@@ -404,39 +404,64 @@ def similar_papers(
     paper_id: str,
     limit: Annotated[int, Query(ge=1, le=50)] = 10,
 ) -> dict:
-    """Papers similar to the given one, via shared community + tag overlap."""
-    with ch_connect() as c:
-        anchor = c.query(
-            "SELECT community_id, openalex_tags, title FROM papers FINAL WHERE paper_id = %(pid)s",
-            parameters={"pid": paper_id},
-        ).result_rows
-        if not anchor:
-            raise HTTPException(404, f"anchor not found: {paper_id}")
-        cid, tags, anchor_title = anchor[0]
-        if cid is None and not tags:
-            return {"anchor": {"paper_id": paper_id, "title": anchor_title}, "count": 0, "results": []}
+    """Papers similar to the given one, via embedding cosine distance.
 
+    Falls back to tag+community overlap if the paper has no embedding yet
+    (e.g. very short or missing abstract).
+    """
+    with ch_connect() as c:
+        # Try embedding-based first.
         rows = c.query(
             """
-            SELECT paper_id, title, source, citation_count, submitted_date,
-                   length(arrayIntersect(openalex_tags, %(tags)s)) AS shared_tags
-            FROM papers FINAL
-            WHERE paper_id != %(pid)s
-              AND ((community_id = %(cid)s AND length(arrayIntersect(openalex_tags, %(tags)s)) >= 1)
-                   OR length(arrayIntersect(openalex_tags, %(tags)s)) >= 2)
-            ORDER BY shared_tags DESC, citation_count DESC
+            WITH (SELECT embedding FROM paper_embeddings FINAL WHERE paper_id = %(pid)s LIMIT 1) AS anchor_emb
+            SELECT p.paper_id, p.title, p.source, p.citation_count, p.submitted_date,
+                   round(1 - cosineDistance(e.embedding, anchor_emb), 4) AS similarity
+            FROM paper_embeddings AS e FINAL
+            JOIN papers AS p FINAL ON p.paper_id = e.paper_id
+            WHERE p.paper_id != %(pid)s
+              AND length(anchor_emb) > 0
+            ORDER BY cosineDistance(e.embedding, anchor_emb) ASC
             LIMIT %(limit)s
             """,
-            parameters={"pid": paper_id, "cid": cid, "tags": list(tags or []), "limit": limit},
+            parameters={"pid": paper_id, "limit": limit},
         ).result_rows
+        anchor_title_q = c.query(
+            "SELECT title FROM papers FINAL WHERE paper_id = %(pid)s",
+            parameters={"pid": paper_id},
+        ).result_rows
+        if not anchor_title_q:
+            raise HTTPException(404, f"anchor not found: {paper_id}")
+        anchor_title = anchor_title_q[0][0]
+
+        if not rows:
+            # No embedding for anchor — fall back to tag+community overlap.
+            anchor = c.query(
+                "SELECT community_id, openalex_tags FROM papers FINAL WHERE paper_id = %(pid)s",
+                parameters={"pid": paper_id},
+            ).result_rows
+            if anchor:
+                cid, tags = anchor[0]
+                rows = c.query(
+                    """
+                    SELECT paper_id, title, source, citation_count, submitted_date, 0.0 AS similarity
+                    FROM papers FINAL
+                    WHERE paper_id != %(pid)s
+                      AND community_id = %(cid)s
+                      AND length(arrayIntersect(openalex_tags, %(tags)s)) >= 1
+                    ORDER BY citation_count DESC
+                    LIMIT %(limit)s
+                    """,
+                    parameters={"pid": paper_id, "cid": cid, "tags": list(tags or []), "limit": limit},
+                ).result_rows
     return {
         "anchor": {"paper_id": paper_id, "title": anchor_title},
+        "method": "embedding" if rows and rows[0][5] > 0 else "tag_overlap",
         "count": len(rows),
         "results": [
             {"paper_id": r[0], "title": r[1], "source": r[2],
              "citation_count": int(r[3] or 0),
              "submitted_date": str(r[4]) if r[4] else None,
-             "shared_tags": int(r[5])}
+             "similarity": float(r[5])}
             for r in rows
         ],
     }
