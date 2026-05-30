@@ -343,6 +343,18 @@ def mlx_tag_v3_cmd(
     typer.echo(f"completion_tok/sec={c.get('completion_tok_per_sec')}")
 
 
+@app.command("cluster-embeddings")
+def cluster_embeddings_cmd(
+    n_clusters: Annotated[int, typer.Option(help="Number of clusters")] = 64,
+    batch_size: Annotated[int, typer.Option(help="MiniBatchKMeans batch")] = 4096,
+    sample: Annotated[int | None, typer.Option(help="Limit to first N papers (for testing)")] = None,
+) -> None:
+    """MiniBatchKMeans over paper_embeddings → paper_clusters table."""
+    from researchpapers import cluster_embeddings
+    c = cluster_embeddings.cluster_papers(n_clusters=n_clusters, batch_size=batch_size, sample_size=sample)
+    typer.echo(f"clustered={c.get('clustered')} k={c.get('n_clusters')} elapsed={c.get('elapsed_seconds')}s")
+
+
 @app.command("embed")
 def embed_cmd(
     source: Annotated[str | None, typer.Option(help="Limit to one source")] = None,

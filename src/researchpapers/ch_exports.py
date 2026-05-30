@@ -233,4 +233,129 @@ def export_review_data(out_dir: Path) -> list[Path]:
         p = out_dir / "hot.json"
         p.write_text(json.dumps(hot, indent=2, default=str))
         written.append(p)
+
+        # 8. Tag co-occurrence — which tags travel together in the same paper.
+        # Top 30 tags as nodes; edges weighted by # papers tagged with both.
+        top_tags_result = c.query("""
+            SELECT
+                multiIf(
+                  lower(tag) IN ('language model', 'large language model', 'large language models'), 'language models',
+                  lower(tag) IN ('neural network'), 'neural networks',
+                  lower(tag) IN ('diffusion model'), 'diffusion models',
+                  lower(tag) IN ('transformer'), 'transformers',
+                  lower(tag) IN ('llm', 'llms'), 'llms',
+                  lower(tag)
+                ) AS t,
+                count() AS n
+            FROM paper_tags FINAL
+            ARRAY JOIN tags AS tag
+            WHERE tagger = 'spacy_v2'
+            GROUP BY t ORDER BY n DESC LIMIT 30
+        """).result_rows
+        top_tag_set = {r[0] for r in top_tags_result}
+        top_tag_counts = {r[0]: int(r[1]) for r in top_tags_result}
+
+        # Compute co-occurrence by joining paper_tags to itself via ARRAY JOIN.
+        # Filter to pairs where both sides are in top_tag_set.
+        rows_co = c.query(
+            """
+            SELECT t1, t2, count() AS co
+            FROM (
+              SELECT t.paper_id,
+                multiIf(
+                  lower(tag) IN ('language model', 'large language model', 'large language models'), 'language models',
+                  lower(tag) IN ('neural network'), 'neural networks',
+                  lower(tag) IN ('diffusion model'), 'diffusion models',
+                  lower(tag) IN ('transformer'), 'transformers',
+                  lower(tag) IN ('llm', 'llms'), 'llms',
+                  lower(tag)
+                ) AS canonical
+              FROM paper_tags AS t FINAL
+              ARRAY JOIN tags AS tag
+              WHERE t.tagger = 'spacy_v2'
+            ) p1
+            JOIN (
+              SELECT t.paper_id,
+                multiIf(
+                  lower(tag) IN ('language model', 'large language model', 'large language models'), 'language models',
+                  lower(tag) IN ('neural network'), 'neural networks',
+                  lower(tag) IN ('diffusion model'), 'diffusion models',
+                  lower(tag) IN ('transformer'), 'transformers',
+                  lower(tag) IN ('llm', 'llms'), 'llms',
+                  lower(tag)
+                ) AS canonical
+              FROM paper_tags AS t FINAL
+              ARRAY JOIN tags AS tag
+              WHERE t.tagger = 'spacy_v2'
+            ) p2 USING (paper_id)
+            ARRAY JOIN [p1.canonical] AS t1, [p2.canonical] AS t2
+            WHERE t1 < t2 AND t1 IN %(top)s AND t2 IN %(top)s
+            GROUP BY t1, t2
+            HAVING co >= 50
+            ORDER BY co DESC
+            LIMIT 500
+            """,
+            parameters={"top": list(top_tag_set)},
+        ).result_rows
+        tag_cooccur = {
+            "nodes": [
+                {"id": t, "count": top_tag_counts[t]}
+                for t in sorted(top_tag_set, key=lambda x: -top_tag_counts[x])
+            ],
+            "edges": [
+                {"source": r[0], "target": r[1], "co_occurrence": int(r[2])}
+                for r in rows_co
+            ],
+        }
+        p = out_dir / "tag_cooccurrence.json"
+        p.write_text(json.dumps(tag_cooccur, indent=2))
+        written.append(p)
+
+        # 9. Embedding-based semantic clusters (MiniBatchKMeans on 478k × 384).
+        # For each cluster: size, top tags, top-cited sample papers.
+        cluster_rows = c.query("""
+            SELECT cluster_id, count() AS size
+            FROM paper_clusters FINAL
+            GROUP BY cluster_id
+            ORDER BY size DESC
+        """).result_rows
+
+        clusters_out = []
+        for cid, size in cluster_rows:
+            top_tags = c.query(
+                """
+                SELECT tag, count() AS n
+                FROM paper_tags t FINAL
+                ARRAY JOIN tags AS tag
+                JOIN paper_clusters pc FINAL ON pc.paper_id = t.paper_id
+                WHERE t.tagger = 'spacy_v2' AND pc.cluster_id = %(cid)s
+                GROUP BY tag
+                HAVING n >= 5
+                ORDER BY n DESC LIMIT 8
+                """,
+                parameters={"cid": int(cid)},
+            ).result_rows
+            samples = c.query(
+                """
+                SELECT p.paper_id, p.title, p.citation_count, p.source
+                FROM paper_clusters pc FINAL
+                JOIN papers AS p FINAL ON p.paper_id = pc.paper_id
+                WHERE pc.cluster_id = %(cid)s
+                ORDER BY p.citation_count DESC
+                LIMIT 5
+                """,
+                parameters={"cid": int(cid)},
+            ).result_rows
+            clusters_out.append({
+                "id": int(cid),
+                "size": int(size),
+                "top_tags": [{"tag": r[0], "n": int(r[1])} for r in top_tags],
+                "top_papers": [
+                    {"paper_id": r[0], "title": r[1], "citation_count": int(r[2] or 0), "source": r[3]}
+                    for r in samples
+                ],
+            })
+        p = out_dir / "embedding_clusters.json"
+        p.write_text(json.dumps(clusters_out, indent=2))
+        written.append(p)
     return written

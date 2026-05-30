@@ -57,14 +57,14 @@
       },
       {
         "avg_rating": 7.5,
-        "title": "SGD Finds then Tunes Features in Two-Layer Neural Networks with near-Optimal Sample Complexity: A Case Study in the XOR problem",
-        "paper_id": "openreview:HgOJlxzB16",
+        "title": "Optimal Sample Complexity of Contrastive Learning",
+        "paper_id": "openreview:NU9AYHJvYe",
         "venue": "ICLR-2024"
       },
       {
         "avg_rating": 7.5,
-        "title": "Optimal Sample Complexity of Contrastive Learning",
-        "paper_id": "openreview:NU9AYHJvYe",
+        "title": "SGD Finds then Tunes Features in Two-Layer Neural Networks with near-Optimal Sample Complexity: A Case Study in the XOR problem",
+        "paper_id": "openreview:HgOJlxzB16",
         "venue": "ICLR-2024"
       },
       {
@@ -266,44 +266,6 @@
     ]
   },
   {
-    "tag": "fundamental limitation",
-    "mean_rating": 6.24,
-    "n_papers": 12,
-    "p90_rating": 7.22,
-    "samples": [
-      {
-        "avg_rating": 8.0,
-        "title": "Backtracking Improves Generation Safety",
-        "paper_id": "openreview:Bo62NeU6VF",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.25,
-        "title": "MAGNet: Motif-Agnostic Generation of Molecules from Scaffolds",
-        "paper_id": "openreview:5FXKgOxmb2",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Improving Equivariant Networks with Probabilistic Symmetry Breaking",
-        "paper_id": "openreview:ZE6lrLvATd",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Fundamental Limitation of Alignment in Large Language Models",
-        "paper_id": "openreview:4qFIkOhq24",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "RRM:  Robust Reward Model Training Mitigates Reward Hacking",
-        "paper_id": "openreview:88AS5MQnmC",
-        "venue": "ICLR-2025"
-      }
-    ]
-  },
-  {
     "tag": "practical usage",
     "mean_rating": 6.24,
     "n_papers": 10,
@@ -337,6 +299,44 @@
         "avg_rating": 6.25,
         "title": "PaLD: Detection of Text Partially Written by Large Language Models",
         "paper_id": "openreview:rWjZWHYPcz",
+        "venue": "ICLR-2025"
+      }
+    ]
+  },
+  {
+    "tag": "fundamental limitation",
+    "mean_rating": 6.24,
+    "n_papers": 12,
+    "p90_rating": 7.22,
+    "samples": [
+      {
+        "avg_rating": 8.0,
+        "title": "Backtracking Improves Generation Safety",
+        "paper_id": "openreview:Bo62NeU6VF",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.25,
+        "title": "MAGNet: Motif-Agnostic Generation of Molecules from Scaffolds",
+        "paper_id": "openreview:5FXKgOxmb2",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Improving Equivariant Networks with Probabilistic Symmetry Breaking",
+        "paper_id": "openreview:ZE6lrLvATd",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Fundamental Limitation of Alignment in Large Language Models",
+        "paper_id": "openreview:4qFIkOhq24",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "RRM:  Robust Reward Model Training Mitigates Reward Hacking",
+        "paper_id": "openreview:88AS5MQnmC",
         "venue": "ICLR-2025"
       }
     ]
@@ -760,6 +760,44 @@
     ]
   },
   {
+    "tag": "level concepts",
+    "mean_rating": 6.17,
+    "n_papers": 13,
+    "p90_rating": 7.4,
+    "samples": [
+      {
+        "avg_rating": 8.0,
+        "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
+        "paper_id": "openreview:3bq3jsvcQ1",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.5,
+        "title": "Learning to Receive Help: Intervention-Aware Concept Embedding Models",
+        "paper_id": "openreview:4ImZxqmT1K",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Black Sheep in the Herd: Playing with Spuriously Correlated Attributes for Vision-Language Recognition",
+        "paper_id": "openreview:g1fkhbhHjL",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "Not All Neuro-Symbolic Concepts Are Created Equal: Analysis and Mitigation of Reasoning Shortcuts",
+        "paper_id": "openreview:tLTtqySDFb",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Beyond Concept Bottleneck Models: How to Make Black Boxes Intervenable?",
+        "paper_id": "openreview:5oJlyJXUxK",
+        "venue": "ICLR-2024"
+      }
+    ]
+  },
+  {
     "tag": "differential equation",
     "mean_rating": 6.17,
     "n_papers": 10,
@@ -836,40 +874,40 @@
     ]
   },
   {
-    "tag": "level concepts",
-    "mean_rating": 6.17,
-    "n_papers": 13,
+    "tag": "kernel ridge regression",
+    "mean_rating": 6.16,
+    "n_papers": 11,
     "p90_rating": 7.4,
     "samples": [
       {
         "avg_rating": 8.0,
-        "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
-        "paper_id": "openreview:3bq3jsvcQ1",
+        "title": "Generalization error of spectral algorithms",
+        "paper_id": "openreview:3SJE1WLB4M",
         "venue": "ICLR-2024"
       },
       {
-        "avg_rating": 7.5,
-        "title": "Learning to Receive Help: Intervention-Aware Concept Embedding Models",
-        "paper_id": "openreview:4ImZxqmT1K",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Black Sheep in the Herd: Playing with Spuriously Correlated Attributes for Vision-Language Recognition",
-        "paper_id": "openreview:g1fkhbhHjL",
+        "avg_rating": 7.4,
+        "title": "Learning vector fields of differential equations on manifolds with geometrically constrained operator-valued kernels",
+        "paper_id": "openreview:OwpLQrpdwE",
         "venue": "ICLR-2025"
       },
       {
         "avg_rating": 6.75,
-        "title": "Not All Neuro-Symbolic Concepts Are Created Equal: Analysis and Mitigation of Reasoning Shortcuts",
-        "paper_id": "openreview:tLTtqySDFb",
+        "title": "The Exact Sample Complexity Gain from Invariances for Kernel Regression",
+        "paper_id": "openreview:6iouUxI45W",
         "venue": "NeurIPS-2023"
       },
       {
-        "avg_rating": 6.5,
-        "title": "Beyond Concept Bottleneck Models: How to Make Black Boxes Intervenable?",
-        "paper_id": "openreview:5oJlyJXUxK",
-        "venue": "ICLR-2024"
+        "avg_rating": 6.666666666666667,
+        "title": "On the Saturation Effects of Spectral Algorithms in Large Dimensions",
+        "paper_id": "openreview:kJzecLYsRi",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.4,
+        "title": "On the Asymptotic Learning Curves of Kernel Ridge Regression under Power-law Decay",
+        "paper_id": "openreview:E4P5kVSKlT",
+        "venue": "NeurIPS-2023"
       }
     ]
   },
@@ -912,44 +950,6 @@
     ]
   },
   {
-    "tag": "kernel ridge regression",
-    "mean_rating": 6.16,
-    "n_papers": 11,
-    "p90_rating": 7.4,
-    "samples": [
-      {
-        "avg_rating": 8.0,
-        "title": "Generalization error of spectral algorithms",
-        "paper_id": "openreview:3SJE1WLB4M",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.4,
-        "title": "Learning vector fields of differential equations on manifolds with geometrically constrained operator-valued kernels",
-        "paper_id": "openreview:OwpLQrpdwE",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "The Exact Sample Complexity Gain from Invariances for Kernel Regression",
-        "paper_id": "openreview:6iouUxI45W",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.666666666666667,
-        "title": "On the Saturation Effects of Spectral Algorithms in Large Dimensions",
-        "paper_id": "openreview:kJzecLYsRi",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.4,
-        "title": "On the Asymptotic Learning Curves of Kernel Ridge Regression under Power-law Decay",
-        "paper_id": "openreview:E4P5kVSKlT",
-        "venue": "NeurIPS-2023"
-      }
-    ]
-  },
-  {
     "tag": "unknown distribution",
     "mean_rating": 6.16,
     "n_papers": 14,
@@ -983,6 +983,44 @@
         "avg_rating": 6.5,
         "title": "Adaptive Data Analysis in a Balanced Adversarial Model",
         "paper_id": "openreview:QatZNssk7T",
+        "venue": "NeurIPS-2023"
+      }
+    ]
+  },
+  {
+    "tag": "finite number",
+    "mean_rating": 6.15,
+    "n_papers": 19,
+    "p90_rating": 7.0,
+    "samples": [
+      {
+        "avg_rating": 7.333333333333333,
+        "title": "Honor Among Bandits: No-Regret Learning for Online Fair Division",
+        "paper_id": "openreview:OCQbC0eDJJ",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "When Is Inductive Inference Possible?",
+        "paper_id": "openreview:2aGcshccuV",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "HyPoGen: Optimization-Biased Hypernetworks for Generalizable Policy Generation",
+        "paper_id": "openreview:CJWMXqAnAy",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.666666666666667,
+        "title": "Transformers are Universal In-context Learners",
+        "paper_id": "openreview:6S4WQD1LZR",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.666666666666667,
+        "title": "Hypervolume Maximization: A Geometric View of Pareto Set Learning",
+        "paper_id": "openreview:9ieV1hnuva",
         "venue": "NeurIPS-2023"
       }
     ]
@@ -1026,78 +1064,40 @@
     ]
   },
   {
-    "tag": "finite number",
-    "mean_rating": 6.15,
-    "n_papers": 19,
-    "p90_rating": 7.0,
-    "samples": [
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "Honor Among Bandits: No-Regret Learning for Online Fair Division",
-        "paper_id": "openreview:OCQbC0eDJJ",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "When Is Inductive Inference Possible?",
-        "paper_id": "openreview:2aGcshccuV",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "HyPoGen: Optimization-Biased Hypernetworks for Generalizable Policy Generation",
-        "paper_id": "openreview:CJWMXqAnAy",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.666666666666667,
-        "title": "Transformers are Universal In-context Learners",
-        "paper_id": "openreview:6S4WQD1LZR",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.666666666666667,
-        "title": "Hypervolume Maximization: A Geometric View of Pareto Set Learning",
-        "paper_id": "openreview:9ieV1hnuva",
-        "venue": "NeurIPS-2023"
-      }
-    ]
-  },
-  {
-    "tag": "cell types",
+    "tag": "rigorous analysis",
     "mean_rating": 6.14,
     "n_papers": 10,
-    "p90_rating": 7.55,
+    "p90_rating": 6.65,
     "samples": [
       {
         "avg_rating": 8.0,
-        "title": "When Selection Meets Intervention: Additional Complexities in Causal Discovery",
-        "paper_id": "openreview:xByvdb3DCm",
-        "venue": "ICLR-2025"
+        "title": "Noisy Interpolation Learning with Shallow Univariate ReLU Networks",
+        "paper_id": "openreview:GTUoTJXPBf",
+        "venue": "ICLR-2024"
       },
       {
-        "avg_rating": 7.5,
-        "title": "Reinforcement Learning for Control of Non-Markovian Cellular Population Dynamics",
-        "paper_id": "openreview:dsHpulHpOK",
-        "venue": "ICLR-2025"
+        "avg_rating": 6.5,
+        "title": "Ensemble sampling for linear bandits: small ensembles suffice",
+        "paper_id": "openreview:SO7fnIFq0o",
+        "venue": "NeurIPS-2024"
       },
       {
-        "avg_rating": 7.0,
-        "title": "Designing Cell-Type-Specific Promoter Sequences Using Conservative Model-Based Optimization",
-        "paper_id": "openreview:F8DWffLkYG",
+        "avg_rating": 6.5,
+        "title": "Hardness of Learning Neural Networks under the Manifold Hypothesis",
+        "paper_id": "openreview:dkkgKzMni7",
         "venue": "NeurIPS-2024"
       },
       {
         "avg_rating": 6.4,
-        "title": "Cell ontology guided transcriptome foundation model",
-        "paper_id": "openreview:aeYNVtTo7o",
-        "venue": "NeurIPS-2024"
+        "title": "On the Stability-Plasticity Dilemma in Continual Meta-Learning: Theory and Algorithm",
+        "paper_id": "openreview:DNHGKeOhLl",
+        "venue": "NeurIPS-2023"
       },
       {
-        "avg_rating": 6.333333333333333,
-        "title": "Disentangling the Roles of Distinct Cell Classes with Cell-Type Dynamical Systems",
-        "paper_id": "openreview:9sP4oejtjB",
-        "venue": "NeurIPS-2024"
+        "avg_rating": 6.25,
+        "title": "Beyond IID weights: sparse and low-rank deep Neural Networks are also Gaussian Processes",
+        "paper_id": "openreview:1Wi0Ys33Nm",
+        "venue": "ICLR-2024"
       }
     ]
   },
@@ -1140,44 +1140,6 @@
     ]
   },
   {
-    "tag": "rigorous analysis",
-    "mean_rating": 6.14,
-    "n_papers": 10,
-    "p90_rating": 6.65,
-    "samples": [
-      {
-        "avg_rating": 8.0,
-        "title": "Noisy Interpolation Learning with Shallow Univariate ReLU Networks",
-        "paper_id": "openreview:GTUoTJXPBf",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Ensemble sampling for linear bandits: small ensembles suffice",
-        "paper_id": "openreview:SO7fnIFq0o",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Hardness of Learning Neural Networks under the Manifold Hypothesis",
-        "paper_id": "openreview:dkkgKzMni7",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.4,
-        "title": "On the Stability-Plasticity Dilemma in Continual Meta-Learning: Theory and Algorithm",
-        "paper_id": "openreview:DNHGKeOhLl",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.25,
-        "title": "Beyond IID weights: sparse and low-rank deep Neural Networks are also Gaussian Processes",
-        "paper_id": "openreview:1Wi0Ys33Nm",
-        "venue": "ICLR-2024"
-      }
-    ]
-  },
-  {
     "tag": "linear inverse problems",
     "mean_rating": 6.14,
     "n_papers": 11,
@@ -1216,40 +1178,40 @@
     ]
   },
   {
-    "tag": "generalization analysis",
-    "mean_rating": 6.13,
+    "tag": "cell types",
+    "mean_rating": 6.14,
     "n_papers": 10,
-    "p90_rating": 7.05,
+    "p90_rating": 7.55,
     "samples": [
       {
+        "avg_rating": 8.0,
+        "title": "When Selection Meets Intervention: Additional Complexities in Causal Discovery",
+        "paper_id": "openreview:xByvdb3DCm",
+        "venue": "ICLR-2025"
+      },
+      {
         "avg_rating": 7.5,
-        "title": "When is Task Vector Provably Effective for Model Editing? A Generalization Analysis of Nonlinear Transformers",
-        "paper_id": "openreview:vRvVVb0NAz",
+        "title": "Reinforcement Learning for Control of Non-Markovian Cellular Population Dynamics",
+        "paper_id": "openreview:dsHpulHpOK",
         "venue": "ICLR-2025"
       },
       {
         "avg_rating": 7.0,
-        "title": "A Unified Generalization Analysis of Re-Weighting and Logit-Adjustment for Imbalanced Learning",
-        "paper_id": "openreview:UAow2kPsYP",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "Generalization Analysis for Label-Specific Representation Learning",
-        "paper_id": "openreview:dtPIUXdJHY",
+        "title": "Designing Cell-Type-Specific Promoter Sequences Using Conservative Model-Based Optimization",
+        "paper_id": "openreview:F8DWffLkYG",
         "venue": "NeurIPS-2024"
       },
       {
-        "avg_rating": 6.25,
-        "title": "Stability and Generalization of Adversarial Training for Shallow Neural Networks with Smooth Activation",
-        "paper_id": "openreview:9Nsa4lVZeD",
+        "avg_rating": 6.4,
+        "title": "Cell ontology guided transcriptome foundation model",
+        "paper_id": "openreview:aeYNVtTo7o",
         "venue": "NeurIPS-2024"
       },
       {
-        "avg_rating": 6.142857142857143,
-        "title": "Fine-Grained Theoretical Analysis of Federated Zeroth-Order Optimization",
-        "paper_id": "openreview:0ycX03sMAT",
-        "venue": "NeurIPS-2023"
+        "avg_rating": 6.333333333333333,
+        "title": "Disentangling the Roles of Distinct Cell Classes with Cell-Type Dynamical Systems",
+        "paper_id": "openreview:9sP4oejtjB",
+        "venue": "NeurIPS-2024"
       }
     ]
   },
@@ -1266,6 +1228,12 @@
         "venue": "ICLR-2024"
       },
       {
+        "avg_rating": 7.5,
+        "title": "Estimating Shape Distances on Neural Representations with Limited Samples",
+        "paper_id": "openreview:kvByNnMERu",
+        "venue": "ICLR-2024"
+      },
+      {
         "avg_rating": 7.333333333333333,
         "title": "On the hardness of learning under symmetries",
         "paper_id": "openreview:ARPrtuzAnQ",
@@ -1276,12 +1244,6 @@
         "title": "Precise asymptotic generalization for multiclass classification with overparameterized linear models",
         "paper_id": "openreview:cRGINXQWem",
         "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 7.25,
-        "title": "Lower Bounds and Optimal Algorithms for Non-Smooth Convex Decentralized Optimization over Time-Varying Networks",
-        "paper_id": "openreview:IUKff7nYmW",
-        "venue": "NeurIPS-2024"
       },
       {
         "avg_rating": 7.25,
@@ -1330,40 +1292,40 @@
     ]
   },
   {
-    "tag": "conditional average treatment effect",
-    "mean_rating": 6.12,
-    "n_papers": 11,
-    "p90_rating": 7.25,
+    "tag": "generalization analysis",
+    "mean_rating": 6.13,
+    "n_papers": 10,
+    "p90_rating": 7.05,
     "samples": [
       {
-        "avg_rating": 7.25,
-        "title": "Bounds on Representation-Induced Confounding Bias for Treatment Effect Estimation",
-        "paper_id": "openreview:d3xKPQVjSc",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.25,
-        "title": "Empirical Analysis of Model Selection for Heterogeneous Causal Effect Estimation",
-        "paper_id": "openreview:yuy6cGt3KL",
-        "venue": "ICLR-2024"
+        "avg_rating": 7.5,
+        "title": "When is Task Vector Provably Effective for Model Editing? A Generalization Analysis of Nonlinear Transformers",
+        "paper_id": "openreview:vRvVVb0NAz",
+        "venue": "ICLR-2025"
       },
       {
         "avg_rating": 7.0,
-        "title": "Unveiling the Potential of Robustness in Selecting Conditional Average Treatment Effect Estimators",
-        "paper_id": "openreview:k4EP46Q9X2",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "Conformal Meta-learners for Predictive Inference of Individual Treatment Effects",
-        "paper_id": "openreview:IwnINorSZ5",
+        "title": "A Unified Generalization Analysis of Re-Weighting and Logit-Adjustment for Imbalanced Learning",
+        "paper_id": "openreview:UAow2kPsYP",
         "venue": "NeurIPS-2023"
       },
       {
-        "avg_rating": 6.5,
-        "title": "Differentially private learners for heterogeneous treatment effects",
-        "paper_id": "openreview:1z3SOCwst9",
-        "venue": "ICLR-2025"
+        "avg_rating": 6.75,
+        "title": "Generalization Analysis for Label-Specific Representation Learning",
+        "paper_id": "openreview:dtPIUXdJHY",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.25,
+        "title": "Stability and Generalization of Adversarial Training for Shallow Neural Networks with Smooth Activation",
+        "paper_id": "openreview:9Nsa4lVZeD",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.142857142857143,
+        "title": "Fine-Grained Theoretical Analysis of Federated Zeroth-Order Optimization",
+        "paper_id": "openreview:0ycX03sMAT",
+        "venue": "NeurIPS-2023"
       }
     ]
   },
@@ -1402,82 +1364,6 @@
         "title": "Provable Guarantees for Nonlinear Feature Learning in Three-Layer Neural Networks",
         "paper_id": "openreview:fShubymWrc",
         "venue": "NeurIPS-2023"
-      }
-    ]
-  },
-  {
-    "tag": "human motion",
-    "mean_rating": 6.12,
-    "n_papers": 15,
-    "p90_rating": 7.33,
-    "samples": [
-      {
-        "avg_rating": 8.0,
-        "title": "Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency",
-        "paper_id": "openreview:weM4YBicIP",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "H-GAP: Humanoid Control with a Generalist Planner",
-        "paper_id": "openreview:LYG6tBlEX0",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "Following the Human Thread in Social Navigation",
-        "paper_id": "openreview:M8OGl34Pmg",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Towards Unified Human Motion-Language Understanding via Sparse Interpretable Characterization",
-        "paper_id": "openreview:Oh8MuCacJW",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "MoMu-Diffusion: On Learning Long-Term Motion-Music Synchronization and Correspondence",
-        "paper_id": "openreview:YscR3LBIi7",
-        "venue": "NeurIPS-2024"
-      }
-    ]
-  },
-  {
-    "tag": "total variation distance",
-    "mean_rating": 6.12,
-    "n_papers": 14,
-    "p90_rating": 6.78,
-    "samples": [
-      {
-        "avg_rating": 7.2,
-        "title": "Computational Explorations of Total Variation Distance",
-        "paper_id": "openreview:xak8c9l1nu",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.8,
-        "title": "Uncertainty Quantification via Stable Distribution Propagation",
-        "paper_id": "openreview:cZttUMTiPL",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "The adaptive complexity of parallelized log-concave sampling",
-        "paper_id": "openreview:EeqlkPpaV8",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.666666666666667,
-        "title": "Wasserstein-Regularized Conformal Prediction under General Distribution Shift",
-        "paper_id": "openreview:aJ3tiX1Tu4",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Faster Diffusion Sampling with Randomized Midpoints: Sequential and Parallel",
-        "paper_id": "openreview:MT3aOfXIbY",
-        "venue": "ICLR-2025"
       }
     ]
   },
@@ -1558,6 +1444,158 @@
     ]
   },
   {
+    "tag": "total variation distance",
+    "mean_rating": 6.12,
+    "n_papers": 14,
+    "p90_rating": 6.78,
+    "samples": [
+      {
+        "avg_rating": 7.2,
+        "title": "Computational Explorations of Total Variation Distance",
+        "paper_id": "openreview:xak8c9l1nu",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.8,
+        "title": "Uncertainty Quantification via Stable Distribution Propagation",
+        "paper_id": "openreview:cZttUMTiPL",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "The adaptive complexity of parallelized log-concave sampling",
+        "paper_id": "openreview:EeqlkPpaV8",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.666666666666667,
+        "title": "Wasserstein-Regularized Conformal Prediction under General Distribution Shift",
+        "paper_id": "openreview:aJ3tiX1Tu4",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Faster Diffusion Sampling with Randomized Midpoints: Sequential and Parallel",
+        "paper_id": "openreview:MT3aOfXIbY",
+        "venue": "ICLR-2025"
+      }
+    ]
+  },
+  {
+    "tag": "human motion",
+    "mean_rating": 6.12,
+    "n_papers": 15,
+    "p90_rating": 7.33,
+    "samples": [
+      {
+        "avg_rating": 8.0,
+        "title": "Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency",
+        "paper_id": "openreview:weM4YBicIP",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.333333333333333,
+        "title": "H-GAP: Humanoid Control with a Generalist Planner",
+        "paper_id": "openreview:LYG6tBlEX0",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.333333333333333,
+        "title": "Following the Human Thread in Social Navigation",
+        "paper_id": "openreview:M8OGl34Pmg",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Towards Unified Human Motion-Language Understanding via Sparse Interpretable Characterization",
+        "paper_id": "openreview:Oh8MuCacJW",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "MoMu-Diffusion: On Learning Long-Term Motion-Music Synchronization and Correspondence",
+        "paper_id": "openreview:YscR3LBIi7",
+        "venue": "NeurIPS-2024"
+      }
+    ]
+  },
+  {
+    "tag": "conditional average treatment effect",
+    "mean_rating": 6.12,
+    "n_papers": 11,
+    "p90_rating": 7.25,
+    "samples": [
+      {
+        "avg_rating": 7.25,
+        "title": "Bounds on Representation-Induced Confounding Bias for Treatment Effect Estimation",
+        "paper_id": "openreview:d3xKPQVjSc",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.25,
+        "title": "Empirical Analysis of Model Selection for Heterogeneous Causal Effect Estimation",
+        "paper_id": "openreview:yuy6cGt3KL",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Unveiling the Potential of Robustness in Selecting Conditional Average Treatment Effect Estimators",
+        "paper_id": "openreview:k4EP46Q9X2",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "Conformal Meta-learners for Predictive Inference of Individual Treatment Effects",
+        "paper_id": "openreview:IwnINorSZ5",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Differentially private learners for heterogeneous treatment effects",
+        "paper_id": "openreview:1z3SOCwst9",
+        "venue": "ICLR-2025"
+      }
+    ]
+  },
+  {
+    "tag": "benign overfitting",
+    "mean_rating": 6.11,
+    "n_papers": 14,
+    "p90_rating": 7.0,
+    "samples": [
+      {
+        "avg_rating": 7.25,
+        "title": "Stable Minima Cannot Overfit in Univariate ReLU Networks: Generalization by Large Step Sizes",
+        "paper_id": "openreview:7Swrtm9Qsp",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Benign Overfitting in Out-of-Distribution Generalization of Linear Models",
+        "paper_id": "openreview:6jxUsDAdAu",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Training shallow ReLU networks on noisy data using hinge loss: when do we overfit and is it benign?",
+        "paper_id": "openreview:LlERoXEKjh",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "From Tempered to Benign Overfitting in ReLU Neural Networks",
+        "paper_id": "openreview:LnZuxp3Tx7",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.6,
+        "title": "Mind the spikes: Benign overfitting of kernels and neural networks in fixed dimension",
+        "paper_id": "openreview:yjYwbZBJyl",
+        "venue": "NeurIPS-2023"
+      }
+    ]
+  },
+  {
     "tag": "research efforts",
     "mean_rating": 6.11,
     "n_papers": 13,
@@ -1634,44 +1672,6 @@
     ]
   },
   {
-    "tag": "benign overfitting",
-    "mean_rating": 6.11,
-    "n_papers": 14,
-    "p90_rating": 7.0,
-    "samples": [
-      {
-        "avg_rating": 7.25,
-        "title": "Stable Minima Cannot Overfit in Univariate ReLU Networks: Generalization by Large Step Sizes",
-        "paper_id": "openreview:7Swrtm9Qsp",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Benign Overfitting in Out-of-Distribution Generalization of Linear Models",
-        "paper_id": "openreview:6jxUsDAdAu",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Training shallow ReLU networks on noisy data using hinge loss: when do we overfit and is it benign?",
-        "paper_id": "openreview:LlERoXEKjh",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "From Tempered to Benign Overfitting in ReLU Neural Networks",
-        "paper_id": "openreview:LnZuxp3Tx7",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.6,
-        "title": "Mind the spikes: Benign overfitting of kernels and neural networks in fixed dimension",
-        "paper_id": "openreview:yjYwbZBJyl",
-        "venue": "NeurIPS-2023"
-      }
-    ]
-  },
-  {
     "tag": "elbo",
     "mean_rating": 6.11,
     "n_papers": 16,
@@ -1723,15 +1723,15 @@
       },
       {
         "avg_rating": 8.0,
-        "title": "Inference Scaling for Long-Context Retrieval Augmented Generation",
-        "paper_id": "openreview:FSjIrOm1vz",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 8.0,
         "title": "Knowledge Card: Filling LLMs' Knowledge Gaps with Plug-in Specialized Language Models",
         "paper_id": "openreview:WbWtOYIzIK",
         "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 8.0,
+        "title": "Inference Scaling for Long-Context Retrieval Augmented Generation",
+        "paper_id": "openreview:FSjIrOm1vz",
+        "venue": "ICLR-2025"
       },
       {
         "avg_rating": 7.0,
@@ -1744,6 +1744,44 @@
         "title": "Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models",
         "paper_id": "openreview:ANO1i9JPtb",
         "venue": "NeurIPS-2024"
+      }
+    ]
+  },
+  {
+    "tag": "nfe",
+    "mean_rating": 6.1,
+    "n_papers": 12,
+    "p90_rating": 7.18,
+    "samples": [
+      {
+        "avg_rating": 8.0,
+        "title": "Learning to Discretize Denoising Diffusion ODEs",
+        "paper_id": "openreview:xDrFWUmCne",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.2,
+        "title": "Bespoke Solvers for Generative Flow Models",
+        "paper_id": "openreview:1PXEY7ofFX",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Linear Multistep Solver Distillation for Fast Sampling of Diffusion Models",
+        "paper_id": "openreview:vkOFOUDLTn",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Improving the Training of Rectified Flows",
+        "paper_id": "openreview:mSHs6C7Nfa",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Score-based Generative Models with L\u00e9vy Processes",
+        "paper_id": "openreview:0Wp3VHX0Gm",
+        "venue": "NeurIPS-2023"
       }
     ]
   },
@@ -1824,44 +1862,6 @@
     ]
   },
   {
-    "tag": "linear bandits",
-    "mean_rating": 6.1,
-    "n_papers": 15,
-    "p90_rating": 7.0,
-    "samples": [
-      {
-        "avg_rating": 7.25,
-        "title": "Enhancing Preference-based Linear Bandits via Human Response Time",
-        "paper_id": "openreview:aIPwlkdOut",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Geometry-Aware Approaches for Balancing Performance and Theoretical Guarantees in Linear Bandits",
-        "paper_id": "openreview:Oeb0I3JcVc",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Fixed-Budget Differentially Private Best Arm Identification",
-        "paper_id": "openreview:vrE2fqAInO",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.6,
-        "title": "Anytime Model Selection in Linear Bandits",
-        "paper_id": "openreview:YiRX7nQ77Q",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Ensemble sampling for linear bandits: small ensembles suffice",
-        "paper_id": "openreview:SO7fnIFq0o",
-        "venue": "NeurIPS-2024"
-      }
-    ]
-  },
-  {
     "tag": "excess risk",
     "mean_rating": 6.1,
     "n_papers": 13,
@@ -1900,78 +1900,40 @@
     ]
   },
   {
-    "tag": "nfe",
+    "tag": "linear bandits",
     "mean_rating": 6.1,
-    "n_papers": 12,
-    "p90_rating": 7.18,
+    "n_papers": 15,
+    "p90_rating": 7.0,
     "samples": [
       {
-        "avg_rating": 8.0,
-        "title": "Learning to Discretize Denoising Diffusion ODEs",
-        "paper_id": "openreview:xDrFWUmCne",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.2,
-        "title": "Bespoke Solvers for Generative Flow Models",
-        "paper_id": "openreview:1PXEY7ofFX",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Linear Multistep Solver Distillation for Fast Sampling of Diffusion Models",
-        "paper_id": "openreview:vkOFOUDLTn",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Improving the Training of Rectified Flows",
-        "paper_id": "openreview:mSHs6C7Nfa",
+        "avg_rating": 7.25,
+        "title": "Enhancing Preference-based Linear Bandits via Human Response Time",
+        "paper_id": "openreview:aIPwlkdOut",
         "venue": "NeurIPS-2024"
       },
       {
-        "avg_rating": 6.5,
-        "title": "Score-based Generative Models with L\u00e9vy Processes",
-        "paper_id": "openreview:0Wp3VHX0Gm",
-        "venue": "NeurIPS-2023"
-      }
-    ]
-  },
-  {
-    "tag": "sbi",
-    "mean_rating": 6.09,
-    "n_papers": 12,
-    "p90_rating": 6.5,
-    "samples": [
-      {
-        "avg_rating": 6.75,
-        "title": "Calibrating Neural Simulation-Based Inference with Differentiable Coverage Probability",
-        "paper_id": "openreview:wLiMhVJ7fx",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Meta-learning families of plasticity rules in recurrent spiking networks using simulation-based inference",
-        "paper_id": "openreview:FLFasCFJNo",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Generalized Bayesian Inference for Scientific Simulators via Amortized Cost Estimation",
-        "paper_id": "openreview:ZARAiV25CW",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.25,
-        "title": "Flow Matching for Scalable Simulation-Based Inference",
-        "paper_id": "openreview:D2cS6SoYlP",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.166666666666667,
-        "title": "Robust Simulation-Based Inference under Missing Data via Neural Processes",
-        "paper_id": "openreview:GsR3zRCRX5",
+        "avg_rating": 7.0,
+        "title": "Geometry-Aware Approaches for Balancing Performance and Theoretical Guarantees in Linear Bandits",
+        "paper_id": "openreview:Oeb0I3JcVc",
         "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Fixed-Budget Differentially Private Best Arm Identification",
+        "paper_id": "openreview:vrE2fqAInO",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.6,
+        "title": "Anytime Model Selection in Linear Bandits",
+        "paper_id": "openreview:YiRX7nQ77Q",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Ensemble sampling for linear bandits: small ensembles suffice",
+        "paper_id": "openreview:SO7fnIFq0o",
+        "venue": "NeurIPS-2024"
       }
     ]
   },
@@ -2010,6 +1972,120 @@
         "title": "Outlier Synthesis via Hamiltonian Monte Carlo for Out-of-Distribution Detection",
         "paper_id": "openreview:N6ba2xsmds",
         "venue": "ICLR-2025"
+      }
+    ]
+  },
+  {
+    "tag": "sbi",
+    "mean_rating": 6.09,
+    "n_papers": 12,
+    "p90_rating": 6.5,
+    "samples": [
+      {
+        "avg_rating": 6.75,
+        "title": "Calibrating Neural Simulation-Based Inference with Differentiable Coverage Probability",
+        "paper_id": "openreview:wLiMhVJ7fx",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Generalized Bayesian Inference for Scientific Simulators via Amortized Cost Estimation",
+        "paper_id": "openreview:ZARAiV25CW",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Meta-learning families of plasticity rules in recurrent spiking networks using simulation-based inference",
+        "paper_id": "openreview:FLFasCFJNo",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.25,
+        "title": "Flow Matching for Scalable Simulation-Based Inference",
+        "paper_id": "openreview:D2cS6SoYlP",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.166666666666667,
+        "title": "Compositional simulation-based inference for time series",
+        "paper_id": "openreview:uClUUJk05H",
+        "venue": "ICLR-2025"
+      }
+    ]
+  },
+  {
+    "tag": "stationary point",
+    "mean_rating": 6.08,
+    "n_papers": 11,
+    "p90_rating": 7.0,
+    "samples": [
+      {
+        "avg_rating": 8.0,
+        "title": "The Complexity of Two-Team Polymatrix Games with Independent Adversaries",
+        "paper_id": "openreview:9VGTk2NYjF",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Loss Landscape of Shallow ReLU-like Neural Networks: Stationary Points, Saddle Escape, and Network Embedding",
+        "paper_id": "openreview:ogKE7LcvW6",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.333333333333333,
+        "title": "Oracle Complexity of Single-Loop Switching Subgradient Methods for Non-Smooth Weakly Convex Functional Constrained Optimization",
+        "paper_id": "openreview:A383wMho4h",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.333333333333333,
+        "title": "On Convergence of Adam for Stochastic Optimization under Relaxed Assumptions",
+        "paper_id": "openreview:x7usmidzxj",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.25,
+        "title": "A Restoration Network as an Implicit Prior",
+        "paper_id": "openreview:x7d1qXEn1e",
+        "venue": "ICLR-2024"
+      }
+    ]
+  },
+  {
+    "tag": "non - stationary environments",
+    "mean_rating": 6.08,
+    "n_papers": 14,
+    "p90_rating": 6.62,
+    "samples": [
+      {
+        "avg_rating": 7.25,
+        "title": "Online Reinforcement Learning in Non-Stationary Context-Driven Environments",
+        "paper_id": "openreview:l6QnSQizmN",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.666666666666667,
+        "title": "Test-time Adaptation in Non-stationary Environments via Adaptive Representation Alignment",
+        "paper_id": "openreview:0EfUYVMrLv",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "ViDA: Homeostatic Visual Domain Adapter for Continual Test Time Adaptation",
+        "paper_id": "openreview:sJ88Wg5Bp5",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.4,
+        "title": "Rewiring Neurons in Non-Stationary Environments",
+        "paper_id": "openreview:t7ozN4AXd0",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.333333333333333,
+        "title": "Learning World Models with Identifiable Factorization",
+        "paper_id": "openreview:6JJq5TW9Mc",
+        "venue": "NeurIPS-2023"
       }
     ]
   },
@@ -2166,44 +2242,6 @@
     ]
   },
   {
-    "tag": "stationary point",
-    "mean_rating": 6.08,
-    "n_papers": 11,
-    "p90_rating": 7.0,
-    "samples": [
-      {
-        "avg_rating": 8.0,
-        "title": "The Complexity of Two-Team Polymatrix Games with Independent Adversaries",
-        "paper_id": "openreview:9VGTk2NYjF",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Loss Landscape of Shallow ReLU-like Neural Networks: Stationary Points, Saddle Escape, and Network Embedding",
-        "paper_id": "openreview:ogKE7LcvW6",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.333333333333333,
-        "title": "Oracle Complexity of Single-Loop Switching Subgradient Methods for Non-Smooth Weakly Convex Functional Constrained Optimization",
-        "paper_id": "openreview:A383wMho4h",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.333333333333333,
-        "title": "On Convergence of Adam for Stochastic Optimization under Relaxed Assumptions",
-        "paper_id": "openreview:x7usmidzxj",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.25,
-        "title": "A Restoration Network as an Implicit Prior",
-        "paper_id": "openreview:x7d1qXEn1e",
-        "venue": "ICLR-2024"
-      }
-    ]
-  },
-  {
     "tag": "formal guarantees",
     "mean_rating": 6.08,
     "n_papers": 14,
@@ -2242,40 +2280,40 @@
     ]
   },
   {
-    "tag": "non - stationary environments",
-    "mean_rating": 6.08,
-    "n_papers": 14,
-    "p90_rating": 6.62,
+    "tag": "draft model",
+    "mean_rating": 6.07,
+    "n_papers": 10,
+    "p90_rating": 6.8,
     "samples": [
       {
-        "avg_rating": 7.25,
-        "title": "Online Reinforcement Learning in Non-Stationary Context-Driven Environments",
-        "paper_id": "openreview:l6QnSQizmN",
+        "avg_rating": 8.0,
+        "title": "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+        "paper_id": "openreview:mtSSFiqW6y",
         "venue": "ICLR-2025"
       },
       {
         "avg_rating": 6.666666666666667,
-        "title": "Test-time Adaptation in Non-stationary Environments via Adaptive Representation Alignment",
-        "paper_id": "openreview:0EfUYVMrLv",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "ViDA: Homeostatic Visual Domain Adapter for Continual Test Time Adaptation",
-        "paper_id": "openreview:sJ88Wg5Bp5",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.4,
-        "title": "Rewiring Neurons in Non-Stationary Environments",
-        "paper_id": "openreview:t7ozN4AXd0",
-        "venue": "NeurIPS-2023"
+        "title": "Efficient Inference for Large Language Model-based Generative Recommendation",
+        "paper_id": "openreview:ACSNlt77hq",
+        "venue": "ICLR-2025"
       },
       {
         "avg_rating": 6.333333333333333,
-        "title": "Learning World Models with Identifiable Factorization",
-        "paper_id": "openreview:6JJq5TW9Mc",
-        "venue": "NeurIPS-2023"
+        "title": "Accelerating Greedy Coordinate Gradient and General Prompt Optimization via Probe Sampling",
+        "paper_id": "openreview:CMgxAaRqZh",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.0,
+        "title": "Online Speculative Decoding",
+        "paper_id": "openreview:Km3Kprwyua",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.0,
+        "title": "DistillSpec: Improving Speculative Decoding via Knowledge Distillation",
+        "paper_id": "openreview:rsY6J3ZaTF",
+        "venue": "ICLR-2024"
       }
     ]
   },
@@ -2356,44 +2394,6 @@
     ]
   },
   {
-    "tag": "computational power",
-    "mean_rating": 6.07,
-    "n_papers": 10,
-    "p90_rating": 7.51,
-    "samples": [
-      {
-        "avg_rating": 7.6,
-        "title": "Space and time continuous physics simulation from partial observations",
-        "paper_id": "openreview:4yaFQ7181M",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.5,
-        "title": "The Expressive Power of Transformers with Chain of Thought",
-        "paper_id": "openreview:NjNGlPh8Wh",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "Designing Skill-Compatible AI: Methodologies and Frameworks in Chess",
-        "paper_id": "openreview:79rfgv3jw4",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Graph Neural Networks and Arithmetic Circuits",
-        "paper_id": "openreview:0ZeONp33f0",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.333333333333333,
-        "title": "Network Memory Footprint Compression Through Jointly Learnable Codebooks and Mappings",
-        "paper_id": "openreview:1RrOtCmuKr",
-        "venue": "ICLR-2024"
-      }
-    ]
-  },
-  {
     "tag": "monte carlo",
     "mean_rating": 6.07,
     "n_papers": 14,
@@ -2432,78 +2432,40 @@
     ]
   },
   {
-    "tag": "draft model",
+    "tag": "computational power",
     "mean_rating": 6.07,
     "n_papers": 10,
-    "p90_rating": 6.8,
+    "p90_rating": 7.51,
     "samples": [
       {
-        "avg_rating": 8.0,
-        "title": "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
-        "paper_id": "openreview:mtSSFiqW6y",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.666666666666667,
-        "title": "Efficient Inference for Large Language Model-based Generative Recommendation",
-        "paper_id": "openreview:ACSNlt77hq",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.333333333333333,
-        "title": "Accelerating Greedy Coordinate Gradient and General Prompt Optimization via Probe Sampling",
-        "paper_id": "openreview:CMgxAaRqZh",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.0,
-        "title": "Online Speculative Decoding",
-        "paper_id": "openreview:Km3Kprwyua",
+        "avg_rating": 7.6,
+        "title": "Space and time continuous physics simulation from partial observations",
+        "paper_id": "openreview:4yaFQ7181M",
         "venue": "ICLR-2024"
       },
-      {
-        "avg_rating": 6.0,
-        "title": "DistillSpec: Improving Speculative Decoding via Knowledge Distillation",
-        "paper_id": "openreview:rsY6J3ZaTF",
-        "venue": "ICLR-2024"
-      }
-    ]
-  },
-  {
-    "tag": "statistical guarantees",
-    "mean_rating": 6.06,
-    "n_papers": 12,
-    "p90_rating": 6.98,
-    "samples": [
       {
         "avg_rating": 7.5,
-        "title": "Private estimation algorithms for stochastic block models and mixture models",
-        "paper_id": "openreview:Pya0kCEpDk",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Sample then Identify: A General Framework for Risk Control and Assessment in Multimodal Large Language Models",
-        "paper_id": "openreview:9WYMDgxDac",
-        "venue": "ICLR-2025"
+        "title": "The Expressive Power of Transformers with Chain of Thought",
+        "paper_id": "openreview:NjNGlPh8Wh",
+        "venue": "ICLR-2024"
       },
       {
         "avg_rating": 6.75,
-        "title": "Statistical Guarantees for Variational Autoencoders using PAC-Bayesian Theory",
-        "paper_id": "openreview:jkPDRHff3s",
-        "venue": "NeurIPS-2023"
+        "title": "Designing Skill-Compatible AI: Methodologies and Frameworks in Chess",
+        "paper_id": "openreview:79rfgv3jw4",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Graph Neural Networks and Arithmetic Circuits",
+        "paper_id": "openreview:0ZeONp33f0",
+        "venue": "NeurIPS-2024"
       },
       {
         "avg_rating": 6.333333333333333,
-        "title": "Decentralized Matrix Sensing: Statistical Guarantees and Fast Convergence",
-        "paper_id": "openreview:i5sSWKbF3b",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.25,
-        "title": "Efficient Uncertainty Quantification and Reduction for Over-Parameterized Neural Networks",
-        "paper_id": "openreview:6vnwhzRinw",
-        "venue": "NeurIPS-2023"
+        "title": "Network Memory Footprint Compression Through Jointly Learnable Codebooks and Mappings",
+        "paper_id": "openreview:1RrOtCmuKr",
+        "venue": "ICLR-2024"
       }
     ]
   },
@@ -2533,52 +2495,14 @@
       },
       {
         "avg_rating": 6.25,
-        "title": "Curvature Enhanced Manifold Sampling",
-        "paper_id": "openreview:HYWdlCPtao",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.25,
         "title": "CS4ML: A general framework for active learning with arbitrary data based on Christoffel functions",
         "paper_id": "openreview:aINqoP32cb",
         "venue": "NeurIPS-2023"
-      }
-    ]
-  },
-  {
-    "tag": "scale diffusion models",
-    "mean_rating": 6.06,
-    "n_papers": 12,
-    "p90_rating": 7.0,
-    "samples": [
-      {
-        "avg_rating": 9.0,
-        "title": "Representation Alignment for Generation: Training Diffusion Transformers Is Easier Than You Think",
-        "paper_id": "openreview:DJSZGGZYVi",
-        "venue": "ICLR-2025"
       },
       {
-        "avg_rating": 7.0,
-        "title": "Time-Varying LoRA: Towards Effective Cross-Domain Fine-Tuning of Diffusion Models",
-        "paper_id": "openreview:SgODU2mx9T",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "UniCon: Unidirectional Information Flow for Effective Control of Large-Scale Diffusion Models",
-        "paper_id": "openreview:uJqKf24HGN",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Resolution Attack: Exploiting Image Compression to Deceive Deep Neural Networks",
-        "paper_id": "openreview:OFukl9Qg8P",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.0,
-        "title": "CtrLoRA: An Extensible and Efficient Framework for Controllable Image Generation",
-        "paper_id": "openreview:3Gga05Jdmj",
+        "avg_rating": 6.25,
+        "title": "Curvature Enhanced Manifold Sampling",
+        "paper_id": "openreview:HYWdlCPtao",
         "venue": "ICLR-2025"
       }
     ]
@@ -2622,77 +2546,77 @@
     ]
   },
   {
-    "tag": "broad class",
-    "mean_rating": 6.05,
-    "n_papers": 27,
-    "p90_rating": 7.1,
+    "tag": "statistical guarantees",
+    "mean_rating": 6.06,
+    "n_papers": 12,
+    "p90_rating": 6.98,
     "samples": [
       {
         "avg_rating": 7.5,
-        "title": "Asymptotically Free Sketched Ridge Ensembles: Risks, Cross-Validation, and Tuning",
-        "paper_id": "openreview:i9Vs5NGDpk",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "Implicit Bias of Mirror Flow for Shallow Neural Networks in Univariate Regression",
-        "paper_id": "openreview:IF0Q9KY3p2",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 7.25,
-        "title": "Improving Offline RL by Blending Heuristics",
-        "paper_id": "openreview:MCl0TLboP1",
-        "venue": "ICLR-2024"
+        "title": "Private estimation algorithms for stochastic block models and mixture models",
+        "paper_id": "openreview:Pya0kCEpDk",
+        "venue": "NeurIPS-2023"
       },
       {
         "avg_rating": 7.0,
-        "title": "Automated Efficient Estimation using Monte Carlo Efficient Influence Functions",
-        "paper_id": "openreview:2wfd3pti8v",
-        "venue": "NeurIPS-2024"
+        "title": "Sample then Identify: A General Framework for Risk Control and Assessment in Multimodal Large Language Models",
+        "paper_id": "openreview:9WYMDgxDac",
+        "venue": "ICLR-2025"
       },
       {
-        "avg_rating": 6.8,
-        "title": "Learning Hierarchical Polynomials of Multiple Nonlinear Features",
-        "paper_id": "openreview:UZ893n8FXr",
-        "venue": "ICLR-2025"
+        "avg_rating": 6.75,
+        "title": "Statistical Guarantees for Variational Autoencoders using PAC-Bayesian Theory",
+        "paper_id": "openreview:jkPDRHff3s",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.333333333333333,
+        "title": "Decentralized Matrix Sensing: Statistical Guarantees and Fast Convergence",
+        "paper_id": "openreview:i5sSWKbF3b",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.25,
+        "title": "Efficient Uncertainty Quantification and Reduction for Over-Parameterized Neural Networks",
+        "paper_id": "openreview:6vnwhzRinw",
+        "venue": "NeurIPS-2023"
       }
     ]
   },
   {
-    "tag": "model capabilities",
-    "mean_rating": 6.05,
-    "n_papers": 16,
-    "p90_rating": 6.83,
+    "tag": "scale diffusion models",
+    "mean_rating": 6.06,
+    "n_papers": 12,
+    "p90_rating": 7.0,
     "samples": [
       {
-        "avg_rating": 8.0,
-        "title": "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
-        "paper_id": "openreview:51WraMid8K",
+        "avg_rating": 9.0,
+        "title": "Representation Alignment for Generation: Training Diffusion Transformers Is Easier Than You Think",
+        "paper_id": "openreview:DJSZGGZYVi",
         "venue": "ICLR-2025"
       },
       {
         "avg_rating": 7.0,
-        "title": "DiscoveryBench: Towards Data-Driven Discovery with Large Language Models",
-        "paper_id": "openreview:vyflgpwfJW",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.666666666666667,
-        "title": "Mechanistically analyzing the effects of fine-tuning on procedurally defined tasks",
-        "paper_id": "openreview:A0HKeKl4Nl",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.666666666666667,
-        "title": "A Phase Transition between Positional and Semantic Learning in a Solvable Model of Dot-Product Attention",
-        "paper_id": "openreview:BFWdIPPLgZ",
+        "title": "Time-Varying LoRA: Towards Effective Cross-Domain Fine-Tuning of Diffusion Models",
+        "paper_id": "openreview:SgODU2mx9T",
         "venue": "NeurIPS-2024"
       },
       {
+        "avg_rating": 7.0,
+        "title": "UniCon: Unidirectional Information Flow for Effective Control of Large-Scale Diffusion Models",
+        "paper_id": "openreview:uJqKf24HGN",
+        "venue": "ICLR-2025"
+      },
+      {
         "avg_rating": 6.5,
-        "title": "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
-        "paper_id": "openreview:PDnEDS244P",
+        "title": "Resolution Attack: Exploiting Image Compression to Deceive Deep Neural Networks",
+        "paper_id": "openreview:OFukl9Qg8P",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.0,
+        "title": "CtrLoRA: An Extensible and Efficient Framework for Controllable Image Generation",
+        "paper_id": "openreview:3Gga05Jdmj",
         "venue": "ICLR-2025"
       }
     ]
@@ -2732,6 +2656,44 @@
         "title": "Model-Based Reparameterization Policy Gradient Methods: Theory and Practical Algorithms",
         "paper_id": "openreview:bUgqyyNo8j",
         "venue": "NeurIPS-2023"
+      }
+    ]
+  },
+  {
+    "tag": "broad class",
+    "mean_rating": 6.05,
+    "n_papers": 27,
+    "p90_rating": 7.1,
+    "samples": [
+      {
+        "avg_rating": 7.5,
+        "title": "Asymptotically Free Sketched Ridge Ensembles: Risks, Cross-Validation, and Tuning",
+        "paper_id": "openreview:i9Vs5NGDpk",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.333333333333333,
+        "title": "Implicit Bias of Mirror Flow for Shallow Neural Networks in Univariate Regression",
+        "paper_id": "openreview:IF0Q9KY3p2",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.25,
+        "title": "Improving Offline RL by Blending Heuristics",
+        "paper_id": "openreview:MCl0TLboP1",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Automated Efficient Estimation using Monte Carlo Efficient Influence Functions",
+        "paper_id": "openreview:2wfd3pti8v",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.8,
+        "title": "Learning Hierarchical Polynomials of Multiple Nonlinear Features",
+        "paper_id": "openreview:UZ893n8FXr",
+        "venue": "ICLR-2025"
       }
     ]
   },
@@ -2812,78 +2774,40 @@
     ]
   },
   {
-    "tag": "pac",
-    "mean_rating": 6.04,
-    "n_papers": 42,
-    "p90_rating": 7.2,
+    "tag": "model capabilities",
+    "mean_rating": 6.05,
+    "n_papers": 16,
+    "p90_rating": 6.83,
     "samples": [
       {
-        "avg_rating": 7.6,
-        "title": "Optimal Learners for Realizable Regression: PAC Learning and Online Learning",
-        "paper_id": "openreview:w116w62fxH",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 7.5,
-        "title": "User-Level Differential Privacy With Few Examples Per User",
-        "paper_id": "openreview:PITeSdYQkv",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 7.5,
-        "title": "Understanding prompt engineering may not require rethinking generalization",
-        "paper_id": "openreview:a745RnSFLT",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.25,
-        "title": "Learning via Wasserstein-Based High Probability Generalisation Bounds",
-        "paper_id": "openreview:3Wrolscjbx",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 7.25,
-        "title": "Reliable Learning of Halfspaces under Gaussian Marginals",
-        "paper_id": "openreview:0Lb8vZT1DB",
-        "venue": "NeurIPS-2024"
-      }
-    ]
-  },
-  {
-    "tag": "linear transformers",
-    "mean_rating": 6.04,
-    "n_papers": 10,
-    "p90_rating": 7.03,
-    "samples": [
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "Parallelizing Linear Transformers with the Delta Rule over Sequence Length",
-        "paper_id": "openreview:y8Rm4VNRPH",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
-        "paper_id": "openreview:r8H7xhYPwz",
+        "avg_rating": 8.0,
+        "title": "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+        "paper_id": "openreview:51WraMid8K",
         "venue": "ICLR-2025"
       },
       {
-        "avg_rating": 6.75,
-        "title": "Transformers learn to implement preconditioned gradient descent for in-context learning",
-        "paper_id": "openreview:LziniAXEI9",
-        "venue": "NeurIPS-2023"
+        "avg_rating": 7.0,
+        "title": "DiscoveryBench: Towards Data-Driven Discovery with Large Language Models",
+        "paper_id": "openreview:vyflgpwfJW",
+        "venue": "ICLR-2025"
       },
       {
-        "avg_rating": 6.6,
-        "title": "A Theoretical Understanding of Self-Correction through In-context Alignment",
-        "paper_id": "openreview:OtvNLTWYww",
+        "avg_rating": 6.666666666666667,
+        "title": "Mechanistically analyzing the effects of fine-tuning on procedurally defined tasks",
+        "paper_id": "openreview:A0HKeKl4Nl",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.666666666666667,
+        "title": "A Phase Transition between Positional and Semantic Learning in a Solvable Model of Dot-Product Attention",
+        "paper_id": "openreview:BFWdIPPLgZ",
         "venue": "NeurIPS-2024"
       },
       {
         "avg_rating": 6.5,
-        "title": "Linear attention is (maybe) all you need (to understand Transformer optimization)",
-        "paper_id": "openreview:0uI5415ry7",
-        "venue": "ICLR-2024"
+        "title": "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
+        "paper_id": "openreview:PDnEDS244P",
+        "venue": "ICLR-2025"
       }
     ]
   },
@@ -2926,6 +2850,44 @@
     ]
   },
   {
+    "tag": "linear transformers",
+    "mean_rating": 6.04,
+    "n_papers": 10,
+    "p90_rating": 7.03,
+    "samples": [
+      {
+        "avg_rating": 7.333333333333333,
+        "title": "Parallelizing Linear Transformers with the Delta Rule over Sequence Length",
+        "paper_id": "openreview:y8Rm4VNRPH",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+        "paper_id": "openreview:r8H7xhYPwz",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "Transformers learn to implement preconditioned gradient descent for in-context learning",
+        "paper_id": "openreview:LziniAXEI9",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.6,
+        "title": "A Theoretical Understanding of Self-Correction through In-context Alignment",
+        "paper_id": "openreview:OtvNLTWYww",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Linear attention is (maybe) all you need (to understand Transformer optimization)",
+        "paper_id": "openreview:0uI5415ry7",
+        "venue": "ICLR-2024"
+      }
+    ]
+  },
+  {
     "tag": "hypothesis class",
     "mean_rating": 6.04,
     "n_papers": 11,
@@ -2964,78 +2926,78 @@
     ]
   },
   {
-    "tag": "kernel methods",
-    "mean_rating": 6.03,
-    "n_papers": 20,
-    "p90_rating": 6.85,
+    "tag": "pac",
+    "mean_rating": 6.04,
+    "n_papers": 42,
+    "p90_rating": 7.2,
     "samples": [
       {
-        "avg_rating": 8.0,
-        "title": "Generalization error of spectral algorithms",
-        "paper_id": "openreview:3SJE1WLB4M",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "Minimax optimality of convolutional neural networks for infinite dimensional input-output problems and separation from kernel methods",
-        "paper_id": "openreview:EW8ZExRZkJ",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.8,
-        "title": "Tanimoto Random Features for Scalable Molecular Machine Learning",
-        "paper_id": "openreview:MV0INFAKGq",
+        "avg_rating": 7.6,
+        "title": "Optimal Learners for Realizable Regression: PAC Learning and Online Learning",
+        "paper_id": "openreview:w116w62fxH",
         "venue": "NeurIPS-2023"
       },
       {
-        "avg_rating": 6.4,
-        "title": "Variance-Reducing Couplings for Random Features",
-        "paper_id": "openreview:oJLpXraSLb",
-        "venue": "ICLR-2025"
+        "avg_rating": 7.5,
+        "title": "User-Level Differential Privacy With Few Examples Per User",
+        "paper_id": "openreview:PITeSdYQkv",
+        "venue": "NeurIPS-2023"
       },
       {
-        "avg_rating": 6.25,
-        "title": "Deep learning with kernels through RKHM and the Perron-Frobenius operator",
-        "paper_id": "openreview:3ZrGmenVM2",
+        "avg_rating": 7.5,
+        "title": "Understanding prompt engineering may not require rethinking generalization",
+        "paper_id": "openreview:a745RnSFLT",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.25,
+        "title": "Learning via Wasserstein-Based High Probability Generalisation Bounds",
+        "paper_id": "openreview:3Wrolscjbx",
         "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 7.25,
+        "title": "Reliable Learning of Halfspaces under Gaussian Marginals",
+        "paper_id": "openreview:0Lb8vZT1DB",
+        "venue": "NeurIPS-2024"
       }
     ]
   },
   {
-    "tag": "sde",
+    "tag": "end users",
     "mean_rating": 6.03,
-    "n_papers": 40,
+    "n_papers": 10,
     "p90_rating": 7.05,
     "samples": [
       {
-        "avg_rating": 8.0,
-        "title": "Signature Kernel Conditional Independence Tests in Causal Discovery for Stochastic Processes",
-        "paper_id": "openreview:Nx4PMtJ1ER",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 8.0,
-        "title": "Latent Trajectory Learning for Limited Timestamps under Distribution Shift over Time",
-        "paper_id": "openreview:bTMMNT7IdW",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 8.0,
-        "title": "Trajectory Flow Matching with Applications to Clinical Time Series Modelling",
-        "paper_id": "openreview:fNakQltI1N",
-        "venue": "NeurIPS-2024"
-      },
-      {
         "avg_rating": 7.5,
-        "title": "MaRS: A Fast Sampler for Mean Reverting Diffusion based on ODE and SDE Solvers",
-        "paper_id": "openreview:yVeNBxwL5W",
+        "title": "Learning from End User Data with Shuffled Differential Privacy over Kernel Densities",
+        "paper_id": "openreview:QjSOgxJ0hp",
         "venue": "ICLR-2025"
       },
       {
         "avg_rating": 7.0,
-        "title": "Score-based Generative Modeling through Stochastic Evolution Equations in Hilbert Spaces",
-        "paper_id": "openreview:GrElRvXnEj",
+        "title": "MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks",
+        "paper_id": "openreview:2rWbKbmOuM",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+        "paper_id": "openreview:mXpq6ut8J3",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Post-processing Private Synthetic Data for Improving Utility on Selected Measures",
+        "paper_id": "openreview:neu9JlNweE",
         "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.333333333333333,
+        "title": "On Targeted Manipulation and Deception when Optimizing LLMs for User Feedback",
+        "paper_id": "openreview:Wf2ndb8nhf",
+        "venue": "ICLR-2025"
       }
     ]
   },
@@ -3078,40 +3040,78 @@
     ]
   },
   {
-    "tag": "end users",
+    "tag": "sde",
     "mean_rating": 6.03,
-    "n_papers": 10,
+    "n_papers": 40,
     "p90_rating": 7.05,
     "samples": [
       {
+        "avg_rating": 8.0,
+        "title": "Signature Kernel Conditional Independence Tests in Causal Discovery for Stochastic Processes",
+        "paper_id": "openreview:Nx4PMtJ1ER",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 8.0,
+        "title": "Latent Trajectory Learning for Limited Timestamps under Distribution Shift over Time",
+        "paper_id": "openreview:bTMMNT7IdW",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 8.0,
+        "title": "Trajectory Flow Matching with Applications to Clinical Time Series Modelling",
+        "paper_id": "openreview:fNakQltI1N",
+        "venue": "NeurIPS-2024"
+      },
+      {
         "avg_rating": 7.5,
-        "title": "Learning from End User Data with Shuffled Differential Privacy over Kernel Densities",
-        "paper_id": "openreview:QjSOgxJ0hp",
+        "title": "MaRS: A Fast Sampler for Mean Reverting Diffusion based on ODE and SDE Solvers",
+        "paper_id": "openreview:yVeNBxwL5W",
         "venue": "ICLR-2025"
       },
       {
         "avg_rating": 7.0,
-        "title": "MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks",
-        "paper_id": "openreview:2rWbKbmOuM",
-        "venue": "ICLR-2025"
+        "title": "Neural structure learning with stochastic differential equations",
+        "paper_id": "openreview:V1GM9xDvIY",
+        "venue": "ICLR-2024"
+      }
+    ]
+  },
+  {
+    "tag": "kernel methods",
+    "mean_rating": 6.03,
+    "n_papers": 20,
+    "p90_rating": 6.85,
+    "samples": [
+      {
+        "avg_rating": 8.0,
+        "title": "Generalization error of spectral algorithms",
+        "paper_id": "openreview:3SJE1WLB4M",
+        "venue": "ICLR-2024"
       },
       {
-        "avg_rating": 6.75,
-        "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
-        "paper_id": "openreview:mXpq6ut8J3",
-        "venue": "NeurIPS-2024"
+        "avg_rating": 7.333333333333333,
+        "title": "Minimax optimality of convolutional neural networks for infinite dimensional input-output problems and separation from kernel methods",
+        "paper_id": "openreview:EW8ZExRZkJ",
+        "venue": "ICLR-2024"
       },
       {
-        "avg_rating": 6.5,
-        "title": "Post-processing Private Synthetic Data for Improving Utility on Selected Measures",
-        "paper_id": "openreview:neu9JlNweE",
+        "avg_rating": 6.8,
+        "title": "Tanimoto Random Features for Scalable Molecular Machine Learning",
+        "paper_id": "openreview:MV0INFAKGq",
         "venue": "NeurIPS-2023"
       },
       {
-        "avg_rating": 6.333333333333333,
-        "title": "On Targeted Manipulation and Deception when Optimizing LLMs for User Feedback",
-        "paper_id": "openreview:Wf2ndb8nhf",
+        "avg_rating": 6.4,
+        "title": "Variance-Reducing Couplings for Random Features",
+        "paper_id": "openreview:oJLpXraSLb",
         "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.25,
+        "title": "Deep learning with kernels through RKHM and the Perron-Frobenius operator",
+        "paper_id": "openreview:3ZrGmenVM2",
+        "venue": "NeurIPS-2023"
       }
     ]
   },
@@ -3344,44 +3344,6 @@
     ]
   },
   {
-    "tag": "random initialization",
-    "mean_rating": 6.01,
-    "n_papers": 16,
-    "p90_rating": 6.88,
-    "samples": [
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "On the Parameterization of Second-Order Optimization Effective towards the Infinite Width",
-        "paper_id": "openreview:g8sGBSQjYk",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "LEMON: Lossless model expansion",
-        "paper_id": "openreview:3Vw7DQqq7U",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "A Unified Theory of Quantum Neural Network Loss Landscapes",
-        "paper_id": "openreview:fv8TTt9srF",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "DEEP NEURAL NETWORK INITIALIZATION WITH SPARSITY INDUCING ACTIVATIONS",
-        "paper_id": "openreview:uvXK8Xk9Jk",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.333333333333333,
-        "title": "Decentralized Matrix Sensing: Statistical Guarantees and Fast Convergence",
-        "paper_id": "openreview:i5sSWKbF3b",
-        "venue": "NeurIPS-2023"
-      }
-    ]
-  },
-  {
     "tag": "matrix completion",
     "mean_rating": 6.01,
     "n_papers": 12,
@@ -3420,6 +3382,120 @@
     ]
   },
   {
+    "tag": "random initialization",
+    "mean_rating": 6.01,
+    "n_papers": 16,
+    "p90_rating": 6.88,
+    "samples": [
+      {
+        "avg_rating": 7.333333333333333,
+        "title": "On the Parameterization of Second-Order Optimization Effective towards the Infinite Width",
+        "paper_id": "openreview:g8sGBSQjYk",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "LEMON: Lossless model expansion",
+        "paper_id": "openreview:3Vw7DQqq7U",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "A Unified Theory of Quantum Neural Network Loss Landscapes",
+        "paper_id": "openreview:fv8TTt9srF",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "DEEP NEURAL NETWORK INITIALIZATION WITH SPARSITY INDUCING ACTIVATIONS",
+        "paper_id": "openreview:uvXK8Xk9Jk",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.333333333333333,
+        "title": "Decentralized Matrix Sensing: Statistical Guarantees and Fast Convergence",
+        "paper_id": "openreview:i5sSWKbF3b",
+        "venue": "NeurIPS-2023"
+      }
+    ]
+  },
+  {
+    "tag": "widespread deployment",
+    "mean_rating": 6.0,
+    "n_papers": 16,
+    "p90_rating": 6.88,
+    "samples": [
+      {
+        "avg_rating": 7.5,
+        "title": "Controlling Language and Diffusion Models by Transporting Activations",
+        "paper_id": "openreview:l2zFn6TIQi",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention",
+        "paper_id": "openreview:fPBACAbqSN",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference",
+        "paper_id": "openreview:vHO9mU87dc",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "Expand and Compress: Exploring Tuning Principles for Continual Spatio-Temporal Graph Forecasting",
+        "paper_id": "openreview:FRzCIlkM7I",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Waxing-and-Waning: a Generic Similarity-based Framework for Efficient Self-Supervised Learning",
+        "paper_id": "openreview:TilcG5C8bN",
+        "venue": "ICLR-2024"
+      }
+    ]
+  },
+  {
+    "tag": "theoretical studies",
+    "mean_rating": 6.0,
+    "n_papers": 19,
+    "p90_rating": 7.0,
+    "samples": [
+      {
+        "avg_rating": 8.666666666666666,
+        "title": "Meta Continual Learning Revisited: Implicitly Enhancing Online Hessian Approximation via Variance Reduction",
+        "paper_id": "openreview:TpD2aG1h0D",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "From Sparse Dependence to Sparse Attention: Unveiling How Chain-of-Thought Enhances Transformer Sample Efficiency",
+        "paper_id": "openreview:AmEgWDhmTr",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Generalized Neural Collapse for a Large Number of Classes",
+        "paper_id": "openreview:TmcH09s6pT",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Provable Memory Efficient Self-Play Algorithm for Model-free Reinforcement Learning",
+        "paper_id": "openreview:vNiI3aGcE6",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "Towards Bridging Generalization and Expressivity of Graph Neural Networks",
+        "paper_id": "openreview:BOQpRtI4F5",
+        "venue": "ICLR-2025"
+      }
+    ]
+  },
+  {
     "tag": "tta methods",
     "mean_rating": 6.0,
     "n_papers": 11,
@@ -3453,6 +3529,158 @@
         "avg_rating": 6.0,
         "title": "Binary-Feedback Active Test-Time Adaptation",
         "paper_id": "openreview:6ZdXp2Tbb6",
+        "venue": "ICLR-2025"
+      }
+    ]
+  },
+  {
+    "tag": "ambient dimension",
+    "mean_rating": 6.0,
+    "n_papers": 11,
+    "p90_rating": 6.86,
+    "samples": [
+      {
+        "avg_rating": 7.0,
+        "title": "Learning Multi-Index Models with Neural Networks via Mean-Field Langevin Dynamics",
+        "paper_id": "openreview:WHhZv8X5zF",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.857142857142857,
+        "title": "Robust Feature Learning for Multi-Index Models in High Dimensions",
+        "paper_id": "openreview:aKkDY1Wca0",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "On Differentially Private Subspace Estimation in a Distribution-Free Setting",
+        "paper_id": "openreview:aCcHVnwNlf",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "Provable benefits of score matching",
+        "paper_id": "openreview:waXoG35kbb",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "Learning High-Degree Parities: The Crucial Role of the Initialization",
+        "paper_id": "openreview:OuNIWgGGif",
+        "venue": "ICLR-2025"
+      }
+    ]
+  },
+  {
+    "tag": "ridge regression",
+    "mean_rating": 6.0,
+    "n_papers": 10,
+    "p90_rating": 6.78,
+    "samples": [
+      {
+        "avg_rating": 7.0,
+        "title": "An Effective Theory of Bias Amplification",
+        "paper_id": "openreview:VoI4d6uhdr",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.75,
+        "title": "Transformers as Statisticians: Provable In-Context Learning with In-Context Algorithm Selection",
+        "paper_id": "openreview:liMSqUuVg9",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "An Agnostic View on the Cost of Overfitting in (Kernel) Ridge Regression",
+        "paper_id": "openreview:YrTI2Zu0dd",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.4,
+        "title": "Pretraining task diversity and the emergence of non-Bayesian in-context learning for regression",
+        "paper_id": "openreview:BtAz4a5xDg",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.2,
+        "title": "Optimal Rates for Vector-Valued Spectral Regularization Learning Algorithms",
+        "paper_id": "openreview:U9e1d2xOc8",
+        "venue": "NeurIPS-2024"
+      }
+    ]
+  },
+  {
+    "tag": "equivariant neural networks",
+    "mean_rating": 6.0,
+    "n_papers": 17,
+    "p90_rating": 7.13,
+    "samples": [
+      {
+        "avg_rating": 7.333333333333333,
+        "title": "On the hardness of learning under symmetries",
+        "paper_id": "openreview:ARPrtuzAnQ",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.333333333333333,
+        "title": "Enabling Efficient Equivariant Operations in the Fourier Basis via Gaunt Tensor Products",
+        "paper_id": "openreview:mhyQXJ6JsK",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "A Characterization Theorem for Equivariant Networks with Point-wise Activations",
+        "paper_id": "openreview:79FVDdfoSR",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 7.0,
+        "title": "Separation Power of Equivariant Neural Networks",
+        "paper_id": "openreview:RAyRXQjsFl",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.833333333333333,
+        "title": "Lie Group Decompositions for Equivariant Neural Networks",
+        "paper_id": "openreview:p34fRKp8qA",
+        "venue": "ICLR-2024"
+      }
+    ]
+  },
+  {
+    "tag": "conditional generative model",
+    "mean_rating": 6.0,
+    "n_papers": 12,
+    "p90_rating": 7.41,
+    "samples": [
+      {
+        "avg_rating": 8.0,
+        "title": "Probablistic Emulation of a Global Climate Model with Spherical DYffusion",
+        "paper_id": "openreview:Ib2iHIJRTh",
+        "venue": "NeurIPS-2024"
+      },
+      {
+        "avg_rating": 7.5,
+        "title": "Idempotence and Perceptual Image Compression",
+        "paper_id": "openreview:Cy5v64DqEF",
+        "venue": "ICLR-2024"
+      },
+      {
+        "avg_rating": 6.6,
+        "title": "Diffusion Models and Semi-Supervised Learners Benefit Mutually with Few Labels",
+        "paper_id": "openreview:LVHEcVgEGm",
+        "venue": "NeurIPS-2023"
+      },
+      {
+        "avg_rating": 6.5,
+        "title": "BiGR: Harnessing Binary Latent Codes for Image Generation and Improved Visual Representation Capabilities",
+        "paper_id": "openreview:1Z6PSw7OL8",
+        "venue": "ICLR-2025"
+      },
+      {
+        "avg_rating": 6.333333333333333,
+        "title": "Can Generative AI Solve Your In-Context Learning Problem?  A Martingale Perspective",
+        "paper_id": "openreview:bcynT7s2du",
         "venue": "ICLR-2025"
       }
     ]
@@ -3496,120 +3724,6 @@
     ]
   },
   {
-    "tag": "equivariant neural networks",
-    "mean_rating": 6.0,
-    "n_papers": 17,
-    "p90_rating": 7.13,
-    "samples": [
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "On the hardness of learning under symmetries",
-        "paper_id": "openreview:ARPrtuzAnQ",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.333333333333333,
-        "title": "Enabling Efficient Equivariant Operations in the Fourier Basis via Gaunt Tensor Products",
-        "paper_id": "openreview:mhyQXJ6JsK",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "A Characterization Theorem for Equivariant Networks with Point-wise Activations",
-        "paper_id": "openreview:79FVDdfoSR",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Separation Power of Equivariant Neural Networks",
-        "paper_id": "openreview:RAyRXQjsFl",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.833333333333333,
-        "title": "Lie Group Decompositions for Equivariant Neural Networks",
-        "paper_id": "openreview:p34fRKp8qA",
-        "venue": "ICLR-2024"
-      }
-    ]
-  },
-  {
-    "tag": "ridge regression",
-    "mean_rating": 6.0,
-    "n_papers": 10,
-    "p90_rating": 6.78,
-    "samples": [
-      {
-        "avg_rating": 7.0,
-        "title": "An Effective Theory of Bias Amplification",
-        "paper_id": "openreview:VoI4d6uhdr",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "Transformers as Statisticians: Provable In-Context Learning with In-Context Algorithm Selection",
-        "paper_id": "openreview:liMSqUuVg9",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "An Agnostic View on the Cost of Overfitting in (Kernel) Ridge Regression",
-        "paper_id": "openreview:YrTI2Zu0dd",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.4,
-        "title": "Pretraining task diversity and the emergence of non-Bayesian in-context learning for regression",
-        "paper_id": "openreview:BtAz4a5xDg",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.2,
-        "title": "Optimal Rates for Vector-Valued Spectral Regularization Learning Algorithms",
-        "paper_id": "openreview:U9e1d2xOc8",
-        "venue": "NeurIPS-2024"
-      }
-    ]
-  },
-  {
-    "tag": "total variation",
-    "mean_rating": 6.0,
-    "n_papers": 12,
-    "p90_rating": 6.72,
-    "samples": [
-      {
-        "avg_rating": 7.2,
-        "title": "Computational Explorations of Total Variation Distance",
-        "paper_id": "openreview:xak8c9l1nu",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "Score-based generative models break the curse of dimensionality in learning a family of sub-Gaussian distributions",
-        "paper_id": "openreview:wG12xUSqrI",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Optimal Sample Complexity for Average Reward Markov Decision Processes",
-        "paper_id": "openreview:jOm5p3q7c7",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.4,
-        "title": "Contrastive Moments: Unsupervised Halfspace Learning in Polynomial Time",
-        "paper_id": "openreview:PHbqznMa1i",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.333333333333333,
-        "title": "A Unified Principle of Pessimism for Offline Reinforcement Learning under Model Mismatch",
-        "paper_id": "openreview:cBY66CKEbq",
-        "venue": "NeurIPS-2024"
-      }
-    ]
-  },
-  {
     "tag": "upper bounds",
     "mean_rating": 6.0,
     "n_papers": 33,
@@ -3620,12 +3734,6 @@
         "title": "Learning via Wasserstein-Based High Probability Generalisation Bounds",
         "paper_id": "openreview:3Wrolscjbx",
         "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 7.0,
-        "title": "Provable Convergence and Limitations of Geometric Tempering for Langevin Dynamics",
-        "paper_id": "openreview:DZcmz9wU0i",
-        "venue": "ICLR-2025"
       },
       {
         "avg_rating": 7.0,
@@ -3644,119 +3752,11 @@
         "title": "A Separation in Heavy-Tailed Sampling: Gaussian vs. Stable Oracles for Proximal Samplers",
         "paper_id": "openreview:zuwLGhgxtQ",
         "venue": "NeurIPS-2024"
-      }
-    ]
-  },
-  {
-    "tag": "conditional generative model",
-    "mean_rating": 6.0,
-    "n_papers": 12,
-    "p90_rating": 7.41,
-    "samples": [
-      {
-        "avg_rating": 8.0,
-        "title": "Probablistic Emulation of a Global Climate Model with Spherical DYffusion",
-        "paper_id": "openreview:Ib2iHIJRTh",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 7.5,
-        "title": "Idempotence and Perceptual Image Compression",
-        "paper_id": "openreview:Cy5v64DqEF",
-        "venue": "ICLR-2024"
-      },
-      {
-        "avg_rating": 6.6,
-        "title": "Diffusion Models and Semi-Supervised Learners Benefit Mutually with Few Labels",
-        "paper_id": "openreview:LVHEcVgEGm",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "BiGR: Harnessing Binary Latent Codes for Image Generation and Improved Visual Representation Capabilities",
-        "paper_id": "openreview:1Z6PSw7OL8",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.333333333333333,
-        "title": "Can Generative AI Solve Your In-Context Learning Problem?  A Martingale Perspective",
-        "paper_id": "openreview:bcynT7s2du",
-        "venue": "ICLR-2025"
-      }
-    ]
-  },
-  {
-    "tag": "widespread deployment",
-    "mean_rating": 6.0,
-    "n_papers": 16,
-    "p90_rating": 6.88,
-    "samples": [
-      {
-        "avg_rating": 7.5,
-        "title": "Controlling Language and Diffusion Models by Transporting Activations",
-        "paper_id": "openreview:l2zFn6TIQi",
-        "venue": "ICLR-2025"
       },
       {
         "avg_rating": 7.0,
-        "title": "MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention",
-        "paper_id": "openreview:fPBACAbqSN",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "Expand and Compress: Exploring Tuning Principles for Continual Spatio-Temporal Graph Forecasting",
-        "paper_id": "openreview:FRzCIlkM7I",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference",
-        "paper_id": "openreview:vHO9mU87dc",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Waxing-and-Waning: a Generic Similarity-based Framework for Efficient Self-Supervised Learning",
-        "paper_id": "openreview:TilcG5C8bN",
-        "venue": "ICLR-2024"
-      }
-    ]
-  },
-  {
-    "tag": "ambient dimension",
-    "mean_rating": 6.0,
-    "n_papers": 11,
-    "p90_rating": 6.86,
-    "samples": [
-      {
-        "avg_rating": 7.0,
-        "title": "Learning Multi-Index Models with Neural Networks via Mean-Field Langevin Dynamics",
-        "paper_id": "openreview:WHhZv8X5zF",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.857142857142857,
-        "title": "Robust Feature Learning for Multi-Index Models in High Dimensions",
-        "paper_id": "openreview:aKkDY1Wca0",
-        "venue": "ICLR-2025"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "On Differentially Private Subspace Estimation in a Distribution-Free Setting",
-        "paper_id": "openreview:aCcHVnwNlf",
-        "venue": "NeurIPS-2024"
-      },
-      {
-        "avg_rating": 6.75,
-        "title": "Provable benefits of score matching",
-        "paper_id": "openreview:waXoG35kbb",
-        "venue": "NeurIPS-2023"
-      },
-      {
-        "avg_rating": 6.5,
-        "title": "Learning High-Degree Parities: The Crucial Role of the Initialization",
-        "paper_id": "openreview:OuNIWgGGif",
+        "title": "Provable Convergence and Limitations of Geometric Tempering for Langevin Dynamics",
+        "paper_id": "openreview:DZcmz9wU0i",
         "venue": "ICLR-2025"
       }
     ]

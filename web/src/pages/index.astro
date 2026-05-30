@@ -18,6 +18,8 @@ import chSources from "../../public/data/ch_sources_summary.json";
 import tagRating from "../../public/data/tag_rating.json";
 import sleepers from "../../public/data/sleepers.json";
 import hot from "../../public/data/hot.json";
+import embeddingClusters from "../../public/data/embedding_clusters.json";
+import tagCooccurrence from "../../public/data/tag_cooccurrence.json";
 
 import { HostsTable } from "@/components/tables/hosts-table";
 import { UrlsTable } from "@/components/tables/urls-table";
@@ -30,6 +32,8 @@ import { TagRatingTable } from "@/components/tables/tag-rating-table";
 import { SleepersTable } from "@/components/tables/sleepers-table";
 import { HotTable } from "@/components/tables/hot-table";
 import { SemanticSearch } from "@/components/semantic-search";
+import { EmbeddingClusters } from "@/components/embedding-clusters";
+import { TagCooccurrence } from "@/components/tag-cooccurrence";
 import { AuthorsTable } from "@/components/tables/authors-table";
 import { CommunitiesTable } from "@/components/tables/communities-table";
 import { CyclesTable } from "@/components/tables/cycles-table";
@@ -62,6 +66,8 @@ const preprintCount = chSources
         <a href="#search" class="px-3 py-1 rounded-md text-primary hover:bg-muted/50 transition-colors whitespace-nowrap">🔍 Search</a>
         <a href="/digest" class="px-3 py-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors whitespace-nowrap">📰 Digest</a>
         <a href="#openreview" class="px-3 py-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors whitespace-nowrap">OpenReview</a>
+        {embeddingClusters?.length > 0 && <a href="#clusters" class="px-3 py-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors whitespace-nowrap">🧩 Clusters</a>}
+        {tagCooccurrence?.nodes?.length > 0 && <a href="#tag-graph" class="px-3 py-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors whitespace-nowrap">🕸️ Tag graph</a>}
         {hot?.length > 0 && <a href="#hot" class="px-3 py-1 rounded-md text-orange-400/80 hover:text-orange-400 hover:bg-muted/50 transition-colors whitespace-nowrap">🔥 Hot</a>}
         {sleepers?.length > 0 && <a href="#sleepers" class="px-3 py-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors whitespace-nowrap">🌙 Sleepers</a>}
         {tagRating?.length > 0 && <a href="#tag-rating" class="px-3 py-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors whitespace-nowrap">Tag ratings</a>}
@@ -195,6 +201,34 @@ const preprintCount = chSources
         <div class="space-y-3">
           <h3 class="text-sm font-semibold text-foreground/80">Top-rated submissions (avg reviewer rating, ≥3 reviews)</h3>
           <TopRatedPapersTable client:load data={reviewTopPapers} />
+        </div>
+      </section>
+    )}
+
+    {embeddingClusters?.length > 0 && (
+      <section id="clusters" class="max-w-7xl mx-auto px-6 py-8 space-y-3">
+        <div class="space-y-1">
+          <h2 class="text-2xl font-semibold tracking-tight">🧩 Semantic clusters</h2>
+          <p class="text-sm text-muted-foreground">
+            64 clusters from MiniBatchKMeans over all-MiniLM-L6-v2 embeddings (478k × 384-dim).
+            Click any to see top tags + top-cited papers in that semantic region.
+          </p>
+        </div>
+        <EmbeddingClusters client:load data={embeddingClusters} />
+      </section>
+    )}
+
+    {tagCooccurrence?.nodes?.length > 0 && (
+      <section id="tag-graph" class="max-w-7xl mx-auto px-6 py-8 space-y-3">
+        <div class="space-y-1">
+          <h2 class="text-2xl font-semibold tracking-tight">🕸️ Tag co-occurrence</h2>
+          <p class="text-sm text-muted-foreground">
+            How often the top 20 research tags appear together in the same paper. Cell color = log-scaled co-occurrence count.
+            Hover for exact numbers. The strongest pairs reveal how the field clusters: <code class="text-foreground/70">language models ↔ llms</code>, <code class="text-foreground/70">reinforcement learning ↔ rl</code>, etc.
+          </p>
+        </div>
+        <div class="rounded-xl border bg-card p-4 overflow-x-auto">
+          <TagCooccurrence client:load data={tagCooccurrence} />
         </div>
       </section>
     )}

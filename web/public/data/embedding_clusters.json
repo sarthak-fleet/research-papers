@@ -1,0 +1,4482 @@
+[
+  {
+    "id": 47,
+    "size": 19256,
+    "top_tags": [
+      {
+        "tag": "deep learning",
+        "n": 1903
+      },
+      {
+        "tag": "CNN",
+        "n": 1771
+      },
+      {
+        "tag": "convolutional neural networks",
+        "n": 1570
+      },
+      {
+        "tag": "object detection",
+        "n": 1426
+      },
+      {
+        "tag": "computer vision",
+        "n": 1129
+      },
+      {
+        "tag": "semantic segmentation",
+        "n": 1128
+      },
+      {
+        "tag": "deep neural networks",
+        "n": 886
+      },
+      {
+        "tag": "convolutional neural network",
+        "n": 736
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1409.1556",
+        "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+        "citation_count": 75505,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2010.11929",
+        "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+        "citation_count": 21539,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1503.03832",
+        "title": "FaceNet: A unified embedding for face recognition and clustering",
+        "citation_count": 11116,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2004.10934",
+        "title": "YOLOv4: Optimal Speed and Accuracy of Object Detection",
+        "citation_count": 10427,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1706.05587",
+        "title": "Rethinking Atrous Convolution for Semantic Image Segmentation",
+        "citation_count": 7447,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "size": 14503,
+    "top_tags": [
+      {
+        "tag": "np -",
+        "n": 834
+      },
+      {
+        "tag": "NP",
+        "n": 799
+      },
+      {
+        "tag": "planar graphs",
+        "n": 592
+      },
+      {
+        "tag": "graph g",
+        "n": 562
+      },
+      {
+        "tag": "maximum degree",
+        "n": 525
+      },
+      {
+        "tag": "minimum number",
+        "n": 512
+      },
+      {
+        "tag": "n$ vertices",
+        "n": 491
+      },
+      {
+        "tag": "polynomial time",
+        "n": 486
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2105.10386",
+        "title": "Analysis of Boolean Functions",
+        "citation_count": 731,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1503.05432",
+        "title": "Discrete Signal Processing on Graphs: Sampling Theory",
+        "citation_count": 664,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0704.1269",
+        "title": "Phase transitions in the coloring of random graphs",
+        "citation_count": 303,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1512.03547",
+        "title": "Graph Isomorphism in Quasipolynomial Time",
+        "citation_count": 283,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1511.06773",
+        "title": "Unifying and Strengthening Hardness for Dynamic Problems via the Online Matrix-Vector Multiplication Conjecture",
+        "citation_count": 221,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "size": 12646,
+    "top_tags": [
+      {
+        "tag": "autonomous driving",
+        "n": 606
+      },
+      {
+        "tag": "computer vision",
+        "n": 552
+      },
+      {
+        "tag": "RGB",
+        "n": 541
+      },
+      {
+        "tag": "deep learning",
+        "n": 382
+      },
+      {
+        "tag": "LiDAR",
+        "n": 359
+      },
+      {
+        "tag": "3d object detection",
+        "n": 351
+      },
+      {
+        "tag": "NeRF",
+        "n": 345
+      },
+      {
+        "tag": "view synthesis",
+        "n": 340
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1312.4659",
+        "title": "DeepPose: Human Pose Estimation via Deep Neural Networks",
+        "citation_count": 3238,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1512.03012",
+        "title": "ShapeNet: An Information-Rich 3D Model Repository",
+        "citation_count": 2373,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1512.02134",
+        "title": "A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation",
+        "citation_count": 2174,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1406.2283",
+        "title": "Depth Map Prediction from a Single Image using a Multi-Scale Deep Network",
+        "citation_count": 1844,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1905.04757",
+        "title": "NTU RGB+D 120: A Large-Scale Benchmark for 3D Human Activity Understanding",
+        "citation_count": 1713,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "size": 12565,
+    "top_tags": [
+      {
+        "tag": "machine learning",
+        "n": 1259
+      },
+      {
+        "tag": "training data",
+        "n": 730
+      },
+      {
+        "tag": "unlabeled data",
+        "n": 507
+      },
+      {
+        "tag": "active learning",
+        "n": 451
+      },
+      {
+        "tag": "machine learning models",
+        "n": 431
+      },
+      {
+        "tag": "ML",
+        "n": 361
+      },
+      {
+        "tag": "target domain",
+        "n": 361
+      },
+      {
+        "tag": "semi - supervised learning",
+        "n": 343
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1201.0490",
+        "title": "Scikit-learn: Machine Learning in Python",
+        "citation_count": 63659,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1106.1813",
+        "title": "SMOTE: Synthetic Minority Over-sampling Technique",
+        "citation_count": 30787,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1703.05175",
+        "title": "Prototypical Networks for Few-shot Learning",
+        "citation_count": 5192,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2010.16061",
+        "title": "Evaluation: from precision, recall and F-measure to ROC, informedness, markedness and correlation",
+        "citation_count": 4430,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1106.0257",
+        "title": "Popular Ensemble Methods: An Empirical Study",
+        "citation_count": 2965,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "size": 12535,
+    "top_tags": [
+      {
+        "tag": "language models",
+        "n": 1630
+      },
+      {
+        "tag": "CLIP",
+        "n": 622
+      },
+      {
+        "tag": "VQA",
+        "n": 492
+      },
+      {
+        "tag": "computer vision",
+        "n": 440
+      },
+      {
+        "tag": "visual question",
+        "n": 414
+      },
+      {
+        "tag": "language model",
+        "n": 398
+      },
+      {
+        "tag": "image captioning",
+        "n": 371
+      },
+      {
+        "tag": "multimodal large language models",
+        "n": 361
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2103.00020",
+        "title": "Learning Transferable Visual Models From Natural Language Supervision",
+        "citation_count": 5296,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1807.03748",
+        "title": "Representation Learning with Contrastive Predictive Coding",
+        "citation_count": 4519,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1212.0402",
+        "title": "UCF-101: A dataset of 101 human actions classes from videos in the wild",
+        "citation_count": 4445,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1405.0312",
+        "title": "Microsoft COCO: Common Objects in Context",
+        "citation_count": 2354,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2204.06125",
+        "title": "Hierarchical Text-Conditional Image Generation with CLIP Latents",
+        "citation_count": 2278,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "size": 12185,
+    "top_tags": [
+      {
+        "tag": "quantum computing",
+        "n": 1373
+      },
+      {
+        "tag": "quantum computers",
+        "n": 1129
+      },
+      {
+        "tag": "quantum algorithms",
+        "n": 1012
+      },
+      {
+        "tag": "quantum circuits",
+        "n": 813
+      },
+      {
+        "tag": "quantum computation",
+        "n": 742
+      },
+      {
+        "tag": "quantum computer",
+        "n": 653
+      },
+      {
+        "tag": "quantum algorithm",
+        "n": 599
+      },
+      {
+        "tag": "quantum states",
+        "n": 398
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1910.11333",
+        "title": "Quantum supremacy using a programmable superconducting processor",
+        "citation_count": 6935,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1304.3061",
+        "title": "A variational eigenvalue solver on a photonic quantum processor",
+        "citation_count": 4515,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1208.0928",
+        "title": "Surface codes: Towards practical large-scale quantum computation",
+        "citation_count": 3008,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1302.5843",
+        "title": "Ising formulations of many NP problems",
+        "citation_count": 2428,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1509.04279",
+        "title": "The theory of variational hybrid quantum-classical algorithms",
+        "citation_count": 2231,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "size": 11550,
+    "top_tags": [
+      {
+        "tag": "language models",
+        "n": 2309
+      },
+      {
+        "tag": "natural language processing",
+        "n": 962
+      },
+      {
+        "tag": "LLMs",
+        "n": 845
+      },
+      {
+        "tag": "NLP",
+        "n": 698
+      },
+      {
+        "tag": "BERT",
+        "n": 689
+      },
+      {
+        "tag": "entity recognition",
+        "n": 486
+      },
+      {
+        "tag": "LLM",
+        "n": 486
+      },
+      {
+        "tag": "language model",
+        "n": 455
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1301.3781",
+        "title": "Efficient Estimation of Word Representations in Vector Space",
+        "citation_count": 18123,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1103.0398",
+        "title": "Natural Language Processing (almost) from Scratch",
+        "citation_count": 5181,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1405.4053",
+        "title": "Distributed Representations of Sentences and Documents",
+        "citation_count": 5119,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1910.10683",
+        "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text\\n Transformer",
+        "citation_count": 3692,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1904.09675",
+        "title": "BERTScore: Evaluating Text Generation with BERT",
+        "citation_count": 2036,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "size": 10631,
+    "top_tags": [
+      {
+        "tag": "neural networks",
+        "n": 2561
+      },
+      {
+        "tag": "deep neural networks",
+        "n": 1748
+      },
+      {
+        "tag": "deep learning",
+        "n": 1337
+      },
+      {
+        "tag": "neural network",
+        "n": 908
+      },
+      {
+        "tag": "machine learning",
+        "n": 532
+      },
+      {
+        "tag": "gradient descent",
+        "n": 430
+      },
+      {
+        "tag": "SGD",
+        "n": 391
+      },
+      {
+        "tag": "stochastic gradient descent",
+        "n": 371
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1412.6980",
+        "title": "Adam: A Method for Stochastic Optimization",
+        "citation_count": 84666,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1502.03167",
+        "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+        "citation_count": 24342,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1608.03981",
+        "title": "Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising",
+        "citation_count": 8741,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1207.0580",
+        "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+        "citation_count": 6651,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1312.6199",
+        "title": "Intriguing properties of neural networks",
+        "citation_count": 5724,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "size": 10547,
+    "top_tags": [
+      {
+        "tag": "finite fields",
+        "n": 619
+      },
+      {
+        "tag": "finite field",
+        "n": 558
+      },
+      {
+        "tag": "math xmlns",
+        "n": 209
+      },
+      {
+        "tag": "MathML",
+        "n": 202
+      },
+      {
+        "tag": "positive integer",
+        "n": 191
+      },
+      {
+        "tag": "sufficient conditions",
+        "n": 160
+      },
+      {
+        "tag": "lower bounds",
+        "n": 135
+      },
+      {
+        "tag": "elliptic curves",
+        "n": 126
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1004.3348",
+        "title": "ON MUTUALLY UNBIASED BASES",
+        "citation_count": 736,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1401.7714",
+        "title": "Algebraic complexity theory and matrix multiplication",
+        "citation_count": 209,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1411.0911",
+        "title": "Reducing differential equations for multiloop master integrals",
+        "citation_count": 201,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1511.01071",
+        "title": "Integration-by-parts reductions from unitarity cuts and algebraic geometry",
+        "citation_count": 193,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1107.5665",
+        "title": "Dualities in persistent (co)homology",
+        "citation_count": 161,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "size": 9995,
+    "top_tags": [
+      {
+        "tag": "reinforcement learning",
+        "n": 3921
+      },
+      {
+        "tag": "RL",
+        "n": 2921
+      },
+      {
+        "tag": "deep reinforcement learning",
+        "n": 1111
+      },
+      {
+        "tag": "offline reinforcement learning",
+        "n": 410
+      },
+      {
+        "tag": "reward function",
+        "n": 378
+      },
+      {
+        "tag": "imitation learning",
+        "n": 351
+      },
+      {
+        "tag": "optimal policy",
+        "n": 348
+      },
+      {
+        "tag": "sample efficiency",
+        "n": 345
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1707.06347",
+        "title": "Diagnosing Non-Intermittent Anomalies in Reinforcement Learning Policy Executions (Short Paper)",
+        "citation_count": 11298,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1509.02971",
+        "title": "Continuous control with deep reinforcement learning",
+        "citation_count": 5371,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1312.5602",
+        "title": "Playing Atari with Deep Reinforcement Learning",
+        "citation_count": 5121,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1509.06461",
+        "title": "Deep Reinforcement Learning with Double Q-Learning",
+        "citation_count": 3520,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1801.01290",
+        "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+        "citation_count": 3493,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "size": 9942,
+    "top_tags": [
+      {
+        "tag": "blockchain technology",
+        "n": 383
+      },
+      {
+        "tag": "smart contracts",
+        "n": 372
+      },
+      {
+        "tag": "IoT",
+        "n": 294
+      },
+      {
+        "tag": "iot devices",
+        "n": 242
+      },
+      {
+        "tag": "cloud computing",
+        "n": 228
+      },
+      {
+        "tag": "mobile devices",
+        "n": 161
+      },
+      {
+        "tag": "sensitive data",
+        "n": 138
+      },
+      {
+        "tag": "security issues",
+        "n": 127
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1906.11078",
+        "title": "Blockchain technology overview",
+        "citation_count": 1491,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1505.07919",
+        "title": "A Survey on Wireless Security: Technical Challenges, Recent Advances, and Future Trends",
+        "citation_count": 1221,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1407.3561",
+        "title": "A Privacy-Preserving and Transparent Certification System for Digital Credentials",
+        "citation_count": 1206,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2203.02662",
+        "title": "A Survey on Metaverse: Fundamentals, Security, and Privacy",
+        "citation_count": 1205,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1706.00916",
+        "title": "A Survey on Security and Privacy Issues of Bitcoin",
+        "citation_count": 1070,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "size": 9918,
+    "top_tags": [
+      {
+        "tag": "generative adversarial networks",
+        "n": 1451
+      },
+      {
+        "tag": "GAN",
+        "n": 1434
+      },
+      {
+        "tag": "diffusion models",
+        "n": 832
+      },
+      {
+        "tag": "generative models",
+        "n": 755
+      },
+      {
+        "tag": "image generation",
+        "n": 547
+      },
+      {
+        "tag": "deep learning",
+        "n": 457
+      },
+      {
+        "tag": "latent space",
+        "n": 400
+      },
+      {
+        "tag": "generative adversarial network",
+        "n": 400
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1411.1784",
+        "title": "Conditional Generative Adversarial Nets",
+        "citation_count": 8899,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1511.06434",
+        "title": "Unsupervised Representation Learning with Deep Convolutional Generative\\n Adversarial Networks",
+        "citation_count": 6993,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1710.07035",
+        "title": "Generative Adversarial Networks: An Overview",
+        "citation_count": 4394,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1706.08500",
+        "title": "GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium",
+        "citation_count": 3814,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1601.07661",
+        "title": "DehazeNet: An End-to-End System for Single Image Haze Removal",
+        "citation_count": 3225,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "size": 9503,
+    "top_tags": [
+      {
+        "tag": "ASR",
+        "n": 813
+      },
+      {
+        "tag": "automatic speech recognition",
+        "n": 693
+      },
+      {
+        "tag": "deep learning",
+        "n": 447
+      },
+      {
+        "tag": "speech recognition",
+        "n": 401
+      },
+      {
+        "tag": "speech enhancement",
+        "n": 362
+      },
+      {
+        "tag": "TTS",
+        "n": 310
+      },
+      {
+        "tag": "deep neural networks",
+        "n": 289
+      },
+      {
+        "tag": "speech synthesis",
+        "n": 253
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1412.3555",
+        "title": "Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling",
+        "citation_count": 10784,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1609.03499",
+        "title": "WaveNet: A Generative Model for Raw Audio",
+        "citation_count": 3610,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1904.08779",
+        "title": "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition",
+        "citation_count": 3512,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1806.05622",
+        "title": "VoxCeleb2: Deep Speaker Recognition",
+        "citation_count": 2245,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1706.08612",
+        "title": "VoxCeleb: A Large-Scale Speaker Identification Dataset",
+        "citation_count": 2122,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "size": 9443,
+    "top_tags": [
+      {
+        "tag": "machine learning",
+        "n": 476
+      },
+      {
+        "tag": "objective function",
+        "n": 328
+      },
+      {
+        "tag": "SGD",
+        "n": 315
+      },
+      {
+        "tag": "stochastic gradient descent",
+        "n": 307
+      },
+      {
+        "tag": "optimization problems",
+        "n": 258
+      },
+      {
+        "tag": "convergence rate",
+        "n": 247
+      },
+      {
+        "tag": "gradient descent",
+        "n": 221
+      },
+      {
+        "tag": "optimization problem",
+        "n": 200
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1609.04747",
+        "title": "An overview of gradient descent optimization algorithms",
+        "citation_count": 4795,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0912.3995",
+        "title": "Gaussian Process Optimization in the Bandit Setting: No Regret and Experimental Design",
+        "citation_count": 1052,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1005.2012",
+        "title": "Dual Averaging for Distributed Optimization: Convergence Analysis and Network Scaling",
+        "citation_count": 899,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1307.5561",
+        "title": "On the Linear Convergence of the ADMM in Decentralized Consensus Optimization",
+        "citation_count": 857,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1604.00772",
+        "title": "The CMA Evolution Strategy: A Tutorial",
+        "citation_count": 617,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "size": 9296,
+    "top_tags": [
+      {
+        "tag": "computer vision",
+        "n": 356
+      },
+      {
+        "tag": "image processing",
+        "n": 257
+      },
+      {
+        "tag": "face recognition",
+        "n": 225
+      },
+      {
+        "tag": "experimental results",
+        "n": 216
+      },
+      {
+        "tag": "image segmentation",
+        "n": 174
+      },
+      {
+        "tag": "machine learning",
+        "n": 125
+      },
+      {
+        "tag": "MRI",
+        "n": 108
+      },
+      {
+        "tag": "image quality",
+        "n": 107
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1802.03426",
+        "title": "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction",
+        "citation_count": 7495,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1404.7584",
+        "title": "High-Speed Tracking with Kernelized Correlation Filters",
+        "citation_count": 5782,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1602.00763",
+        "title": "Simple online and realtime tracking",
+        "citation_count": 3857,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1012.1184",
+        "title": "Image Deblurring and Super-Resolution by Adaptive Sparse Domain Selection and Adaptive Regularization",
+        "citation_count": 1107,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2104.13015",
+        "title": "Underwater Image Enhancement via Medium Transmission-Guided Multi-Color Space Embedding",
+        "citation_count": 916,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "size": 9269,
+    "top_tags": [
+      {
+        "tag": "quantum states",
+        "n": 779
+      },
+      {
+        "tag": "quantum information",
+        "n": 443
+      },
+      {
+        "tag": "quantum state",
+        "n": 413
+      },
+      {
+        "tag": "quantum channels",
+        "n": 391
+      },
+      {
+        "tag": "quantum correlations",
+        "n": 377
+      },
+      {
+        "tag": "classical communication",
+        "n": 374
+      },
+      {
+        "tag": "entangled states",
+        "n": 352
+      },
+      {
+        "tag": "quantum mechanics",
+        "n": 344
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2003.06557",
+        "title": "Quantum cryptography: Public key distribution and coin tossing",
+        "citation_count": 5384,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1906.01645",
+        "title": "Advances in quantum cryptography",
+        "citation_count": 1735,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0908.0238",
+        "title": "Measure for the Degree of Non-Markovian Behavior of Quantum Processes in Open Systems",
+        "citation_count": 1465,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1302.3428",
+        "title": "Quantum error correction for quantum memories",
+        "citation_count": 1345,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1004.0190",
+        "title": "Necessary and Sufficient Condition for Nonzero Quantum Discord",
+        "citation_count": 1198,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "size": 9120,
+    "top_tags": [
+      {
+        "tag": "EEG",
+        "n": 717
+      },
+      {
+        "tag": "MRI",
+        "n": 331
+      },
+      {
+        "tag": "neural activity",
+        "n": 299
+      },
+      {
+        "tag": "human brain",
+        "n": 247
+      },
+      {
+        "tag": "brain regions",
+        "n": 244
+      },
+      {
+        "tag": "neural mechanisms",
+        "n": 211
+      },
+      {
+        "tag": "brain activity",
+        "n": 197
+      },
+      {
+        "tag": "functional connectivity",
+        "n": 166
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1511.06448",
+        "title": "Learning Representations from EEG with Deep Recurrent-Convolutional\\n Neural Networks",
+        "citation_count": 543,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1502.06172",
+        "title": "Clique topology reveals intrinsic geometric structure in neural correlations",
+        "citation_count": 399,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1608.03425",
+        "title": "Neural Encoding and Decoding with Deep Learning for Dynamic Natural Vision",
+        "citation_count": 327,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1901.08644",
+        "title": "Ablation Studies in Artificial Neural Networks",
+        "citation_count": 171,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2101.08123",
+        "title": "Technological Competence Is a Pre-condition for Effective Implementation of Virtual Reality Head Mounted Displays in Human Neuroscience: A Technological Review and Meta-Analysis",
+        "citation_count": 167,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "size": 8847,
+    "top_tags": [
+      {
+        "tag": "gaussian processes",
+        "n": 506
+      },
+      {
+        "tag": "diffusion models",
+        "n": 439
+      },
+      {
+        "tag": "GP",
+        "n": 388
+      },
+      {
+        "tag": "gaussian process",
+        "n": 332
+      },
+      {
+        "tag": "variational inference",
+        "n": 332
+      },
+      {
+        "tag": "machine learning",
+        "n": 324
+      },
+      {
+        "tag": "bayesian inference",
+        "n": 303
+      },
+      {
+        "tag": "generative models",
+        "n": 273
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1206.2944",
+        "title": "Practical Bayesian Optimization of Machine Learning Algorithms",
+        "citation_count": 5659,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1601.00670",
+        "title": "Variational Inference: A Review for Statisticians",
+        "citation_count": 3674,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1302.4964",
+        "title": "Estimating Continuous Distributions in Bayesian Classifiers",
+        "citation_count": 2922,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1406.5823",
+        "title": "Fitting Linear Mixed-Effects Models Using lme4",
+        "citation_count": 2577,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1906.02691",
+        "title": "An Introduction to Variational Autoencoders",
+        "citation_count": 2469,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "size": 8493,
+    "top_tags": [
+      {
+        "tag": "order logic",
+        "n": 313
+      },
+      {
+        "tag": "regular languages",
+        "n": 185
+      },
+      {
+        "tag": "natural numbers",
+        "n": 165
+      },
+      {
+        "tag": "NP",
+        "n": 125
+      },
+      {
+        "tag": "infinite words",
+        "n": 119
+      },
+      {
+        "tag": "type theory",
+        "n": 105
+      },
+      {
+        "tag": "modal logic",
+        "n": 104
+      },
+      {
+        "tag": "finite automata",
+        "n": 100
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1308.0729",
+        "title": "A Homological Theory of Functions: Nonuniform Boolean Complexity Separation and VC Dimension Bound Via Algebraic Topology, and a Homological Farkas Lemma",
+        "citation_count": 385,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2305.00968",
+        "title": "The Monadic Theory of Order",
+        "citation_count": 323,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1312.1399",
+        "title": "Handling Algebraic Effects",
+        "citation_count": 138,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0705.2205",
+        "title": "From Nondeterministic B\\\"uchi and Streett Automata to Deterministic Parity Automata",
+        "citation_count": 129,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1303.3255",
+        "title": "Sheaves, Cosheaves and Applications",
+        "citation_count": 115,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "size": 8440,
+    "top_tags": [
+      {
+        "tag": "CI",
+        "n": 1189
+      },
+      {
+        "tag": "% ci",
+        "n": 1121
+      },
+      {
+        "tag": "systematic review",
+        "n": 375
+      },
+      {
+        "tag": "OR",
+        "n": 294
+      },
+      {
+        "tag": "AI",
+        "n": 286
+      },
+      {
+        "tag": "HR",
+        "n": 244
+      },
+      {
+        "tag": "UK",
+        "n": 212
+      },
+      {
+        "tag": "older adults",
+        "n": 208
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2012.12028",
+        "title": "Wiley StatsRef: Statistics Reference Online",
+        "citation_count": 780,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1407.5296",
+        "title": "An investigation of the false discovery rate and the misinterpretation of <i>p</i> -values",
+        "citation_count": 708,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2301.12591",
+        "title": "Cybersickness in Virtual Reality Questionnaire (CSQ-VR): A Validation and Comparison against SSQ and VRSQ",
+        "citation_count": 140,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2004.09545",
+        "title": "Influence of COVID-19 confinement in students performance in higher education",
+        "citation_count": 119,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1206.6840",
+        "title": "Direct and Indirect Effects of Sequential Treatments",
+        "citation_count": 97,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "size": 8356,
+    "top_tags": [
+      {
+        "tag": "GPU",
+        "n": 659
+      },
+      {
+        "tag": "CPU",
+        "n": 376
+      },
+      {
+        "tag": "HPC",
+        "n": 300
+      },
+      {
+        "tag": "FPGA",
+        "n": 255
+      },
+      {
+        "tag": "performance computing",
+        "n": 250
+      },
+      {
+        "tag": "DRAM",
+        "n": 162
+      },
+      {
+        "tag": "MPI",
+        "n": 154
+      },
+      {
+        "tag": "energy consumption",
+        "n": 145
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1102.1523",
+        "title": "The NumPy Array: A Structure for Efficient Numerical Computation",
+        "citation_count": 11008,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2006.11477",
+        "title": "In-Kernel Aggregation and Broadcast Acceleration for Distributed Communication",
+        "citation_count": 2444,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2006.09167",
+        "title": "Heterogeneous parallelization and acceleration of molecular dynamics simulations in GROMACS",
+        "citation_count": 859,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1209.5145",
+        "title": "Julia: A Fast Dynamic Language for Technical Computing",
+        "citation_count": 669,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1507.04072",
+        "title": "Journal of the Korean Physical Society",
+        "citation_count": 595,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "size": 8309,
+    "top_tags": [
+      {
+        "tag": "adversarial attacks",
+        "n": 1714
+      },
+      {
+        "tag": "adversarial examples",
+        "n": 1496
+      },
+      {
+        "tag": "deep neural networks",
+        "n": 1386
+      },
+      {
+        "tag": "adversarial training",
+        "n": 721
+      },
+      {
+        "tag": "deep learning",
+        "n": 716
+      },
+      {
+        "tag": "machine learning",
+        "n": 647
+      },
+      {
+        "tag": "neural networks",
+        "n": 643
+      },
+      {
+        "tag": "adversarial robustness",
+        "n": 595
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1412.6572",
+        "title": "Explaining and Harnessing Adversarial Examples",
+        "citation_count": 8131,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1710.09412",
+        "title": "mixup: Beyond Empirical Risk Minimization",
+        "citation_count": 4752,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1607.02533",
+        "title": "Adversarial Examples in the Physical World",
+        "citation_count": 1852,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1704.01155",
+        "title": "Feature Squeezing: Detecting Adversarial Examples in Deep Neural Networks",
+        "citation_count": 1839,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1708.03999",
+        "title": "ZOO",
+        "citation_count": 1740,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "size": 8182,
+    "top_tags": [
+      {
+        "tag": "language models",
+        "n": 5487
+      },
+      {
+        "tag": "LLMs",
+        "n": 3363
+      },
+      {
+        "tag": "LLM",
+        "n": 1744
+      },
+      {
+        "tag": "language model",
+        "n": 611
+      },
+      {
+        "tag": "AI",
+        "n": 568
+      },
+      {
+        "tag": "reinforcement learning",
+        "n": 328
+      },
+      {
+        "tag": "natural language",
+        "n": 285
+      },
+      {
+        "tag": "GPT-4",
+        "n": 274
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1810.04805",
+        "title": "AI-Assisted Pipeline for Dynamic Generation of Trustworthy Health Supplement Content at Scale",
+        "citation_count": 45574,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1907.11692",
+        "title": "HISTORIAE, History of Socio-Cultural Transformation as Linguistic Data Science. A Humanities Use Case",
+        "citation_count": 17296,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2203.02155",
+        "title": "Training language models to follow instructions with human feedback",
+        "citation_count": 4280,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2201.11903",
+        "title": "BNAI, NO-TOKEN, and MIND-UNITY: Pillars of a Systemic Revolution in Artificial Intelligence",
+        "citation_count": 4245,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2303.18223",
+        "title": "A Survey of Large Language Models",
+        "citation_count": 1398,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "size": 7859,
+    "top_tags": [
+      {
+        "tag": "wireless sensor networks",
+        "n": 426
+      },
+      {
+        "tag": "IoT",
+        "n": 295
+      },
+      {
+        "tag": "SDN",
+        "n": 290
+      },
+      {
+        "tag": "wireless networks",
+        "n": 287
+      },
+      {
+        "tag": "energy consumption",
+        "n": 278
+      },
+      {
+        "tag": "cloud computing",
+        "n": 272
+      },
+      {
+        "tag": "MEC",
+        "n": 232
+      },
+      {
+        "tag": "mobile devices",
+        "n": 231
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:0803.0952",
+        "title": "Femtocell networks: a survey",
+        "citation_count": 3056,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1702.05309",
+        "title": "Mobile Edge Computing: A Survey on Architecture and Computation Offloading",
+        "citation_count": 2936,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0901.0131",
+        "title": "Cloud Computing and Grid Computing 360-Degree Compared",
+        "citation_count": 2910,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1305.0982",
+        "title": "Context Aware Computing for The Internet of Things: A Survey",
+        "citation_count": 2770,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1603.08462",
+        "title": "Survey of Important Issues in UAV Communication Networks",
+        "citation_count": 2294,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "size": 7731,
+    "top_tags": [
+      {
+        "tag": "deep neural networks",
+        "n": 1167
+      },
+      {
+        "tag": "deep learning",
+        "n": 971
+      },
+      {
+        "tag": "neural networks",
+        "n": 706
+      },
+      {
+        "tag": "convolutional neural networks",
+        "n": 524
+      },
+      {
+        "tag": "DNN",
+        "n": 516
+      },
+      {
+        "tag": "CNN",
+        "n": 431
+      },
+      {
+        "tag": "neural architecture search",
+        "n": 380
+      },
+      {
+        "tag": "GPU",
+        "n": 373
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1912.01703",
+        "title": "PyTorch: An Imperative Style, High-Performance Deep Learning Library",
+        "citation_count": 16187,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1503.02531",
+        "title": "Distilling the Knowledge in a Neural Network",
+        "citation_count": 13936,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1603.04467",
+        "title": "TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems",
+        "citation_count": 9771,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1605.08695",
+        "title": "TensorFlow: A system for large-scale machine learning",
+        "citation_count": 8814,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1804.02767",
+        "title": "YOLOv3: An Incremental Improvement",
+        "citation_count": 5887,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "size": 7675,
+    "top_tags": [
+      {
+        "tag": "order logic",
+        "n": 313
+      },
+      {
+        "tag": "SAT",
+        "n": 255
+      },
+      {
+        "tag": "logic programming",
+        "n": 203
+      },
+      {
+        "tag": "ASP",
+        "n": 199
+      },
+      {
+        "tag": "programming languages",
+        "n": 180
+      },
+      {
+        "tag": "logic programs",
+        "n": 169
+      },
+      {
+        "tag": "answer set programming",
+        "n": 139
+      },
+      {
+        "tag": "SMT",
+        "n": 137
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1107.0023",
+        "title": "CP-nets: A Tool for Representing and Reasoning withConditional Ceteris Paribus Preference Statements",
+        "citation_count": 878,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1106.0667",
+        "title": "Reasoning within Fuzzy Description Logics",
+        "citation_count": 526,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2105.06319",
+        "title": "The inductive approach to verifying cryptographic protocols",
+        "citation_count": 504,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1811.04211",
+        "title": "Nopol: Automatic Repair of Conditional Statement Bugs in Java Programs",
+        "citation_count": 426,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1106.1819",
+        "title": "A Knowledge Compilation Map",
+        "citation_count": 379,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "size": 7639,
+    "top_tags": [
+      {
+        "tag": "graph neural networks",
+        "n": 2119
+      },
+      {
+        "tag": "GNN",
+        "n": 896
+      },
+      {
+        "tag": "graph neural network",
+        "n": 342
+      },
+      {
+        "tag": "node classification",
+        "n": 310
+      },
+      {
+        "tag": "link prediction",
+        "n": 308
+      },
+      {
+        "tag": "graph structure",
+        "n": 305
+      },
+      {
+        "tag": "graph convolutional networks",
+        "n": 298
+      },
+      {
+        "tag": "graph representation learning",
+        "n": 277
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1901.00596",
+        "title": "A Comprehensive Survey on Graph Neural Networks",
+        "citation_count": 9052,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1403.6652",
+        "title": "DeepWalk",
+        "citation_count": 8486,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1609.02907",
+        "title": "Semi-Supervised Classification with Graph Convolutional Networks",
+        "citation_count": 8068,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1503.03578",
+        "title": "LINE",
+        "citation_count": 4684,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1806.01973",
+        "title": "Graph Convolutional Neural Networks for Web-Scale Recommender Systems",
+        "citation_count": 2740,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "size": 7595,
+    "top_tags": [
+      {
+        "tag": "bayesian networks",
+        "n": 329
+      },
+      {
+        "tag": "random variables",
+        "n": 258
+      },
+      {
+        "tag": "graphical models",
+        "n": 201
+      },
+      {
+        "tag": "probability distributions",
+        "n": 200
+      },
+      {
+        "tag": "causal discovery",
+        "n": 187
+      },
+      {
+        "tag": "causal inference",
+        "n": 180
+      },
+      {
+        "tag": "observational data",
+        "n": 172
+      },
+      {
+        "tag": "machine learning",
+        "n": 157
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1101.1438",
+        "title": "Optimal Detection of Changepoints With a Linear Computational Cost",
+        "citation_count": 2434,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1301.2294",
+        "title": "Expectation Propagation for approximate Bayesian inference",
+        "citation_count": 1466,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1301.6725",
+        "title": "Loopy Belief Propagation for Approximate Inference: An Empirical Study",
+        "citation_count": 1465,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1709.01449",
+        "title": "Visualization in Bayesian Workflow",
+        "citation_count": 1119,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1312.2372",
+        "title": "Labeled Random Finite Sets and the Bayes Multi-Target Tracking Filter",
+        "citation_count": 744,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "size": 7566,
+    "top_tags": [
+      {
+        "tag": "language models",
+        "n": 2149
+      },
+      {
+        "tag": "LLMs",
+        "n": 765
+      },
+      {
+        "tag": "neural machine translation",
+        "n": 620
+      },
+      {
+        "tag": "natural language processing",
+        "n": 420
+      },
+      {
+        "tag": "NMT",
+        "n": 405
+      },
+      {
+        "tag": "LLM",
+        "n": 373
+      },
+      {
+        "tag": "recurrent neural networks",
+        "n": 358
+      },
+      {
+        "tag": "language model",
+        "n": 342
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1409.0473",
+        "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+        "citation_count": 14596,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1409.3215",
+        "title": "Sequence to Sequence Learning with Neural Networks",
+        "citation_count": 13340,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1503.04069",
+        "title": "LSTM: A Search Space Odyssey",
+        "citation_count": 6776,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1706.03762",
+        "title": "Attention Is All You Need",
+        "citation_count": 6551,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1609.08144",
+        "title": "Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation",
+        "citation_count": 5661,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "size": 7333,
+    "top_tags": [
+      {
+        "tag": "bounded domain",
+        "n": 243
+      },
+      {
+        "tag": "asymptotic behavior",
+        "n": 170
+      },
+      {
+        "tag": "boundary conditions",
+        "n": 151
+      },
+      {
+        "tag": "dirichlet problem",
+        "n": 137
+      },
+      {
+        "tag": "sufficient conditions",
+        "n": 131
+      },
+      {
+        "tag": "math xmlns",
+        "n": 129
+      },
+      {
+        "tag": "weak solutions",
+        "n": 122
+      },
+      {
+        "tag": "dirichlet boundary conditions",
+        "n": 114
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1204.6216",
+        "title": "Geodesics in heat",
+        "citation_count": 401,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0906.4325",
+        "title": "Finite element exterior calculus: from Hodge theory to numerical stability",
+        "citation_count": 395,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1203.0908",
+        "title": "An optimal error estimate in stochastic homogenization of discrete elliptic equations",
+        "citation_count": 209,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0901.3261",
+        "title": "From the long jump random walk to the fractional Laplacian",
+        "citation_count": 203,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1104.1291",
+        "title": "An optimal variance estimate in stochastic homogenization of discrete elliptic equations",
+        "citation_count": 164,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "size": 7293,
+    "top_tags": [
+      {
+        "tag": "language models",
+        "n": 883
+      },
+      {
+        "tag": "LLMs",
+        "n": 618
+      },
+      {
+        "tag": "source code",
+        "n": 490
+      },
+      {
+        "tag": "software engineering",
+        "n": 432
+      },
+      {
+        "tag": "software development",
+        "n": 415
+      },
+      {
+        "tag": "LLM",
+        "n": 380
+      },
+      {
+        "tag": "code generation",
+        "n": 244
+      },
+      {
+        "tag": "software systems",
+        "n": 243
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1801.02634",
+        "title": "The Astropy Project: Building an Open-science Project and Status of the v2.0 Core Package<sup>*</sup>",
+        "citation_count": 7225,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2303.08774",
+        "title": "GPT-4 Technical Report",
+        "citation_count": 2335,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1309.0238",
+        "title": "API design for machine learning software: experiences from the scikit-learn project",
+        "citation_count": 1801,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1605.02688",
+        "title": "Static Analysis of Shape in TensorFlow Programs",
+        "citation_count": 1684,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2107.03374",
+        "title": "Evaluating Large Language Models Trained on Code",
+        "citation_count": 1423,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "size": 7227,
+    "top_tags": [
+      {
+        "tag": "knowledge graphs",
+        "n": 239
+      },
+      {
+        "tag": "information retrieval",
+        "n": 230
+      },
+      {
+        "tag": "data mining",
+        "n": 204
+      },
+      {
+        "tag": "RDF",
+        "n": 198
+      },
+      {
+        "tag": "knowledge graph",
+        "n": 161
+      },
+      {
+        "tag": "big data",
+        "n": 150
+      },
+      {
+        "tag": "search engines",
+        "n": 148
+      },
+      {
+        "tag": "machine learning",
+        "n": 148
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1603.02754",
+        "title": "XGBoost",
+        "citation_count": 47531,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1508.01991",
+        "title": "Bidirectional LSTM-CRF Models for Sequence Tagging",
+        "citation_count": 3284,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1105.5444",
+        "title": "Semantic Similarity in a Taxonomy: An Information-Based Measure and its Application to Problems of Ambiguity in Natural Language",
+        "citation_count": 2085,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1510.04389",
+        "title": "Sketch-based manga retrieval using manga109 dataset",
+        "citation_count": 1372,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1611.09268",
+        "title": "Analysis of Points of Interests Recommended for Leisure Walk Descriptions",
+        "citation_count": 1289,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "size": 7097,
+    "top_tags": [
+      {
+        "tag": "LDPC",
+        "n": 505
+      },
+      {
+        "tag": "polar codes",
+        "n": 378
+      },
+      {
+        "tag": "density parity",
+        "n": 341
+      },
+      {
+        "tag": "minimum distance",
+        "n": 328
+      },
+      {
+        "tag": "linear codes",
+        "n": 328
+      },
+      {
+        "tag": "ldpc codes",
+        "n": 253
+      },
+      {
+        "tag": "MathML",
+        "n": 251
+      },
+      {
+        "tag": "MDS",
+        "n": 248
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:0807.3917",
+        "title": "Channel Polarization: A Method for Constructing Capacity-Achieving Codes for Symmetric Binary-Input Memoryless Channels",
+        "citation_count": 4391,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0711.0708",
+        "title": "A Rank-Metric Approach to Error Control in Random Network Coding",
+        "citation_count": 699,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1401.3753",
+        "title": "LLR-Based Successive Cancellation List Decoding of Polar Codes",
+        "citation_count": 614,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1311.3284",
+        "title": "A Family of Optimal Locally Recoverable Codes",
+        "citation_count": 600,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1005.4178",
+        "title": "Optimal Exact-Regenerating Codes for Distributed Storage at the MSR and MBR Points via a Product-Matrix Construction",
+        "citation_count": 575,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "size": 6904,
+    "top_tags": [
+      {
+        "tag": "AI",
+        "n": 490
+      },
+      {
+        "tag": "VR",
+        "n": 282
+      },
+      {
+        "tag": "virtual reality",
+        "n": 279
+      },
+      {
+        "tag": "artificial intelligence",
+        "n": 214
+      },
+      {
+        "tag": "augmented reality",
+        "n": 170
+      },
+      {
+        "tag": "AR",
+        "n": 143
+      },
+      {
+        "tag": "software engineering",
+        "n": 110
+      },
+      {
+        "tag": "user experience",
+        "n": 99
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1709.08439",
+        "title": "Agile Software Development Methods: Review and Analysis",
+        "citation_count": 1193,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2309.07930",
+        "title": "Generative AI",
+        "citation_count": 1127,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1106.4869",
+        "title": "SHOP2: An HTN Planning System",
+        "citation_count": 933,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1207.6231",
+        "title": "Touchalytics: On the Applicability of Touchscreen Input as a Behavioral Biometric for Continuous Authentication",
+        "citation_count": 826,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2203.12687",
+        "title": "Trust in AI and Its Role in the Acceptance of AI Technologies",
+        "citation_count": 718,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "size": 6882,
+    "top_tags": [
+      {
+        "tag": "RNA",
+        "n": 1012
+      },
+      {
+        "tag": "DNA",
+        "n": 703
+      },
+      {
+        "tag": "gene expression",
+        "n": 481
+      },
+      {
+        "tag": "cell rna",
+        "n": 236
+      },
+      {
+        "tag": "CRISPR",
+        "n": 193
+      },
+      {
+        "tag": "cell types",
+        "n": 171
+      },
+      {
+        "tag": "transcription factors",
+        "n": 153
+      },
+      {
+        "tag": "molecular mechanisms",
+        "n": 147
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1110.5265",
+        "title": "On Programs and Genomes",
+        "citation_count": 7,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1002.0065",
+        "title": "Automated DNA Motif Discovery",
+        "citation_count": 1,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2204.14048",
+        "title": "Topological Data Analysis in Time Series: Temporal Filtration and Application to Single-Cell Genomics",
+        "citation_count": 1,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1404.6020",
+        "title": "A Fast Multiple Attractor Cellular Automata with Modified Clonal Classifier for Splicing Site Prediction in Human Genome",
+        "citation_count": 0,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "biorxiv:10.1101/2025.05.26.656218",
+        "title": "Cohesin sumoylation is required for repression of subtelomeric gene expression in Saccharomyces cerevisiae.",
+        "citation_count": 0,
+        "source": "biorxiv"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "size": 6721,
+    "top_tags": [
+      {
+        "tag": "sentiment analysis",
+        "n": 726
+      },
+      {
+        "tag": "social media",
+        "n": 716
+      },
+      {
+        "tag": "language models",
+        "n": 693
+      },
+      {
+        "tag": "natural language processing",
+        "n": 416
+      },
+      {
+        "tag": "LLMs",
+        "n": 331
+      },
+      {
+        "tag": "NLP",
+        "n": 281
+      },
+      {
+        "tag": "hate speech",
+        "n": 251
+      },
+      {
+        "tag": "machine learning",
+        "n": 251
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1509.01626",
+        "title": "Character-level Convolutional Networks for Text Classification",
+        "citation_count": 3277,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1301.6705",
+        "title": "Probabilistic Latent Semantic Analysis",
+        "citation_count": 2093,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1109.2128",
+        "title": "LexRank: Graph-based Lexical Centrality as Salience in Text Summarization",
+        "citation_count": 1637,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1003.0783",
+        "title": "Supervised Topic Models",
+        "citation_count": 1317,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2203.05794",
+        "title": "BERTopic: Neural topic modeling with a class-based TF-IDF procedure",
+        "citation_count": 1308,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "size": 6710,
+    "top_tags": [
+      {
+        "tag": "QKD",
+        "n": 527
+      },
+      {
+        "tag": "quantum key distribution",
+        "n": 490
+      },
+      {
+        "tag": "coherent states",
+        "n": 250
+      },
+      {
+        "tag": "photon pairs",
+        "n": 240
+      },
+      {
+        "tag": "quantum states",
+        "n": 236
+      },
+      {
+        "tag": "quantum communication",
+        "n": 233
+      },
+      {
+        "tag": "quantum information processing",
+        "n": 210
+      },
+      {
+        "tag": "quantum information",
+        "n": 202
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1802.04173",
+        "title": "Topological photonics",
+        "citation_count": 3569,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2012.01625",
+        "title": "Quantum computational advantage using photons",
+        "citation_count": 2194,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1109.1473",
+        "title": "Measurement-Device-Independent Quantum Key Distribution",
+        "citation_count": 2193,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2005.12667",
+        "title": "Circuit quantum electrodynamics",
+        "citation_count": 1847,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1312.1079",
+        "title": "Interfacing single photons and single quantum dots with photonic nanostructures",
+        "citation_count": 1425,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "size": 6636,
+    "top_tags": [
+      {
+        "tag": "lower bounds",
+        "n": 174
+      },
+      {
+        "tag": "multi - agent systems",
+        "n": 157
+      },
+      {
+        "tag": "competitive ratio",
+        "n": 156
+      },
+      {
+        "tag": "np -",
+        "n": 132
+      },
+      {
+        "tag": "NP",
+        "n": 108
+      },
+      {
+        "tag": "MathML",
+        "n": 106
+      },
+      {
+        "tag": "xlink=\"http://www.w3.org/1999",
+        "n": 96
+      },
+      {
+        "tag": "consensus problem",
+        "n": 93
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:0802.3922",
+        "title": "Constrained Consensus and Optimization in Multi-Agent Networks",
+        "citation_count": 2134,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1312.7377",
+        "title": "Designing Fully Distributed Consensus Protocols for Linear Multi-Agent Systems With Directed Graphs",
+        "citation_count": 1106,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1512.02673",
+        "title": "Speeding Up Distributed Machine Learning Using Codes",
+        "citation_count": 866,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1109.3799",
+        "title": "Consensus of Multi-Agent Systems With General Linear and Lipschitz Nonlinear Dynamics Using Distributed Adaptive Protocols",
+        "citation_count": 835,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1012.1367",
+        "title": "Optimal Distributed Online Prediction using Mini-Batches",
+        "citation_count": 563,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "size": 6506,
+    "top_tags": [
+      {
+        "tag": "quantum systems",
+        "n": 300
+      },
+      {
+        "tag": "quantum system",
+        "n": 242
+      },
+      {
+        "tag": "open quantum systems",
+        "n": 239
+      },
+      {
+        "tag": "time evolution",
+        "n": 188
+      },
+      {
+        "tag": "quantum walks",
+        "n": 180
+      },
+      {
+        "tag": "QED",
+        "n": 178
+      },
+      {
+        "tag": "initial state",
+        "n": 166
+      },
+      {
+        "tag": "ground state",
+        "n": 159
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1308.6253",
+        "title": "Quantum simulation",
+        "citation_count": 2865,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1904.06560",
+        "title": "A quantum engineer's guide to superconducting qubits",
+        "citation_count": 1829,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1609.02439",
+        "title": "<i>Colloquium</i>: Quantum coherence as a resource",
+        "citation_count": 1784,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1505.01385",
+        "title": "<i>Colloquium</i>: Non-Markovian dynamics in open quantum systems",
+        "citation_count": 1379,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1806.06107",
+        "title": "Quantum resource theories",
+        "citation_count": 1282,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "size": 6487,
+    "top_tags": [
+      {
+        "tag": "t cells",
+        "n": 560
+      },
+      {
+        "tag": "CD8",
+        "n": 392
+      },
+      {
+        "tag": "RNA",
+        "n": 333
+      },
+      {
+        "tag": "CD4",
+        "n": 286
+      },
+      {
+        "tag": "DNA",
+        "n": 212
+      },
+      {
+        "tag": "SARS",
+        "n": 208
+      },
+      {
+        "tag": "CoV-2",
+        "n": 206
+      },
+      {
+        "tag": "CAR",
+        "n": 182
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2006.00652",
+        "title": "In Silico Identification of Potential Natural Product Inhibitors of Human Proteases Key to SARS-CoV-2 Infection",
+        "citation_count": 77,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2312.00487",
+        "title": "Explainable AI in Diagnosing and Anticipating Leukemia Using Transfer Learning Method",
+        "citation_count": 67,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2006.01968",
+        "title": "Identifying Human Interactors of SARS-CoV-2 Proteins and Drug Targets for COVID-19 using Network-Based Label Propagation",
+        "citation_count": 10,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2009.01094",
+        "title": "Computational evidence on repurposing the anti-influenza drugs baloxavir acid and baloxavir marboxil against COVID-19",
+        "citation_count": 6,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2406.02618",
+        "title": "Immunocto: a massive immune cell database auto-generated for histopathology",
+        "citation_count": 3,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "size": 6472,
+    "top_tags": [
+      {
+        "tag": "reinforcement learning",
+        "n": 331
+      },
+      {
+        "tag": "motion planning",
+        "n": 311
+      },
+      {
+        "tag": "language models",
+        "n": 235
+      },
+      {
+        "tag": "mobile robots",
+        "n": 215
+      },
+      {
+        "tag": "deep reinforcement learning",
+        "n": 180
+      },
+      {
+        "tag": "autonomous driving",
+        "n": 179
+      },
+      {
+        "tag": "RL",
+        "n": 172
+      },
+      {
+        "tag": "path planning",
+        "n": 170
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1106.4561",
+        "title": "PDDL2.1: An Extension to PDDL for Expressing Temporal Planning Domains",
+        "citation_count": 1728,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1504.00702",
+        "title": "End-to-End Training of Deep Visuomotor Policies",
+        "citation_count": 1399,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1404.2334",
+        "title": "Informed RRT*: Optimal sampling-based path planning focused via direct sampling of an admissible ellipsoidal heuristic",
+        "citation_count": 1124,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1710.06537",
+        "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+        "citation_count": 784,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1910.07113",
+        "title": "Solving Rubik's Cube with a Robot Hand",
+        "citation_count": 632,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 0,
+    "size": 6304,
+    "top_tags": [
+      {
+        "tag": "anomaly detection",
+        "n": 886
+      },
+      {
+        "tag": "time series",
+        "n": 769
+      },
+      {
+        "tag": "machine learning",
+        "n": 466
+      },
+      {
+        "tag": "time series data",
+        "n": 324
+      },
+      {
+        "tag": "deep learning",
+        "n": 282
+      },
+      {
+        "tag": "time series forecasting",
+        "n": 178
+      },
+      {
+        "tag": "ML",
+        "n": 171
+      },
+      {
+        "tag": "multivariate time series",
+        "n": 169
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1704.01036",
+        "title": "Objective Criteria for the Evaluation of Clustering Methods",
+        "citation_count": 5900,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1308.0850",
+        "title": "Generating Sequences With Recurrent Neural Networks",
+        "citation_count": 3096,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1404.1100",
+        "title": "A Tutorial on Principal Component Analysis",
+        "citation_count": 2270,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2007.02500",
+        "title": "Deep Learning for Anomaly Detection",
+        "citation_count": 1734,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1805.03409",
+        "title": "N-BaIoT\u2014Network-Based Detection of IoT Botnet Attacks Using Deep Autoencoders",
+        "citation_count": 1334,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "size": 6256,
+    "top_tags": [
+      {
+        "tag": "drug discovery",
+        "n": 521
+      },
+      {
+        "tag": "deep learning",
+        "n": 406
+      },
+      {
+        "tag": "machine learning",
+        "n": 342
+      },
+      {
+        "tag": "AI",
+        "n": 314
+      },
+      {
+        "tag": "RNA",
+        "n": 303
+      },
+      {
+        "tag": "language models",
+        "n": 192
+      },
+      {
+        "tag": "DNA",
+        "n": 185
+      },
+      {
+        "tag": "gene expression",
+        "n": 162
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2006.11239",
+        "title": "Denoising Diffusion Probabilistic Models",
+        "citation_count": 5619,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1704.01212",
+        "title": "Neural Message Passing for Quantum Chemistry",
+        "citation_count": 2996,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1801.10193",
+        "title": "DeepDTA: deep drug\u2013target binding affinity prediction",
+        "citation_count": 1622,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1802.00543",
+        "title": "Modeling polypharmacy side effects with graph convolutional networks",
+        "citation_count": 1360,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1711.10907",
+        "title": "Deep reinforcement learning for de novo drug design",
+        "citation_count": 1137,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "size": 6245,
+    "top_tags": [
+      {
+        "tag": "language models",
+        "n": 870
+      },
+      {
+        "tag": "natural language processing",
+        "n": 525
+      },
+      {
+        "tag": "machine translation",
+        "n": 485
+      },
+      {
+        "tag": "NLP",
+        "n": 400
+      },
+      {
+        "tag": "LLMs",
+        "n": 338
+      },
+      {
+        "tag": "resource languages",
+        "n": 302
+      },
+      {
+        "tag": "computational linguistics",
+        "n": 244
+      },
+      {
+        "tag": "MT",
+        "n": 193
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1910.03771",
+        "title": "HuggingFace's Transformers: State-of-the-art Natural Language Processing",
+        "citation_count": 3135,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1003.1141",
+        "title": "From Frequency to Meaning: Vector Space Models of Semantics",
+        "citation_count": 2871,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1901.07291",
+        "title": "Cross-lingual Language Model Pretraining",
+        "citation_count": 1620,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1309.4168",
+        "title": "Exploiting Similarities among Languages for Machine Translation",
+        "citation_count": 1439,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1104.2086",
+        "title": "A Universal Part-of-Speech Tagset",
+        "citation_count": 735,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "size": 6080,
+    "top_tags": [
+      {
+        "tag": "AD",
+        "n": 706
+      },
+      {
+        "tag": "alzheimers disease",
+        "n": 526
+      },
+      {
+        "tag": "PD",
+        "n": 242
+      },
+      {
+        "tag": "parkinsons disease",
+        "n": 190
+      },
+      {
+        "tag": "oxidative stress",
+        "n": 172
+      },
+      {
+        "tag": "MS",
+        "n": 141
+      },
+      {
+        "tag": "mouse model",
+        "n": 138
+      },
+      {
+        "tag": "cognitive decline",
+        "n": 136
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2005.02182",
+        "title": "Opportunities for multiscale computational modelling of serotonergic drug effects in Alzheimer's disease",
+        "citation_count": 21,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1108.0132",
+        "title": "Dual -1 Hahn polynomials:",
+        "citation_count": 4,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2308.08618",
+        "title": "Modeling Biphasic, Non-Sigmoidal Dose-Response Relationships: Comparison of Brain-Cousens and Cedergreen Models for a Biochemical Dataset",
+        "citation_count": 4,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1801.01533",
+        "title": "Computational Analysis for the Rational Design of Anti-Amyloid Beta (A\u03b2) Antibodies",
+        "citation_count": 0,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "biorxiv:10.1101/2025.05.31.657128",
+        "title": "Oxidative stress mediates cardiac electrophysiological injury in inhalation exposure to flavored vaping products.",
+        "citation_count": 0,
+        "source": "biorxiv"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "size": 5393,
+    "top_tags": [
+      {
+        "tag": "DNA",
+        "n": 666
+      },
+      {
+        "tag": "RNA",
+        "n": 509
+      },
+      {
+        "tag": "ATP",
+        "n": 139
+      },
+      {
+        "tag": "structural basis",
+        "n": 137
+      },
+      {
+        "tag": "ER",
+        "n": 134
+      },
+      {
+        "tag": "EM",
+        "n": 130
+      },
+      {
+        "tag": "biomolecular condensates",
+        "n": 106
+      },
+      {
+        "tag": "protein interactions",
+        "n": 95
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1412.2779",
+        "title": "Persistent homology analysis of protein structure, flexibility, and folding",
+        "citation_count": 248,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1505.01138",
+        "title": "Modeling of protein\u2013peptide interactions using the CABS-dock web server for binding site search and flexible docking",
+        "citation_count": 161,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1607.03783",
+        "title": "Statistical Mechanics of Ligand\u2013Receptor Noncovalent Association, Revisited: Binding Site and Standard State Volumes in Modern Alchemical Theories",
+        "citation_count": 57,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1802.05669",
+        "title": "Minimum Energy Paths and Transition States by Curve Optimization",
+        "citation_count": 47,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1905.05942",
+        "title": "Protein-Folding Analysis Using Features Obtained by Persistent Homology",
+        "citation_count": 30,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "size": 5131,
+    "top_tags": [
+      {
+        "tag": "MIMO",
+        "n": 331
+      },
+      {
+        "tag": "wireless networks",
+        "n": 328
+      },
+      {
+        "tag": "cognitive radio",
+        "n": 214
+      },
+      {
+        "tag": "SNR",
+        "n": 213
+      },
+      {
+        "tag": "cognitive radio networks",
+        "n": 196
+      },
+      {
+        "tag": "secondary users",
+        "n": 177
+      },
+      {
+        "tag": "CSI",
+        "n": 148
+      },
+      {
+        "tag": "MAC",
+        "n": 141
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:0906.5394",
+        "title": "Wireless Network Information Flow: A Deterministic Approach",
+        "citation_count": 854,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1003.5309",
+        "title": "Gossip Algorithms for Distributed Signal Processing",
+        "citation_count": 724,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0704.2475",
+        "title": "Physical Layer Network Coding",
+        "citation_count": 703,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1305.0817",
+        "title": "Optimal Relay Selection for Physical-Layer Security in Cooperative Wireless Networks",
+        "citation_count": 510,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0809.0016",
+        "title": "An Overview of the Transmission Capacity of Wireless Networks",
+        "citation_count": 435,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "size": 5112,
+    "top_tags": [
+      {
+        "tag": "dynamical systems",
+        "n": 212
+      },
+      {
+        "tag": "kuramoto model",
+        "n": 201
+      },
+      {
+        "tag": "phase oscillators",
+        "n": 191
+      },
+      {
+        "tag": "chimera states",
+        "n": 161
+      },
+      {
+        "tag": "numerical simulations",
+        "n": 148
+      },
+      {
+        "tag": "complex networks",
+        "n": 142
+      },
+      {
+        "tag": "cellular automata",
+        "n": 142
+      },
+      {
+        "tag": "pattern formation",
+        "n": 125
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1208.0045",
+        "title": "Synchronization in complex oscillator networks and smart grids",
+        "citation_count": 883,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1403.6204",
+        "title": "Chimera states: coexistence of coherence and incoherence in networks of coupled oscillators",
+        "citation_count": 787,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1301.7608",
+        "title": "Chimera states in mechanical oscillator networks",
+        "citation_count": 639,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0806.0594",
+        "title": "Solvable Model for Chimera States of Coupled Oscillators",
+        "citation_count": 622,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0902.2773",
+        "title": "Long time evolution of phase oscillator systems",
+        "citation_count": 451,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "size": 5064,
+    "top_tags": [
+      {
+        "tag": "physical systems",
+        "n": 198
+      },
+      {
+        "tag": "formal verification",
+        "n": 165
+      },
+      {
+        "tag": "model checking",
+        "n": 152
+      },
+      {
+        "tag": "LTL",
+        "n": 148
+      },
+      {
+        "tag": "petri nets",
+        "n": 120
+      },
+      {
+        "tag": "formal methods",
+        "n": 118
+      },
+      {
+        "tag": "hybrid systems",
+        "n": 111
+      },
+      {
+        "tag": "linear temporal logic",
+        "n": 102
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2005.11401",
+        "title": "Affordance-Compiled Intelligence: Observable-Only Cognitive Impedance Matching for No-Meta LLM-Integrated Systems",
+        "citation_count": 2971,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1505.05093",
+        "title": "Programming With Models: Writing Statistical Algorithms for General Model Structures With NIMBLE",
+        "citation_count": 997,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1808.06255",
+        "title": "Evolving Algebras 1993: Lipari Guide",
+        "citation_count": 551,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1708.06374",
+        "title": "On a Formal Model of Safe and Scalable Self-driving Cars",
+        "citation_count": 421,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1807.00048",
+        "title": "Formal Specification and Verification of Autonomous Robotic Systems",
+        "citation_count": 264,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "size": 4849,
+    "top_tags": [
+      {
+        "tag": "DNA",
+        "n": 217
+      },
+      {
+        "tag": "RNA",
+        "n": 170
+      },
+      {
+        "tag": "pseudomonas aeruginosa",
+        "n": 137
+      },
+      {
+        "tag": "e. coli",
+        "n": 107
+      },
+      {
+        "tag": "staphylococcus aureus",
+        "n": 102
+      },
+      {
+        "tag": "antibiotic resistance",
+        "n": 100
+      },
+      {
+        "tag": "biofilm formation",
+        "n": 98
+      },
+      {
+        "tag": "antimicrobial resistance",
+        "n": 96
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1003.1266",
+        "title": "Hitting and commute times in large graphs are often misleading",
+        "citation_count": 9,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2010.00624",
+        "title": "Biocybersecurity -- A Converging Threat as an Auxiliary to War",
+        "citation_count": 6,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1312.2841",
+        "title": "Predictive Comparative Qsar Analysis of as 5-Nitrofuran-2-Yl Derivatives Myco Bacterium Tuberculosis H37RV Inhibitors",
+        "citation_count": 5,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2004.03806",
+        "title": "Proposing a fungal metabolite-Flaviolin as a potential inhibitor of 3CLpro of novel coronavirus SARS-CoV2 using docking and molecular dynamics",
+        "citation_count": 5,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2403.11911",
+        "title": "Bacterial Communications and Computing in Internet of Everything (IoE)",
+        "citation_count": 4,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "size": 4704,
+    "top_tags": [
+      {
+        "tag": "AI",
+        "n": 1197
+      },
+      {
+        "tag": "machine learning",
+        "n": 628
+      },
+      {
+        "tag": "artificial intelligence",
+        "n": 499
+      },
+      {
+        "tag": "XAI",
+        "n": 407
+      },
+      {
+        "tag": "explainable ai",
+        "n": 361
+      },
+      {
+        "tag": "ML",
+        "n": 299
+      },
+      {
+        "tag": "explainable artificial intelligence",
+        "n": 280
+      },
+      {
+        "tag": "machine learning models",
+        "n": 278
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1705.07874",
+        "title": "A Unified Approach to Interpreting Model Predictions",
+        "citation_count": 7622,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1702.08608",
+        "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+        "citation_count": 3133,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1806.01261",
+        "title": "Relational inductive biases, deep learning, and graph networks",
+        "citation_count": 2401,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2108.07258",
+        "title": "On the Opportunities and Risks of Foundation Models",
+        "citation_count": 2171,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1907.07374",
+        "title": "A Survey on Explainable Artificial Intelligence (XAI): Toward Medical XAI",
+        "citation_count": 2133,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "size": 4685,
+    "top_tags": [
+      {
+        "tag": "recommender systems",
+        "n": 1244
+      },
+      {
+        "tag": "collaborative filtering",
+        "n": 436
+      },
+      {
+        "tag": "recommendation systems",
+        "n": 310
+      },
+      {
+        "tag": "recommender system",
+        "n": 265
+      },
+      {
+        "tag": "language models",
+        "n": 216
+      },
+      {
+        "tag": "user preferences",
+        "n": 216
+      },
+      {
+        "tag": "sequential recommendation",
+        "n": 185
+      },
+      {
+        "tag": "CF",
+        "n": 151
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1301.7363",
+        "title": "Empirical Analysis of Predictive Algorithms for Collaborative Filtering",
+        "citation_count": 4515,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1205.2618",
+        "title": "BPR: Bayesian Personalized Ranking from Implicit Feedback",
+        "citation_count": 4366,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1905.08108",
+        "title": "Neural Graph Collaborative Filtering",
+        "citation_count": 2988,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1905.07854",
+        "title": "KGAT",
+        "citation_count": 2050,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1606.00931",
+        "title": "DeepSurv: personalized treatment recommender system using a Cox proportional hazards deep neural network",
+        "citation_count": 1876,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "size": 4461,
+    "top_tags": [
+      {
+        "tag": "ECM",
+        "n": 163
+      },
+      {
+        "tag": "extracellular matrix",
+        "n": 119
+      },
+      {
+        "tag": "extracellular vesicles",
+        "n": 94
+      },
+      {
+        "tag": "DNA",
+        "n": 89
+      },
+      {
+        "tag": "mechanical properties",
+        "n": 62
+      },
+      {
+        "tag": "+ /-",
+        "n": 59
+      },
+      {
+        "tag": "MRI",
+        "n": 59
+      },
+      {
+        "tag": "EV",
+        "n": 59
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1204.0615",
+        "title": "Stripe Formation in Bacterial Systems with Density-Suppressed Motility",
+        "citation_count": 194,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2101.00442",
+        "title": "CryoNuSeg: A dataset for nuclei instance segmentation of cryosectioned H&amp;E-stained histological images",
+        "citation_count": 110,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1803.00046",
+        "title": "Continuum contact models for coupled adhesion and friction",
+        "citation_count": 89,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1210.3655",
+        "title": "Reliable transport through a microfabricated<i>X</i>-junction surface-electrode ion trap",
+        "citation_count": 82,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1204.4147",
+        "title": "Controlling trapping potentials and stray electric fields in a microfabricated ion trap through design and compensation",
+        "citation_count": 80,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "size": 4404,
+    "top_tags": [
+      {
+        "tag": "differential privacy",
+        "n": 1025
+      },
+      {
+        "tag": "DP",
+        "n": 508
+      },
+      {
+        "tag": "machine learning",
+        "n": 339
+      },
+      {
+        "tag": "sensitive information",
+        "n": 274
+      },
+      {
+        "tag": "sensitive data",
+        "n": 213
+      },
+      {
+        "tag": "privacy concerns",
+        "n": 192
+      },
+      {
+        "tag": "data privacy",
+        "n": 187
+      },
+      {
+        "tag": "private data",
+        "n": 179
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1607.00133",
+        "title": "Deep Learning with Differential Privacy",
+        "citation_count": 5790,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1407.6981",
+        "title": "RAPPOR",
+        "citation_count": 1494,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0903.3276",
+        "title": "De-anonymizing Social Networks",
+        "citation_count": 1318,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1702.07476",
+        "title": "R\u00e9nyi Differential Privacy",
+        "citation_count": 1056,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1710.06963",
+        "title": "Learning Differentially Private Recurrent Language Models",
+        "citation_count": 671,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "size": 4104,
+    "top_tags": [
+      {
+        "tag": "reinforcement learning",
+        "n": 376
+      },
+      {
+        "tag": "AI",
+        "n": 364
+      },
+      {
+        "tag": "MARL",
+        "n": 259
+      },
+      {
+        "tag": "RL",
+        "n": 206
+      },
+      {
+        "tag": "artificial intelligence",
+        "n": 171
+      },
+      {
+        "tag": "multi - agent systems",
+        "n": 158
+      },
+      {
+        "tag": "deep reinforcement learning",
+        "n": 125
+      },
+      {
+        "tag": "machine learning",
+        "n": 115
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1105.5449",
+        "title": "AntNet: Distributed Stigmergetic Control for Communications Networks",
+        "citation_count": 1581,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1606.06565",
+        "title": "Agnostic Learning with Unknown Utilities",
+        "citation_count": 1397,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1712.01815",
+        "title": "Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm",
+        "citation_count": 1080,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1912.06680",
+        "title": "Dota 2 with Large Scale Deep Reinforcement Learning",
+        "citation_count": 1045,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1706.02275",
+        "title": "Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments",
+        "citation_count": 1015,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "size": 4048,
+    "top_tags": [
+      {
+        "tag": "DNA",
+        "n": 252
+      },
+      {
+        "tag": "genetic diversity",
+        "n": 171
+      },
+      {
+        "tag": "climate change",
+        "n": 124
+      },
+      {
+        "tag": "genetic variation",
+        "n": 101
+      },
+      {
+        "tag": "genetic basis",
+        "n": 93
+      },
+      {
+        "tag": "RNA",
+        "n": 88
+      },
+      {
+        "tag": "gene expression",
+        "n": 80
+      },
+      {
+        "tag": "gene flow",
+        "n": 71
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1401.5201",
+        "title": "Hyperspectral imaging spectroscopy of a Mars analogue environment at the North Pole Dome, Pilbara Craton, Western Australia",
+        "citation_count": 78,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1505.05815",
+        "title": "Inference of Ancestral Recombination Graphs through Topological Data Analysis",
+        "citation_count": 75,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1405.6623",
+        "title": "The Dawn of Open Access to Phylogenetic Data",
+        "citation_count": 65,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1707.00062",
+        "title": "The SpeX Prism Library Analysis Toolkit (SPLAT): A Data Curation Model",
+        "citation_count": 27,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1512.02484",
+        "title": "Uranium distribution in the Variscan Basement of Northeastern Sardinia",
+        "citation_count": 17,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "size": 4005,
+    "top_tags": [
+      {
+        "tag": "language models",
+        "n": 676
+      },
+      {
+        "tag": "dialogue systems",
+        "n": 389
+      },
+      {
+        "tag": "LLMs",
+        "n": 292
+      },
+      {
+        "tag": "AI",
+        "n": 280
+      },
+      {
+        "tag": "LLM",
+        "n": 216
+      },
+      {
+        "tag": "conversational agents",
+        "n": 163
+      },
+      {
+        "tag": "language model",
+        "n": 144
+      },
+      {
+        "tag": "dialog systems",
+        "n": 138
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2307.09288",
+        "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+        "citation_count": 2614,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1506.05869",
+        "title": "A Neural Conversational Model",
+        "citation_count": 1504,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2405.18346",
+        "title": "Intelligent Clinical Documentation: Harnessing Generative AI for Patient-Centric Clinical Note Generation",
+        "citation_count": 1017,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1502.05698",
+        "title": "Towards AI-Complete Question Answering: A Set of Prerequisite Toy Tasks",
+        "citation_count": 720,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2201.08239",
+        "title": "LaMDA: Language Models for Dialog Applications",
+        "citation_count": 705,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "size": 3985,
+    "top_tags": [
+      {
+        "tag": "federated learning",
+        "n": 2386
+      },
+      {
+        "tag": "FL",
+        "n": 1773
+      },
+      {
+        "tag": "global model",
+        "n": 458
+      },
+      {
+        "tag": "machine learning",
+        "n": 412
+      },
+      {
+        "tag": "data privacy",
+        "n": 343
+      },
+      {
+        "tag": "data heterogeneity",
+        "n": 222
+      },
+      {
+        "tag": "central server",
+        "n": 209
+      },
+      {
+        "tag": "IID",
+        "n": 205
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1602.05629",
+        "title": "Communication-Efficient Learning of Deep Networks from Decentralized\\n Data",
+        "citation_count": 5177,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1912.04977",
+        "title": "Advances and Open Problems in Federated Learning",
+        "citation_count": 4607,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1908.07873",
+        "title": "Federated Learning: Challenges, Methods, and Future Directions",
+        "citation_count": 4560,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2003.08119",
+        "title": "The future of digital health with federated learning",
+        "citation_count": 2445,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1806.00582",
+        "title": "Federated Learning with Non-IID Data",
+        "citation_count": 1907,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "size": 3985,
+    "top_tags": [
+      {
+        "tag": "evolutionary algorithms",
+        "n": 297
+      },
+      {
+        "tag": "genetic algorithm",
+        "n": 179
+      },
+      {
+        "tag": "machine learning",
+        "n": 179
+      },
+      {
+        "tag": "optimization problems",
+        "n": 141
+      },
+      {
+        "tag": "bayesian optimization",
+        "n": 137
+      },
+      {
+        "tag": "genetic algorithms",
+        "n": 134
+      },
+      {
+        "tag": "search space",
+        "n": 124
+      },
+      {
+        "tag": "evolutionary algorithm",
+        "n": 123
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1008.3601",
+        "title": "Crystal structure prediction via particle-swarm optimization",
+        "citation_count": 2699,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2002.04504",
+        "title": "Pymoo: Multi-Objective Optimization in Python",
+        "citation_count": 2084,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1106.0675",
+        "title": "The FF Planning System: Fast Plan Generation Through Heuristic Search",
+        "citation_count": 1850,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1211.6663",
+        "title": "Bat algorithm: a novel approach for global engineering optimization",
+        "citation_count": 1720,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1804.03515",
+        "title": "Hyperparameters and tuning strategies for random forest",
+        "citation_count": 1452,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "size": 3939,
+    "top_tags": [
+      {
+        "tag": "math xmlns",
+        "n": 128
+      },
+      {
+        "tag": "standard model",
+        "n": 119
+      },
+      {
+        "tag": "MathML",
+        "n": 75
+      },
+      {
+        "tag": "dark matter",
+        "n": 66
+      },
+      {
+        "tag": "quantum field theory",
+        "n": 48
+      },
+      {
+        "tag": "LHC",
+        "n": 48
+      },
+      {
+        "tag": "QCD",
+        "n": 47
+      },
+      {
+        "tag": "persistent homology",
+        "n": 43
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2006.10256",
+        "title": "Array programming with NumPy",
+        "citation_count": 21771,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1106.0522",
+        "title": "MadGraph 5: going beyond",
+        "citation_count": 2522,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1503.06237",
+        "title": "Holographic quantum error-correcting codes: toy models for the bulk/boundary correspondence",
+        "citation_count": 815,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1706.09436",
+        "title": "Reevaluation of the hadronic vacuum polarisation contributions to the Standard Model predictions of the muon $$g-2$$ g - 2 and $${\\alpha (m_Z^2)}$$ \u03b1 ( m Z 2 ) using newest hadronic cross-section data",
+        "citation_count": 624,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1911.00003",
+        "title": "Simulating lattice gauge theories within quantum technologies",
+        "citation_count": 473,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "size": 3891,
+    "top_tags": [
+      {
+        "tag": "GWAS",
+        "n": 380
+      },
+      {
+        "tag": "DNA",
+        "n": 335
+      },
+      {
+        "tag": "association studies",
+        "n": 244
+      },
+      {
+        "tag": "RNA",
+        "n": 163
+      },
+      {
+        "tag": "genetic variants",
+        "n": 160
+      },
+      {
+        "tag": "PRS",
+        "n": 145
+      },
+      {
+        "tag": "CI",
+        "n": 131
+      },
+      {
+        "tag": "% ci",
+        "n": 121
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1509.02816",
+        "title": "Bipartite Community Structure of eQTLs",
+        "citation_count": 76,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1407.3682",
+        "title": "When Data Sharing Gets Close to 100%: What Human Paleogenetics Can Teach the Open Science Movement",
+        "citation_count": 66,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1707.01623",
+        "title": "RIDDLE: Race and ethnicity Imputation from Disease history with Deep LEarning",
+        "citation_count": 32,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1903.07847",
+        "title": "Identify Statistical Similarities and Differences Between the Deadliest Cancer Types Through Gene Expression",
+        "citation_count": 27,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1703.02577",
+        "title": "SAFETY: Secure gwAs in Federated Environment Through a hYbrid solution with Intel SGX and Homomorphic Encryption",
+        "citation_count": 22,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "size": 3557,
+    "top_tags": [
+      {
+        "tag": "CI",
+        "n": 329
+      },
+      {
+        "tag": "% ci",
+        "n": 309
+      },
+      {
+        "tag": "SARS",
+        "n": 286
+      },
+      {
+        "tag": "CoV-2",
+        "n": 273
+      },
+      {
+        "tag": "HIV",
+        "n": 248
+      },
+      {
+        "tag": "TB",
+        "n": 133
+      },
+      {
+        "tag": "covid-19 pandemic",
+        "n": 122
+      },
+      {
+        "tag": "PCR",
+        "n": 111
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:2003.11511",
+        "title": "Contact Tracing Mobile Apps for COVID-19: Privacy Considerations and Related Trade-offs",
+        "citation_count": 380,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2005.10548",
+        "title": "Coswara \u2014 A Database of Breathing, Cough, and Voice Sounds for COVID-19 Diagnosis",
+        "citation_count": 338,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2002.05534",
+        "title": "Abnormal respiratory patterns classifier may contribute to large-scale screening of people infected with COVID-19 in an accurate and unobtrusive manner",
+        "citation_count": 197,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2105.07844",
+        "title": "Does \u201cAI\u201d stand for augmenting inequality in the era of covid-19 healthcare?",
+        "citation_count": 167,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:2007.00621",
+        "title": "In silico investigation of phytoconstituents from Indian medicinal herb \u2018<i>Tinospora cordifolia</i>(giloy)\u2019 against SARS-CoV-2 (COVID-19) by molecular dynamics approach",
+        "citation_count": 156,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "size": 3483,
+    "top_tags": [
+      {
+        "tag": "DNA",
+        "n": 281
+      },
+      {
+        "tag": "microbial communities",
+        "n": 223
+      },
+      {
+        "tag": "RNA",
+        "n": 142
+      },
+      {
+        "tag": "gut microbiome",
+        "n": 128
+      },
+      {
+        "tag": "antimicrobial resistance",
+        "n": 117
+      },
+      {
+        "tag": "AMR",
+        "n": 114
+      },
+      {
+        "tag": "gut microbiota",
+        "n": 79
+      },
+      {
+        "tag": "microbial diversity",
+        "n": 67
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1205.0192",
+        "title": "Large-scale compression of genomic sequence databases with the Burrows\u2013Wheeler transform",
+        "citation_count": 144,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1406.0426",
+        "title": "Fast construction of FM-index for long sequence reads",
+        "citation_count": 95,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:0901.3215",
+        "title": "Multiseed Lossless Filtration",
+        "citation_count": 71,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1403.7481",
+        "title": "Indexes of Large Genome Collections on a PC",
+        "citation_count": 44,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1902.02776",
+        "title": "Modeling microbial abundances and dysbiosis with beta-binomial regression",
+        "citation_count": 36,
+        "source": "arxiv"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "size": 3442,
+    "top_tags": [
+      {
+        "tag": "climate change",
+        "n": 167
+      },
+      {
+        "tag": "drosophila melanogaster",
+        "n": 64
+      },
+      {
+        "tag": "body size",
+        "n": 59
+      },
+      {
+        "tag": "DNA",
+        "n": 54
+      },
+      {
+        "tag": "population dynamics",
+        "n": 53
+      },
+      {
+        "tag": "environmental change",
+        "n": 46
+      },
+      {
+        "tag": "environmental conditions",
+        "n": 46
+      },
+      {
+        "tag": "species richness",
+        "n": 34
+      }
+    ],
+    "top_papers": [
+      {
+        "paper_id": "arxiv:1307.5631",
+        "title": "Collective Behaviour without Collective Order in Wild Swarms of Midges",
+        "citation_count": 267,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1505.07071",
+        "title": "The climatological relationships between wind and solar energy supply in Britain",
+        "citation_count": 266,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1605.03626",
+        "title": "Predictability and hierarchy in <i>Drosophila</i> behavior",
+        "citation_count": 234,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1407.2414",
+        "title": "Role of projection in the control of bird flocks",
+        "citation_count": 190,
+        "source": "arxiv"
+      },
+      {
+        "paper_id": "arxiv:1603.00869",
+        "title": "Proto-cooperation: group hunting sailfish improve hunting success by alternating attacks on grouping prey",
+        "citation_count": 103,
+        "source": "arxiv"
+      }
+    ]
+  }
+]
