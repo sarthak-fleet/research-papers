@@ -528,7 +528,11 @@ def authors_by_tag(
 ) -> dict:
     """Top authors writing papers tagged with X, by avg reviewer rating + paper count.
 
-    Finds the people who consistently produce high-rated work in a given research area.
+    Returns `n_communities` and `n_semantic_clusters` per author — if these
+    are ≥3, the name is almost certainly multiple distinct people merged
+    together (no author disambiguation in OpenAlex source data).
+    Also returns `disambiguated_buckets`: same author split by community for
+    a "best guess" disambiguation.
     """
     with ch_connect() as c:
         rows = c.query(
@@ -546,7 +550,9 @@ def authors_by_tag(
                    count() AS n_papers,
                    round(avg(coalesce(par.avg_rating, 0)), 2) AS avg_rating_when_reviewed,
                    countIf(par.avg_rating IS NOT NULL) AS n_reviewed,
-                   sum(p.citation_count) AS sum_citations
+                   sum(p.citation_count) AS sum_citations,
+                   length(groupUniqArray(p.community_id)) AS n_communities,
+                   length(groupUniqArray(p.semantic_cluster)) AS n_semantic_clusters
             FROM tagged AS t
             JOIN papers AS p FINAL ON p.paper_id = t.paper_id
             LEFT JOIN par ON par.paper_id = p.paper_id
@@ -565,7 +571,57 @@ def authors_by_tag(
             {"author": r[0], "n_papers": int(r[1]),
              "avg_rating_when_reviewed": float(r[2]) if r[2] else None,
              "n_reviewed": int(r[3]),
-             "sum_citations": int(r[4] or 0)}
+             "sum_citations": int(r[4] or 0),
+             "n_communities": int(r[5] or 0),
+             "n_semantic_clusters": int(r[6] or 0),
+             "likely_multiple_people": int(r[5] or 0) >= 3 and int(r[1]) >= 5}
+            for r in rows
+        ],
+    }
+
+
+@app.get("/authors/{author}/disambiguate")
+def disambiguate_author(
+    author: str,
+    limit: Annotated[int, Query(ge=1, le=50)] = 20,
+) -> dict:
+    """Heuristic disambiguation: for a given author name, return one entry per
+    distinct (community, top-cluster) tuple they appear in. Same name in 3
+    different communities likely = 3 different people.
+    """
+    with ch_connect() as c:
+        rows = c.query(
+            """
+            SELECT
+              coalesce(community_id, 9999) AS cid,
+              coalesce(semantic_cluster, 9999) AS sc,
+              count() AS n_papers,
+              sum(citation_count) AS sum_citations,
+              arraySlice(groupArray((paper_id, title, citation_count)), 1, 5) AS samples
+            FROM papers FINAL
+            WHERE has(authors, %(author)s)
+            GROUP BY cid, sc
+            ORDER BY n_papers DESC
+            LIMIT %(limit)s
+            """,
+            parameters={"author": author, "limit": limit},
+        ).result_rows
+    return {
+        "author": author,
+        "n_buckets": len(rows),
+        "interpretation": f"This name appears in {len(rows)} community/cluster bucket(s). "
+                          f"Buckets with very different topic mixes are likely different real people.",
+        "buckets": [
+            {
+                "community_id": int(r[0]) if r[0] != 9999 else None,
+                "semantic_cluster": int(r[1]) if r[1] != 9999 else None,
+                "n_papers": int(r[2]),
+                "sum_citations": int(r[3] or 0),
+                "sample_papers": [
+                    {"paper_id": s[0], "title": s[1], "citation_count": int(s[2] or 0)}
+                    for s in r[4]
+                ],
+            }
             for r in rows
         ],
     }
@@ -588,6 +644,7 @@ def root() -> JSONResponse:
             "GET /tags/top-rated?limit=25&min_papers=10",
             "GET /tags/{tag}?limit=20",
             "GET /authors/by-tag/{tag}?limit=25",
+            "GET /authors/{author}/disambiguate — split a name into community/cluster buckets",
             "GET /reviews/top-rated?limit=25&venue=ICLR-2025",
         ],
         "docs": "/docs",
