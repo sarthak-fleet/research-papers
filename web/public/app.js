@@ -27,7 +27,9 @@ function readJson(id) {
 
 function renderHostsChart() {
   const data = readJson("data-hosts-bar") || [];
-  new Chart(document.getElementById("chart-hosts"), {
+  const canvas = document.getElementById("chart-hosts");
+  if (!canvas || data.length === 0) return;
+  new Chart(canvas, {
     type: "bar",
     data: {
       labels: data.map((d) => d.host),
@@ -44,7 +46,9 @@ function renderHostsChart() {
 
 function renderCategoriesChart() {
   const data = readJson("data-categories") || [];
-  new Chart(document.getElementById("chart-categories"), {
+  const canvas = document.getElementById("chart-categories");
+  if (!canvas || data.length === 0) return;
+  new Chart(canvas, {
     type: "doughnut",
     data: {
       labels: data.map((d) => `${d.category} (${d.edges})`),
@@ -66,7 +70,9 @@ function renderCategoriesChart() {
 
 function renderHistChart() {
   const data = readJson("data-hist") || [];
-  new Chart(document.getElementById("chart-hist"), {
+  const canvas = document.getElementById("chart-hist");
+  if (!canvas || data.length === 0) return;
+  new Chart(canvas, {
     type: "bar",
     data: {
       labels: data.map((d) => d.n_urls),
