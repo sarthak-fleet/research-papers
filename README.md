@@ -109,6 +109,139 @@ All under the FastAPI server (`uv run papers api-serve`):
 | `GET /authors/by-id/{openalex_id}` | full author profile |
 | `GET /reviews/top-rated` | best-reviewed OpenReview papers |
 
+## Using the data
+
+Once `./scripts/deploy.sh` has the stack running (FastAPI on `:8000`, CH on
+`:8123`), here is how to actually pull insights out of the corpus.
+
+### Via the HTTP API (recommended)
+
+```bash
+# Corpus stats — confirms data shape: 488k papers across 4 sources, ~1.05M
+# paper→paper edges, ~478k embedded.
+curl -s http://127.0.0.1:8000/stats | jq
+
+# Substring search across titles + authors.
+curl -s "http://127.0.0.1:8000/search?q=attention+is+all+you+need&limit=5" | jq
+
+# Canonical detail for one paper (with corrected title from paper_metadata_v2
+# and PageRank from paper_scores_v2 already merged in).
+curl -s http://127.0.0.1:8000/papers/arxiv:1706.03762 | jq
+
+# Semantic search — encodes the query through MiniLM and ranks by cosine
+# distance against all 478k embeddings.
+curl -s "http://127.0.0.1:8000/semantic-search?q=mixture+of+experts+routing&limit=10" | jq
+
+# "Sleepers" — papers that were quiet for years then woke up. Useful for
+# finding under-cited fundamentals that suddenly mattered.
+curl -s "http://127.0.0.1:8000/sleepers?limit=20" | jq
+
+# "Hot" — recent papers gaining citations fast. The freshness signal.
+curl -s "http://127.0.0.1:8000/hot?limit=20" | jq
+
+# "Similar" — nearest neighbours by embedding for a given paper.
+curl -s "http://127.0.0.1:8000/similar/arxiv:1706.03762?limit=10" | jq
+
+# Tag → mean OpenReview rating. The "what topics get accepted at top venues"
+# signal. Comes from a cross-join of paper_tags × openreview_reviews.
+curl -s "http://127.0.0.1:8000/tags/top-rated?limit=20" | jq
+
+# Drilldown: all papers under a single tag, ordered by PageRank.
+curl -s "http://127.0.0.1:8000/tags/transformers?limit=20" | jq
+
+# Author profile by OpenAlex ID (only populated for top-2000 refreshed papers).
+curl -s http://127.0.0.1:8000/authors/by-id/A5024211345 | jq
+```
+
+### Via direct ClickHouse queries
+
+The API only exposes the curated insights; for ad-hoc questions, talk to CH
+directly. Connect with `docker exec -it researchpapers_ch clickhouse-client
+--user papers --password papers -d papers`, or hit HTTP on `:8123`.
+
+```sql
+-- Source breakdown
+SELECT source, count() FROM papers GROUP BY source ORDER BY count() DESC;
+--  arxiv 399902 │ biorxiv 64829 │ openreview 30327 │ medrxiv 17332
+
+-- Canonical view of one paper, with title/year corrections applied.
+SELECT
+  p.paper_id,
+  effective_year(p.source, p.arxiv_id, p.submitted_date) AS year,
+  p.citation_count,
+  coalesce(nullIf(m.title, ''), p.title) AS title
+FROM papers p
+LEFT JOIN paper_metadata_v2 m USING (paper_id)
+WHERE p.paper_id = 'arxiv:1706.03762';
+--  arxiv:1706.03762 │ 2017 │ 6551 │ Attention Is All You Need
+
+-- Top 10 by full-corpus PageRank.
+SELECT
+  s.paper_id,
+  round(s.pagerank, 6) AS pr,
+  coalesce(nullIf(m.title, ''), p.title) AS title
+FROM paper_scores_v2 s
+LEFT JOIN papers p USING (paper_id)
+LEFT JOIN paper_metadata_v2 m USING (paper_id)
+ORDER BY s.pagerank DESC LIMIT 10;
+
+-- Top arxiv 2024 papers by citations (year corrected via UDF).
+SELECT
+  p.paper_id, p.citation_count,
+  coalesce(nullIf(m.title, ''), p.title) AS title
+FROM papers p LEFT JOIN paper_metadata_v2 m USING (paper_id)
+WHERE p.source = 'arxiv'
+  AND effective_year(p.source, p.arxiv_id, p.submitted_date) = 2024
+ORDER BY p.citation_count DESC LIMIT 10;
+
+-- Nearest neighbours of any paper, by embedding.
+WITH q AS (SELECT embedding FROM paper_embeddings WHERE paper_id = 'arxiv:1706.03762' LIMIT 1)
+SELECT e.paper_id, round(cosineDistance(e.embedding, (SELECT embedding FROM q)), 4) AS d,
+       coalesce(nullIf(m.title, ''), p.title) AS title
+FROM paper_embeddings e
+LEFT JOIN papers p USING (paper_id)
+LEFT JOIN paper_metadata_v2 m USING (paper_id)
+WHERE e.paper_id != 'arxiv:1706.03762'
+ORDER BY d ASC LIMIT 10;
+
+-- Most common spaCy noun-chunk tags across the corpus.
+SELECT arrayJoin(tags) AS tag, count() AS c
+FROM paper_tags WHERE tagger = 'spacy_v2'
+GROUP BY tag ORDER BY c DESC LIMIT 20;
+--  language models │ machine learning │ deep learning │ LLMs │ ...
+
+-- All papers in semantic cluster N (0..63), top-cited first.
+SELECT p.paper_id, p.citation_count,
+       coalesce(nullIf(m.title, ''), p.title) AS title
+FROM paper_clusters c
+JOIN papers p USING (paper_id)
+LEFT JOIN paper_metadata_v2 m USING (paper_id)
+WHERE c.cluster_id = 17
+ORDER BY p.citation_count DESC LIMIT 20;
+```
+
+### Via the Astro frontend
+
+`cd web && npm install && npm run dev` (then http://127.0.0.1:4321) is the
+visual entry point. Each table is a React island bound to either a static
+JSON in `web/public/data/` (built by `papers export-ch`) or a live FastAPI
+endpoint (search, semantic search, similar). The `/digest` page is the
+HighSignal-style summary.
+
+### Refreshing the static JSON exports
+
+The dashboard's tables (sleepers, hot, top-authors, communities, etc.) read
+from `web/public/data/*.json`. To regenerate after new ingestion or a
+re-tag run:
+
+```bash
+uv run papers export-ch         # rewrites web/public/data/*.json from CH
+cd web && npm run build         # rebuild the static bundle
+```
+
+The live endpoints (search, semantic-search, similar, sleepers, hot, etc.)
+always read from CH directly — no rebuild needed.
+
 ## CLI cheatsheet
 
 ```bash
@@ -142,13 +275,13 @@ ClickHouse UDFs:
 - **`paper_scores_v2`** (ReplacingMergeTree) — full-corpus PageRank,
   written by `papers pagerank-full`. Used because `papers.pagerank_score`
   can't be `ALTER UPDATE`d cheaply (partition key on `submitted_date`).
-- **`effective_year(arxiv_id, submitted_date, publication_year)`** —
-  parses the YYMM prefix of arxiv IDs (`2410.xxxxx` → 2024) and only
-  falls back to OpenAlex's date if no arxiv prefix is present. Defined
-  in `clickhouse/init/02_functions.sql` so it survives container
+- **`effective_year(source, arxiv_id, submitted_date)`** — parses the
+  YYMM prefix of arxiv IDs (`2410.xxxxx` → 2024) and only falls back to
+  `toYear(submitted_date)` for non-arxiv sources or malformed IDs.
+  Defined in `clickhouse/init/02_functions.sql` so it survives container
   restarts; `deploy.sh` re-applies it after restores.
-- **`effective_date(arxiv_id, submitted_date)`** — same idea, returns a
-  `Date` for chart axes.
+- **`effective_date(source, arxiv_id, submitted_date)`** — same idea,
+  returns a `Date` for chart axes.
 
 ## Repo layout
 
