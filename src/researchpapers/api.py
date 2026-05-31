@@ -425,10 +425,15 @@ def similar_papers(
         rows = c.query(
             """
             WITH (SELECT embedding FROM paper_embeddings FINAL WHERE paper_id = %(pid)s LIMIT 1) AS anchor_emb
-            SELECT p.paper_id, p.title, p.source, p.citation_count, p.submitted_date,
+            SELECT p.paper_id,
+                   coalesce(nullIf(m.title, ''), p.title) AS title,
+                   p.source,
+                   coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
+                   p.submitted_date,
                    round(1 - cosineDistance(e.embedding, anchor_emb), 4) AS similarity
             FROM paper_embeddings AS e FINAL
             JOIN papers AS p FINAL ON p.paper_id = e.paper_id
+            LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
             WHERE p.paper_id != %(pid)s
               AND length(anchor_emb) > 0
             ORDER BY cosineDistance(e.embedding, anchor_emb) ASC
@@ -437,7 +442,10 @@ def similar_papers(
             parameters={"pid": paper_id, "limit": limit},
         ).result_rows
         anchor_title_q = c.query(
-            "SELECT title FROM papers FINAL WHERE paper_id = %(pid)s",
+            """SELECT coalesce(nullIf(m.title, ''), p.title)
+               FROM papers AS p FINAL
+               LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+               WHERE p.paper_id = %(pid)s""",
             parameters={"pid": paper_id},
         ).result_rows
         if not anchor_title_q:
