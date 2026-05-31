@@ -13,7 +13,7 @@ scp researchpapers_data_*.tar.gz user@target:/tmp/
 
 On the **target** machine (Linux or Mac, needs Docker + uv):
 ```bash
-git clone https://github.com/sarthakagrawal927/researchPapers
+git clone https://github.com/sarthak-fleet/researchPapers
 cd researchPapers
 ./scripts/deploy.sh /tmp/researchpapers_data_*.tar.gz
 # bind to LAN if you'll hit it from another box:
