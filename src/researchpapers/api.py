@@ -504,18 +504,26 @@ def hot_papers(
               FROM openreview_reviews WHERE rating IS NOT NULL
               GROUP BY paper_id HAVING count() >= 3
             )
-            SELECT p.paper_id, p.source, p.title, p.citation_count,
+            SELECT p.paper_id, p.source,
+                   coalesce(nullIf(m.title, ''), p.title) AS title,
+                   coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
                    p.submitted_date,
-                   round(p.citation_count / greatest((today() - effective_date(p.source, p.arxiv_id, p.submitted_date)) / 365.25, 0.25), 1) AS cpy,
+                   round(citation_count / greatest(
+                     (today() - effective_date(p.source, p.arxiv_id, p.submitted_date)) / 365.25,
+                     0.25), 1) AS cpy,
                    coalesce(par.avg_rating, 0) AS rating,
-                   coalesce(p.pagerank_score, 0) AS pr,
+                   coalesce(s.pagerank, p.pagerank_score, 0) AS pr,
                    round(
-                     0.5 * log(1 + p.citation_count / greatest((today() - effective_date(p.source, p.arxiv_id, p.submitted_date)) / 365.25, 0.25))
+                     0.5 * log(1 + citation_count / greatest(
+                       (today() - effective_date(p.source, p.arxiv_id, p.submitted_date)) / 365.25,
+                       0.25))
                      + 0.3 * coalesce(par.avg_rating, 5.0) / 10
-                     + 0.2 * coalesce(p.pagerank_score, 0) * 10000,
+                     + 0.2 * coalesce(s.pagerank, p.pagerank_score, 0) * 10000,
                    3) AS hotness
             FROM papers AS p FINAL
             LEFT JOIN par ON par.paper_id = p.paper_id
+            LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+            LEFT JOIN paper_scores_v2 AS s FINAL ON s.paper_id = p.paper_id
             WHERE p.submitted_date IS NOT NULL
               AND effective_year(p.source, p.arxiv_id, p.submitted_date) >= %(year)s
               AND p.citation_count >= 5
