@@ -45,6 +45,7 @@ function SimilarButton({ arxiv_id, title }: { arxiv_id: string; title: string })
   const [loading, setLoading] = React.useState(false);
   const [method, setMethod] = React.useState<string>("");
   const [error, setError] = React.useState<string | null>(null);
+  const [requested, setRequested] = React.useState(false);
 
   const fetchSimilar = React.useCallback(async () => {
     setLoading(true);
@@ -63,13 +64,25 @@ function SimilarButton({ arxiv_id, title }: { arxiv_id: string; title: string })
   }, [arxiv_id]);
 
   React.useEffect(() => {
-    if (open && results.length === 0 && !loading) {
+    if (open && !requested && !loading) {
+      setRequested(true);
       fetchSimilar();
     }
-  }, [open, fetchSimilar, results.length, loading]);
+  }, [open, fetchSimilar, requested, loading]);
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog
+      open={open}
+      onOpenChange={(nextOpen) => {
+        setOpen(nextOpen);
+        if (!nextOpen) {
+          setRequested(false);
+          setResults([]);
+          setMethod("");
+          setError(null);
+        }
+      }}
+    >
       <DialogTrigger asChild>
         <button className="text-xs text-muted-foreground hover:text-primary font-mono">similar↗</button>
       </DialogTrigger>
