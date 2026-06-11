@@ -67,7 +67,7 @@ def stats() -> dict:
             "SELECT source, count() AS n FROM papers GROUP BY source ORDER BY n DESC"
         ).result_rows
         tag_coverage = c.query("""
-            SELECT splitByChar(':', paper_id)[1] AS source, count() AS n
+            SELECT splitByChar(':', paper_id)[1] AS source, countDistinct(paper_id) AS n
             FROM paper_tags FINAL WHERE tagger='spacy_v2' GROUP BY source
         """).result_rows
         n_reviews = c.query("SELECT count() FROM openreview_reviews").result_rows[0][0]
