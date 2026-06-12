@@ -27,12 +27,9 @@ papers, and HighSignal-style research digests.
 
 ## Planned Next
 
-1. Add Semantic Scholar `/paper/batch` enrichment for the top papers if citation
-   undercount materially hurts ranking or demos.
-2. Add an arxiv abstract refresh job to repair cross-contaminated OpenAlex
-   abstracts and tags, not only corrected titles.
-3. Expand author disambiguation beyond the current top-2000 refreshed papers if
-   author pages become a primary surface.
+1. Semantic Scholar enrichment for top papers. PRD: `docs/prds/semantic-scholar-enrichment.md`
+2. ArXiv abstract refresh for contaminated records. PRD: `docs/prds/arxiv-abstract-refresh.md`
+3. Author graph and disambiguation expansion. PRD: `docs/prds/author-graph-disambiguation.md`
 4. Decide the deployment target before public use: same-host deployment is the
    preferred path unless a CDN/static frontend launch is needed.
 5. Keep static JSON exports fresh after new ingestion or retagging with

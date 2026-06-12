@@ -326,15 +326,16 @@ DEPLOY.md                    three deployment shapes (host / LAN / CDN)
 
 - **OpenAlex citation undercount.** Some preprints have lower
   `cited_by_count` in OpenAlex than they do on Google Scholar
-  (Attention Is All You Need shows ~6,551). Could augment with
-  Semantic Scholar `/paper/batch` for the top-1k papers; deferred.
+  (Attention Is All You Need shows ~6,551). See
+  `docs/prds/semantic-scholar-enrichment.md`.
 - **Cross-contaminated OpenAlex records.** A small fraction of arxiv
   IDs return another paper's abstract/DOI/tags in OpenAlex. Title is
   fixed via `paper_metadata_v2`; abstracts and tags are not yet
-  re-pulled from arxiv. Would require an `arxiv abstract refresh` job.
+  re-pulled from arxiv. See `docs/prds/arxiv-abstract-refresh.md`.
 - **Author disambiguation** is only populated for the top-2000 papers
   (those refreshed via `papers refresh-metadata`). Non-top papers fall
-  back to author name strings.
+  back to author name strings. See
+  `docs/prds/author-graph-disambiguation.md`.
 - **No Vercel/CF deploy yet.** The static FE builds clean (see
   `DEPLOY.md`) but hasn't been pushed to a CDN — the user prefers
   same-host deploy unless going public.
