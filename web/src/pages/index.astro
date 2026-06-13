@@ -57,7 +57,7 @@ const preprintCount = chSources
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>researchPapers · what does CS cite?</title>
+    <title>researchPapers · 488k papers, semantic search, PageRank</title>
   </head>
   <body class="min-h-screen antialiased font-sans">
     <nav class="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b">
@@ -83,10 +83,16 @@ const preprintCount = chSources
     </nav>
 
     <header class="max-w-7xl mx-auto px-6 pt-12 pb-6">
-      <h1 class="text-4xl font-bold tracking-tight">What does CS cite?</h1>
-      <p class="mt-4 text-muted-foreground max-w-3xl text-base">
-        URLs, references, and graph structure extracted from the top-cited CS papers (selected via OpenAlex). Source text stored as gzipped UTF-8 in Postgres.
+      <h1 class="text-4xl font-bold tracking-tight">488k papers. Semantic search. PageRank.</h1>
+      <p class="mt-3 text-muted-foreground max-w-3xl text-base">
+        arxiv · OpenReview · bioRxiv · medRxiv — 488,491 papers, 1.05M citation edges, 64 semantic clusters.
+        Search by meaning, find sleepers the field missed, or drill into what the top papers actually cite.
       </p>
+      <div class="mt-5">
+        <a href="#search" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">
+          Search 488k abstracts &rarr;
+        </a>
+      </div>
     </header>
 
     <section id="search" class="max-w-7xl mx-auto px-6 pb-8">
@@ -396,7 +402,8 @@ const preprintCount = chSources
     )}
 
     <footer class="max-w-7xl mx-auto px-6 py-12 text-center text-xs text-muted-foreground border-t mt-12">
-      <p>Built from <code class="font-mono text-foreground/70">~/Desktop/fleet/researchPapers</code> · top-N CS papers via OpenAlex · URLs via pdfminer + custom canonicalizer · charts via Chart.js · tables via TanStack + shadcn</p>
+      <p class="text-sm font-medium text-foreground/70 mb-1">488,491 papers ingested. 1.05M edges computed. 64 clusters mapped.</p>
+      <p>arxiv · OpenReview · bioRxiv · medRxiv · ClickHouse · semantic search via all-MiniLM-L6-v2 · charts via Chart.js · tables via TanStack + shadcn</p>
     </footer>
 
     <script src="/api-config.js" is:inline></script>
