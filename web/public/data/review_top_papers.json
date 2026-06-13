@@ -63,8 +63,8 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:nwDRD4AMoN",
-    "title": "Artificial Kuramoto Oscillatory Neurons",
+    "paper_id": "openreview:YrycTjllL0",
+    "title": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
     "venue": "ICLR-2025",
     "avg_rating": 9.0,
     "avg_confidence": 3.75,
@@ -72,8 +72,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:YrycTjllL0",
-    "title": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+    "paper_id": "openreview:nwDRD4AMoN",
+    "title": "Artificial Kuramoto Oscillatory Neurons",
     "venue": "ICLR-2025",
     "avg_rating": 9.0,
     "avg_confidence": 3.75,
@@ -108,15 +108,6 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:BPgK5XW1Nb",
-    "title": "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.67,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (Oral)"
-  },
-  {
     "paper_id": "openreview:tc90LV0yRL",
     "title": "Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks of Language Models",
     "venue": "ICLR-2025",
@@ -126,26 +117,17 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:n2NidsYDop",
-    "title": "Transformers Provably Solve Parity Efficiently with Chain of Thought",
+    "paper_id": "openreview:BPgK5XW1Nb",
+    "title": "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
     "venue": "ICLR-2025",
     "avg_rating": 8.67,
-    "avg_confidence": 3.33,
+    "avg_confidence": 3.67,
     "n_reviews": 3,
     "decision": "Accept (Oral)"
   },
   {
     "paper_id": "openreview:VpWki1v2P8",
     "title": "LoRA Done RITE: Robust Invariant Transformation Equilibration for LoRA Optimization",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.67,
-    "avg_confidence": 3.33,
-    "n_reviews": 3,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:xXTkbTBmqq",
-    "title": "OLMoE: Open Mixture-of-Experts Language Models",
     "venue": "ICLR-2025",
     "avg_rating": 8.67,
     "avg_confidence": 3.33,
@@ -162,6 +144,24 @@
     "decision": "Accept (Oral)"
   },
   {
+    "paper_id": "openreview:n2NidsYDop",
+    "title": "Transformers Provably Solve Parity Efficiently with Chain of Thought",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.67,
+    "avg_confidence": 3.33,
+    "n_reviews": 3,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:xXTkbTBmqq",
+    "title": "OLMoE: Open Mixture-of-Experts Language Models",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.67,
+    "avg_confidence": 3.33,
+    "n_reviews": 3,
+    "decision": "Accept (Oral)"
+  },
+  {
     "paper_id": "openreview:LbEWwJOufy",
     "title": "TANGO: Co-Speech Gesture Video Reenactment with Hierarchical Audio Motion Embedding and Diffusion Interpolation",
     "venue": "ICLR-2025",
@@ -171,8 +171,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:sllU8vvsFF",
-    "title": "LRM: Large Reconstruction Model for Single Image to 3D",
+    "paper_id": "openreview:7Ttk3RzDeu",
+    "title": "BooookScore: A systematic exploration of book-length summarization in the era of LLMs",
     "venue": "ICLR-2024",
     "avg_rating": 8.5,
     "avg_confidence": 4.25,
@@ -189,8 +189,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:7Ttk3RzDeu",
-    "title": "BooookScore: A systematic exploration of book-length summarization in the era of LLMs",
+    "paper_id": "openreview:sllU8vvsFF",
+    "title": "LRM: Large Reconstruction Model for Single Image to 3D",
     "venue": "ICLR-2024",
     "avg_rating": 8.5,
     "avg_confidence": 4.25,
@@ -207,13 +207,13 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:TjhUtloBZU",
-    "title": "Understanding and Mitigating the Label Noise in Pre-training on Downstream Tasks",
+    "paper_id": "openreview:UyNXMqnN3c",
+    "title": "DreamGaussian: Generative Gaussian Splatting for Efficient 3D Content Creation",
     "venue": "ICLR-2024",
     "avg_rating": 8.5,
     "avg_confidence": 4.0,
     "n_reviews": 4,
-    "decision": "Accept (spotlight)"
+    "decision": "Accept (oral)"
   },
   {
     "paper_id": "openreview:7ERQPyR2eb",
@@ -225,13 +225,13 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:UyNXMqnN3c",
-    "title": "DreamGaussian: Generative Gaussian Splatting for Efficient 3D Content Creation",
+    "paper_id": "openreview:TjhUtloBZU",
+    "title": "Understanding and Mitigating the Label Noise in Pre-training on Downstream Tasks",
     "venue": "ICLR-2024",
     "avg_rating": 8.5,
     "avg_confidence": 4.0,
     "n_reviews": 4,
-    "decision": "Accept (oral)"
+    "decision": "Accept (spotlight)"
   },
   {
     "paper_id": "openreview:FBkpCyujtS",
@@ -252,15 +252,6 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:nHESwXvxWK",
-    "title": "Monte Carlo guided Denoising Diffusion models for Bayesian linear inverse problems.",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.5,
-    "avg_confidence": 3.25,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
     "paper_id": "openreview:E4Fk3YuG56",
     "title": "Cut Your Losses in Large-Vocabulary Language Models",
     "venue": "ICLR-2025",
@@ -268,6 +259,15 @@
     "avg_confidence": 3.25,
     "n_reviews": 4,
     "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:nHESwXvxWK",
+    "title": "Monte Carlo guided Denoising Diffusion models for Bayesian linear inverse problems.",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.5,
+    "avg_confidence": 3.25,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
   },
   {
     "paper_id": "openreview:EpVe8jAjdx",
@@ -351,6 +351,15 @@
     "decision": "Accept (Oral)"
   },
   {
+    "paper_id": "openreview:eiC4BKypf1",
+    "title": "Turning large language models into cognitive models",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.5,
+    "n_reviews": 4,
+    "decision": "Accept (poster)"
+  },
+  {
     "paper_id": "openreview:3b9SKkRAKw",
     "title": "LeFusion: Controllable Pathology Synthesis via Lesion-Focused Diffusion Models",
     "venue": "ICLR-2025",
@@ -369,26 +378,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:eiC4BKypf1",
-    "title": "Turning large language models into cognitive models",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.5,
-    "n_reviews": 4,
-    "decision": "Accept (poster)"
-  },
-  {
-    "paper_id": "openreview:z8sxoCYgmd",
-    "title": "LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.5,
-    "n_reviews": 4,
-    "decision": "Accept (Spotlight)"
-  },
-  {
-    "paper_id": "openreview:9pW2J49flQ",
-    "title": "DeepLTL: Learning to Efficiently Satisfy Complex LTL Specifications for Multi-Task RL",
+    "paper_id": "openreview:XmProj9cPs",
+    "title": "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 4.5,
@@ -396,8 +387,17 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:XmProj9cPs",
-    "title": "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows",
+    "paper_id": "openreview:H4yQefeXhp",
+    "title": "DMV3D: Denoising Multi-view Diffusion Using 3D Large Reconstruction Model",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.5,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:9pW2J49flQ",
+    "title": "DeepLTL: Learning to Efficiently Satisfy Complex LTL Specifications for Multi-Task RL",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 4.5,
@@ -414,15 +414,6 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:H4yQefeXhp",
-    "title": "DMV3D: Denoising Multi-view Diffusion Using 3D Large Reconstruction Model",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.5,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
     "paper_id": "openreview:vrBVFXwAmi",
     "title": "Towards LLM4QPE: Unsupervised Pretraining of Quantum Property Estimation and A Benchmark",
     "venue": "ICLR-2024",
@@ -432,6 +423,15 @@
     "decision": "Accept (spotlight)"
   },
   {
+    "paper_id": "openreview:z8sxoCYgmd",
+    "title": "LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.5,
+    "n_reviews": 4,
+    "decision": "Accept (Spotlight)"
+  },
+  {
     "paper_id": "openreview:fU8H4lzkIm",
     "title": "PhyMPGN: Physics-encoded Message Passing Graph Network for spatiotemporal PDE systems",
     "venue": "ICLR-2025",
@@ -439,6 +439,15 @@
     "avg_confidence": 4.4,
     "n_reviews": 5,
     "decision": "Accept (Spotlight)"
+  },
+  {
+    "paper_id": "openreview:1CLzLXSFNn",
+    "title": "TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.33,
+    "n_reviews": 3,
+    "decision": "Accept (Oral)"
   },
   {
     "paper_id": "openreview:JDud6zbpFv",
@@ -459,8 +468,8 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:1CLzLXSFNn",
-    "title": "TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis",
+    "paper_id": "openreview:P4o9akekdf",
+    "title": "No Pose, No Problem: Surprisingly Simple 3D Gaussian Splats from Sparse Unposed Images",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 4.33,
@@ -495,49 +504,13 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:P4o9akekdf",
-    "title": "No Pose, No Problem: Surprisingly Simple 3D Gaussian Splats from Sparse Unposed Images",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.33,
-    "n_reviews": 3,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:ZCOwwRAaEl",
-    "title": "Latent Bayesian Optimization via Autoregressive Normalizing Flows",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.25,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:weM4YBicIP",
-    "title": "Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.25,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:MEbNz44926",
-    "title": "Flexible Residual Binarization for Image Super-Resolution",
+    "paper_id": "openreview:SQrHpTllXa",
+    "title": "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 4.25,
     "n_reviews": 4,
-    "decision": "Reject"
-  },
-  {
-    "paper_id": "openreview:9Cu8MRmhq2",
-    "title": "Multi-granularity Correspondence Learning from Long-term Noisy Videos",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.25,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
+    "decision": "Accept (spotlight)"
   },
   {
     "paper_id": "openreview:bNt7oajl2a",
@@ -549,26 +522,8 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:OIvg3MqWX2",
-    "title": "A Theoretically-Principled Sparse, Connected, and Rigid Graph Representation of Molecules",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.25,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:QQ6RgKYiQq",
-    "title": "MovingParts: Motion-based 3D Part Discovery in Dynamic Radiance Field",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.25,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:gU58d5QeGv",
-    "title": "W\u00fcrstchen: An Efficient Architecture for Large-Scale Text-to-Image Diffusion Models",
+    "paper_id": "openreview:9Cu8MRmhq2",
+    "title": "Multi-granularity Correspondence Learning from Long-term Noisy Videos",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 4.25,
@@ -576,8 +531,26 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:kbjJ9ZOakb",
-    "title": "Learning and aligning single-neuron invariance manifolds in visual cortex",
+    "paper_id": "openreview:rzF0R6GOd4",
+    "title": "Neural SDF Flow for 3D Reconstruction of Dynamic Scenes",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.25,
+    "n_reviews": 4,
+    "decision": "Accept (poster)"
+  },
+  {
+    "paper_id": "openreview:Oxh5CstDJU",
+    "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.25,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:OIvg3MqWX2",
+    "title": "A Theoretically-Principled Sparse, Connected, and Rigid Graph Representation of Molecules",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 4.25,
@@ -594,31 +567,13 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:1oijHJBRsT",
-    "title": "Self-Alignment with Instruction Backtranslation",
-    "venue": "ICLR-2024",
+    "paper_id": "openreview:weM4YBicIP",
+    "title": "Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency",
+    "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 4.25,
     "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:SQrHpTllXa",
-    "title": "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.25,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:rzF0R6GOd4",
-    "title": "Neural SDF Flow for 3D Reconstruction of Dynamic Scenes",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.25,
-    "n_reviews": 4,
-    "decision": "Accept (poster)"
+    "decision": "Accept (Oral)"
   },
   {
     "paper_id": "openreview:bnINPG5A32",
@@ -630,15 +585,6 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:cJs4oE4m9Q",
-    "title": "Deep Orthogonal Hypersphere Compression for Anomaly Detection",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.25,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
     "paper_id": "openreview:Rc7dAwVL3v",
     "title": "NaturalSpeech 2: Latent Diffusion Models are Natural and Zero-Shot Speech and Singing Synthesizers",
     "venue": "ICLR-2024",
@@ -648,8 +594,35 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:Oxh5CstDJU",
-    "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+    "paper_id": "openreview:1oijHJBRsT",
+    "title": "Self-Alignment with Instruction Backtranslation",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.25,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:MEbNz44926",
+    "title": "Flexible Residual Binarization for Image Super-Resolution",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.25,
+    "n_reviews": 4,
+    "decision": "Reject"
+  },
+  {
+    "paper_id": "openreview:ZCOwwRAaEl",
+    "title": "Latent Bayesian Optimization via Autoregressive Normalizing Flows",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.25,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:QQ6RgKYiQq",
+    "title": "MovingParts: Motion-based 3D Part Discovery in Dynamic Radiance Field",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 4.25,
@@ -657,17 +630,62 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:g3xuCtrG6H",
-    "title": "A Computational Framework for Modeling Emergence of Color Vision in the Human Brain",
+    "paper_id": "openreview:kbjJ9ZOakb",
+    "title": "Learning and aligning single-neuron invariance manifolds in visual cortex",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
-    "avg_confidence": 4.0,
-    "n_reviews": 5,
+    "avg_confidence": 4.25,
+    "n_reviews": 4,
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:Sx7BIiPzys",
-    "title": "Variational Bayesian Last Layers",
+    "paper_id": "openreview:gU58d5QeGv",
+    "title": "W\u00fcrstchen: An Efficient Architecture for Large-Scale Text-to-Image Diffusion Models",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.25,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:cJs4oE4m9Q",
+    "title": "Deep Orthogonal Hypersphere Compression for Anomaly Detection",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.25,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:Fk5IzauJ7F",
+    "title": "Candidate Label Set Pruning: A Data-centric Perspective for Deep Partial-label Learning",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.0,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:UHPnqSTBPO",
+    "title": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.0,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:OvoCm1gGhN",
+    "title": "Differential Transformer",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.0,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:noe76eRcPC",
+    "title": "PF-LRM: Pose-Free Large Reconstruction Model for Joint Pose and Shape Prediction",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
@@ -684,12 +702,12 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:OlzB6LnXcS",
-    "title": "One Step Diffusion via Shortcut Models",
+    "paper_id": "openreview:t7P5BUKcYv",
+    "title": "MoE++: Accelerating Mixture-of-Experts Methods with Zero-Computation Experts",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
-    "n_reviews": 4,
+    "n_reviews": 3,
     "decision": "Accept (Oral)"
   },
   {
@@ -711,62 +729,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:OvoCm1gGhN",
-    "title": "Differential Transformer",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.0,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:Sf9goJtTCE",
-    "title": "Sampling from Gaussian Process Posteriors using Stochastic Gradient Descent",
-    "venue": "NeurIPS-2023",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.0,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:Fk5IzauJ7F",
-    "title": "Candidate Label Set Pruning: A Data-centric Perspective for Deep Partial-label Learning",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.0,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:UHPnqSTBPO",
-    "title": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.0,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:xGvPKAiOhq",
-    "title": "How Over-Parameterization Slows Down Gradient Descent in Matrix Sensing: The Curses of Symmetry and Initialization",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.0,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:pISLZG7ktL",
-    "title": "Data Scaling Laws in Imitation Learning for Robotic Manipulation",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.0,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:PBjCTeDL6o",
-    "title": "Unlearning-based Neural Interpretations",
+    "paper_id": "openreview:OlzB6LnXcS",
+    "title": "One Step Diffusion via Shortcut Models",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
@@ -792,15 +756,6 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:EHrvRNs2Y0",
-    "title": "ResFields: Residual Neural Fields for Spatiotemporal Signals",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 4.0,
-    "n_reviews": 3,
-    "decision": "Accept (spotlight)"
-  },
-  {
     "paper_id": "openreview:HnhNRrLPwm",
     "title": "MMIE: Massive Multimodal Interleaved Comprehension Benchmark for Large Vision-Language Models",
     "venue": "ICLR-2025",
@@ -810,22 +765,31 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:t7P5BUKcYv",
-    "title": "MoE++: Accelerating Mixture-of-Experts Methods with Zero-Computation Experts",
+    "paper_id": "openreview:g3xuCtrG6H",
+    "title": "A Computational Framework for Modeling Emergence of Color Vision in the Human Brain",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
-    "n_reviews": 3,
+    "n_reviews": 5,
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:noe76eRcPC",
-    "title": "PF-LRM: Pose-Free Large Reconstruction Model for Joint Pose and Shape Prediction",
+    "paper_id": "openreview:xGvPKAiOhq",
+    "title": "How Over-Parameterization Slows Down Gradient Descent in Matrix Sensing: The Curses of Symmetry and Initialization",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
     "n_reviews": 4,
     "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:pISLZG7ktL",
+    "title": "Data Scaling Laws in Imitation Learning for Robotic Manipulation",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.0,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
   },
   {
     "paper_id": "openreview:5UKrnKuspb",
@@ -837,13 +801,22 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:GTUoTJXPBf",
-    "title": "Noisy Interpolation Learning with Shallow Univariate ReLU Networks",
+    "paper_id": "openreview:zMoNrajk2X",
+    "title": "CADS: Unleashing the Diversity of Diffusion Models through Condition-Annealed Sampling",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
     "n_reviews": 3,
     "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:Sf9goJtTCE",
+    "title": "Sampling from Gaussian Process Posteriors using Stochastic Gradient Descent",
+    "venue": "NeurIPS-2023",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.0,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
   },
   {
     "paper_id": "openreview:NN6QHwgRrQ",
@@ -852,6 +825,33 @@
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
     "n_reviews": 3,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:PBjCTeDL6o",
+    "title": "Unlearning-based Neural Interpretations",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.0,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:Sx7BIiPzys",
+    "title": "Variational Bayesian Last Layers",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.0,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:6EUtjXAvmj",
+    "title": "Variational Diffusion Posterior Sampling with Midpoint Guidance",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 4.0,
+    "n_reviews": 4,
     "decision": "Accept (Oral)"
   },
   {
@@ -873,17 +873,17 @@
     "decision": "Accept (poster)"
   },
   {
-    "paper_id": "openreview:6EUtjXAvmj",
-    "title": "Variational Diffusion Posterior Sampling with Midpoint Guidance",
-    "venue": "ICLR-2025",
+    "paper_id": "openreview:GTUoTJXPBf",
+    "title": "Noisy Interpolation Learning with Shallow Univariate ReLU Networks",
+    "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
+    "n_reviews": 3,
+    "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:zMoNrajk2X",
-    "title": "CADS: Unleashing the Diversity of Diffusion Models through Condition-Annealed Sampling",
+    "paper_id": "openreview:EHrvRNs2Y0",
+    "title": "ResFields: Residual Neural Fields for Spatiotemporal Signals",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 4.0,
@@ -918,78 +918,6 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:N8N0hgNDRt",
-    "title": "MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:v593OaNePQ",
-    "title": "Learning to Search from Demonstration Sequences",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:P15CHILQlg",
-    "title": "Learning Energy Decompositions for Partial Inference in GFlowNets",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:sbG8qhMjkZ",
-    "title": "Improved Finite-Particle Convergence Rates for Stein Variational Gradient Descent",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:HL5P4H8eO2",
-    "title": "Differentiable Trajectory Optimization as a Policy Class for Reinforcement and Imitation Learning",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Reject"
-  },
-  {
-    "paper_id": "openreview:SPS6HzVzyt",
-    "title": "Context-Parametric Inversion: Why Instruction Finetuning May Not Actually Improve Context Reliance",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:xriGRsoAza",
-    "title": "Inherently Interpretable Time Series Classification via Multiple Instance Learning",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:MFWgLCWgUB",
-    "title": "Random Cuts are Optimal for Explainable k-Medians",
-    "venue": "NeurIPS-2023",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
     "paper_id": "openreview:6s5uXNWGIh",
     "title": "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering",
     "venue": "ICLR-2025",
@@ -997,105 +925,6 @@
     "avg_confidence": 3.75,
     "n_reviews": 4,
     "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:dVnhdm9MIg",
-    "title": "Human-like Few-Shot Learning via Bayesian Reasoning over Natural Language",
-    "venue": "NeurIPS-2023",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:IRcv4yFX6z",
-    "title": "Learning Hierarchical Image Segmentation For Recognition and By Recognition",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:ceATjGPTUD",
-    "title": "Large Language Models are Efficient Learners of Noise-Robust Speech Recognition",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:FIj9IEPCKr",
-    "title": "Proxy Denoising for Source-Free Domain Adaptation",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:AoraWUmpLU",
-    "title": "Global Convergence in Neural ODEs: Impact of Activation Functions",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:vzItLaEoDa",
-    "title": "Open-World Reinforcement Learning over Long Short-Term Imagination",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:xoXn62FzD0",
-    "title": "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:GMwRl2e9Y1",
-    "title": "Restructuring Vector Quantization with the Rotation Trick",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:o2Igqm95SJ",
-    "title": "CAX: Cellular Automata Accelerated in JAX",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:6PbvbLyqT6",
-    "title": "Dynamic Discounted Counterfactual Regret Minimization",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:kJFIH23hXb",
-    "title": "SE(3)-Stochastic Flow Matching for Protein Backbone Generation",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
   },
   {
     "paper_id": "openreview:PdaPky8MUn",
@@ -1116,6 +945,15 @@
     "decision": "Accept (spotlight)"
   },
   {
+    "paper_id": "openreview:6PbvbLyqT6",
+    "title": "Dynamic Discounted Counterfactual Regret Minimization",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
     "paper_id": "openreview:Q6a9W6kzv5",
     "title": "PhysBench: Benchmarking and Enhancing Vision-Language Models for Physical World Understanding",
     "venue": "ICLR-2025",
@@ -1125,35 +963,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:7gUrYE50Rb",
-    "title": "EQA-MX: Embodied Question Answering using Multimodal Expression",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
-  },
-  {
     "paper_id": "openreview:DzGe40glxs",
     "title": "Interpreting Emergent Planning in Model-Free Reinforcement Learning",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:2dnO3LLiJ1",
-    "title": "Vision Transformers Need Registers",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.75,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:hyfe5q5TD0",
-    "title": "Computationally Efficient RL under Linear Bellman Completeness for Deterministic Dynamics",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.75,
@@ -1170,44 +981,206 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:I5lcjmFmlc",
-    "title": "Robust Classification via a Single Diffusion Model",
+    "paper_id": "openreview:N8N0hgNDRt",
+    "title": "MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:HL5P4H8eO2",
+    "title": "Differentiable Trajectory Optimization as a Policy Class for Reinforcement and Imitation Learning",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
     "decision": "Reject"
   },
   {
-    "paper_id": "openreview:cB0BImqSS9",
-    "title": "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture",
+    "paper_id": "openreview:xoXn62FzD0",
+    "title": "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:GMwRl2e9Y1",
+    "title": "Restructuring Vector Quantization with the Rotation Trick",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:IRcv4yFX6z",
+    "title": "Learning Hierarchical Image Segmentation For Recognition and By Recognition",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:MFWgLCWgUB",
+    "title": "Random Cuts are Optimal for Explainable k-Medians",
     "venue": "NeurIPS-2023",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:FIj9IEPCKr",
+    "title": "Proxy Denoising for Source-Free Domain Adaptation",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:ceATjGPTUD",
+    "title": "Large Language Models are Efficient Learners of Noise-Robust Speech Recognition",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:xriGRsoAza",
+    "title": "Inherently Interpretable Time Series Classification via Multiple Instance Learning",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:sbG8qhMjkZ",
+    "title": "Improved Finite-Particle Convergence Rates for Stein Variational Gradient Descent",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:SPS6HzVzyt",
+    "title": "Context-Parametric Inversion: Why Instruction Finetuning May Not Actually Improve Context Reliance",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:v593OaNePQ",
+    "title": "Learning to Search from Demonstration Sequences",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:dVnhdm9MIg",
+    "title": "Human-like Few-Shot Learning via Bayesian Reasoning over Natural Language",
+    "venue": "NeurIPS-2023",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:P15CHILQlg",
+    "title": "Learning Energy Decompositions for Partial Inference in GFlowNets",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:2dnO3LLiJ1",
+    "title": "Vision Transformers Need Registers",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:vzItLaEoDa",
+    "title": "Open-World Reinforcement Learning over Long Short-Term Imagination",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:o2Igqm95SJ",
+    "title": "CAX: Cellular Automata Accelerated in JAX",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:kJFIH23hXb",
+    "title": "SE(3)-Stochastic Flow Matching for Protein Backbone Generation",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:AoraWUmpLU",
+    "title": "Global Convergence in Neural ODEs: Impact of Activation Functions",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:hyfe5q5TD0",
+    "title": "Computationally Efficient RL under Linear Bellman Completeness for Deterministic Dynamics",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:7gUrYE50Rb",
+    "title": "EQA-MX: Embodied Question Answering using Multimodal Expression",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.75,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:agPpmEgf8C",
+    "title": "Predictive auxiliary objectives in deep RL mimic learning in the brain",
+    "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 3.67,
     "n_reviews": 3,
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:ja4rpheN2n",
-    "title": "GeSubNet: Gene Interaction Inference for Disease Subtype Network Generation",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:vpJMJerXHU",
-    "title": "ModernTCN: A Modern Pure Convolution Structure for General Time Series Analysis",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:UvTo3tVBk2",
-    "title": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+    "paper_id": "openreview:cNmu0hZ4CL",
+    "title": "Comparing noisy neural population dynamics using optimal transport distances",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.67,
@@ -1224,26 +1197,26 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:Kpjvm2mB0K",
-    "title": "Streaming Algorithms For $\\ell_p$ Flows and $\\ell_p$ Regression",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (Spotlight)"
-  },
-  {
-    "paper_id": "openreview:agPpmEgf8C",
-    "title": "Predictive auxiliary objectives in deep RL mimic learning in the brain",
+    "paper_id": "openreview:gzqrANCF4g",
+    "title": "Language Model Beats Diffusion - Tokenizer is key to visual generation",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 3.67,
     "n_reviews": 3,
-    "decision": "Accept (oral)"
+    "decision": "Accept (poster)"
   },
   {
-    "paper_id": "openreview:KIgaAqEFHW",
-    "title": "miniCTX: Neural Theorem Proving with (Long-)Contexts",
+    "paper_id": "openreview:E78OaH2s3f",
+    "title": "CAS: A Probability-Based Approach for Universal Condition Alignment Score",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:ja4rpheN2n",
+    "title": "GeSubNet: Gene Interaction Inference for Disease Subtype Network Generation",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.67,
@@ -1251,8 +1224,17 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:QEHrmQPBdd",
-    "title": "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+    "paper_id": "openreview:I5lcjmFmlc",
+    "title": "Robust Classification via a Single Diffusion Model",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Reject"
+  },
+  {
+    "paper_id": "openreview:KIgaAqEFHW",
+    "title": "miniCTX: Neural Theorem Proving with (Long-)Contexts",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.67,
@@ -1278,44 +1260,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:cNmu0hZ4CL",
-    "title": "Comparing noisy neural population dynamics using optimal transport distances",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:IGzaH538fz",
-    "title": "GNNCert: Deterministic Certification of Graph Neural Networks against Adversarial Perturbations",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:rmg0qMKYRQ",
-    "title": "Intriguing Properties of Generative Classifiers",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:zMPHKOmQNb",
-    "title": "Protein Discovery with Discrete Walk-Jump Sampling",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:aWXnKanInf",
-    "title": "TopoLM: brain-like spatio-functional organization in a topographic language model",
+    "paper_id": "openreview:QEHrmQPBdd",
+    "title": "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.67,
@@ -1332,17 +1278,8 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:gzqrANCF4g",
-    "title": "Language Model Beats Diffusion - Tokenizer is key to visual generation",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.67,
-    "n_reviews": 3,
-    "decision": "Accept (poster)"
-  },
-  {
-    "paper_id": "openreview:E78OaH2s3f",
-    "title": "CAS: A Probability-Based Approach for Universal Condition Alignment Score",
+    "paper_id": "openreview:vpJMJerXHU",
+    "title": "ModernTCN: A Modern Pure Convolution Structure for General Time Series Analysis",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 3.67,
@@ -1350,35 +1287,89 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:0VBsoluxR2",
-    "title": "MOFDiff: Coarse-grained Diffusion for Metal-Organic Framework Design",
+    "paper_id": "openreview:IGzaH538fz",
+    "title": "GNNCert: Deterministic Certification of Graph Neural Networks against Adversarial Perturbations",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:aWXnKanInf",
+    "title": "TopoLM: brain-like spatio-functional organization in a topographic language model",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:cB0BImqSS9",
+    "title": "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture",
+    "venue": "NeurIPS-2023",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:rmg0qMKYRQ",
+    "title": "Intriguing Properties of Generative Classifiers",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:Kpjvm2mB0K",
+    "title": "Streaming Algorithms For $\\ell_p$ Flows and $\\ell_p$ Regression",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Accept (Spotlight)"
+  },
+  {
+    "paper_id": "openreview:UvTo3tVBk2",
+    "title": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:zMPHKOmQNb",
+    "title": "Protein Discovery with Discrete Walk-Jump Sampling",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.67,
+    "n_reviews": 3,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:OI3RoHoWAN",
+    "title": "GenSim: Generating Robotic Simulation Tasks via Large Language Models",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
     "n_reviews": 4,
-    "decision": "Accept (poster)"
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:A3YUPeJTNR",
+    "title": "The Hidden Cost of Waiting for Accurate Predictions",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
   },
   {
     "paper_id": "openreview:GRMfXcAAFh",
     "title": "Oscillatory State-Space Models",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:0ctvBgKFgc",
-    "title": "ProtComposer: Compositional Protein Structure Generation with 3D Ellipsoids",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:uAFHCZRmXk",
-    "title": "Two Effects, One Trigger: On the Modality Gap, Object Bias, and Information Imbalance in Contrastive Vision-Language Models",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
@@ -1395,6 +1386,33 @@
     "decision": "Accept (Oral)"
   },
   {
+    "paper_id": "openreview:pOoKI3ouv1",
+    "title": "Robust agents learn causal world models",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:I4e82CIDxv",
+    "title": "Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:Bo62NeU6VF",
+    "title": "Backtracking Improves Generation Safety",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
     "paper_id": "openreview:TTrzgEZt9s",
     "title": "Distributionally Robust Optimization with Bias and Variance Reduction",
     "venue": "ICLR-2024",
@@ -1402,60 +1420,6 @@
     "avg_confidence": 3.5,
     "n_reviews": 4,
     "decision": "Accept (spotlight)"
-  },
-  {
-    "paper_id": "openreview:tqh1zdXIra",
-    "title": "Quick-Tune: Quickly Learning Which Pretrained Model to Finetune and How",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:5Ca9sSzuDp",
-    "title": "Interpreting CLIP's Image Representation via Text-Based Decomposition",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:mtSSFiqW6y",
-    "title": "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:Zsfiqpft6K",
-    "title": "Diffusion Model for Dense Matching",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:A3YUPeJTNR",
-    "title": "The Hidden Cost of Waiting for Accurate Predictions",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:je3GZissZc",
-    "title": "Instant Policy: In-Context Imitation Learning via Graph Diffusion",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
   },
   {
     "paper_id": "openreview:Nx4PMtJ1ER",
@@ -1467,8 +1431,8 @@
     "decision": "Accept (Spotlight)"
   },
   {
-    "paper_id": "openreview:stUKwWBuBm",
-    "title": "Tractable Multi-Agent Reinforcement Learning through Behavioral Economics",
+    "paper_id": "openreview:Xo0Q1N7CGk",
+    "title": "On Conformal Isometry of Grid Cells: Learning Distance-Preserving Position Embedding",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
@@ -1476,8 +1440,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:07yvxWDSla",
-    "title": "Synthetic continued pretraining",
+    "paper_id": "openreview:zCxGCdzreM",
+    "title": "Kinetix: Investigating the Training of General Agents through Open-Ended Physics-Based Control Tasks",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
@@ -1485,8 +1449,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:xuY33XhEGR",
-    "title": "ClimODE: Climate and Weather Forecasting with Physics-informed Neural ODEs",
+    "paper_id": "openreview:tqh1zdXIra",
+    "title": "Quick-Tune: Quickly Learning Which Pretrained Model to Finetune and How",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
@@ -1494,13 +1458,22 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:OI3RoHoWAN",
-    "title": "GenSim: Generating Robotic Simulation Tasks via Large Language Models",
+    "paper_id": "openreview:0VBsoluxR2",
+    "title": "MOFDiff: Coarse-grained Diffusion for Metal-Organic Framework Design",
     "venue": "ICLR-2024",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
     "n_reviews": 4,
-    "decision": "Accept (spotlight)"
+    "decision": "Accept (poster)"
+  },
+  {
+    "paper_id": "openreview:wIlmx4bHrO",
+    "title": "A Single-Loop Accelerated Extra-Gradient Difference Algorithm with Improved Complexity Bounds for Constrained Minimax Optimization",
+    "venue": "NeurIPS-2023",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
   },
   {
     "paper_id": "openreview:OOxotBmGol",
@@ -1514,15 +1487,6 @@
   {
     "paper_id": "openreview:OfjIlbelrT",
     "title": "FlexPrefill: A Context-Aware Sparse Attention Mechanism for Efficient Long-Sequence Inference",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:zCxGCdzreM",
-    "title": "Kinetix: Investigating the Training of General Agents through Open-Ended Physics-Based Control Tasks",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
@@ -1548,8 +1512,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:25kAzqzTrz",
-    "title": "Towards Understanding Why FixMatch Generalizes Better Than Supervised Learning",
+    "paper_id": "openreview:tTPHgb0EtV",
+    "title": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
@@ -1557,40 +1521,13 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:I4e82CIDxv",
-    "title": "Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models",
+    "paper_id": "openreview:0ctvBgKFgc",
+    "title": "ProtComposer: Compositional Protein Structure Generation with 3D Ellipsoids",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.5,
     "n_reviews": 4,
     "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:wIlmx4bHrO",
-    "title": "A Single-Loop Accelerated Extra-Gradient Difference Algorithm with Improved Complexity Bounds for Constrained Minimax Optimization",
-    "venue": "NeurIPS-2023",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:pOoKI3ouv1",
-    "title": "Robust agents learn causal world models",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:ta26LtNq2r",
-    "title": "Learning to Reject Meets Long-tail Learning",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (spotlight)"
   },
   {
     "paper_id": "openreview:NSVtmmzeRB",
@@ -1602,33 +1539,6 @@
     "decision": "Accept (oral)"
   },
   {
-    "paper_id": "openreview:Bo62NeU6VF",
-    "title": "Backtracking Improves Generation Safety",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:tTPHgb0EtV",
-    "title": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:Xo0Q1N7CGk",
-    "title": "On Conformal Isometry of Grid Cells: Learning Distance-Preserving Position Embedding",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.5,
-    "n_reviews": 4,
-    "decision": "Accept (Oral)"
-  },
-  {
     "paper_id": "openreview:QuIiLSktO4",
     "title": "Algorithms for Caching and MTS with reduced number of predictions",
     "venue": "ICLR-2024",
@@ -1638,12 +1548,93 @@
     "decision": "Accept (poster)"
   },
   {
-    "paper_id": "openreview:4xWQS2z77v",
-    "title": "Exploring The Loss Landscape Of Regularized Neural Networks Via Convex Duality",
+    "paper_id": "openreview:je3GZissZc",
+    "title": "Instant Policy: In-Context Imitation Learning via Graph Diffusion",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
-    "avg_confidence": 3.4,
-    "n_reviews": 5,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:Zsfiqpft6K",
+    "title": "Diffusion Model for Dense Matching",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:xuY33XhEGR",
+    "title": "ClimODE: Climate and Weather Forecasting with Physics-informed Neural ODEs",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:07yvxWDSla",
+    "title": "Synthetic continued pretraining",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:ta26LtNq2r",
+    "title": "Learning to Reject Meets Long-tail Learning",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (spotlight)"
+  },
+  {
+    "paper_id": "openreview:uAFHCZRmXk",
+    "title": "Two Effects, One Trigger: On the Modality Gap, Object Bias, and Information Imbalance in Contrastive Vision-Language Models",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:25kAzqzTrz",
+    "title": "Towards Understanding Why FixMatch Generalizes Better Than Supervised Learning",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:mtSSFiqW6y",
+    "title": "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:5Ca9sSzuDp",
+    "title": "Interpreting CLIP's Image Representation via Text-Based Decomposition",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:stUKwWBuBm",
+    "title": "Tractable Multi-Agent Reinforcement Learning through Behavioral Economics",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.5,
+    "n_reviews": 4,
     "decision": "Accept (Oral)"
   },
   {
@@ -1656,8 +1647,8 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:k38Th3x4d9",
-    "title": "Root Cause Analysis of Anomalies in Multivariate Time Series through Granger Causal Discovery",
+    "paper_id": "openreview:4xWQS2z77v",
+    "title": "Exploring The Loss Landscape Of Regularized Neural Networks Via Convex Duality",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.4,
@@ -1665,39 +1656,12 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:RWJX5F5I9g",
-    "title": "Brain Bandit: A Biologically Grounded Neural Network for Efficient Control of Exploration",
+    "paper_id": "openreview:k38Th3x4d9",
+    "title": "Root Cause Analysis of Anomalies in Multivariate Time Series through Granger Causal Discovery",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
-    "avg_confidence": 3.33,
-    "n_reviews": 3,
-    "decision": "Accept (Oral)"
-  },
-  {
-    "paper_id": "openreview:et5l9qPUhm",
-    "title": "Strong Model Collapse",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.33,
-    "n_reviews": 3,
-    "decision": "Accept (Spotlight)"
-  },
-  {
-    "paper_id": "openreview:cc8h3I3V4E",
-    "title": "Approximating Nash Equilibria in Normal-Form Games via Stochastic Optimization",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.33,
-    "n_reviews": 3,
-    "decision": "Accept (oral)"
-  },
-  {
-    "paper_id": "openreview:Cjz9Xhm7sI",
-    "title": "High-Dynamic Radar Sequence Prediction for Weather Nowcasting Using Spatiotemporal Coherent Gaussian Representation",
-    "venue": "ICLR-2025",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.33,
-    "n_reviews": 3,
+    "avg_confidence": 3.4,
+    "n_reviews": 5,
     "decision": "Accept (Oral)"
   },
   {
@@ -1719,8 +1683,26 @@
     "decision": "Accept (spotlight)"
   },
   {
-    "paper_id": "openreview:rfdblE10qm",
-    "title": "Rethinking Reward Modeling in Preference-based Large Language Model Alignment",
+    "paper_id": "openreview:cc8h3I3V4E",
+    "title": "Approximating Nash Equilibria in Normal-Form Games via Stochastic Optimization",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.33,
+    "n_reviews": 3,
+    "decision": "Accept (oral)"
+  },
+  {
+    "paper_id": "openreview:et5l9qPUhm",
+    "title": "Strong Model Collapse",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.33,
+    "n_reviews": 3,
+    "decision": "Accept (Spotlight)"
+  },
+  {
+    "paper_id": "openreview:RWJX5F5I9g",
+    "title": "Brain Bandit: A Biologically Grounded Neural Network for Efficient Control of Exploration",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.33,
@@ -1728,17 +1710,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:3bq3jsvcQ1",
-    "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
-    "venue": "ICLR-2024",
-    "avg_rating": 8.0,
-    "avg_confidence": 3.33,
-    "n_reviews": 3,
-    "decision": "Accept (poster)"
-  },
-  {
-    "paper_id": "openreview:Y6aHdDNQYD",
-    "title": "MOS: Model Synergy for Test-Time Adaptation on LiDAR-Based 3D Object Detection",
+    "paper_id": "openreview:Cjz9Xhm7sI",
+    "title": "High-Dynamic Radar Sequence Prediction for Weather Nowcasting Using Spatiotemporal Coherent Gaussian Representation",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.33,
@@ -1764,12 +1737,30 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:CjwERcAU7w",
-    "title": "Training Language Models to Self-Correct via Reinforcement Learning",
+    "paper_id": "openreview:3bq3jsvcQ1",
+    "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
+    "venue": "ICLR-2024",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.33,
+    "n_reviews": 3,
+    "decision": "Accept (poster)"
+  },
+  {
+    "paper_id": "openreview:rfdblE10qm",
+    "title": "Rethinking Reward Modeling in Preference-based Large Language Model Alignment",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
-    "avg_confidence": 3.25,
-    "n_reviews": 4,
+    "avg_confidence": 3.33,
+    "n_reviews": 3,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:Y6aHdDNQYD",
+    "title": "MOS: Model Synergy for Test-Time Adaptation on LiDAR-Based 3D Object Detection",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.33,
+    "n_reviews": 3,
     "decision": "Accept (Oral)"
   },
   {
@@ -1782,8 +1773,8 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:3i13Gev2hV",
-    "title": "Compositional Entailment Learning for Hyperbolic Vision-Language Models",
+    "paper_id": "openreview:mMPMHWOdOy",
+    "title": "WizardMath: Empowering Mathematical Reasoning for Large Language Models via Reinforced Evol-Instruct",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.25,
@@ -1791,8 +1782,17 @@
     "decision": "Accept (Oral)"
   },
   {
-    "paper_id": "openreview:mMPMHWOdOy",
-    "title": "WizardMath: Empowering Mathematical Reasoning for Large Language Models via Reinforced Evol-Instruct",
+    "paper_id": "openreview:Fur0DtynPX",
+    "title": "GridMix: Exploring Spatial Modulation for Neural Fields in PDE Modeling",
+    "venue": "ICLR-2025",
+    "avg_rating": 8.0,
+    "avg_confidence": 3.25,
+    "n_reviews": 4,
+    "decision": "Accept (Oral)"
+  },
+  {
+    "paper_id": "openreview:SnDmPkOJ0T",
+    "title": "REEF: Representation Encoding Fingerprints for Large Language Models",
     "venue": "ICLR-2025",
     "avg_rating": 8.0,
     "avg_confidence": 3.25,

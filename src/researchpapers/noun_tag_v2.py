@@ -15,8 +15,6 @@ Expected: 3-5× faster than v1 on the same hardware.
 from __future__ import annotations
 
 import logging
-import os
-import subprocess
 import time
 from collections import Counter
 
@@ -28,49 +26,13 @@ from researchpapers.noun_tag import (
     BLACKLIST_SINGLE,
     _strip_leading,
 )
+from researchpapers.ram import m1_16gb_profile, pick_n_process, wait_for_ram
 
 log = logging.getLogger("researchpapers.noun_tag_v2")
 
 SPACY_MODEL = "en_core_web_sm"
-
-
-def _detect_cpu_count() -> int:
-    try:
-        return os.cpu_count() or 4
-    except Exception:
-        return 4
-
-
-PAGE_SIZE = 4096
-WORKER_RSS_MB = 1500          # observed per-spaCy-worker RSS at steady state
-SAFETY_HEADROOM_MB = 1500     # leave this much free for the OS + other apps
-
-
-def _free_ram_mb() -> int:
-    """Best-effort free RAM in MB on macOS. Counts 'free' + 'inactive' + 'speculative' pages."""
-    try:
-        out = subprocess.check_output(["vm_stat"], text=True, timeout=2)
-    except Exception:
-        return 4096  # safe fallback
-    pages = {"free": 0, "inactive": 0, "speculative": 0}
-    for line in out.splitlines():
-        if "Pages free" in line:
-            pages["free"] = int(line.rsplit(maxsplit=1)[-1].rstrip("."))
-        elif "Pages inactive" in line:
-            pages["inactive"] = int(line.rsplit(maxsplit=1)[-1].rstrip("."))
-        elif "Pages speculative" in line:
-            pages["speculative"] = int(line.rsplit(maxsplit=1)[-1].rstrip("."))
-    return sum(pages.values()) * PAGE_SIZE // (1024 * 1024)
-
-
-def _pick_n_process(cap: int | None = None) -> int:
-    """RAM-aware worker count. cap clamps the upper bound."""
-    cap = cap or min(8, max(1, _detect_cpu_count() - 1))
-    free_mb = _free_ram_mb()
-    budget = max(0, free_mb - SAFETY_HEADROOM_MB)
-    n = max(1, min(cap, budget // WORKER_RSS_MB))
-    log.info("RAM picker: free=%d MB → n_process=%d (cap=%d)", free_mb, n, cap)
-    return int(n)
+DEFAULT_BATCH_PAPERS = m1_16gb_profile()["spacy_batch_papers"]
+DEFAULT_MAX_PROCS = m1_16gb_profile()["spacy_max_procs"]
 
 
 def _candidates_pos_only(doc) -> Counter:
@@ -122,65 +84,68 @@ def _candidates_pos_only(doc) -> Counter:
     return cnt
 
 
+def _fetch_untagged_chunk(*, source: str, batch_papers: int) -> list[tuple[str, str, str | None]]:
+    from researchpapers.ch_db import connect as ch_connect
+
+    with ch_connect() as ch:
+        return ch.query(
+            """
+            SELECT p.paper_id, p.title, p.abstract
+            FROM papers AS p FINAL
+            WHERE p.source = %(source)s
+              AND length(p.abstract) > 80
+              AND p.paper_id NOT IN (
+                SELECT paper_id FROM paper_tags FINAL WHERE tagger = 'spacy_v2'
+              )
+            ORDER BY p.paper_id
+            LIMIT %(lim)s
+            """,
+            parameters={"source": source, "lim": batch_papers},
+        ).result_rows
+
+
 def tag_multi_source(
     *,
     source: str,
-    batch_papers: int = 5000,
+    batch_papers: int = DEFAULT_BATCH_PAPERS,
     limit: int | None = None,
     n_process: int | None = None,
     max_procs: int | None = None,
 ) -> dict[str, int | float]:
-    """Run spaCy v2 on any source in ClickHouse (e.g. 'openreview', 'biorxiv').
+    """Run spaCy v2 on any source in ClickHouse. Streams untagged papers in chunks."""
+    from researchpapers.ch_db import write_paper_tags
 
-    Reads title+abstract from CH papers (source=...), writes tags to CH paper_tags.
-    Does NOT touch Postgres. Skips papers already tagged by spacy_v2.
-    """
-    from researchpapers.ch_db import connect as ch_connect, write_paper_tags
-
+    wait_for_ram()
     log.info("loading spaCy %s with parser DISABLED", SPACY_MODEL)
     nlp = spacy.load(SPACY_MODEL, disable=["parser", "ner", "lemmatizer"])
 
     t0 = time.monotonic()
     total_tagged = 0
     total_skipped = 0
-
-    with ch_connect() as ch:
-        already = ch.query(
-            "SELECT DISTINCT paper_id FROM paper_tags WHERE tagger='spacy_v2'"
-        ).result_rows
-        tagged_ids = {r[0] for r in already}
-        log.info("already-tagged count: %d", len(tagged_ids))
-
-        rows_q = ch.query(
-            f"""
-            SELECT paper_id, title, abstract
-            FROM papers FINAL
-            WHERE source = %(source)s
-              AND length(abstract) > 80
-            """,
-            parameters={"source": source},
-        ).result_rows
-        rows = [
-            {"paper_id": r[0], "title": r[1], "abstract": r[2]}
-            for r in rows_q
-            if r[0] not in tagged_ids
-        ]
-        if limit:
-            rows = rows[: int(limit)]
-        log.info("queue (untagged %s submissions): %d papers", source, len(rows))
-
     batch_idx = 0
-    for start in range(0, len(rows), batch_papers):
-        chunk = rows[start : start + batch_papers]
+    cap = max_procs if max_procs is not None else DEFAULT_MAX_PROCS
+
+    while True:
+        if limit is not None and total_tagged >= limit:
+            break
+        take = batch_papers if limit is None else min(batch_papers, limit - total_tagged)
+        chunk_rows = _fetch_untagged_chunk(source=source, batch_papers=take)
+        if not chunk_rows:
+            break
+
         batch_idx += 1
-        n = n_process or _pick_n_process(cap=max_procs)
+        n = n_process or pick_n_process(cap=cap)
         log.info(
             "batch #%d: %d papers, n_process=%d (running total tagged=%d)",
-            batch_idx, len(chunk), n, total_tagged,
+            batch_idx, len(chunk_rows), n, total_tagged,
         )
+        chunk = [
+            {"paper_id": r[0], "title": r[1], "abstract": r[2]}
+            for r in chunk_rows
+        ]
         texts = [f"{r['title']}\n\n{r['abstract']}" for r in chunk]
         results: list[list[str]] = []
-        for doc in nlp.pipe(texts, batch_size=1024, n_process=n):
+        for doc in nlp.pipe(texts, batch_size=512, n_process=n):
             cnt = _candidates_pos_only(doc)
             results.append([t for t, _ in cnt.most_common(12)])
 
@@ -191,6 +156,7 @@ def tag_multi_source(
         write_paper_tags(ch_rows, model_version="en_core_web_sm")
         total_tagged += len(chunk)
         total_skipped += sum(1 for r in results if not r)
+        wait_for_ram()
 
     elapsed = time.monotonic() - t0
     return {
@@ -218,7 +184,7 @@ def tag_papers(
     return tag_multi_source(
         source="arxiv",
         limit=limit,
-        batch_papers=batch_papers or 25000,
+        batch_papers=batch_papers or DEFAULT_BATCH_PAPERS,
         n_process=n_process,
         max_procs=max_procs,
     )

@@ -16,6 +16,9 @@ log = logging.getLogger("researchpapers.author_graph")
 
 def build_author_graph(*, expand_metadata_limit: int = 10000) -> dict[str, int]:
     """Rebuild author graph tables from metadata overlay + paper authorships."""
+    from researchpapers.ram import wait_for_ram
+
+    wait_for_ram()
     ensure_author_graph_tables()
 
     # Expand metadata refresh if the overlay is smaller than requested.

@@ -244,8 +244,17 @@ always read from CH directly — no rebuild needed.
 
 ## CLI cheatsheet
 
+**One command (16 GB M1 Pro, RAM-aware):**
+
 ```bash
-uv run papers api-serve                  # FastAPI on :8000
+docker compose up -d clickhouse
+uv run papers warm-update --build-web   # overlays + exports + static build
+uv run papers api-serve --lean          # API without resident ML models
+```
+
+```bash
+uv run papers api-serve --lean           # default: low-RAM API (~400 MB saved)
+uv run papers warm-update                # sequential overlay refresh
 uv run papers export-ch                  # write JSON files for the static FE
 uv run papers refresh-metadata           # pull arxiv API + OpenAlex into paper_metadata_v2
 uv run papers enrich-citations           # Semantic Scholar counts → citation_overlay_v2
@@ -299,6 +308,23 @@ ClickHouse UDFs:
 - **`effective_date(source, arxiv_id, submitted_date)`** — same idea,
   returns a `Date` for chart axes.
 
+## RAM efficiency (16 GB M1)
+
+Heavy jobs stream from ClickHouse in chunks and wait for free RAM between
+steps. Defaults are tuned for an M1 Pro 16 GB machine with other apps open:
+
+| Setting | Default | Why |
+| --- | --- | --- |
+| API `--lean` | on | semantic search uses a one-shot encoder subprocess |
+| `embed --batch-size` | 64 | was 256 |
+| `spacy-tag-v2` batch | 3000 papers, max 2 workers | was 25000 / up to 8 workers |
+| `cluster-embeddings` | chunked partial_fit | was load-all-478k into RAM |
+| `pagerank-full` | streamed edge reads | was load-all edges at once |
+
+Use `papers warm-update` to run overlay jobs sequentially without peaking
+multiple model loads. For MLX tagging, keep `--total-shards` high and run one
+shard at a time.
+
 ## Repo layout
 
 ```
@@ -313,6 +339,9 @@ src/researchpapers/
   arxiv_abstract_refresh.py       arxiv abstract fixups → abstract_overlay_v2
   author_graph.py       canonical authors + coauthor graph
   overlays.py           shared overlay SQL + table DDL
+  ram.py                RAM waits + M1 16 GB profile
+  warm_update.py        one-command overlay refresh
+  encode_query.py       one-shot query encoder for lean API
   pagerank_full.py      scipy.sparse PageRank → paper_scores_v2
   embed.py              sentence-transformers → paper_embeddings
   cluster_embeddings.py MiniBatchKMeans → paper_clusters

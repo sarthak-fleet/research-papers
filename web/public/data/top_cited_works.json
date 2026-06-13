@@ -1647,15 +1647,6 @@
     "primary_topic": "Multimodal Machine Learning Applications"
   },
   {
-    "title": "Theory of open quantum systems",
-    "global_citations": 6166,
-    "in_corpus_citations": 875,
-    "arxiv_id": null,
-    "doi": "https://doi.org/10.1063/1.1474579",
-    "publication_year": 2002,
-    "primary_topic": "Spectroscopy and Quantum Chemical Studies"
-  },
-  {
     "title": "Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour",
     "global_citations": 2619,
     "in_corpus_citations": 875,
@@ -1663,6 +1654,15 @@
     "doi": "https://doi.org/10.48550/arxiv.1706.02677",
     "publication_year": 2017,
     "primary_topic": "Advanced Neural Network Applications"
+  },
+  {
+    "title": "Theory of open quantum systems",
+    "global_citations": 6166,
+    "in_corpus_citations": 875,
+    "arxiv_id": null,
+    "doi": "https://doi.org/10.1063/1.1474579",
+    "publication_year": 2002,
+    "primary_topic": "Spectroscopy and Quantum Chemical Studies"
   },
   {
     "title": "Unsupervised Representation Learning with Deep Convolutional Generative\\n Adversarial Networks",
@@ -1773,15 +1773,6 @@
     "primary_topic": "Generative Adversarial Networks and Image Synthesis"
   },
   {
-    "title": "Deep learning in neural networks: An overview",
-    "global_citations": 17962,
-    "in_corpus_citations": 831,
-    "arxiv_id": "1404.7828",
-    "doi": "https://doi.org/10.1016/j.neunet.2014.09.003",
-    "publication_year": 2014,
-    "primary_topic": "Neural Networks and Applications"
-  },
-  {
     "title": "Scheme for reducing decoherence in quantum computer memory",
     "global_citations": 4505,
     "in_corpus_citations": 831,
@@ -1789,6 +1780,15 @@
     "doi": "https://doi.org/10.1103/physreva.52.r2493",
     "publication_year": 1995,
     "primary_topic": "Quantum Computing Algorithms and Architecture"
+  },
+  {
+    "title": "Deep learning in neural networks: An overview",
+    "global_citations": 17962,
+    "in_corpus_citations": 831,
+    "arxiv_id": "1404.7828",
+    "doi": "https://doi.org/10.1016/j.neunet.2014.09.003",
+    "publication_year": 2014,
+    "primary_topic": "Neural Networks and Applications"
   },
   {
     "title": "Proposed Experiment to Test Local Hidden-Variable Theories",

@@ -88,7 +88,6 @@ echo "==> Sanity check..."
 COUNT=$(docker exec researchpapers_ch clickhouse-client --user papers --password papers -d papers -q "SELECT count() FROM papers" 2>/dev/null || echo "0")
 echo "    papers in DB: $COUNT"
 
-echo ""
-echo "==> Starting API on http://${API_HOST}:${API_PORT}"
+echo "==> Starting API on http://${API_HOST}:${API_PORT} (lean mode — low RAM)"
 echo "    (Ctrl-C to stop)"
-exec uv run papers api-serve --host "$API_HOST" --port "$API_PORT"
+exec uv run papers api-serve --host "$API_HOST" --port "$API_PORT" --lean

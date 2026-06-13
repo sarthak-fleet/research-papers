@@ -39,7 +39,7 @@ papers, and HighSignal-style research digests.
 2. Keep static JSON exports fresh after new ingestion or retagging with
    `uv run papers export-ch` and a frontend rebuild.
 3. Run overlay jobs on production corpus after deploy:
-   `enrich-citations`, `refresh-abstracts --reembed`, `build-author-graph`.
+   `uv run papers warm-update` (one command, RAM-aware, sequential).
 
 ## Deferred / Parked
 

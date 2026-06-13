@@ -276,7 +276,7 @@ def mlx_tag_v2_cmd(
 def spacy_tag_v2_cmd(
     limit: Annotated[int | None, typer.Option(help="Max papers this run")] = None,
     any_order: Annotated[bool, typer.Option(help="Don't prioritize high-citation papers")] = False,
-    batch_papers: Annotated[int | None, typer.Option(help="If set, process in chunks of this size, re-sampling free RAM between chunks. Recommended: 25000.")] = None,
+    batch_papers: Annotated[int | None, typer.Option(help="Process in chunks of this size (default 3000 for 16 GB RAM)")] = None,
     n_process: Annotated[int | None, typer.Option(help="Override spaCy worker count (skips RAM picker)")] = None,
     max_procs: Annotated[int | None, typer.Option(help="Cap for the RAM-aware picker")] = None,
 ) -> None:
@@ -301,9 +301,21 @@ def api_serve_cmd(
     host: Annotated[str, typer.Option(help="Bind host")] = "127.0.0.1",
     port: Annotated[int, typer.Option(help="Bind port")] = 8000,
     reload: Annotated[bool, typer.Option(help="Auto-reload on code changes")] = False,
+    lean: Annotated[
+        bool,
+        typer.Option(help="Lean mode: no resident ML models (~400 MB saved). Default on."),
+    ] = True,
+    eager_embed: Annotated[
+        bool,
+        typer.Option("--eager-embed", help="Disable lean mode; keep embedder loaded in API process"),
+    ] = False,
 ) -> None:
     """Serve the researchPapers HTTP API (FastAPI + uvicorn over ClickHouse)."""
+    import os
+
     import uvicorn
+
+    os.environ["PAPERS_LEAN_API"] = "0" if eager_embed else ("1" if lean else "0")
     uvicorn.run("researchpapers.api:app", host=host, port=port, reload=reload)
 
 
@@ -346,7 +358,7 @@ def mlx_tag_v3_cmd(
 @app.command("cluster-embeddings")
 def cluster_embeddings_cmd(
     n_clusters: Annotated[int, typer.Option(help="Number of clusters")] = 64,
-    batch_size: Annotated[int, typer.Option(help="MiniBatchKMeans batch")] = 4096,
+    batch_size: Annotated[int, typer.Option(help="MiniBatchKMeans batch")] = 2048,
     sample: Annotated[int | None, typer.Option(help="Limit to first N papers (for testing)")] = None,
 ) -> None:
     """MiniBatchKMeans over paper_embeddings → paper_clusters table."""
@@ -418,6 +430,9 @@ def build_author_graph_cmd(
 ) -> None:
     """Build authors_v2 + paper_authorships_v2 from metadata and inferred buckets."""
     from researchpapers import author_graph
+    from researchpapers.ram import wait_for_ram
+
+    wait_for_ram()
     c = author_graph.build_author_graph(expand_metadata_limit=metadata_limit)
     typer.echo(
         f"authors={c.get('authors')} authorships={c.get('authorships')} "
@@ -425,11 +440,42 @@ def build_author_graph_cmd(
     )
 
 
+@app.command("warm-update")
+def warm_update_cmd(
+    build_web: Annotated[bool, typer.Option(help="Also run npm run build in web/")] = False,
+    skip_enrich: Annotated[bool, typer.Option(help="Skip Semantic Scholar enrichment")] = False,
+    skip_abstracts: Annotated[bool, typer.Option(help="Skip arXiv abstract refresh")] = False,
+    skip_author_graph: Annotated[bool, typer.Option(help="Skip author graph rebuild")] = False,
+) -> None:
+    """One-command overlay refresh for 16 GB RAM (M1 Pro). Runs jobs sequentially."""
+    from researchpapers import warm_update
+
+    c = warm_update.run_warm_update(
+        build_web=build_web,
+        skip_enrich=skip_enrich,
+        skip_abstracts=skip_abstracts,
+        skip_author_graph=skip_author_graph,
+    )
+    typer.echo(f"warm-update done exports={len(c.get('exports', []))}")
+
+
+@app.command("encode-query")
+def encode_query_cmd(
+    query: Annotated[str, typer.Argument(help="Natural-language query to embed")],
+) -> None:
+    """Encode one query via MiniLM (stdout JSON). Used by lean API semantic search."""
+    import json
+
+    from researchpapers.encode_query import encode_text
+
+    typer.echo(json.dumps(encode_text(query)))
+
+
 @app.command("embed")
 def embed_cmd(
     source: Annotated[str | None, typer.Option(help="Limit to one source")] = None,
     limit: Annotated[int | None, typer.Option(help="Max papers")] = None,
-    batch_size: Annotated[int, typer.Option(help="Encoder batch size")] = 128,
+    batch_size: Annotated[int, typer.Option(help="Encoder batch size")] = 64,
 ) -> None:
     """Embed papers (title+abstract) into CH paper_embeddings via all-MiniLM-L6-v2."""
     from researchpapers import embed

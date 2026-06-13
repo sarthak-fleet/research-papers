@@ -196,7 +196,9 @@ def _reembed_papers(paper_ids: list[str]) -> int:
     from sentence_transformers import SentenceTransformer
 
     from researchpapers.overlays import EFFECTIVE_ABSTRACT_SQL, EFFECTIVE_TITLE_SQL, OVERLAY_JOINS_SQL
+    from researchpapers.ram import clamp_batch_size, wait_for_ram
 
+    wait_for_ram()
     with ch_connect() as ch:
         rows = ch.query(
             f"""
@@ -213,8 +215,9 @@ def _reembed_papers(paper_ids: list[str]) -> int:
         return 0
 
     model = SentenceTransformer("all-MiniLM-L6-v2")
+    batch = clamp_batch_size(64)
     texts = [f"{r[1] or ''}. {(r[2] or '')[:1000]}" for r in rows]
-    embeddings = model.encode(texts, batch_size=64, normalize_embeddings=True, show_progress_bar=False)
+    embeddings = model.encode(texts, batch_size=batch, normalize_embeddings=True, show_progress_bar=False)
     payload = [[r[0], embeddings[i].tolist(), "all-MiniLM-L6-v2"] for i, r in enumerate(rows)]
     with ch_connect() as ch:
         ch.insert(

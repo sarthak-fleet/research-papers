@@ -1267,20 +1267,20 @@
         "pagerank_score": 5e-06
       },
       {
-        "arxiv_id": "1902.04546",
-        "title": "ACTRCE: Augmenting Experience via Teacher's Advice For Multi-Goal Reinforcement Learning",
-        "citation_count": 21,
-        "submitted_date": "2019-02-12",
-        "community_id": 6,
-        "pagerank_score": 2e-06
-      },
-      {
         "arxiv_id": "1810.10999",
         "title": "Reversible Recurrent Neural Networks",
         "citation_count": 21,
         "submitted_date": "2018-10-25",
         "community_id": 0,
         "pagerank_score": 3e-06
+      },
+      {
+        "arxiv_id": "1902.04546",
+        "title": "ACTRCE: Augmenting Experience via Teacher's Advice For Multi-Goal Reinforcement Learning",
+        "citation_count": 21,
+        "submitted_date": "2019-02-12",
+        "community_id": 6,
+        "pagerank_score": 2e-06
       },
       {
         "arxiv_id": "1910.07512",
@@ -1395,19 +1395,19 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2305.15316",
-        "title": "Training on Thin Air: Improve Image Classification with Generated Data",
-        "citation_count": 6,
-        "submitted_date": "2023-05-24",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "2012.12896",
         "title": "How Does a Neural Network's Architecture Impact Its Robustness to Noisy\\n Labels?",
         "citation_count": 6,
         "submitted_date": "2020-12-23",
         "community_id": 2,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2305.15316",
+        "title": "Training on Thin Air: Improve Image Classification with Generated Data",
+        "citation_count": 6,
+        "submitted_date": "2023-05-24",
+        "community_id": null,
         "pagerank_score": 1e-06
       },
       {
@@ -1435,18 +1435,18 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "2012.02419",
+        "title": "Planning from Pixels using Inverse Dynamics Models",
+        "citation_count": 3,
+        "submitted_date": "2020-12-04",
+        "community_id": 6,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "2209.13569",
         "title": "Exploring Low Rank Training of Deep Neural Networks",
         "citation_count": 3,
         "submitted_date": "2022-09-27",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2212.03905",
-        "title": "Multi-Rate VAE: Train Once, Get the Full Rate-Distortion Curve",
-        "citation_count": 3,
-        "submitted_date": "2022-12-07",
         "community_id": null,
         "pagerank_score": 1e-06
       }
@@ -2151,19 +2151,19 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "1606.06439",
-        "title": "Social-sparsity brain decoders: faster spatial sparsity",
-        "citation_count": 0,
-        "submitted_date": "2016-06-01",
-        "community_id": 4167,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1511.04898",
         "title": "Fast clustering for scalable statistical analysis on structured images",
         "citation_count": 0,
         "submitted_date": "2015-11-16",
         "community_id": 11,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "1606.06439",
+        "title": "Social-sparsity brain decoders: faster spatial sparsity",
+        "citation_count": 0,
+        "submitted_date": "2016-06-01",
+        "community_id": 4167,
         "pagerank_score": 1e-06
       }
     ],
@@ -2527,20 +2527,20 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2206.13424",
-        "title": "Benchopt: Reproducible, efficient and collaborative optimization benchmarks",
-        "citation_count": 9,
-        "submitted_date": "2022-06-27",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1301.3611",
         "title": "Jitter-Adaptive Dictionary Learning - Application to Multi-Trial Neuroelectric Signals",
         "citation_count": 9,
         "submitted_date": "2013-01-16",
         "community_id": 2011,
         "pagerank_score": 4e-06
+      },
+      {
+        "arxiv_id": "2206.13424",
+        "title": "Benchopt: Reproducible, efficient and collaborative optimization benchmarks",
+        "citation_count": 9,
+        "submitted_date": "2022-06-27",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "1811.11433",
@@ -2591,6 +2591,14 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "1806.09390",
+        "title": "Accelerating Likelihood Optimization for ICA on Real Signals",
+        "citation_count": 2,
+        "submitted_date": "2018-01-01",
+        "community_id": 34,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "2008.09693",
         "title": "Spectral Independent Component Analysis with noise modeling for M/EEG source separation",
         "citation_count": 2,
@@ -2607,26 +2615,10 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "1806.09390",
-        "title": "Accelerating Likelihood Optimization for ICA on Real Signals",
-        "citation_count": 2,
-        "submitted_date": "2018-01-01",
-        "community_id": 34,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "2306.03580",
         "title": "L-C2ST: Local Diagnostics for Posterior Approximations in Simulation-Based Inference",
         "citation_count": 2,
         "submitted_date": "2023-06-06",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2202.02142",
-        "title": "Deep invariant networks with differentiable augmentation layers",
-        "citation_count": 1,
-        "submitted_date": "2022-02-04",
         "community_id": null,
         "pagerank_score": 1e-06
       },
@@ -2647,11 +2639,27 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "2202.02142",
+        "title": "Deep invariant networks with differentiable augmentation layers",
+        "citation_count": 1,
+        "submitted_date": "2022-02-04",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "2407.14303",
         "title": "Multi-Source and Test-Time Domain Adaptation on Multivariate Signals using Spatio-Temporal Monge Alignment",
         "citation_count": 1,
         "submitted_date": "2024-07-19",
         "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "1503.08596",
+        "title": "Fast Optimal Transport Averaging of Neuroimaging Data",
+        "citation_count": 0,
+        "submitted_date": "2015-01-01",
+        "community_id": 5,
         "pagerank_score": 1e-06
       },
       {
@@ -2663,14 +2671,6 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2102.10964",
-        "title": "Adaptive Multi-View ICA: Estimation of noise levels for optimal inference",
-        "citation_count": 0,
-        "submitted_date": "2021-02-22",
-        "community_id": 11,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1811.02225",
         "title": "A Quasi-Newton algorithm on the orthogonal manifold for NMF with\\n transform learning",
         "citation_count": 0,
@@ -2679,11 +2679,11 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "1503.08596",
-        "title": "Fast Optimal Transport Averaging of Neuroimaging Data",
+        "arxiv_id": "2102.10964",
+        "title": "Adaptive Multi-View ICA: Estimation of noise levels for optimal inference",
         "citation_count": 0,
-        "submitted_date": "2015-01-01",
-        "community_id": 5,
+        "submitted_date": "2021-02-22",
+        "community_id": 11,
         "pagerank_score": 1e-06
       }
     ],
@@ -2702,11 +2702,11 @@
         "n": 2
       },
       {
-        "community_id": 13,
+        "community_id": 5,
         "n": 1
       },
       {
-        "community_id": 3,
+        "community_id": 13,
         "n": 1
       }
     ]
@@ -2955,19 +2955,19 @@
         "pagerank_score": 2e-06
       },
       {
-        "arxiv_id": "2010.14318",
-        "title": "Multitask Training with Text Data for End-to-End Speech Recognition",
-        "citation_count": 1,
-        "submitted_date": "2020-10-27",
-        "community_id": 16,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1301.4171",
         "title": "Affinity Weighted Embedding",
         "citation_count": 1,
         "submitted_date": "2013-01-17",
         "community_id": 10,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2010.14318",
+        "title": "Multitask Training with Text Data for End-to-End Speech Recognition",
+        "citation_count": 1,
+        "submitted_date": "2020-10-27",
+        "community_id": 16,
         "pagerank_score": 1e-06
       },
       {
@@ -3143,20 +3143,20 @@
         "pagerank_score": 3e-06
       },
       {
-        "arxiv_id": "2006.04757",
-        "title": "Mathematical Reasoning via Self-supervised Skip-tree Training",
-        "citation_count": 13,
-        "submitted_date": "2020-06-08",
-        "community_id": 0,
-        "pagerank_score": 3e-06
-      },
-      {
         "arxiv_id": "1909.11851",
         "title": "Mathematical Reasoning in Latent Space",
         "citation_count": 13,
         "submitted_date": "2019-09-26",
         "community_id": 6,
         "pagerank_score": 2e-06
+      },
+      {
+        "arxiv_id": "2006.04757",
+        "title": "Mathematical Reasoning via Self-supervised Skip-tree Training",
+        "citation_count": 13,
+        "submitted_date": "2020-06-08",
+        "community_id": 0,
+        "pagerank_score": 3e-06
       },
       {
         "arxiv_id": "1701.06972",
@@ -3191,19 +3191,19 @@
         "pagerank_score": 2e-06
       },
       {
-        "arxiv_id": "2303.04488",
-        "title": "Magnushammer: A Transformer-Based Approach to Premise Selection",
-        "citation_count": 8,
-        "submitted_date": "2023-03-08",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1512.05430",
         "title": "Large Scale Business Discovery from Street Level Imagery",
         "citation_count": 8,
         "submitted_date": "2015-12-17",
         "community_id": 1,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2303.04488",
+        "title": "Magnushammer: A Transformer-Based Approach to Premise Selection",
+        "citation_count": 8,
+        "submitted_date": "2023-03-08",
+        "community_id": null,
         "pagerank_score": 1e-06
       },
       {
@@ -3803,20 +3803,20 @@
         "pagerank_score": 3.7e-05
       },
       {
-        "arxiv_id": "2001.09977",
-        "title": "Towards a Human-like Open-Domain Chatbot",
-        "citation_count": 267,
-        "submitted_date": "2020-01-27",
-        "community_id": 0,
-        "pagerank_score": 2.6e-05
-      },
-      {
         "arxiv_id": "1511.06807",
         "title": "Adding Gradient Noise Improves Learning for Very Deep Networks",
         "citation_count": 267,
         "submitted_date": "2015-11-21",
         "community_id": 2,
         "pagerank_score": 0.000101
+      },
+      {
+        "arxiv_id": "2001.09977",
+        "title": "Towards a Human-like Open-Domain Chatbot",
+        "citation_count": 267,
+        "submitted_date": "2020-01-27",
+        "community_id": 0,
+        "pagerank_score": 2.6e-05
       },
       {
         "arxiv_id": "1911.04252",
@@ -4139,19 +4139,19 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "1511.04898",
+        "title": "Fast clustering for scalable statistical analysis on structured images",
+        "citation_count": 0,
+        "submitted_date": "2015-11-16",
+        "community_id": 11,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "1903.04955",
         "title": "ECKO: Ensemble of Clustered Knockoffs for multivariate inference on fMRI data",
         "citation_count": 0,
         "submitted_date": "2019-03-12",
         "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2102.10964",
-        "title": "Adaptive Multi-View ICA: Estimation of noise levels for optimal inference",
-        "citation_count": 0,
-        "submitted_date": "2021-02-22",
-        "community_id": 11,
         "pagerank_score": 1e-06
       },
       {
@@ -4163,10 +4163,10 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "1511.04898",
-        "title": "Fast clustering for scalable statistical analysis on structured images",
+        "arxiv_id": "2102.10964",
+        "title": "Adaptive Multi-View ICA: Estimation of noise levels for optimal inference",
         "citation_count": 0,
-        "submitted_date": "2015-11-16",
+        "submitted_date": "2021-02-22",
         "community_id": 11,
         "pagerank_score": 1e-06
       }
@@ -4250,7 +4250,7 @@
         "n": 2
       },
       {
-        "community_id": 11,
+        "community_id": 4167,
         "n": 1
       },
       {
@@ -4258,7 +4258,7 @@
         "n": 1
       },
       {
-        "community_id": 4167,
+        "community_id": 11,
         "n": 1
       }
     ]
@@ -4350,11 +4350,11 @@
         "n": 2
       },
       {
-        "community_id": 11,
+        "community_id": 4167,
         "n": 1
       },
       {
-        "community_id": 4167,
+        "community_id": 11,
         "n": 1
       }
     ]
@@ -4551,20 +4551,20 @@
         "pagerank_score": 0.000147
       },
       {
-        "arxiv_id": "2106.04624",
-        "title": "SpeechBrain: A General-Purpose Speech Toolkit",
-        "citation_count": 513,
-        "submitted_date": "2021-06-08",
-        "community_id": 16,
-        "pagerank_score": 8e-06
-      },
-      {
         "arxiv_id": "1503.03535",
         "title": "On Using Monolingual Corpora in Neural Machine Translation",
         "citation_count": 513,
         "submitted_date": "2015-03-11",
         "community_id": 16,
         "pagerank_score": 0.000101
+      },
+      {
+        "arxiv_id": "2106.04624",
+        "title": "SpeechBrain: A General-Purpose Speech Toolkit",
+        "citation_count": 513,
+        "submitted_date": "2021-06-08",
+        "community_id": 16,
+        "pagerank_score": 8e-06
       },
       {
         "arxiv_id": "1312.6211",
@@ -5219,12 +5219,12 @@
         "pagerank_score": 2e-06
       },
       {
-        "arxiv_id": "2110.05448",
-        "title": "Unsupervised Neural Machine Translation with Generative Language Models Only",
+        "arxiv_id": "1608.01281",
+        "title": "Learning Online Alignments with Continuous Rewards Policy Gradient",
         "citation_count": 10,
-        "submitted_date": "2021-10-11",
-        "community_id": 0,
-        "pagerank_score": 1e-06
+        "submitted_date": "2016-08-03",
+        "community_id": 16,
+        "pagerank_score": 4e-06
       }
     ],
     "top_hosts": [],
@@ -5475,14 +5475,6 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2005.04118",
-        "title": "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList",
-        "citation_count": 51,
-        "submitted_date": "2020-01-01",
-        "community_id": 0,
-        "pagerank_score": 2e-06
-      },
-      {
         "arxiv_id": "1205.2645",
         "title": "Distributed Parallel Inference on Large Factor Graphs",
         "citation_count": 51,
@@ -5497,6 +5489,14 @@
         "submitted_date": "2006-10-22",
         "community_id": 6,
         "pagerank_score": 1.2e-05
+      },
+      {
+        "arxiv_id": "2005.04118",
+        "title": "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList",
+        "citation_count": 51,
+        "submitted_date": "2020-01-01",
+        "community_id": 0,
+        "pagerank_score": 2e-06
       },
       {
         "arxiv_id": "1611.07579",
@@ -5579,20 +5579,20 @@
         "pagerank_score": 3e-06
       },
       {
-        "arxiv_id": "1406.5752",
-        "title": "Divide-and-Conquer Learning by Anchoring a Conical Hull",
-        "citation_count": 8,
-        "submitted_date": "2014-06-22",
-        "community_id": 13,
-        "pagerank_score": 2e-06
-      },
-      {
         "arxiv_id": "1301.2273",
         "title": "Robust Combination of Local Controllers",
         "citation_count": 8,
         "submitted_date": "2013-01-10",
         "community_id": 6,
         "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "1406.5752",
+        "title": "Divide-and-Conquer Learning by Anchoring a Conical Hull",
+        "citation_count": 8,
+        "submitted_date": "2014-06-22",
+        "community_id": 13,
+        "pagerank_score": 2e-06
       },
       {
         "arxiv_id": "1910.13101",
@@ -5611,20 +5611,20 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "1807.08046",
-        "title": "A Fast, Principled Working Set Algorithm for Exploiting Piecewise Linear Structure in Convex Problems",
-        "citation_count": 3,
-        "submitted_date": "2018-07-20",
-        "community_id": 5,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1204.2523",
         "title": "Concept Modeling with Superwords",
         "citation_count": 3,
         "submitted_date": "2012-04-11",
         "community_id": 13,
         "pagerank_score": 2e-06
+      },
+      {
+        "arxiv_id": "1807.08046",
+        "title": "A Fast, Principled Working Set Algorithm for Exploiting Piecewise Linear Structure in Convex Problems",
+        "citation_count": 3,
+        "submitted_date": "2018-07-20",
+        "community_id": 5,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "2403.04871",
@@ -5651,6 +5651,14 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "1207.4174",
+        "title": "Robust Probabilistic Inference in Distributed Systems",
+        "citation_count": 2,
+        "submitted_date": "2012-07-11",
+        "community_id": 19,
+        "pagerank_score": 2e-06
+      },
+      {
         "arxiv_id": "2006.10705",
         "title": "Set Distribution Networks: a Generative Model for Sets of Images",
         "citation_count": 2,
@@ -5665,14 +5673,6 @@
         "submitted_date": "2021-02-20",
         "community_id": 2,
         "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "1207.4174",
-        "title": "Robust Probabilistic Inference in Distributed Systems",
-        "citation_count": 2,
-        "submitted_date": "2012-07-11",
-        "community_id": 19,
-        "pagerank_score": 2e-06
       },
       {
         "arxiv_id": "2305.18262",
@@ -5871,6 +5871,14 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "1812.01837",
+        "title": "ADARES: Adaptive Resource Management for Virtual Machines",
+        "citation_count": 3,
+        "submitted_date": "2018-12-05",
+        "community_id": 6,
+        "pagerank_score": 2e-06
+      },
+      {
         "arxiv_id": "2103.14949",
         "title": "Automated Backend-Aware Post-Training Quantization",
         "citation_count": 3,
@@ -5885,14 +5893,6 @@
         "submitted_date": "2022-07-09",
         "community_id": null,
         "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "1812.01837",
-        "title": "ADARES: Adaptive Resource Management for Virtual Machines",
-        "citation_count": 3,
-        "submitted_date": "2018-12-05",
-        "community_id": 6,
-        "pagerank_score": 2e-06
       },
       {
         "arxiv_id": "2311.02103",
@@ -5919,27 +5919,11 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2305.10611",
-        "title": "ACRoBat: Optimizing Auto-batching of Dynamic Deep Learning at Compile Time",
-        "citation_count": 1,
-        "submitted_date": "2023-05-17",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "2107.02842",
         "title": "Immuno-mimetic Deep Neural Networks (Immuno-Net)",
         "citation_count": 1,
         "submitted_date": "2021-06-27",
         "community_id": 9,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2111.00655",
-        "title": "Collage: Seamless Integration of Deep Learning Backends with Automatic Placement",
-        "citation_count": 1,
-        "submitted_date": "2021-11-01",
-        "community_id": null,
         "pagerank_score": 1e-06
       },
       {
@@ -5951,10 +5935,26 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "2305.10611",
+        "title": "ACRoBat: Optimizing Auto-batching of Dynamic Deep Learning at Compile Time",
+        "citation_count": 1,
+        "submitted_date": "2023-05-17",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "2406.07177",
         "title": "TernaryLLM: Ternarized Large Language Model",
         "citation_count": 1,
         "submitted_date": "2024-06-11",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2111.00655",
+        "title": "Collage: Seamless Integration of Deep Learning Backends with Automatic Placement",
+        "citation_count": 1,
+        "submitted_date": "2021-11-01",
         "community_id": null,
         "pagerank_score": 1e-06
       },
@@ -6907,6 +6907,14 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "2011.14486",
+        "title": "Value Function Based Performance Optimization of Deep Learning Workloads",
+        "citation_count": 2,
+        "submitted_date": "2020-11-30",
+        "community_id": 2,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "2106.10544",
         "title": "Learning Space Partitions for Path Planning",
         "citation_count": 2,
@@ -6920,14 +6928,6 @@
         "citation_count": 2,
         "submitted_date": "2022-05-02",
         "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2011.14486",
-        "title": "Value Function Based Performance Optimization of Deep Learning Workloads",
-        "citation_count": 2,
-        "submitted_date": "2020-11-30",
-        "community_id": 2,
         "pagerank_score": 1e-06
       },
       {
@@ -7159,20 +7159,20 @@
         "pagerank_score": 5.4e-05
       },
       {
-        "arxiv_id": "1703.07326",
-        "title": "One-Shot Imitation Learning",
-        "citation_count": 227,
-        "submitted_date": "2017-03-21",
-        "community_id": 6,
-        "pagerank_score": 2.6e-05
-      },
-      {
         "arxiv_id": "1702.01182",
         "title": "Uncertainty-Aware Reinforcement Learning for Collision Avoidance",
         "citation_count": 227,
         "submitted_date": "2017-02-03",
         "community_id": 6,
         "pagerank_score": 2.1e-05
+      },
+      {
+        "arxiv_id": "1703.07326",
+        "title": "One-Shot Imitation Learning",
+        "citation_count": 227,
+        "submitted_date": "2017-03-21",
+        "community_id": 6,
+        "pagerank_score": 2.6e-05
       },
       {
         "arxiv_id": "1804.01523",
@@ -7287,20 +7287,20 @@
         "pagerank_score": 2e-06
       },
       {
-        "arxiv_id": "2104.10157",
-        "title": "VideoGPT: Video Generation using VQ-VAE and Transformers",
-        "citation_count": 144,
-        "submitted_date": "2021-04-20",
-        "community_id": 3,
-        "pagerank_score": 2e-06
-      },
-      {
         "arxiv_id": "1705.06366",
         "title": "Automatic Goal Generation for Reinforcement Learning Agents",
         "citation_count": 144,
         "submitted_date": "2017-05-17",
         "community_id": 6,
         "pagerank_score": 1.4e-05
+      },
+      {
+        "arxiv_id": "2104.10157",
+        "title": "VideoGPT: Video Generation using VQ-VAE and Transformers",
+        "citation_count": 144,
+        "submitted_date": "2021-04-20",
+        "community_id": 3,
+        "pagerank_score": 2e-06
       },
       {
         "arxiv_id": "1707.05300",
@@ -7691,20 +7691,20 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2210.06366",
-        "title": "A Generalist Framework for Panoptic Segmentation of Images and Videos",
-        "citation_count": 10,
-        "submitted_date": "2022-10-12",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1303.5778",
         "title": "Speech Recognition with Deep Recurrent Neural Networks",
         "citation_count": 10,
         "submitted_date": "2013-03-22",
         "community_id": 0,
         "pagerank_score": 7e-06
+      },
+      {
+        "arxiv_id": "2210.06366",
+        "title": "A Generalist Framework for Panoptic Segmentation of Images and Videos",
+        "citation_count": 10,
+        "submitted_date": "2022-10-12",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "2210.10318",
@@ -7991,19 +7991,19 @@
         "pagerank_score": 2e-06
       },
       {
-        "arxiv_id": "2008.13503",
-        "title": "Classification of Complex Systems Based on Transients",
-        "citation_count": 3,
-        "submitted_date": "2020-01-01",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1710.10881",
         "title": "Fast Linear Model for Knowledge Graph Embeddings",
         "citation_count": 3,
         "submitted_date": "2017-10-30",
         "community_id": 0,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2008.13503",
+        "title": "Classification of Complex Systems Based on Transients",
+        "citation_count": 3,
+        "submitted_date": "2020-01-01",
+        "community_id": null,
         "pagerank_score": 1e-06
       },
       {
@@ -9115,18 +9115,18 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2204.08585",
-        "title": "INFOrmation Prioritization through EmPOWERment in Visual Model-Based RL",
-        "citation_count": 2,
-        "submitted_date": "2022-04-18",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "2012.04603",
         "title": "Models, Pixels, and Rewards: Evaluating Design Trade-offs in Visual Model-Based Reinforcement Learning",
         "citation_count": 2,
         "submitted_date": "2020-12-08",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2204.08585",
+        "title": "INFOrmation Prioritization through EmPOWERment in Visual Model-Based RL",
+        "citation_count": 2,
+        "submitted_date": "2022-04-18",
         "community_id": null,
         "pagerank_score": 1e-06
       },
@@ -9423,19 +9423,19 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2008.02268",
-        "title": "NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections",
-        "citation_count": 1,
-        "submitted_date": "2021-06-01",
-        "community_id": 3,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1511.06702",
         "title": "Multi-view 3D Models from Single Images with a Convolutional Network",
         "citation_count": 1,
         "submitted_date": "2015-11-20",
         "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2008.02268",
+        "title": "NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections",
+        "citation_count": 1,
+        "submitted_date": "2021-06-01",
+        "community_id": 3,
         "pagerank_score": 1e-06
       },
       {
@@ -9595,20 +9595,20 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2210.09465",
-        "title": "Understanding CNN Fragility When Learning With Imbalanced Data",
-        "citation_count": 6,
-        "submitted_date": "2022-10-17",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1911.11298",
         "title": "Few-Shot Knowledge Graph Completion",
         "citation_count": 6,
         "submitted_date": "2019-11-26",
         "community_id": 2,
         "pagerank_score": 2e-06
+      },
+      {
+        "arxiv_id": "2210.09465",
+        "title": "Understanding CNN Fragility When Learning With Imbalanced Data",
+        "citation_count": 6,
+        "submitted_date": "2022-10-17",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "2306.00153",
@@ -9625,14 +9625,6 @@
         "submitted_date": "2019-10-07",
         "community_id": 2,
         "pagerank_score": 2e-06
-      },
-      {
-        "arxiv_id": "2105.02340",
-        "title": "DeepSMOTE: Fusing Deep Learning and SMOTE for Imbalanced Data",
-        "citation_count": 4,
-        "submitted_date": "2021-05-05",
-        "community_id": null,
-        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "1707.09317",
@@ -9657,6 +9649,14 @@
         "submitted_date": "2019-08-15",
         "community_id": 28,
         "pagerank_score": 3e-06
+      },
+      {
+        "arxiv_id": "2105.02340",
+        "title": "DeepSMOTE: Fusing Deep Learning and SMOTE for Imbalanced Data",
+        "citation_count": 4,
+        "submitted_date": "2021-05-05",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "2208.10010",
@@ -9699,18 +9699,18 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2304.05895",
-        "title": "Towards Understanding How Data Augmentation Works with Imbalanced Data",
-        "citation_count": 3,
-        "submitted_date": "2023-04-12",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1812.02956",
         "title": "LNEMLC: Label Network Embeddings for Multi-Label Classification",
         "citation_count": 3,
         "submitted_date": "2018-12-07",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2304.05895",
+        "title": "Towards Understanding How Data Augmentation Works with Imbalanced Data",
+        "citation_count": 3,
+        "submitted_date": "2023-04-12",
         "community_id": null,
         "pagerank_score": 1e-06
       },
@@ -9763,14 +9763,6 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2212.07743",
-        "title": "Interpretable ML for Imbalanced Data",
-        "citation_count": 2,
-        "submitted_date": "2022-12-15",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "2407.10834",
         "title": "MetaLLM: A High-performant and Cost-efficient Dynamic Framework for Wrapping LLMs",
         "citation_count": 2,
@@ -9783,6 +9775,14 @@
         "title": "Graph Foundation Models: A Comprehensive Survey",
         "citation_count": 2,
         "submitted_date": "2025-05-21",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2212.07743",
+        "title": "Interpretable ML for Imbalanced Data",
+        "citation_count": 2,
+        "submitted_date": "2022-12-15",
         "community_id": null,
         "pagerank_score": 1e-06
       },
@@ -9803,18 +9803,18 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "2012.14727",
+        "title": "AttrE2vec: Unsupervised attributed edge representation learning",
+        "citation_count": 1,
+        "submitted_date": "2022-01-29",
+        "community_id": 10,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "2203.12671",
         "title": "SD2: Slicing and Dicing Scholarly Data for Interactive Evaluation of Academic Performance",
         "citation_count": 1,
         "submitted_date": "2022-03-19",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2207.06080",
-        "title": "Efficient Augmentation for Imbalanced Deep Learning",
-        "citation_count": 1,
-        "submitted_date": "2022-07-13",
         "community_id": null,
         "pagerank_score": 1e-06
       },
@@ -9835,19 +9835,11 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2012.14727",
-        "title": "AttrE2vec: Unsupervised attributed edge representation learning",
+        "arxiv_id": "2207.06080",
+        "title": "Efficient Augmentation for Imbalanced Deep Learning",
         "citation_count": 1,
-        "submitted_date": "2022-01-29",
-        "community_id": 10,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2211.15899",
-        "title": "FakeEdge: Alleviate Dataset Shift in Link Prediction",
-        "citation_count": 1,
-        "submitted_date": "2022-11-29",
-        "community_id": 10,
+        "submitted_date": "2022-07-13",
+        "community_id": null,
         "pagerank_score": 1e-06
       },
       {
@@ -9879,6 +9871,14 @@
         "title": "The Hidden Influence of Latent Feature Magnitude When Learning with Imbalanced Data",
         "citation_count": 1,
         "submitted_date": "2024-07-14",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2409.12010",
+        "title": "ChefFusion: Multimodal Foundation Model Integrating Recipe and Food Image Generation",
+        "citation_count": 1,
+        "submitted_date": "2024-09-18",
         "community_id": null,
         "pagerank_score": 1e-06
       }
@@ -10247,14 +10247,6 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2002.09137",
-        "title": "Robust Iris Presentation Attack Detection Fusing 2D and 3D Information",
-        "citation_count": 3,
-        "submitted_date": "2020-02-21",
-        "community_id": 1,
-        "pagerank_score": 2e-06
-      },
-      {
         "arxiv_id": "1709.07598",
         "title": "Demography-based Facial Retouching Detection using Subclass Supervised Sparse Autoencoder",
         "citation_count": 3,
@@ -10263,12 +10255,12 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2111.04230",
-        "title": "A Study of the Human Perception of Synthetic Faces",
+        "arxiv_id": "2002.09137",
+        "title": "Robust Iris Presentation Attack Detection Fusing 2D and 3D Information",
         "citation_count": 3,
-        "submitted_date": "2021-11-08",
-        "community_id": null,
-        "pagerank_score": 1e-06
+        "submitted_date": "2020-02-21",
+        "community_id": 1,
+        "pagerank_score": 2e-06
       },
       {
         "arxiv_id": "2002.08916",
@@ -10276,6 +10268,14 @@
         "citation_count": 3,
         "submitted_date": "2019-09-01",
         "community_id": 1,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2111.04230",
+        "title": "A Study of the Human Perception of Synthetic Faces",
+        "citation_count": 3,
+        "submitted_date": "2021-11-08",
+        "community_id": null,
         "pagerank_score": 1e-06
       },
       {
@@ -10383,14 +10383,6 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2006.13252",
-        "title": "Iris presentation attack detection: Where are we now?",
-        "citation_count": 1,
-        "submitted_date": "2020-08-22",
-        "community_id": 1,
-        "pagerank_score": 2e-06
-      },
-      {
         "arxiv_id": "1702.01167",
         "title": "An analysis of 1-to-first matching in iris recognition",
         "citation_count": 1,
@@ -10399,18 +10391,18 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "2006.13252",
+        "title": "Iris presentation attack detection: Where are we now?",
+        "citation_count": 1,
+        "submitted_date": "2020-08-22",
+        "community_id": 1,
+        "pagerank_score": 2e-06
+      },
+      {
         "arxiv_id": "2206.01881",
         "title": "Face Recognition Accuracy Across Demographics: Shining a Light Into the Problem",
         "citation_count": 1,
         "submitted_date": "2022-06-04",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2304.09818",
-        "title": "What Should Be Balanced in a \"Balanced\" Face Recognition Dataset?",
-        "citation_count": 1,
-        "submitted_date": "2023-04-17",
         "community_id": null,
         "pagerank_score": 1e-06
       },
@@ -10423,11 +10415,27 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "2304.09818",
+        "title": "What Should Be Balanced in a \"Balanced\" Face Recognition Dataset?",
+        "citation_count": 1,
+        "submitted_date": "2023-04-17",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "2312.12028",
         "title": "EyePreserve: Identity-Preserving Iris Synthesis",
         "citation_count": 1,
         "submitted_date": "2023-12-19",
         "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "1811.01474",
+        "title": "Fast Face Image Synthesis with Minimal Training",
+        "citation_count": 0,
+        "submitted_date": "2018-11-05",
+        "community_id": 3,
         "pagerank_score": 1e-06
       },
       {
@@ -10468,14 +10476,6 @@
         "citation_count": 0,
         "submitted_date": "2021-04-28",
         "community_id": 1,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "1811.01474",
-        "title": "Fast Face Image Synthesis with Minimal Training",
-        "citation_count": 0,
-        "submitted_date": "2018-11-05",
-        "community_id": 3,
         "pagerank_score": 1e-06
       }
     ],
@@ -10843,20 +10843,20 @@
         "pagerank_score": 2e-06
       },
       {
-        "arxiv_id": "2203.00386",
-        "title": "CLIP-GEN: Language-Free Training of a Text-to-Image Generator with CLIP",
-        "citation_count": 31,
-        "submitted_date": "2022-03-01",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1812.01880",
         "title": "Learning to Compose Dynamic Tree Structures for Visual Contexts",
         "citation_count": 31,
         "submitted_date": "2018-12-05",
         "community_id": 0,
         "pagerank_score": 2e-06
+      },
+      {
+        "arxiv_id": "2203.00386",
+        "title": "CLIP-GEN: Language-Free Training of a Text-to-Image Generator with CLIP",
+        "citation_count": 31,
+        "submitted_date": "2022-03-01",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "1509.05472",
@@ -11183,20 +11183,20 @@
         "pagerank_score": 1.1e-05
       },
       {
-        "arxiv_id": "1904.01569",
-        "title": "Exploring Randomly Wired Neural Networks for Image Recognition",
-        "citation_count": 82,
-        "submitted_date": "2019-04-02",
-        "community_id": 2,
-        "pagerank_score": 9e-06
-      },
-      {
         "arxiv_id": "1512.04412",
         "title": "Instance-aware Semantic Segmentation via Multi-task Network Cascades",
         "citation_count": 82,
         "submitted_date": "2015-12-14",
         "community_id": 1,
         "pagerank_score": 2.5e-05
+      },
+      {
+        "arxiv_id": "1904.01569",
+        "title": "Exploring Randomly Wired Neural Networks for Image Recognition",
+        "citation_count": 82,
+        "submitted_date": "2019-04-02",
+        "community_id": 2,
+        "pagerank_score": 9e-06
       },
       {
         "arxiv_id": "1801.00868",
@@ -11239,20 +11239,20 @@
         "pagerank_score": 3e-06
       },
       {
-        "arxiv_id": "2203.16527",
-        "title": "Exploring Plain Vision Transformer Backbones for Object Detection",
-        "citation_count": 43,
-        "submitted_date": "2022-03-30",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1712.04440",
         "title": "Data Distillation: Towards Omni-Supervised Learning",
         "citation_count": 43,
         "submitted_date": "2017-12-12",
         "community_id": 1,
         "pagerank_score": 5e-06
+      },
+      {
+        "arxiv_id": "2203.16527",
+        "title": "Exploring Plain Vision Transformer Backbones for Object Detection",
+        "citation_count": 43,
+        "submitted_date": "2022-03-30",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "1903.12174",
@@ -11375,11 +11375,11 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2212.00794",
-        "title": "Scaling Language-Image Pre-training via Masking",
+        "arxiv_id": "2409.20537",
+        "title": "Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers",
         "citation_count": 5,
-        "submitted_date": "2022-12-01",
-        "community_id": null,
+        "submitted_date": "2024-09-30",
+        "community_id": 0,
         "pagerank_score": 1e-06
       }
     ],
@@ -11815,20 +11815,20 @@
         "pagerank_score": 1.3e-05
       },
       {
-        "arxiv_id": "1906.00080",
-        "title": "Gmail Smart Compose: Real-Time Assisted Writing",
-        "citation_count": 45,
-        "submitted_date": "2019-05-17",
-        "community_id": 0,
-        "pagerank_score": 4e-06
-      },
-      {
         "arxiv_id": "1810.07217",
         "title": "Hierarchical Generative Modeling for Controllable Speech Synthesis",
         "citation_count": 45,
         "submitted_date": "2018-10-16",
         "community_id": 3,
         "pagerank_score": 1.7e-05
+      },
+      {
+        "arxiv_id": "1906.00080",
+        "title": "Gmail Smart Compose: Real-Time Assisted Writing",
+        "citation_count": 45,
+        "submitted_date": "2019-05-17",
+        "community_id": 0,
+        "pagerank_score": 4e-06
       },
       {
         "arxiv_id": "2205.03983",
@@ -11935,14 +11935,6 @@
         "pagerank_score": 2e-06
       },
       {
-        "arxiv_id": "2305.12281",
-        "title": "Lifelong Language Pretraining with Distribution-Specialized Experts",
-        "citation_count": 6,
-        "submitted_date": "2023-05-20",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1712.01807",
         "title": "Improving the Performance of Online Neural Transducer Models",
         "citation_count": 6,
@@ -11957,6 +11949,14 @@
         "submitted_date": "2022-07-13",
         "community_id": 10,
         "pagerank_score": 2e-06
+      },
+      {
+        "arxiv_id": "2305.12281",
+        "title": "Lifelong Language Pretraining with Distribution-Specialized Experts",
+        "citation_count": 6,
+        "submitted_date": "2023-05-20",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "1712.01818",
@@ -12443,14 +12443,6 @@
         "pagerank_score": 3e-06
       },
       {
-        "arxiv_id": "2208.13629",
-        "title": "A Survey on Text-to-SQL Parsing: Concepts, Methods, and Future Directions",
-        "citation_count": 29,
-        "submitted_date": "2022-08-29",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "1711.07240",
         "title": "MegDet: A Large Mini-Batch Object Detector",
         "citation_count": 29,
@@ -12459,12 +12451,12 @@
         "pagerank_score": 8e-06
       },
       {
-        "arxiv_id": "2106.01439",
-        "title": "NTIRE 2021 Challenge on High Dynamic Range Imaging: Dataset, Methods and Results",
-        "citation_count": 27,
-        "submitted_date": "2021-06-01",
-        "community_id": 3,
-        "pagerank_score": 2e-06
+        "arxiv_id": "2208.13629",
+        "title": "A Survey on Text-to-SQL Parsing: Concepts, Methods, and Future Directions",
+        "citation_count": 29,
+        "submitted_date": "2022-08-29",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "1412.1710",
@@ -12473,6 +12465,14 @@
         "submitted_date": "2014-12-04",
         "community_id": 1,
         "pagerank_score": 6e-06
+      },
+      {
+        "arxiv_id": "2106.01439",
+        "title": "NTIRE 2021 Challenge on High Dynamic Range Imaging: Dataset, Methods and Results",
+        "citation_count": 27,
+        "submitted_date": "2021-06-01",
+        "community_id": 3,
+        "pagerank_score": 2e-06
       }
     ],
     "top_hosts": [],
@@ -12879,14 +12879,6 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "2111.11656",
-        "title": "Few-Shot Object Detection via Association and DIscrimination",
-        "citation_count": 24,
-        "submitted_date": "2021-11-23",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
         "arxiv_id": "2207.11108",
         "title": "Inference Skipping for More Efficient Real-Time Speech Enhancement With Parallel RNNs",
         "citation_count": 24,
@@ -12899,6 +12891,14 @@
         "title": "Large Language Models for Cyber Security: A Systematic Literature Review",
         "citation_count": 24,
         "submitted_date": "2024-05-08",
+        "community_id": null,
+        "pagerank_score": 1e-06
+      },
+      {
+        "arxiv_id": "2111.11656",
+        "title": "Few-Shot Object Detection via Association and DIscrimination",
+        "citation_count": 24,
+        "submitted_date": "2021-11-23",
         "community_id": null,
         "pagerank_score": 1e-06
       }
@@ -13171,6 +13171,14 @@
         "pagerank_score": 2e-06
       },
       {
+        "arxiv_id": "1410.1165",
+        "title": "Understanding Locally Competitive Networks",
+        "citation_count": 14,
+        "submitted_date": "2014-10-05",
+        "community_id": 2,
+        "pagerank_score": 4.8e-05
+      },
+      {
         "arxiv_id": "2305.17066",
         "title": "Mindstorms in Natural Language-Based Societies of Mind",
         "citation_count": 14,
@@ -13179,12 +13187,12 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "1410.1165",
-        "title": "Understanding Locally Competitive Networks",
-        "citation_count": 14,
-        "submitted_date": "2014-10-05",
-        "community_id": 2,
-        "pagerank_score": 4.8e-05
+        "arxiv_id": "1708.01565",
+        "title": "Improving Speaker-Independent Lipreading with Domain-Adversarial Training",
+        "citation_count": 13,
+        "submitted_date": "2017-08-16",
+        "community_id": 16,
+        "pagerank_score": 2e-06
       },
       {
         "arxiv_id": "1906.05915",
@@ -13203,28 +13211,12 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "1708.01565",
-        "title": "Improving Speaker-Independent Lipreading with Domain-Adversarial Training",
-        "citation_count": 13,
-        "submitted_date": "2017-08-16",
-        "community_id": 16,
-        "pagerank_score": 2e-06
-      },
-      {
         "arxiv_id": "1112.5309",
         "title": "POWERPLAY: Training an Increasingly General Problem Solver by Continually Searching for the Simplest Still Unsolvable Problem",
         "citation_count": 12,
         "submitted_date": "2011-12-22",
         "community_id": 6,
         "pagerank_score": 6e-06
-      },
-      {
-        "arxiv_id": "2103.08877",
-        "title": "Spatial Dependency Networks: Neural Layers for Improved Generative Image Modeling",
-        "citation_count": 8,
-        "submitted_date": "2021-03-16",
-        "community_id": 3,
-        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "2012.14905",
@@ -13235,11 +13227,11 @@
         "pagerank_score": 1e-06
       },
       {
-        "arxiv_id": "1904.10278",
-        "title": "Improving Differentiable Neural Computers Through Memory Masking, De-allocation, and Link Distribution Sharpness Control",
-        "citation_count": 7,
-        "submitted_date": "2019-04-23",
-        "community_id": null,
+        "arxiv_id": "2103.08877",
+        "title": "Spatial Dependency Networks: Neural Layers for Improved Generative Image Modeling",
+        "citation_count": 8,
+        "submitted_date": "2021-03-16",
+        "community_id": 3,
         "pagerank_score": 1e-06
       },
       {
@@ -13249,6 +13241,14 @@
         "submitted_date": "2012-10-31",
         "community_id": 6,
         "pagerank_score": 7e-06
+      },
+      {
+        "arxiv_id": "1904.10278",
+        "title": "Improving Differentiable Neural Computers Through Memory Masking, De-allocation, and Link Distribution Sharpness Control",
+        "citation_count": 7,
+        "submitted_date": "2019-04-23",
+        "community_id": null,
+        "pagerank_score": 1e-06
       },
       {
         "arxiv_id": "1312.5548",
@@ -13315,18 +13315,18 @@
         "pagerank_score": 1e-06
       },
       {
+        "arxiv_id": "2011.12930",
+        "title": "Unsupervised Object Keypoint Learning using Local Spatial Predictability",
+        "citation_count": 3,
+        "submitted_date": "2020-11-25",
+        "community_id": 3,
+        "pagerank_score": 1e-06
+      },
+      {
         "arxiv_id": "2207.01566",
         "title": "General Policy Evaluation and Improvement by Learning to Identify Few But Crucial States",
         "citation_count": 3,
         "submitted_date": "2022-07-04",
-        "community_id": null,
-        "pagerank_score": 1e-06
-      },
-      {
-        "arxiv_id": "2211.02222",
-        "title": "The Benefits of Model-Based Generalization in Reinforcement Learning",
-        "citation_count": 3,
-        "submitted_date": "2022-11-04",
         "community_id": null,
         "pagerank_score": 1e-06
       }

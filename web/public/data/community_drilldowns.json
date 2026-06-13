@@ -1360,7 +1360,7 @@
         "n": 43
       },
       {
-        "author": "Philipp Hennig",
+        "author": "Yarin Gal",
         "n": 42
       }
     ],
@@ -2312,19 +2312,19 @@
         "n": 82
       },
       {
-        "author": "John M. Martinis",
-        "n": 72
-      },
-      {
         "author": "Ryan Babbush",
         "n": 72
       },
       {
-        "author": "Nathan Wiebe",
-        "n": 70
+        "author": "John M. Martinis",
+        "n": 72
       },
       {
         "author": "Jay Gambetta",
+        "n": 70
+      },
+      {
+        "author": "Nathan Wiebe",
         "n": 70
       },
       {
@@ -2796,11 +2796,11 @@
         "n": 106
       },
       {
-        "author": "H. Vincent Poor",
+        "author": "Ali H. Sayed",
         "n": 63
       },
       {
-        "author": "Ali H. Sayed",
+        "author": "H. Vincent Poor",
         "n": 63
       },
       {
@@ -2816,7 +2816,7 @@
         "n": 46
       },
       {
-        "author": "Soummya Kar",
+        "author": "Jonathan Ullman",
         "n": 45
       },
       {
@@ -2828,7 +2828,7 @@
         "n": 45
       },
       {
-        "author": "Jonathan Ullman",
+        "author": "Soummya Kar",
         "n": 45
       }
     ],
@@ -3280,11 +3280,11 @@
         "n": 145
       },
       {
-        "author": "Chelsea Finn",
+        "author": "Doina Precup",
         "n": 65
       },
       {
-        "author": "Doina Precup",
+        "author": "Chelsea Finn",
         "n": 65
       },
       {
@@ -3784,11 +3784,11 @@
         "n": 82
       },
       {
-        "author": "Lin Chen",
+        "author": "Andreas Winter",
         "n": 78
       },
       {
-        "author": "Andreas Winter",
+        "author": "Lin Chen",
         "n": 78
       }
     ],
@@ -4200,13 +4200,6 @@
         "pagerank_score": 3.2e-05
       },
       {
-        "arxiv_id": "1212.5324",
-        "title": "Hypercontractive inequalities via SOS, with an application to Vertex-Cover",
-        "citation_count": 3,
-        "submitted_date": "2012-12-21",
-        "pagerank_score": 3.2e-05
-      },
-      {
         "arxiv_id": "1205.3534",
         "title": "DNF Sparsification and a Faster Deterministic Counting Algorithm",
         "citation_count": 4,
@@ -4218,6 +4211,13 @@
         "title": "On Sharp Thresholds of Monotone Properties: Bourgain's Proof Revisited",
         "citation_count": 1,
         "submitted_date": "2013-02-05",
+        "pagerank_score": 3.2e-05
+      },
+      {
+        "arxiv_id": "1212.5324",
+        "title": "Hypercontractive inequalities via SOS, with an application to Vertex-Cover",
+        "citation_count": 3,
+        "submitted_date": "2012-12-21",
         "pagerank_score": 3.2e-05
       },
       {
@@ -4272,11 +4272,11 @@
         "n": 50
       },
       {
-        "author": "Saket Saurabh",
+        "author": "David Eppstein",
         "n": 49
       },
       {
-        "author": "David Eppstein",
+        "author": "Saket Saurabh",
         "n": 49
       },
       {
@@ -6700,11 +6700,11 @@
         "n": 37
       },
       {
-        "author": "Rob van Glabbeek",
+        "author": "Alessandra Palmigiano",
         "n": 36
       },
       {
-        "author": "Alessandra Palmigiano",
+        "author": "Rob van Glabbeek",
         "n": 36
       },
       {
@@ -6728,7 +6728,7 @@
         "n": 25
       },
       {
-        "author": "Stefan Milius",
+        "author": "Bart Jacobs",
         "n": 23
       }
     ],
@@ -7676,11 +7676,11 @@
         "n": 31
       },
       {
-        "author": "Thomas C. Schmidt",
+        "author": "Matthias W\u00e4hlisch",
         "n": 29
       },
       {
-        "author": "Matthias W\u00e4hlisch",
+        "author": "Thomas C. Schmidt",
         "n": 29
       },
       {
@@ -7688,19 +7688,19 @@
         "n": 27
       },
       {
-        "author": "Ali Dehghantanha",
-        "n": 26
-      },
-      {
         "author": "Wojciech Mazurczyk",
         "n": 26
       },
       {
-        "author": "Nick Feamster",
-        "n": 25
+        "author": "Ali Dehghantanha",
+        "n": 26
       },
       {
         "author": "Michael L. Nelson",
+        "n": 25
+      },
+      {
+        "author": "Nick Feamster",
         "n": 25
       }
     ],
@@ -8168,11 +8168,11 @@
         "n": 41
       },
       {
-        "author": "Joon Son Chung",
+        "author": "Zhuo Chen",
         "n": 39
       },
       {
-        "author": "Zhuo Chen",
+        "author": "Joon Son Chung",
         "n": 39
       },
       {
@@ -8656,11 +8656,11 @@
         "n": 33
       },
       {
-        "author": "Adilson E. Motter",
+        "author": "Per Sebastian Skardal",
         "n": 33
       },
       {
-        "author": "Per Sebastian Skardal",
+        "author": "Adilson E. Motter",
         "n": 33
       }
     ],
@@ -9624,7 +9624,7 @@
         "n": 18
       },
       {
-        "author": "Stefan Szeider",
+        "author": "Stefan Woltran",
         "n": 17
       }
     ],
@@ -10596,7 +10596,7 @@
         "n": 28
       },
       {
-        "author": "Chansup Byun",
+        "author": "Matthew Hubbell",
         "n": 28
       }
     ],
@@ -11040,11 +11040,11 @@
     "top_hosts": [],
     "top_authors": [
       {
-        "author": "Mohab Safey El Din",
+        "author": "Serge\u012d Sergeev",
         "n": 32
       },
       {
-        "author": "Serge\u012d Sergeev",
+        "author": "Mohab Safey El Din",
         "n": 32
       },
       {
@@ -11560,7 +11560,7 @@
         "n": 20
       },
       {
-        "author": "Giuseppe Di Molfetta",
+        "author": "Pablo Arrighi",
         "n": 20
       }
     ],
@@ -12032,11 +12032,11 @@
         "n": 25
       },
       {
-        "author": "Carlo Condo",
+        "author": "David G. M. Mitchell",
         "n": 25
       },
       {
-        "author": "David G. M. Mitchell",
+        "author": "Carlo Condo",
         "n": 25
       },
       {
@@ -12353,17 +12353,17 @@
         "pagerank_score": 1.4e-05
       },
       {
-        "arxiv_id": "1211.6222",
-        "title": "Homogenization of a Double Porosity Model In Deformable Media",
-        "citation_count": 9,
-        "submitted_date": "2012-11-27",
-        "pagerank_score": 1.4e-05
-      },
-      {
         "arxiv_id": "1208.3120",
         "title": "The plasmonic eigenvalue problem",
         "citation_count": 78,
         "submitted_date": "2014-03-11",
+        "pagerank_score": 1.4e-05
+      },
+      {
+        "arxiv_id": "1211.6222",
+        "title": "Homogenization of a Double Porosity Model In Deformable Media",
+        "citation_count": 9,
+        "submitted_date": "2012-11-27",
         "pagerank_score": 1.4e-05
       },
       {
@@ -12512,11 +12512,11 @@
         "n": 30
       },
       {
-        "author": "Zhongwei Shen",
+        "author": "F\u00e9lix Otto",
         "n": 29
       },
       {
-        "author": "F\u00e9lix Otto",
+        "author": "Zhongwei Shen",
         "n": 29
       },
       {
@@ -12524,11 +12524,11 @@
         "n": 23
       },
       {
-        "author": "Daniel Peterseim",
+        "author": "Jean-Christophe Mourrat",
         "n": 22
       },
       {
-        "author": "Jean-Christophe Mourrat",
+        "author": "Daniel Peterseim",
         "n": 22
       },
       {
@@ -12980,11 +12980,11 @@
         "n": 31
       },
       {
-        "author": "James East",
+        "author": "Ville Salo",
         "n": 28
       },
       {
-        "author": "Ville Salo",
+        "author": "James East",
         "n": 28
       },
       {
@@ -13008,7 +13008,7 @@
         "n": 15
       },
       {
-        "author": "Guillaume Theyssier",
+        "author": "Mile Gu",
         "n": 14
       }
     ],
@@ -13468,11 +13468,11 @@
         "n": 33
       },
       {
-        "author": "Ludovic Patey",
+        "author": "Radu Ioan Bo\u0163",
         "n": 28
       },
       {
-        "author": "Radu Ioan Bo\u0163",
+        "author": "Ludovic Patey",
         "n": 28
       },
       {
@@ -14436,11 +14436,11 @@
         "n": 11
       },
       {
-        "author": "Douglas J. Leith",
+        "author": "Christian Timmerer",
         "n": 11
       },
       {
-        "author": "Christian Timmerer",
+        "author": "Douglas J. Leith",
         "n": 11
       },
       {

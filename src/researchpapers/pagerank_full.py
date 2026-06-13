@@ -1,8 +1,7 @@
-"""PageRank over the full 488k-paper citation graph via scipy.sparse.
+"""PageRank over the full citation graph via scipy.sparse.
 
-The existing pagerank_score values in papers table were computed on a much
-smaller subgraph (~8.5k papers). This recomputes on the current corpus and
-writes back via ALTER UPDATE.
+Streams edges from ClickHouse in chunks to avoid holding the full edge list in
+Python before matrix construction. Writes scores to paper_scores_v2 overlay.
 """
 
 from __future__ import annotations
@@ -14,11 +13,15 @@ import numpy as np
 import scipy.sparse as sp
 
 from researchpapers.ch_db import connect as ch_connect
+from researchpapers.ram import wait_for_ram
 
 log = logging.getLogger("researchpapers.pagerank_full")
 
+EDGE_CHUNK = 250_000
+
 
 def compute_and_write(damping: float = 0.85, max_iter: int = 50, tol: float = 1e-6) -> dict:
+    wait_for_ram()
     t0 = time.monotonic()
 
     with ch_connect() as ch:
@@ -33,44 +36,55 @@ def compute_and_write(damping: float = 0.85, max_iter: int = 50, tol: float = 1e
     paper_id_to_idx = {p[0]: i for i, p in enumerate(papers)}
     paper_id_by_idx = [p[0] for p in papers]
 
-    with ch_connect() as ch:
-        log.info("loading edges...")
-        edges = ch.query(
-            "SELECT citing_arxiv_id, cited_openalex_id FROM references_paper"
-        ).result_rows
-    log.info("loaded %d edges", len(edges))
-
-    rows = []
-    cols = []
+    rows: list[int] = []
+    cols: list[int] = []
     matched = 0
-    for citing, cited_oa in edges:
-        src = paper_id_to_idx.get(citing)
-        dst = oa_to_idx.get(cited_oa)
-        if src is not None and dst is not None and src != dst:
-            rows.append(src)
-            cols.append(dst)
-            matched += 1
-    log.info("matched %d in-corpus edges", matched)
+    offset = 0
+    with ch_connect() as ch:
+        while True:
+            chunk = ch.query(
+                """
+                SELECT citing_paper_id, cited_openalex_id
+                FROM references_paper
+                ORDER BY citing_paper_id, cited_openalex_id
+                LIMIT %(lim)s OFFSET %(off)s
+                """,
+                parameters={"lim": EDGE_CHUNK, "off": offset},
+            ).result_rows
+            if not chunk:
+                break
+            for citing, cited_oa in chunk:
+                src = paper_id_to_idx.get(citing)
+                dst = oa_to_idx.get(cited_oa)
+                if src is not None and dst is not None and src != dst:
+                    rows.append(src)
+                    cols.append(dst)
+                    matched += 1
+            offset += len(chunk)
+            if len(chunk) < EDGE_CHUNK:
+                break
+            if offset % (EDGE_CHUNK * 4) == 0:
+                log.info("streamed %d edges (%d matched)", offset, matched)
+
+    log.info("loaded %d edges, matched %d in-corpus", offset, matched)
     if matched == 0:
         return {"computed": 0, "error": "no edges matched"}
 
-    # Build column-stochastic adjacency (transitions): M[j,i] = 1/out_deg(i) if i→j
     data = np.ones(matched, dtype=np.float32)
     A = sp.coo_matrix((data, (rows, cols)), shape=(n, n)).tocsr()
-    # out-degrees
+    del rows, cols, data
+
     out_deg = np.array(A.sum(axis=1)).ravel()
-    # Avoid div-by-0 for dangling nodes (no out-links): redistribute uniformly
-    dangling = (out_deg == 0)
-    out_deg[dangling] = 1.0  # prevent div-by-0; will handle via teleport
-    # Transition matrix (transposed for column-stochastic)
+    dangling = out_deg == 0
+    out_deg[dangling] = 1.0
     D_inv = sp.diags(1.0 / out_deg)
     M = (A.T @ D_inv).astype(np.float32)
+    del A, D_inv
 
     log.info("running power iteration (max %d iters, tol %.0e)...", max_iter, tol)
     pr = np.ones(n, dtype=np.float32) / n
     teleport = np.ones(n, dtype=np.float32) / n
     for i in range(max_iter):
-        # PR = d * (M @ PR + dangling_mass/n) + (1-d) * teleport
         dangling_mass = pr[dangling].sum()
         pr_new = damping * (M @ pr + dangling_mass / n) + (1 - damping) * teleport
         diff = np.abs(pr_new - pr).sum()
@@ -81,11 +95,9 @@ def compute_and_write(damping: float = 0.85, max_iter: int = 50, tol: float = 1e
             log.info("converged at iter %d", i)
             break
 
-    pr = pr / pr.sum()  # renormalize
+    pr = pr / pr.sum()
     log.info("PR range: min=%.2e max=%.2e mean=%.2e", pr.min(), pr.max(), pr.mean())
 
-    # Write to overlay table paper_scores_v2 — INSERT-only, no UPDATE on papers
-    # (avoids partition-key constraints + query-size limits).
     log.info("writing %d pagerank scores to paper_scores_v2...", n)
     with ch_connect() as ch:
         ch.command("""
@@ -106,8 +118,6 @@ def compute_and_write(damping: float = 0.85, max_iter: int = 50, tol: float = 1e
                 payload[start : start + BATCH],
                 column_names=["paper_id", "pagerank"],
             )
-            if start // BATCH % 5 == 0:
-                log.info("  inserted %d/%d", min(start + BATCH, n), n)
 
     return {
         "computed": n,

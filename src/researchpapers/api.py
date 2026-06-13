@@ -17,7 +17,11 @@ Launch with:  uv run papers api-serve --port 8000
 
 from __future__ import annotations
 
+import json
 import logging
+import os
+import subprocess
+import sys
 from typing import Annotated
 
 from fastapi import FastAPI, HTTPException, Query
@@ -35,6 +39,37 @@ from researchpapers.overlays import (
 )
 
 log = logging.getLogger("researchpapers.api")
+
+# Default lean: no resident ML models in the API process (~400 MB saved).
+# Semantic search spawns a one-shot encoder subprocess per request.
+LEAN_API = os.environ.get("PAPERS_LEAN_API", "1") != "0"
+_embedder = None
+
+
+def _encode_query(q: str) -> list[float]:
+    global _embedder
+    if LEAN_API:
+        try:
+            r = subprocess.run(
+                [sys.executable, "-m", "researchpapers.encode_query", q],
+                capture_output=True,
+                text=True,
+                timeout=120,
+                check=True,
+            )
+            return json.loads(r.stdout)
+        except Exception as e:
+            raise HTTPException(
+                503,
+                "semantic search unavailable (encoder subprocess failed). "
+                "Try: uv run papers encode-query 'your query'",
+            ) from e
+    from sentence_transformers import SentenceTransformer
+
+    if _embedder is None:
+        _embedder = SentenceTransformer("all-MiniLM-L6-v2")
+    return _embedder.encode([q], normalize_embeddings=True)[0].tolist()
+
 
 app = FastAPI(
     title="researchPapers API",
@@ -334,13 +369,10 @@ def semantic_search(
 ) -> dict:
     """Semantic search over abstract+title embeddings (all-MiniLM-L6-v2, 384-dim, cosine).
 
-    Computes the query embedding inline, then JOINs against paper_embeddings.
+    In lean API mode (default), encodes the query in a subprocess so the server
+    never keeps the embedder resident.
     """
-    from sentence_transformers import SentenceTransformer
-    # Cache the model on the app instance for warm-call latency
-    if not hasattr(app.state, "embedder"):
-        app.state.embedder = SentenceTransformer("all-MiniLM-L6-v2")
-    q_emb = app.state.embedder.encode([q], normalize_embeddings=True)[0].tolist()
+    q_emb = _encode_query(q)
 
     src_filter = _split_sources(sources)
     src_clause = "AND p.source IN %(sources)s" if src_filter else ""

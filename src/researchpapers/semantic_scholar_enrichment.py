@@ -14,7 +14,8 @@ import httpx
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
 
 from researchpapers.ch_db import connect as ch_connect
-from researchpapers.config import Settings, load_settings
+from researchpapers.config import load_settings
+from researchpapers.ram import wait_for_ram
 from researchpapers.overlays import ensure_citation_overlay_table
 
 log = logging.getLogger("researchpapers.semantic_scholar_enrichment")
@@ -63,6 +64,7 @@ def enrich_top_papers(
     """Enrich top-cited arxiv papers with Semantic Scholar citation counts."""
     settings = settings or load_settings()
     ensure_citation_overlay_table()
+    wait_for_ram()
 
     skip_clause = (
         "AND p.paper_id NOT IN (SELECT paper_id FROM citation_overlay_v2 FINAL)"
@@ -140,6 +142,7 @@ def enrich_top_papers(
                         inserts,
                         column_names=["paper_id", "s2_paper_id", "citation_count", "source"],
                     )
+            wait_for_ram()
             if counters["enriched"] % 500 < BATCH_SIZE:
                 log.info(
                     "progress: enriched=%d improved=%d (%.1fs)",
