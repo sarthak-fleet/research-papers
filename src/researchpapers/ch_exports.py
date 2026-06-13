@@ -11,6 +11,7 @@ import logging
 from pathlib import Path
 
 from researchpapers.ch_db import connect as ch_connect
+from researchpapers.overlays import EFFECTIVE_CITATION_SQL, EFFECTIVE_TITLE_SQL, OVERLAY_JOINS_SQL
 
 log = logging.getLogger("researchpapers.ch_exports")
 
@@ -24,7 +25,7 @@ def export_review_data(out_dir: Path) -> list[Path]:
     written: list[Path] = []
     with ch_connect() as c:
         # 1. Summary across venues
-        result = c.query("""
+        result = c.query(f"""
             SELECT
                 venue,
                 count() AS n_reviews,
@@ -53,7 +54,7 @@ def export_review_data(out_dir: Path) -> list[Path]:
         written.append(p)
 
         # 2. Top-rated submissions: best reviewer-average per paper
-        result = c.query("""
+        result = c.query(f"""
             SELECT
                 r.paper_id,
                 p.title,
@@ -85,7 +86,7 @@ def export_review_data(out_dir: Path) -> list[Path]:
         written.append(p)
 
         # 3. Rating distribution per venue
-        result = c.query("""
+        result = c.query(f"""
             SELECT venue, rating, count() AS n
             FROM openreview_reviews
             WHERE rating IS NOT NULL
@@ -100,7 +101,7 @@ def export_review_data(out_dir: Path) -> list[Path]:
         written.append(p)
 
         # 4. Source breakdown (papers across sources) — useful for the header card
-        result = c.query("""
+        result = c.query(f"""
             SELECT source, count() AS n FROM papers GROUP BY source ORDER BY n DESC
         """).result_rows
         sources = [{"source": r[0], "n": int(r[1])} for r in result]
@@ -113,7 +114,7 @@ def export_review_data(out_dir: Path) -> list[Path]:
         # and known plural pairs ("language models"/"language model") are merged via the CASE map.
         # For each spaCy-extracted tag, mean ICLR/NeurIPS reviewer rating across
         # papers tagged with it. Includes sample top-rated papers per tag for drilldown.
-        result = c.query("""
+        result = c.query(f"""
             WITH paper_avg_rating AS (
                 SELECT
                     r.paper_id,
@@ -170,20 +171,20 @@ def export_review_data(out_dir: Path) -> list[Path]:
         written.append(p)
 
         # 6. Sleeper papers — reviewers loved them but they haven't accrued citations.
-        result = c.query("""
+        result = c.query(f"""
             WITH par AS (
               SELECT paper_id, avg(rating) AS avg_rating, count() AS n_reviews,
                      any(decision) AS decision, any(venue) AS venue
               FROM openreview_reviews WHERE rating IS NOT NULL
               GROUP BY paper_id HAVING n_reviews >= 3
             )
-            SELECT p.paper_id, coalesce(nullIf(m.title, ''), p.title) AS title, par.avg_rating, par.n_reviews,
-                   coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
+            SELECT p.paper_id, {EFFECTIVE_TITLE_SQL} AS title, par.avg_rating, par.n_reviews,
+                   {EFFECTIVE_CITATION_SQL} AS citation_count,
                    par.venue, par.decision, p.submitted_date
             FROM par
             JOIN papers p ON p.paper_id = par.paper_id
-            LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
-            WHERE par.avg_rating >= 7.0 AND coalesce(nullIf(m.citation_count, 0), p.citation_count) <= 20
+            {OVERLAY_JOINS_SQL}
+            WHERE par.avg_rating >= 7.0 AND {EFFECTIVE_CITATION_SQL} <= 20
               AND effective_year(p.source, p.arxiv_id, p.submitted_date) >= 2024
             ORDER BY par.avg_rating DESC, citation_count ASC
             LIMIT 100
@@ -199,15 +200,15 @@ def export_review_data(out_dir: Path) -> list[Path]:
         written.append(p)
 
         # 7. Hot right now — unified score across cites/year + rating + PageRank.
-        result = c.query("""
+        result = c.query(f"""
             WITH par AS (
               SELECT paper_id, avg(rating) AS avg_rating
               FROM openreview_reviews WHERE rating IS NOT NULL
               GROUP BY paper_id HAVING count() >= 3
             )
             SELECT p.paper_id, p.source,
-                   coalesce(nullIf(m.title, ''), p.title) AS title,
-                   coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
+                   {EFFECTIVE_TITLE_SQL} AS title,
+                   {EFFECTIVE_CITATION_SQL} AS citation_count,
                    p.submitted_date,
                    round(citation_count / greatest((today() - effective_date(p.source, p.arxiv_id, p.submitted_date)) / 365.25, 0.25), 1) AS cpy,
                    coalesce(par.avg_rating, 0) AS rating,
@@ -219,11 +220,11 @@ def export_review_data(out_dir: Path) -> list[Path]:
                    3) AS hotness
             FROM papers AS p FINAL
             LEFT JOIN par ON par.paper_id = p.paper_id
-            LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+            {OVERLAY_JOINS_SQL}
             LEFT JOIN paper_scores_v2 AS s FINAL ON s.paper_id = p.paper_id
             WHERE p.submitted_date IS NOT NULL
               AND effective_year(p.source, p.arxiv_id, p.submitted_date) >= 2023
-              AND coalesce(nullIf(m.citation_count, 0), p.citation_count) >= 5
+              AND {EFFECTIVE_CITATION_SQL} >= 5
             ORDER BY hotness DESC
             LIMIT 100
         """).result_rows

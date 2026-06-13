@@ -376,6 +376,55 @@ def refresh_metadata_cmd(
                f"elapsed={c.get('elapsed_seconds')}s")
 
 
+@app.command("enrich-citations")
+def enrich_citations_cmd(
+    limit: Annotated[int, typer.Option(help="Top-N papers to enrich from Semantic Scholar")] = 10000,
+    force: Annotated[bool, typer.Option(help="Re-enrich papers that already have overlay rows")] = False,
+) -> None:
+    """Enrich top papers with Semantic Scholar citation counts → citation_overlay_v2."""
+    from researchpapers import semantic_scholar_enrichment
+    settings = load_settings()
+    c = semantic_scholar_enrichment.enrich_top_papers(
+        limit=limit, settings=settings, skip_existing=not force,
+    )
+    typer.echo(
+        f"enriched={c.get('enriched')} improved={c.get('improved')} "
+        f"skipped={c.get('skipped')} failed={c.get('failed')} "
+        f"elapsed={c.get('elapsed_seconds')}s"
+    )
+
+
+@app.command("refresh-abstracts")
+def refresh_abstracts_cmd(
+    detect_limit: Annotated[int, typer.Option(help="Max suspect papers to scan")] = 5000,
+    reembed: Annotated[bool, typer.Option(help="Re-embed papers with corrected abstracts")] = False,
+    force: Annotated[bool, typer.Option(help="Re-refresh papers that already have overlay rows")] = False,
+) -> None:
+    """Detect and refresh contaminated arXiv abstracts → abstract_overlay_v2."""
+    from researchpapers import arxiv_abstract_refresh
+    c = arxiv_abstract_refresh.refresh_suspect_abstracts(
+        detect_limit=detect_limit, skip_existing=not force, reembed=reembed,
+    )
+    typer.echo(
+        f"detected={c.get('detected')} refreshed={c.get('refreshed')} "
+        f"unchanged={c.get('unchanged')} failed={c.get('failed')} "
+        f"reembedded={c.get('reembedded', 0)} elapsed={c.get('elapsed_seconds')}s"
+    )
+
+
+@app.command("build-author-graph")
+def build_author_graph_cmd(
+    metadata_limit: Annotated[int, typer.Option(help="Expand metadata refresh to this many top papers")] = 10000,
+) -> None:
+    """Build authors_v2 + paper_authorships_v2 from metadata and inferred buckets."""
+    from researchpapers import author_graph
+    c = author_graph.build_author_graph(expand_metadata_limit=metadata_limit)
+    typer.echo(
+        f"authors={c.get('authors')} authorships={c.get('authorships')} "
+        f"inferred={c.get('inferred')}"
+    )
+
+
 @app.command("embed")
 def embed_cmd(
     source: Annotated[str | None, typer.Option(help="Limit to one source")] = None,

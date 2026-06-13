@@ -248,6 +248,9 @@ always read from CH directly — no rebuild needed.
 uv run papers api-serve                  # FastAPI on :8000
 uv run papers export-ch                  # write JSON files for the static FE
 uv run papers refresh-metadata           # pull arxiv API + OpenAlex into paper_metadata_v2
+uv run papers enrich-citations           # Semantic Scholar counts → citation_overlay_v2
+uv run papers refresh-abstracts          # fix contaminated arxiv abstracts → abstract_overlay_v2
+uv run papers build-author-graph         # authors_v2 + paper_authorships_v2
 uv run papers pagerank-full              # full-corpus PageRank → paper_scores_v2
 uv run papers embed                      # all-MiniLM-L6-v2 embed → paper_embeddings
 uv run papers cluster-embeddings         # MiniBatchKMeans → paper_clusters
@@ -265,13 +268,26 @@ Full list: `uv run papers --help`.
 Some primary data has known defects: OpenAlex returns *latest revision dates*
 for arxiv preprints (so "Attention Is All You Need" shows 2025 instead of
 2017), and a handful of arxiv IDs have cross-contaminated titles/abstracts
-in OpenAlex's index. We patch around these with two overlay tables and two
+in OpenAlex's index. We patch around these with overlay tables and two
 ClickHouse UDFs:
 
 - **`paper_metadata_v2`** (ReplacingMergeTree) — corrected titles +
   author OpenAlex IDs pulled from the arxiv API. Populated by
   `papers refresh-metadata`. Joined in via `LEFT JOIN ... ON paper_id`
   with `COALESCE(nullIf(m.title, ''), p.title)`.
+- **`citation_overlay_v2`** (ReplacingMergeTree) — Semantic Scholar
+  `citationCount` for top papers. Populated by `papers enrich-citations`.
+  Preferred over OpenAlex counts in hot/sleepers/search when present.
+  API exposes `citation_source` provenance (`semantic_scholar` |
+  `openalex_refresh` | `openalex`).
+- **`abstract_overlay_v2`** (ReplacingMergeTree) — authoritative arxiv
+  abstracts for contaminated records. Populated by `papers refresh-abstracts`.
+  Search and paper detail use corrected text; pass `--reembed` to refresh
+  semantic-search embeddings for corrected papers.
+- **`authors_v2` + `paper_authorships_v2`** — canonical author identities
+  (OpenAlex IDs + inferred community/cluster buckets). Built by
+  `papers build-author-graph`. API: `/authors/v2/{id}`, `/coauthors`,
+  `/authors/resolve?name=...`.
 - **`paper_scores_v2`** (ReplacingMergeTree) — full-corpus PageRank,
   written by `papers pagerank-full`. Used because `papers.pagerank_score`
   can't be `ALTER UPDATE`d cheaply (partition key on `submitted_date`).
@@ -293,6 +309,10 @@ src/researchpapers/
   ch_exports.py         CH → JSON exports for the static frontend
   exporter.py           legacy multi-source exporter (CH-only)
   refresh_metadata.py   arxiv API + OpenAlex → paper_metadata_v2
+  semantic_scholar_enrichment.py  S2 citation counts → citation_overlay_v2
+  arxiv_abstract_refresh.py       arxiv abstract fixups → abstract_overlay_v2
+  author_graph.py       canonical authors + coauthor graph
+  overlays.py           shared overlay SQL + table DDL
   pagerank_full.py      scipy.sparse PageRank → paper_scores_v2
   embed.py              sentence-transformers → paper_embeddings
   cluster_embeddings.py MiniBatchKMeans → paper_clusters
@@ -308,6 +328,7 @@ src/researchpapers/
 clickhouse/init/
   01_schema.sql         papers, paper_tags, references_paper, ...
   02_functions.sql      effective_year / effective_date UDFs
+  03_overlays.sql       citation/abstract/author overlay tables
 migrations/             legacy Postgres migrations (kept for cold restore)
 scripts/
   deploy.sh             unpack dump, start CH, apply UDFs, serve API
@@ -324,18 +345,15 @@ DEPLOY.md                    three deployment shapes (host / LAN / CDN)
 
 ## Known issues / deferred
 
-- **OpenAlex citation undercount.** Some preprints have lower
-  `cited_by_count` in OpenAlex than they do on Google Scholar
-  (Attention Is All You Need shows ~6,551). See
-  `docs/prds/semantic-scholar-enrichment.md`.
-- **Cross-contaminated OpenAlex records.** A small fraction of arxiv
-  IDs return another paper's abstract/DOI/tags in OpenAlex. Title is
-  fixed via `paper_metadata_v2`; abstracts and tags are not yet
-  re-pulled from arxiv. See `docs/prds/arxiv-abstract-refresh.md`.
-- **Author disambiguation** is only populated for the top-2000 papers
-  (those refreshed via `papers refresh-metadata`). Non-top papers fall
-  back to author name strings. See
-  `docs/prds/author-graph-disambiguation.md`.
+- **OpenAlex citation undercount** is mitigated for top papers via
+  `papers enrich-citations` → `citation_overlay_v2`. Full-corpus S2 backfill
+  remains out of scope.
+- **Cross-contaminated OpenAlex abstracts** are mitigated via
+  `papers refresh-abstracts` → `abstract_overlay_v2`. Run with `--reembed` after
+  large refreshes to update semantic-search vectors.
+- **Author disambiguation** is expanded via `papers build-author-graph` into
+  `authors_v2`. Inferred buckets (community/cluster) cover high-citation papers
+  without OpenAlex IDs; common surnames may still collide.
 - **No Vercel/CF deploy yet.** The static FE builds clean (see
   `DEPLOY.md`) but hasn't been pushed to a CDN — the user prefers
   same-host deploy unless going public.

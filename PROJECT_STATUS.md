@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-06-08
+Last updated: 2026-06-13
 
 ## Current Scope
 
@@ -24,16 +24,22 @@ papers, and HighSignal-style research digests.
   data path.
 - Warm restore, cold rebuild, deployment shapes, dump/export scripts, and CLI
   commands are documented.
+- **Semantic Scholar enrichment** (`papers enrich-citations`) writes
+  `citation_overlay_v2`; ranking surfaces prefer S2 counts with provenance.
+- **ArXiv abstract refresh** (`papers refresh-abstracts`) detects contaminated
+  records and writes `abstract_overlay_v2`; search/detail use corrected text.
+- **Author graph** (`papers build-author-graph`) builds `authors_v2` and
+  `paper_authorships_v2`; API exposes `/authors/v2/{id}`, coauthors, and
+  `/authors/resolve`.
 
 ## Planned Next
 
-1. Semantic Scholar enrichment for top papers. PRD: `docs/prds/semantic-scholar-enrichment.md`
-2. ArXiv abstract refresh for contaminated records. PRD: `docs/prds/arxiv-abstract-refresh.md`
-3. Author graph and disambiguation expansion. PRD: `docs/prds/author-graph-disambiguation.md`
-4. Decide the deployment target before public use: same-host deployment is the
+1. Decide the deployment target before public use: same-host deployment is the
    preferred path unless a CDN/static frontend launch is needed.
-5. Keep static JSON exports fresh after new ingestion or retagging with
+2. Keep static JSON exports fresh after new ingestion or retagging with
    `uv run papers export-ch` and a frontend rebuild.
+3. Run overlay jobs on production corpus after deploy:
+   `enrich-citations`, `refresh-abstracts --reembed`, `build-author-graph`.
 
 ## Deferred / Parked
 
@@ -43,3 +49,5 @@ papers, and HighSignal-style research digests.
   commands.
 - OrbStack/macOS VM instability is an environment issue; do not treat it as a
   product regression without reproducing on a stable Docker daemon.
+- Full-corpus Semantic Scholar backfill and manual author curation remain out of
+  scope.

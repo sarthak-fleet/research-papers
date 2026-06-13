@@ -19,6 +19,7 @@ from typing import Any
 from researchpapers.ch_db import connect as ch_connect
 from researchpapers.clusters import clean_abstract
 from researchpapers.config import Settings
+from researchpapers.overlays import EFFECTIVE_CITATION_SQL, EFFECTIVE_TITLE_SQL, OVERLAY_JOINS_SQL
 
 
 def _format_bytes(n: int) -> str:
@@ -96,8 +97,8 @@ def export_all(settings: Settings, out_dir: Path, *, top: int = 200) -> list[Pat
             f"""
             SELECT
                 p.arxiv_id,
-                coalesce(nullIf(m.title, ''), p.title) AS title,
-                coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
+                {EFFECTIVE_TITLE_SQL} AS title,
+                {EFFECTIVE_CITATION_SQL} AS citation_count,
                 p.primary_category,
                 effective_date(p.source, p.arxiv_id, p.submitted_date) AS submitted_date,
                 p.in_corpus_degree,
@@ -105,9 +106,9 @@ def export_all(settings: Settings, out_dir: Path, *, top: int = 200) -> list[Pat
                 p.katz_score,
                 p.openalex_tags, p.openalex_keywords
             FROM papers AS p FINAL
-            LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+            {OVERLAY_JOINS_SQL}
             LEFT JOIN paper_scores_v2 AS s FINAL ON s.paper_id = p.paper_id
-            WHERE p.source='arxiv' AND p.citation_count > 0
+            WHERE p.source='arxiv' AND {EFFECTIVE_CITATION_SQL} > 0
               AND (s.pagerank IS NOT NULL OR p.pagerank_score IS NOT NULL)
             ORDER BY coalesce(s.pagerank, p.pagerank_score) DESC
             LIMIT {top}

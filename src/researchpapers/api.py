@@ -25,6 +25,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from researchpapers.ch_db import connect as ch_connect
+from researchpapers.overlays import (
+    ABSTRACT_SOURCE_SQL,
+    CITATION_SOURCE_SQL,
+    EFFECTIVE_ABSTRACT_SQL,
+    EFFECTIVE_CITATION_SQL,
+    EFFECTIVE_TITLE_SQL,
+    OVERLAY_JOINS_SQL,
+)
 
 log = logging.getLogger("researchpapers.api")
 
@@ -97,12 +105,17 @@ def search(
     with ch_connect() as c:
         rows = c.query(
             f"""
-            SELECT paper_id, source, title, substring(abstract, 1, 400) AS abstract_preview,
-                   submitted_date, citation_count, doi, arxiv_id
-            FROM papers FINAL
-            WHERE (positionCaseInsensitive(title, %(q)s) > 0
-                   OR positionCaseInsensitive(abstract, %(q)s) > 0)
-              AND citation_count >= %(min_citations)s
+            SELECT p.paper_id, p.source,
+                   {EFFECTIVE_TITLE_SQL} AS title,
+                   substring({EFFECTIVE_ABSTRACT_SQL}, 1, 400) AS abstract_preview,
+                   p.submitted_date,
+                   {EFFECTIVE_CITATION_SQL} AS citation_count,
+                   p.doi, p.arxiv_id
+            FROM papers AS p FINAL
+            {OVERLAY_JOINS_SQL}
+            WHERE (positionCaseInsensitive({EFFECTIVE_TITLE_SQL}, %(q)s) > 0
+                   OR positionCaseInsensitive({EFFECTIVE_ABSTRACT_SQL}, %(q)s) > 0)
+              AND {EFFECTIVE_CITATION_SQL} >= %(min_citations)s
               {src_clause}
             ORDER BY citation_count DESC
             LIMIT %(limit)s
@@ -138,13 +151,17 @@ def get_paper(paper_id: str) -> dict:
     """Single paper detail. paper_id format: 'arxiv:1412.6980' or 'openreview:abc123'."""
     with ch_connect() as c:
         p = c.query(
-            """SELECT p.paper_id, p.source,
-                   coalesce(nullIf(m.title, ''), p.title) AS title,
-                   p.abstract, p.submitted_date,
-                   coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
-                   p.doi, p.arxiv_id, p.authors
+            f"""SELECT p.paper_id, p.source,
+                   {EFFECTIVE_TITLE_SQL} AS title,
+                   {EFFECTIVE_ABSTRACT_SQL} AS abstract,
+                   p.submitted_date,
+                   {EFFECTIVE_CITATION_SQL} AS citation_count,
+                   {CITATION_SOURCE_SQL} AS citation_source,
+                   {ABSTRACT_SOURCE_SQL} AS abstract_source,
+                   p.doi, p.arxiv_id, p.authors,
+                   s2.s2_paper_id
               FROM papers AS p FINAL
-              LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+              {OVERLAY_JOINS_SQL}
               WHERE p.paper_id = %(pid)s""",
             parameters={"pid": paper_id},
         ).result_rows
@@ -166,9 +183,12 @@ def get_paper(paper_id: str) -> dict:
         "abstract": row[3],
         "submitted_date": str(row[4]) if row[4] else None,
         "citation_count": int(row[5] or 0),
-        "doi": row[6],
-        "arxiv_id": row[7],
-        "authors": list(row[8] or []),
+        "citation_source": row[6],
+        "abstract_source": row[7],
+        "doi": row[8],
+        "arxiv_id": row[9],
+        "authors": list(row[10] or []),
+        "s2_paper_id": row[11] or None,
         "tags": [
             {
                 "tagger": t[0],
@@ -328,12 +348,17 @@ def semantic_search(
     with ch_connect() as c:
         rows = c.query(
             f"""
-            SELECT p.paper_id, p.source, p.title, substring(p.abstract, 1, 400) AS abstract_preview,
-                   p.submitted_date, p.citation_count, p.doi, p.arxiv_id,
+            SELECT p.paper_id, p.source,
+                   {EFFECTIVE_TITLE_SQL} AS title,
+                   substring({EFFECTIVE_ABSTRACT_SQL}, 1, 400) AS abstract_preview,
+                   p.submitted_date,
+                   {EFFECTIVE_CITATION_SQL} AS citation_count,
+                   p.doi, p.arxiv_id,
                    round(1 - cosineDistance(e.embedding, %(q_emb)s), 4) AS similarity
             FROM paper_embeddings AS e FINAL
             JOIN papers AS p FINAL ON p.paper_id = e.paper_id
-            WHERE p.citation_count >= %(min_citations)s
+            {OVERLAY_JOINS_SQL}
+            WHERE {EFFECTIVE_CITATION_SQL} >= %(min_citations)s
               {src_clause}
             ORDER BY cosineDistance(e.embedding, %(q_emb)s) ASC
             LIMIT %(limit)s
@@ -375,7 +400,7 @@ def sleepers(
     """
     with ch_connect() as c:
         rows = c.query(
-            """
+            f"""
             WITH par AS (
               SELECT paper_id, avg(rating) AS avg_rating, count() AS n_reviews,
                      any(decision) AS decision, any(venue) AS venue
@@ -383,15 +408,15 @@ def sleepers(
               GROUP BY paper_id HAVING n_reviews >= 3
             )
             SELECT p.paper_id,
-                   coalesce(nullIf(m.title, ''), p.title) AS title,
+                   {EFFECTIVE_TITLE_SQL} AS title,
                    par.avg_rating, par.n_reviews,
-                   coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
+                   {EFFECTIVE_CITATION_SQL} AS citation_count,
                    par.venue, par.decision, p.submitted_date
             FROM par
             JOIN papers p ON p.paper_id = par.paper_id
-            LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+            {OVERLAY_JOINS_SQL}
             WHERE par.avg_rating >= %(min_rating)s
-              AND coalesce(nullIf(m.citation_count, 0), p.citation_count) <= %(max_citations)s
+              AND {EFFECTIVE_CITATION_SQL} <= %(max_citations)s
               AND effective_year(p.source, p.arxiv_id, p.submitted_date) >= %(since_year)s
             ORDER BY par.avg_rating DESC, citation_count ASC
             LIMIT %(limit)s
@@ -423,17 +448,17 @@ def similar_papers(
     with ch_connect() as c:
         # Try embedding-based first.
         rows = c.query(
-            """
+            f"""
             WITH (SELECT embedding FROM paper_embeddings FINAL WHERE paper_id = %(pid)s LIMIT 1) AS anchor_emb
             SELECT p.paper_id,
-                   coalesce(nullIf(m.title, ''), p.title) AS title,
+                   {EFFECTIVE_TITLE_SQL} AS title,
                    p.source,
-                   coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
+                   {EFFECTIVE_CITATION_SQL} AS citation_count,
                    p.submitted_date,
                    round(1 - cosineDistance(e.embedding, anchor_emb), 4) AS similarity
             FROM paper_embeddings AS e FINAL
             JOIN papers AS p FINAL ON p.paper_id = e.paper_id
-            LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+            {OVERLAY_JOINS_SQL}
             WHERE p.paper_id != %(pid)s
               AND length(anchor_emb) > 0
             ORDER BY cosineDistance(e.embedding, anchor_emb) ASC
@@ -442,9 +467,9 @@ def similar_papers(
             parameters={"pid": paper_id, "limit": limit},
         ).result_rows
         anchor_title_q = c.query(
-            """SELECT coalesce(nullIf(m.title, ''), p.title)
+            f"""SELECT {EFFECTIVE_TITLE_SQL}
                FROM papers AS p FINAL
-               LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+               {OVERLAY_JOINS_SQL}
                WHERE p.paper_id = %(pid)s""",
             parameters={"pid": paper_id},
         ).result_rows
@@ -465,15 +490,15 @@ def similar_papers(
             if anchor:
                 cid, tags = anchor[0]
                 rows = c.query(
-                    """
+                    f"""
                     SELECT p.paper_id,
-                           coalesce(nullIf(m.title, ''), p.title) AS title,
+                           {EFFECTIVE_TITLE_SQL} AS title,
                            p.source,
-                           coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
+                           {EFFECTIVE_CITATION_SQL} AS citation_count,
                            p.submitted_date,
                            0.0 AS similarity
                     FROM papers AS p FINAL
-                    LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+                    {OVERLAY_JOINS_SQL}
                     WHERE p.paper_id != %(pid)s
                       AND p.community_id = %(cid)s
                       AND length(arrayIntersect(p.openalex_tags, %(tags)s)) >= 1
@@ -508,15 +533,15 @@ def hot_papers(
     """
     with ch_connect() as c:
         rows = c.query(
-            """
+            f"""
             WITH par AS (
               SELECT paper_id, avg(rating) AS avg_rating
               FROM openreview_reviews WHERE rating IS NOT NULL
               GROUP BY paper_id HAVING count() >= 3
             )
             SELECT p.paper_id, p.source,
-                   coalesce(nullIf(m.title, ''), p.title) AS title,
-                   coalesce(nullIf(m.citation_count, 0), p.citation_count) AS citation_count,
+                   {EFFECTIVE_TITLE_SQL} AS title,
+                   {EFFECTIVE_CITATION_SQL} AS citation_count,
                    p.submitted_date,
                    round(citation_count / greatest(
                      (today() - effective_date(p.source, p.arxiv_id, p.submitted_date)) / 365.25,
@@ -532,11 +557,11 @@ def hot_papers(
                    3) AS hotness
             FROM papers AS p FINAL
             LEFT JOIN par ON par.paper_id = p.paper_id
-            LEFT JOIN paper_metadata_v2 AS m FINAL ON m.paper_id = p.paper_id
+            {OVERLAY_JOINS_SQL}
             LEFT JOIN paper_scores_v2 AS s FINAL ON s.paper_id = p.paper_id
             WHERE p.submitted_date IS NOT NULL
               AND effective_year(p.source, p.arxiv_id, p.submitted_date) >= %(year)s
-              AND coalesce(nullIf(m.citation_count, 0), p.citation_count) >= 5
+              AND {EFFECTIVE_CITATION_SQL} >= 5
             ORDER BY hotness DESC
             LIMIT %(limit)s
             """,
@@ -654,6 +679,48 @@ def author_by_openalex_id(openalex_id: str) -> dict:
     }
 
 
+@app.get("/authors/v2/{author_id}")
+def author_profile_v2(author_id: str) -> dict:
+    """Canonical author page with papers, tags, clusters, and citation totals."""
+    from researchpapers import author_graph
+
+    profile = author_graph.lookup_author(author_id)
+    if not profile:
+        raise HTTPException(404, f"author not found: {author_id}")
+    return profile
+
+
+@app.get("/authors/v2/{author_id}/coauthors")
+def author_coauthors_v2(
+    author_id: str,
+    limit: Annotated[int, Query(ge=1, le=100)] = 25,
+) -> dict:
+    """Coauthor neighborhood for a canonical author identity."""
+    from researchpapers import author_graph
+
+    if not author_graph.lookup_author(author_id):
+        raise HTTPException(404, f"author not found: {author_id}")
+    coauthors = author_graph.coauthors_for(author_id, limit=limit)
+    return {"author_id": author_id, "count": len(coauthors), "coauthors": coauthors}
+
+
+@app.get("/authors/resolve")
+def resolve_author_name(
+    name: Annotated[str, Query(min_length=2, max_length=200)],
+    limit: Annotated[int, Query(ge=1, le=50)] = 10,
+) -> dict:
+    """Resolve an author display name to canonical author_id candidates."""
+    from researchpapers import author_graph
+
+    candidates = author_graph.resolve_author_name(name, limit=limit)
+    return {
+        "name": name,
+        "count": len(candidates),
+        "candidates": candidates,
+        "hint": "Multiple candidates usually means namesakes; prefer openalex source over inferred.",
+    }
+
+
 @app.get("/authors/{author}/disambiguate")
 def disambiguate_author(
     author: str,
@@ -718,6 +785,9 @@ def root() -> JSONResponse:
             "GET /tags/top-rated?limit=25&min_papers=10",
             "GET /tags/{tag}?limit=20",
             "GET /authors/by-tag/{tag}?limit=25",
+            "GET /authors/v2/{author_id} — canonical author profile",
+            "GET /authors/v2/{author_id}/coauthors — coauthor neighborhood",
+            "GET /authors/resolve?name=... — resolve a name to canonical IDs",
             "GET /authors/{author}/disambiguate — split a name into community/cluster buckets",
             "GET /reviews/top-rated?limit=25&venue=ICLR-2025",
         ],
