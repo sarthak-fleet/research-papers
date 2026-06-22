@@ -104,15 +104,20 @@ app.add_middleware(
 
 @app.middleware("http")
 async def _cache_headers(request, call_next):
-    """Add HTTP cache headers to deterministic, TTL-cached endpoints so CDN /
-    browser caches can serve repeat hits without hitting the API."""
+    """Add HTTP cache headers to deterministic, TTL-cached endpoints.
+
+    These endpoints are parameterised (limit, min_papers, etc.) so we use
+    ``Cache-Control: private`` to let the in-process TTL cache handle
+    parameter-scoped caching without a CDN serving a response cached for
+    one parameter combination to a different one.
+    """
     response = await call_next(request)
     if request.method == "GET" and request.url.path in {
         "/tags/top-rated",
         "/hot",
         "/sleepers",
     }:
-        response.headers["Cache-Control"] = "public, max-age=3600"
+        response.headers["Cache-Control"] = "private, max-age=3600"
     return response
 
 
