@@ -53,6 +53,25 @@ Cloudflare Pages config:
 - Output directory: `dist`
 - Env var: `PUBLIC_API_URL=https://your-backend-url`
 
+For the public RAG demo on Cloudflare Pages, leave `PUBLIC_API_URL` unset if
+you want the browser to call the same-origin Pages Function at
+`/api/rag/query`. The Pages Function returns a cited bundled-data answer if the
+Knowledgebase secret is absent, so the demo remains usable. Configure these
+Pages runtime variables/secrets when you want the full Knowledgebase RAG path:
+
+```bash
+RAG_SERVICE_URL=https://knowledgebase.sarthakagrawal927.workers.dev
+RAG_DOMAIN=research-papers
+RAG_SERVICE_KEY=<set as a Pages secret/runtime variable, never commit it>
+```
+
+Seed the Knowledgebase domain from the static exports before showing the full
+RAG demo:
+
+```bash
+RAG_SERVICE_KEY=<service-key> uv run python scripts/seed_knowledgebase_rag.py
+```
+
 The static export of `dist/` (~1.4 MB gzipped) is everything the FE needs.
 JSON data files in `web/public/data/` are bundled; they reflect the CH state
 at build time. To refresh them without rebuilding the bundle: run

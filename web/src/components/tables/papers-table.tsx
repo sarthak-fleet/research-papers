@@ -37,9 +37,26 @@ type SimilarResult = {
 const API_BASE: string =
   (import.meta.env.PUBLIC_API_URL as string | undefined) ??
   (typeof window !== "undefined" && (window as any).__API_BASE__) ??
-  "http://127.0.0.1:8000";
+  "";
 
-function SimilarButton({ arxiv_id, title }: { arxiv_id: string; title: string }) {
+function overlapScore(anchor: Row, candidate: Row): number {
+  const anchorTerms = new Set(
+    [...(anchor.topic_tags ?? []), ...(anchor.top_keywords ?? [])].map((item) =>
+      item.toLowerCase(),
+    ),
+  );
+  const candidateTerms = [...(candidate.topic_tags ?? []), ...(candidate.top_keywords ?? [])].map((item) =>
+    item.toLowerCase(),
+  );
+  let score = 0;
+  for (const term of candidateTerms) {
+    if (anchorTerms.has(term)) score += 1;
+  }
+  score += Math.log1p(Number(candidate.citation_count ?? 0)) / 20;
+  return score;
+}
+
+function SimilarButton({ paper }: { paper: Row }) {
   const [open, setOpen] = React.useState(false);
   const [results, setResults] = React.useState<SimilarResult[]>([]);
   const [loading, setLoading] = React.useState(false);
@@ -51,17 +68,37 @@ function SimilarButton({ arxiv_id, title }: { arxiv_id: string; title: string })
     setLoading(true);
     setError(null);
     try {
-      const r = await fetch(`${API_BASE}/similar/arxiv:${arxiv_id}?limit=10`);
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const data = await r.json();
-      setResults(data.results || []);
-      setMethod(data.method || "");
-    } catch (e: any) {
-      setError(e?.message || "request failed");
+      if (API_BASE) {
+        const r = await fetch(`${API_BASE}/similar/arxiv:${paper.arxiv_id}?limit=10`);
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const data = await r.json();
+        setResults(data.results || []);
+        setMethod(data.method || "");
+      } else {
+        const rows = await fetch("/data/top_papers.json").then((r) => r.json()) as Row[];
+        const fallback = rows
+          .filter((candidate) => candidate.arxiv_id !== paper.arxiv_id)
+          .map((candidate) => ({ candidate, score: overlapScore(paper, candidate) }))
+          .filter(({ score }) => score > 0)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 10)
+          .map(({ candidate, score }) => ({
+            paper_id: `arxiv:${candidate.arxiv_id}`,
+            title: candidate.title,
+            source: "static",
+            citation_count: Number(candidate.citation_count ?? 0),
+            submitted_date: null,
+            similarity: Math.min(0.999, score / 6),
+          }));
+        setResults(fallback);
+        setMethod("static_overlap");
+      }
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "request failed");
     } finally {
       setLoading(false);
     }
-  }, [arxiv_id]);
+  }, [paper]);
 
   React.useEffect(() => {
     if (open && !requested && !loading) {
@@ -89,14 +126,14 @@ function SimilarButton({ arxiv_id, title }: { arxiv_id: string; title: string })
       <DialogContent className="max-w-3xl">
         <DialogHeader>
           <DialogTitle className="text-base">Papers similar to:</DialogTitle>
-          <DialogDescription className="text-sm">{title}</DialogDescription>
+          <DialogDescription className="text-sm">{paper.title}</DialogDescription>
         </DialogHeader>
         {loading && <div className="text-sm text-muted-foreground py-4">Loading...</div>}
-        {error && <div className="text-sm text-destructive">Error: {error}. Is the API at {API_BASE} running?</div>}
+        {error && <div className="text-sm text-destructive">Error: {error}</div>}
         {!loading && results.length > 0 && (
           <>
             <div className="text-xs text-muted-foreground">
-              Ranked by {method === "embedding" ? "cosine similarity over all-MiniLM-L6-v2 embeddings" : "shared tags + community overlap"}.
+              Ranked by {method === "embedding" ? "cosine similarity over all-MiniLM-L6-v2 embeddings" : "shared tags, keywords, and citation signal"}.
             </div>
             <div className="space-y-1 max-h-[60vh] overflow-y-auto pr-2">
               {results.map((r) => {
@@ -185,7 +222,7 @@ export function PapersTable({ data }: { data: Row[] }) {
       id: "similar",
       header: "",
       enableSorting: false,
-      cell: ({ row }) => <SimilarButton arxiv_id={row.original.arxiv_id} title={row.original.title} />,
+      cell: ({ row }) => <SimilarButton paper={row.original} />,
     },
   ], []);
 

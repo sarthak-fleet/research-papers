@@ -1,16 +1,16 @@
 # researchPapers — PROJECT STATUS
 
-Last updated: 2026-06-20
+Last updated: 2026-06-24
 
 ## Why / What
 
 researchPapers is a ClickHouse-backed academic-paper intelligence platform. It indexes papers from arXiv, OpenReview, bioRxiv, and medRxiv, exposes FastAPI search and insight endpoints, and serves an Astro + React dashboard for semantic search, citation graph analysis, tags, reviews, hot papers, sleepers, similar papers, and HighSignal-style research digests.
 
-**Users:** Researchers browsing/searching the corpus; operators running ingest/overlay jobs; frontend readers of static JSON exports and live API.
+**Users:** Researchers browsing/searching the corpus; demo viewers evaluating paid answer APIs over curated data; operators running ingest/overlay jobs; frontend readers of static JSON exports and live API.
 
 **Constraints:** Runtime is ClickHouse-only for API, frontend, and pipeline reads. Warm restore from dump preferred over cold rebuild (hours). Same-host deployment preferred over CDN until launch path decided.
 
-**IN scope:** ~488k paper corpus, FastAPI search/insights, overlay enrichment jobs, Astro dashboard, static JSON export path, warm restore deploy script.
+**IN scope:** ~488k paper corpus, FastAPI search/insights, overlay enrichment jobs, Astro dashboard, static JSON export path, Cloudflare Pages demo, paid-answer/RAG demo path, warm restore deploy script.
 
 **OUT of scope:** Confirmed public CDN launch, legacy Postgres pipeline (except optional old CLI paths), full-corpus Semantic Scholar backfill, manual author curation at scale.
 
@@ -28,12 +28,14 @@ researchPapers is a ClickHouse-backed academic-paper intelligence platform. It i
 - **MLX (Qwen2.5-3B-4bit tagging):** Premium tagging subset.
 - **spaCy v2:** Noun-chunk tags.
 - **Optional Postgres:** Legacy CLI paths (`ingest`, `download-pdfs`) only.
+- **Cloudflare Pages:** Public Astro demo at `https://research-papers.pages.dev`.
 
 Corpus stats: 488,491 papers · full-corpus PageRank · 64 semantic clusters · MLX + spaCy tags · correction overlays · ~1.05M paper→paper edges.
 
 ### Internal (fleet)
 
 - **High Signal:** Insight surface patterns (sleepers, hot, similar).
+- **knowledge-base:** Optional server-side Knowledgebase RAG service for cited paid-answer demos over the `research-papers` domain.
 
 ### Stack & commands
 
@@ -61,12 +63,14 @@ See `DEPLOY.md` for LAN/CDN deployment shapes.
 
 - **Corpus build:** ~488k papers across arxiv, OpenReview, bioRxiv, medRxiv with ~1.05M paper→paper edges; full-corpus PageRank → `paper_scores_v2`; MiniLM embeddings (384-d) for all papers; 64 semantic clusters; spaCy noun-chunk tags + MLX premium tagging subset.
 - **Overlay enrichment shipped:** Semantic Scholar enrichment → `citation_overlay_v2`; ArXiv abstract refresh → `abstract_overlay_v2`; author graph → `authors_v2`, `paper_authorships_v2`.
+- **2026-06-24:** Cloudflare Pages demo deployed at `https://research-papers.pages.dev`; frontend no longer defaults to localhost APIs; Research Answer API panel ships a same-origin RAG proxy path with a bundled-data cited fallback while the Knowledgebase secret is not configured.
 
 ## Products
 
 | Surface | URL / port |
 | --- | --- |
-| Public production | **Not confirmed** — same-host deployment preferred; no CDN launch path yet |
+| Public production | `https://research-papers.pages.dev` (Cloudflare Pages) |
+| Pages RAG Function | `/api/rag/query` on Pages; requires `RAG_SERVICE_KEY` to call the Knowledgebase service |
 | FastAPI (local/deploy) | `http://0.0.0.0:8000` via `uv run papers api-serve` |
 | ClickHouse HTTP | `:8123` (Docker) |
 | Astro dev | `http://127.0.0.1:4321` (`cd web && npm run dev`) |
@@ -108,27 +112,28 @@ See `DEPLOY.md` for LAN/CDN deployment shapes.
 
 - Astro frontend wired to FastAPI/ClickHouse data path.
 - Static JSON exports via `uv run papers export-ch` → `web/public/data/*.json`.
+- Public Pages build uses bundled static JSON when no live API base is configured, so search/similar-paper demo flows do not point at localhost.
+- Research Answer API panel calls same-origin `/api/rag/query` on Pages or FastAPI `/rag/query` in same-host mode; if the live Knowledgebase service is unavailable, the browser falls back to a cited answer over bundled hot papers, sleepers, OpenReview ratings, and semantic clusters.
 - Warm restore, cold rebuild, deployment shapes documented.
 
 ## Todo / Planned / Deferred / Blocked
 
 ### Planned
 
-1. Decide deployment target before public use: same-host deployment preferred unless CDN/static frontend launch needed.
+1. Configure `RAG_SERVICE_KEY` on Cloudflare Pages and seed the `research-papers` Knowledgebase domain with `scripts/seed_knowledgebase_rag.py` when the service key is available.
 2. Keep static JSON exports fresh after ingestion/retagging: `uv run papers export-ch` + frontend rebuild.
 3. Run overlay jobs on production corpus after deploy: `uv run papers warm-update`.
 
 ### Deferred
 
-- Cloudflare/Vercel CDN deployment while same-host deployment preferred.
+- Full same-host live API deployment remains separate from the Cloudflare Pages static demo.
 - Legacy Postgres pipeline unless needed for cold restore or old commands.
 - OrbStack/macOS VM instability — environment issue, not product regression without repro on stable Docker.
 - Full-corpus Semantic Scholar backfill and manual author curation.
-- No confirmed public production deployment target or CDN launch path.
 - Static JSON exports drift from ClickHouse until `export-ch` + frontend rebuild rerun.
 - Overlay jobs need post-deploy runs on live corpus.
 - Cold rebuild remains hours-long; warm restore from dump is the practical path.
 
 ### Blocked
 
-- (none)
+- Live Knowledgebase RAG path is blocked on a non-committed `RAG_SERVICE_KEY`/Pages runtime secret; public UI currently uses the bundled-data fallback until that is configured and seeded.

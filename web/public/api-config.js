@@ -5,6 +5,6 @@
 //   window.__API_BASE__ = "http://192.168.1.42:8000";   // same LAN as host
 //   window.__API_BASE__ = "https://api.researchpapers.example.com";
 //
-// If unset, build-time PUBLIC_API_URL wins; if that's also unset, defaults to
-// http://127.0.0.1:8000 (local dev).
+// If unset, build-time PUBLIC_API_URL wins. Public Pages deployments then use
+// bundled static JSON for search and same-origin Pages Functions for RAG.
 window.__API_BASE__ = undefined;

@@ -16,17 +16,93 @@ type Result = {
 // Resolve API base in this priority:
 //   1. PUBLIC_API_URL build-time env (Cloudflare Pages / Vercel)
 //   2. window.__API_BASE__ runtime override (set via /api-config.js if present)
-//   3. Default: localhost:8000 (local dev)
+//   3. Empty string: static deployed demo mode over bundled JSON exports
 const API_BASE: string =
   (import.meta.env.PUBLIC_API_URL as string | undefined) ??
   (typeof window !== "undefined" && (window as any).__API_BASE__) ??
-  "http://127.0.0.1:8000";
+  "";
+
+type StaticPaper = {
+  paper_id?: string;
+  arxiv_id?: string;
+  source?: string;
+  title?: string;
+  submitted_date?: string | null;
+  citation_count?: number | null;
+  topic_tags?: string[];
+  top_keywords?: string[];
+  venue?: string;
+  decision?: string;
+  avg_rating?: number | null;
+};
 
 function paperUrl(paper_id: string, arxiv_id: string | null): string {
   if (arxiv_id) return `https://arxiv.org/abs/${arxiv_id}`;
   if (paper_id.startsWith("arxiv:")) return `https://arxiv.org/abs/${paper_id.replace("arxiv:", "")}`;
   if (paper_id.startsWith("openreview:")) return `https://openreview.net/forum?id=${paper_id.replace("openreview:", "")}`;
   return "#";
+}
+
+function textScore(query: string, row: StaticPaper): number {
+  const tokens = query.toLowerCase().split(/\s+/).filter((token) => token.length > 2);
+  const haystack = [
+    row.title,
+    row.source,
+    row.venue,
+    row.decision,
+    ...(row.topic_tags ?? []),
+    ...(row.top_keywords ?? []),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  let score = 0;
+  for (const token of tokens) {
+    if (haystack.includes(token)) score += token.length;
+  }
+  if (row.title?.toLowerCase().includes(query.toLowerCase())) score += 20;
+  score += Math.log1p(Number(row.citation_count ?? 0)) / 4;
+  if (row.avg_rating) score += Number(row.avg_rating) / 3;
+  return score;
+}
+
+async function staticSearch(query: string): Promise<Result[]> {
+  const [topPapers, hot, sleepers, reviewed] = await Promise.all([
+    fetch("/data/top_papers.json").then((r) => r.json()),
+    fetch("/data/hot.json").then((r) => r.json()),
+    fetch("/data/sleepers.json").then((r) => r.json()),
+    fetch("/data/review_top_papers.json").then((r) => r.json()),
+  ]) as [StaticPaper[], StaticPaper[], StaticPaper[], StaticPaper[]];
+  const byId = new Map<string, StaticPaper>();
+  for (const row of [...topPapers, ...hot, ...sleepers, ...reviewed]) {
+    const paperId = row.paper_id ?? (row.arxiv_id ? `arxiv:${row.arxiv_id}` : row.title);
+    if (paperId && !byId.has(paperId)) byId.set(paperId, row);
+  }
+  return [...byId.values()]
+    .map((row) => ({ row, score: textScore(query, row) }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 15)
+    .map(({ row, score }) => {
+      const paperId = row.paper_id ?? (row.arxiv_id ? `arxiv:${row.arxiv_id}` : row.title ?? "paper");
+      const arxivId = row.arxiv_id ?? (paperId?.startsWith("arxiv:") ? paperId.replace("arxiv:", "") : null);
+      const details = [
+        row.venue,
+        row.decision,
+        row.topic_tags?.slice(0, 4).join(", "),
+        row.top_keywords?.slice(0, 4).join(", "),
+      ].filter(Boolean).join(" · ");
+      return {
+        paper_id: paperId,
+        source: row.source ?? (paperId?.startsWith("openreview:") ? "openreview" : "static"),
+        title: row.title ?? paperId,
+        abstract_preview: details || "Bundled researchPapers signal from the deployed static export.",
+        submitted_date: row.submitted_date ?? null,
+        citation_count: Number(row.citation_count ?? 0),
+        arxiv_id: arxivId,
+        similarity: Math.min(0.999, score / 40),
+      };
+    });
 }
 
 export function SemanticSearch() {
@@ -42,11 +118,15 @@ export function SemanticSearch() {
     setError(null);
     setDidSearch(true);
     try {
-      const r = await fetch(`${API_BASE}/semantic-search?q=${encodeURIComponent(query)}&limit=15`);
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const data = await r.json();
-      setResults(data.results || []);
-    } catch (e: any) {
+      if (API_BASE) {
+        const r = await fetch(`${API_BASE}/semantic-search?q=${encodeURIComponent(query)}&limit=15`);
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const data = await r.json();
+        setResults(data.results || []);
+      } else {
+        setResults(await staticSearch(query));
+      }
+    } catch (e: unknown) {
       setError(e?.message || "request failed");
       setResults([]);
     } finally {
@@ -76,10 +156,10 @@ export function SemanticSearch() {
         </button>
       </form>
 
-      {error && <div class="text-sm text-destructive">Error: {error}. Is the API running at {API_BASE}?</div>}
+      {error && <div class="text-sm text-destructive">Error: {error}</div>}
 
       {didSearch && !loading && results.length === 0 && !error && (
-        <div class="text-sm text-muted-foreground">No matches. The embedding index may still be building — try again in a few minutes.</div>
+        <div class="text-sm text-muted-foreground">No matches in the deployed demo slice. Try a broader topic.</div>
       )}
 
       {results.length > 0 && (
