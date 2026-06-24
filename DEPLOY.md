@@ -61,7 +61,7 @@ Pages runtime variables/secrets when you want the full Knowledgebase RAG path:
 
 ```bash
 RAG_SERVICE_URL=https://knowledgebase.sarthakagrawal927.workers.dev
-RAG_DOMAIN=research-papers-cited1000-v2
+RAG_DOMAIN=research-papers-cs-cited1000-all
 RAG_SERVICE_KEY=<set as a Pages secret/runtime variable, never commit it>
 ```
 
@@ -72,9 +72,10 @@ RAG_SERVICE_KEY=<service-key> uv run python scripts/seed_openalex_cs_rag.py \
   --live \
   --vector-ingest \
   --local-embedding-backend sentence-transformers \
-  --domain research-papers-cited1000-v2 \
-  --state data/openalex-cs-cited1000-bge-st-kb-seed-state.json \
-  --max-records 3863
+  --domain research-papers-cs-cited1000-all \
+  --state data/openalex-cs-cited1000-all-bge-st-kb-seed-state.json \
+  --openalex-filter 'cited_by_count:>999,is_retracted:false,primary_topic.field.id:17' \
+  --max-records 11116
 ```
 
 The static export of `dist/` (~1.4 MB gzipped) is everything the FE needs.

@@ -109,7 +109,7 @@ All under the FastAPI server (`uv run papers api-serve`):
 | `GET /authors/by-id/{openalex_id}` | full author profile |
 | `GET /reviews/top-rated` | best-reviewed OpenReview papers |
 | `GET /rag/status` | server-side Knowledgebase RAG wiring status, without exposing secrets |
-| `POST /rag/query` | cited answers over the seeded `research-papers-cited1000-v2` Knowledgebase domain |
+| `POST /rag/query` | cited answers over the seeded `research-papers-cs-cited1000-all` Knowledgebase domain |
 
 ### RAG answer demo
 
@@ -127,7 +127,7 @@ Required runtime env for the full Knowledgebase RAG path:
 ```bash
 export RAG_SERVICE_KEY="<service-key>"
 export RAG_SERVICE_URL="https://knowledgebase.sarthakagrawal927.workers.dev"
-export RAG_DOMAIN="research-papers-cited1000-v2"
+export RAG_DOMAIN="research-papers-cs-cited1000-all"
 ```
 
 Seed the demo domain from high-citation OpenAlex Computer Science papers with
@@ -138,14 +138,16 @@ RAG_SERVICE_KEY="<service-key>" uv run python scripts/seed_openalex_cs_rag.py \
   --live \
   --vector-ingest \
   --local-embedding-backend sentence-transformers \
-  --domain research-papers-cited1000-v2 \
-  --state data/openalex-cs-cited1000-bge-st-kb-seed-state.json \
-  --max-records 3863
+  --domain research-papers-cs-cited1000-all \
+  --state data/openalex-cs-cited1000-all-bge-st-kb-seed-state.json \
+  --openalex-filter 'cited_by_count:>999,is_retracted:false,primary_topic.field.id:17' \
+  --max-records 11116
 ```
 
 This seeds the current `cited_by_count > 999` OpenAlex Computer Science slice:
-3,863 paper records/chunks as of June 24, 2026. Query-time embedding still runs
-through Knowledgebase/Cloudflare; ingestion embeddings are generated locally.
+11,116 primary-CS OpenAlex works as of June 24, 2026. Query-time embedding
+still runs through Knowledgebase/Cloudflare; ingestion embeddings are generated
+locally.
 
 ## Using the data
 

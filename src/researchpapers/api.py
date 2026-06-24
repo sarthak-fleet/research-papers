@@ -143,7 +143,7 @@ def _rag_base_url() -> str:
 
 
 def _rag_domain() -> str:
-    return os.environ.get("RAG_DOMAIN", "research-papers-cited1000-v2")
+    return os.environ.get("RAG_DOMAIN", "research-papers-cs-cited1000-all")
 
 
 def _rag_key() -> str | None:

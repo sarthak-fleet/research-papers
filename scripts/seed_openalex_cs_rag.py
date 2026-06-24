@@ -616,10 +616,11 @@ def fetch_openalex_page(
     *,
     cursor: str,
     per_page: int,
+    openalex_filter: str,
     mailto: str | None,
 ) -> dict[str, Any]:
     params = {
-        "filter": OPENALEX_FILTER,
+        "filter": openalex_filter,
         "select": OPENALEX_SELECT,
         "sort": "cited_by_count:desc",
         "per-page": str(per_page),
@@ -658,6 +659,7 @@ def main() -> int:
     parser.add_argument("--local-embedding-batch-size", type=int, default=32)
     parser.add_argument("--chunk-size", type=int, default=2000)
     parser.add_argument("--chunk-overlap", type=int, default=200)
+    parser.add_argument("--openalex-filter", default=os.environ.get("OPENALEX_FILTER", OPENALEX_FILTER))
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE_PATH)
     parser.add_argument("--per-page", type=int, default=200)
     parser.add_argument("--batch-size", type=int, default=10)
@@ -718,11 +720,12 @@ def main() -> int:
             client,
             cursor=str(state.get("cursor") or "*"),
             per_page=args.per_page,
+            openalex_filter=args.openalex_filter,
             mailto=args.mailto,
         )
         total = int((first_page.get("meta") or {}).get("count") or 0)
         print(
-            f"OpenAlex corpus count={total} filter={OPENALEX_FILTER} "
+            f"OpenAlex corpus count={total} filter={args.openalex_filter} "
             f"domain={args.domain} cursor={state.get('cursor')} "
             f"mode={'live' if args.live else 'dry-run'} "
             f"batch_size={args.batch_size} sleep={args.sleep}s run_budget={args.run_budget} "
@@ -914,6 +917,7 @@ def main() -> int:
                 client,
                 cursor=str(next_cursor),
                 per_page=args.per_page,
+                openalex_filter=args.openalex_filter,
                 mailto=args.mailto,
             )
 

@@ -68,7 +68,7 @@ type LiveCitation = {
 };
 
 const DEFAULT_RAG_URL = "https://knowledgebase.sarthakagrawal927.workers.dev";
-const DEFAULT_DOMAIN = "research-papers-cited1000-v2";
+const DEFAULT_DOMAIN = "research-papers-cs-cited1000-all";
 
 async function fetchAssetJson<T>(request: Request, path: string): Promise<T> {
   const url = new URL(path, request.url);
@@ -312,6 +312,7 @@ export async function onRequestPost(context: PagesContext): Promise<Response> {
   const baseUrl = (context.env.RAG_SERVICE_URL || DEFAULT_RAG_URL).replace(/\/+$/, "");
   const domain = String(payload.domain ?? context.env.RAG_DOMAIN ?? DEFAULT_DOMAIN).trim();
   const topK = Math.min(Math.max(Number(payload.top_k ?? 8), 1), 20);
+  const mode = String(payload.mode ?? "semantic");
 
   const upstream = await fetch(`${baseUrl}/v1/kb/query`, {
     method: "POST",
@@ -322,13 +323,15 @@ export async function onRequestPost(context: PagesContext): Promise<Response> {
     body: JSON.stringify({
       domain,
       question,
-      mode: String(payload.mode ?? "semantic"),
-      answer_mode: String(payload.answer_mode ?? "workers_ai"),
+      mode,
+      min_score: mode === "semantic" ? Number(payload.min_score ?? 0) : payload.min_score,
+      answer_mode: String(payload.answer_mode ?? "extractive"),
       top_k: topK,
       rerank: true,
       mmr: true,
       query_rewrite: true,
       query_decompose: true,
+      cache_mode: String(payload.cache_mode ?? "bypass_read"),
     }),
   });
 
