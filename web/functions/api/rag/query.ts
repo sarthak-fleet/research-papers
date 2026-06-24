@@ -47,6 +47,10 @@ type Evidence = {
   title: string;
   excerpt: string;
   score: number;
+  year?: number;
+  citation_count?: number;
+  avg_rating?: number;
+  venue?: string;
 };
 
 type LiveCitation = {
@@ -97,6 +101,7 @@ function paperMeta(paper: StaticPaper): string {
 function paperEvidence(collection: string, paper: StaticPaper, boost = 0): Evidence {
   const title = paper.title ?? paperId(paper);
   const tags = [...(paper.topic_tags ?? []), ...(paper.top_keywords ?? [])].slice(0, 5);
+  const year = paper.submitted_date ? Number(paper.submitted_date.slice(0, 4)) : undefined;
   const excerpt = [title, paperMeta(paper), tags.length ? `Signals: ${tags.join(", ")}` : null]
     .filter(Boolean)
     .join(". ");
@@ -106,6 +111,10 @@ function paperEvidence(collection: string, paper: StaticPaper, boost = 0): Evide
     title,
     excerpt,
     score: boost,
+    year: Number.isFinite(year) ? year : undefined,
+    citation_count: paper.citation_count,
+    avg_rating: paper.avg_rating,
+    venue: paper.venue,
   };
 }
 
@@ -125,15 +134,130 @@ function matchScore(questionTerms: string[], text: string, boost = 0): number {
   );
 }
 
-function summarizeEvidence(evidence: Evidence[]): string {
+type PaperIntent = "general" | "sleepers" | "ratings" | "clusters" | "recent" | "rag";
+
+function paperIntent(question: string): PaperIntent {
+  const lower = question.toLowerCase();
+  if (/\b(sleeper|sleepers|underrated|under-read|under read|accepted)\b/.test(lower)) return "sleepers";
+  if (/\b(rating|ratings|reviewer|reviewers|openreview|peer review)\b/.test(lower)) return "ratings";
+  if (/\b(cluster|clusters|topic|topics|community|communities)\b/.test(lower)) return "clusters";
+  if (/\b(rag|retrieval[-\s]?augmented|augmented generation|grounded generation)\b/.test(lower)) return "rag";
+  if (/\b(recent|latest|hot|rising|trend|trends|signal|signals|velocity|cites per year)\b/.test(lower)) return "recent";
+  return "general";
+}
+
+function shouldUsePaperSignals(question: string): boolean {
+  return paperIntent(question) !== "general";
+}
+
+function topicAliases(question: string): string[] {
+  const lower = question.toLowerCase();
+  const aliases = new Set<string>();
+  if (/\b(rag|retrieval[-\s]?augmented|augmented generation|grounded generation)\b/.test(lower)) {
+    ["retrieval-augmented generation", "retrieval augmented generation", "rag", "graph rag", "long-context retrieval"].forEach((term) => aliases.add(term));
+  }
+  if (/\b(llm|llms|language model|language models|gpt|llama|transformer|transformers)\b/.test(lower)) {
+    ["large language model", "language model", "llm", "llama", "gpt", "transformer", "instruct", "reasoning"].forEach((term) => aliases.add(term));
+  }
+  if (/\b(diffusion|image|vision|video|multimodal)\b/.test(lower)) {
+    ["diffusion", "vision", "image", "video", "multimodal"].forEach((term) => aliases.add(term));
+  }
+  if (/\b(code|coding|programming)\b/.test(lower)) {
+    ["code", "coding", "programming", "software"].forEach((term) => aliases.add(term));
+  }
+  return [...aliases];
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function containsAlias(text: string, alias: string): boolean {
+  if (alias.length <= 4 && /^[a-z0-9]+$/.test(alias)) {
+    return new RegExp(`\\b${escapeRegExp(alias)}\\b`, "i").test(text);
+  }
+  return text.includes(alias);
+}
+
+function topicScore(question: string, text: string): number {
+  const lowerText = text.toLowerCase();
+  return topicAliases(question).reduce((score, alias) => score + (containsAlias(lowerText, alias) ? 10 : 0), 0);
+}
+
+function offTopicPenalty(question: string, text: string): number {
+  const lowerQuestion = question.toLowerCase();
+  const lowerText = text.toLowerCase();
+  if (
+    /\b(llm|llms|language model|language models)\b/.test(lowerQuestion) &&
+    !/\b(vision|image|video|code|coding|clinical|medical|multimodal)\b/.test(lowerQuestion) &&
+    /\b(vision-language|image|video|code generation|clinical|text-to-3d|protein)\b/.test(lowerText)
+  ) {
+    return -18;
+  }
+  return 0;
+}
+
+function intentScore(intent: PaperIntent, item: Evidence): number {
+  if (intent === "sleepers") {
+    return (
+      (item.collection === "sleepers" ? 35 : 0) +
+      (item.collection === "openreview_top_rated" ? 10 : 0) +
+      (typeof item.avg_rating === "number" ? item.avg_rating * 2 : 0) +
+      (typeof item.citation_count === "number" && item.citation_count <= 20 ? 8 : 0)
+    );
+  }
+  if (intent === "ratings") {
+    return (
+      (item.collection === "openreview_top_rated" ? 30 : 0) +
+      (item.collection === "openreview_tag_ratings" ? 22 : 0) +
+      (typeof item.avg_rating === "number" ? item.avg_rating * 2 : 0)
+    );
+  }
+  if (intent === "clusters") return item.collection === "semantic_clusters" ? 40 : 0;
+  if (intent === "rag") {
+    return (
+      (item.collection === "hot_papers" ? 12 : 0) +
+      (item.collection === "sleepers" ? 10 : 0) +
+      (item.collection === "openreview_top_rated" ? 8 : 0)
+    );
+  }
+  if (intent === "recent") {
+    return (
+      (item.collection === "hot_papers" ? 28 : 0) +
+      (item.collection === "sleepers" ? 12 : 0) +
+      (item.collection === "openreview_top_rated" ? 10 : 0) +
+      (typeof item.year === "number" && item.year >= 2023 ? 16 : 0)
+    );
+  }
+  return 0;
+}
+
+function summarizeEvidence(evidence: Evidence[], intent: PaperIntent): string {
+  const intro =
+    intent === "sleepers"
+      ? "The strongest sleeper signals are accepted, highly rated papers with little citation saturation:"
+      : intent === "ratings"
+        ? "The strongest peer-review signals are:"
+        : intent === "clusters"
+          ? "The strongest semantic clusters around this question are:"
+          : intent === "rag"
+            ? "The best reading path for this RAG question is:"
+            : "The strongest recent research signals are:";
+  const note =
+    intent === "sleepers"
+      ? "Source: OpenReview accepted-paper ratings plus current citation counts in the deployed paper analytics layer."
+      : intent === "clusters"
+        ? "Source: semantic clusters computed from the deployed research-paper corpus."
+        : "Source: deployed paper analytics plus the live Knowledgebase corpus; ranking favors topical match, citation velocity, peer-review signal, and recency.";
   return [
-    "Based on the deployed research-paper data, the strongest signals are:",
+    intro,
     ...evidence.slice(0, 5).map((item, index) => {
       const source = item.collection.replace(/_/g, " ");
-      return `${index + 1}. ${item.title} (${source}): ${item.excerpt}`;
+      const year = item.year ? `${item.year}, ` : "";
+      return `${index + 1}. ${item.title} (${year}${source}): ${item.excerpt}`;
     }),
     "",
-    "This answer is served from the bundled demo index when the live Knowledgebase RAG service is unavailable. The same endpoint switches to the full server RAG path when the service key is configured.",
+    note,
   ].join("\n");
 }
 
@@ -161,7 +285,12 @@ function polishLiveAnswer(body: unknown, question: string): unknown {
     ? (record.citations.filter((item): item is LiveCitation => Boolean(item && typeof item === "object")) as LiveCitation[])
     : [];
   if (citations.length === 0) return body;
-  if (record.ai_used === true && typeof record.answer === "string" && record.answer.trim().length > 80) {
+  if (
+    record.answer_mode === "workers_ai" &&
+    record.ai_used === true &&
+    typeof record.answer === "string" &&
+    record.answer.trim().length > 80
+  ) {
     return body;
   }
 
@@ -201,20 +330,21 @@ async function staticDemoAnswer(request: Request, question: string): Promise<Res
 
   const questionTerms = tokens(question);
   const lowerQuestion = question.toLowerCase();
+  const intent = paperIntent(question);
   const evidence: Evidence[] = [
-    ...hot.slice(0, 40).map((paper) => paperEvidence("hot_papers", paper, paper.hotness ?? 0)),
+    ...hot.slice(0, 100).map((paper) => paperEvidence("hot_papers", paper, paper.hotness ?? 0)),
     ...sleepers
-      .slice(0, 40)
+      .slice(0, 100)
       .map((paper) => paperEvidence("sleepers", paper, (paper.avg_rating ?? 0) / 2)),
     ...reviewTop
-      .slice(0, 40)
+      .slice(0, 120)
       .map((paper) => paperEvidence("openreview_top_rated", paper, (paper.avg_rating ?? 0) / 2)),
     ...topPapers
-      .slice(0, 40)
+      .slice(0, 120)
       .map((paper) =>
         paperEvidence("citation_graph", paper, Math.min((paper.cites_per_year ?? 0) / 500, 3)),
       ),
-    ...clusters.slice(0, 40).map((cluster) => {
+    ...clusters.slice(0, 64).map((cluster) => {
       const tags = (cluster.top_tags ?? []).slice(0, 6).map((tag) => tag.tag).join(", ");
       const papers = (cluster.top_papers ?? [])
         .slice(0, 3)
@@ -241,44 +371,56 @@ async function staticDemoAnswer(request: Request, question: string): Promise<Res
         title: `${tag.tag} rating signal`,
         excerpt: `${tag.tag} has mean OpenReview rating ${tag.mean_rating.toFixed(2)} across ${tag.n_papers} papers${typeof tag.p90_rating === "number" ? ` and p90 ${tag.p90_rating.toFixed(2)}` : ""}. Examples: ${samples}.`,
         score: tag.mean_rating,
+        avg_rating: tag.mean_rating,
       };
     }),
   ];
 
-  const selected = evidence
+  const ranked = evidence
     .map((item) => {
-      const intentBoost =
-        (lowerQuestion.includes("sleeper") && item.collection === "sleepers" ? 8 : 0) +
-        (lowerQuestion.includes("rating") && item.collection === "openreview_tag_ratings" ? 8 : 0) +
-        (lowerQuestion.includes("cluster") && item.collection === "semantic_clusters" ? 8 : 0) +
-        (/(llm|language model|transformer|gpt|llama)/.test(lowerQuestion) &&
-        /(llm|language model|transformer|gpt|llama)/i.test(`${item.title} ${item.excerpt}`)
-          ? 20
-          : 0) +
-        (/(vision|image|video)/.test(lowerQuestion) &&
-        /(vision|image|video|diffusion)/i.test(`${item.title} ${item.excerpt}`)
-          ? 10
-          : 0);
+      const haystack = `${item.title} ${item.excerpt}`;
+      const exactQuestionBoost = lowerQuestion.includes(item.title.toLowerCase()) ? 50 : 0;
       return {
         ...item,
-        score: matchScore(questionTerms, `${item.title} ${item.excerpt}`, item.score + intentBoost),
+        score:
+          matchScore(questionTerms, haystack, item.score) +
+          topicScore(question, haystack) +
+          intentScore(intent, item) +
+          exactQuestionBoost +
+          offTopicPenalty(question, haystack),
       };
     })
-    .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title))
-    .slice(0, 6);
+    .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
+  const selected = (intent === "rag"
+    ? ranked.filter((item) => topicScore(question, `${item.title} ${item.excerpt}`) > 0)
+    : ranked
+  ).slice(0, 6);
 
   return Response.json(
     {
-      answer: summarizeEvidence(selected),
+      answer: summarizeEvidence(selected, intent),
       citations: selected.map((item) => ({
         chunk_id: item.id,
         filename: item.collection,
         excerpt: item.excerpt,
         score: item.score,
+        metadata: {
+          title: item.title,
+          publication_year: item.year,
+          citation_count: item.citation_count,
+          avg_rating: item.avg_rating,
+          venue: item.venue,
+        },
       })),
       trace_id: null,
-      route: "static-demo",
-      answer_mode: "bundled-data",
+      route: "paper_signals",
+      answer_mode: "analytics+rag",
+      confidence: {
+        level: selected.length > 0 ? "high" : "none",
+        result_count: selected.length,
+        intent,
+        calibration: "paper_signal_router_over_deployed_static_exports",
+      },
     },
     {
       headers: {
@@ -305,7 +447,7 @@ export async function onRequestPost(context: PagesContext): Promise<Response> {
   }
 
   const key = context.env.RAG_SERVICE_KEY;
-  if (!key) {
+  if (!key || (shouldUsePaperSignals(question) && payload.live_only !== true)) {
     return staticDemoAnswer(context.request, question);
   }
 
@@ -331,7 +473,7 @@ export async function onRequestPost(context: PagesContext): Promise<Response> {
       mmr: true,
       query_rewrite: true,
       query_decompose: true,
-      cache_mode: String(payload.cache_mode ?? "bypass_read"),
+      cache_mode: String(payload.cache_mode ?? "default"),
     }),
   });
 
