@@ -62,7 +62,7 @@ export function TagCooccurrence({ data }: { data: { nodes: Node[]; edges: Edge[]
                 style={{ minWidth: "180px", maxWidth: "180px" }}
               >
                 <span className="truncate inline-block w-full text-right">{row_n.id}</span>
-                <span className="text-[9px] text-muted-foreground/60 ml-1">{fmt.format(row_n.count)}</span>
+                <span className="text-[9px] text-muted-foreground ml-1">{fmt.format(row_n.count)}</span>
               </th>
               {nodes.map((col_n, j) => {
                 const v = matrix[i][j];
@@ -80,7 +80,7 @@ export function TagCooccurrence({ data }: { data: { nodes: Node[]; edges: Edge[]
                     }}
                   >
                     {v > 0 && !isDiag && v >= maxEdge * 0.05 ? (
-                      <span className="text-[8px] text-foreground/80">{v >= 1000 ? `${Math.round(v / 100) / 10}k` : v}</span>
+                      <span className="text-[8px] font-semibold text-slate-950">{v >= 1000 ? `${Math.round(v / 100) / 10}k` : v}</span>
                     ) : null}
                   </td>
                 );

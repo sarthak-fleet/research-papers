@@ -61,6 +61,8 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Search 488k research papers, inspect citation and review signals, and ask cited RAG questions over a high-citation OpenAlex Computer Science corpus." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>researchPapers · 488k papers, semantic search, PageRank</title>
   </head>
   <body class="min-h-screen antialiased font-sans">
@@ -88,6 +90,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
       </div>
     </nav>
 
+    <main>
     <header class="max-w-7xl mx-auto px-6 pt-12 pb-6">
       <h1 class="text-4xl font-bold tracking-tight">488k papers. Search, analytics, and paid answers.</h1>
       <p class="mt-3 text-muted-foreground max-w-3xl text-base">
@@ -259,11 +262,11 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
         </div>
         <div class="space-y-3">
           <h3 class="text-sm font-semibold text-foreground/80">Venue summary</h3>
-          <ReviewVenuesTable client:load data={reviewVenues} />
+          <ReviewVenuesTable client:visible data={reviewVenues} />
         </div>
         <div class="space-y-3">
           <h3 class="text-sm font-semibold text-foreground/80">Top-rated submissions (avg reviewer rating, ≥3 reviews)</h3>
-          <TopRatedPapersTable client:load data={reviewTopPapers} />
+          <TopRatedPapersTable client:visible data={reviewTopPapers} />
         </div>
       </section>
     )}
@@ -277,7 +280,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
             Click any to see top tags + top-cited papers in that semantic region.
           </p>
         </div>
-        <EmbeddingClusters client:load data={embeddingClusters} />
+        <EmbeddingClusters client:visible data={embeddingClusters} />
       </section>
     )}
 
@@ -291,7 +294,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
           </p>
         </div>
         <div class="rounded-xl border bg-card p-4 overflow-x-auto">
-          <TagCooccurrence client:load data={tagCooccurrence} />
+          <TagCooccurrence client:visible data={tagCooccurrence} />
         </div>
       </section>
     )}
@@ -305,7 +308,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
             Surfaces papers that combine recent citation velocity with peer-review love and graph centrality. 2023+ submissions only.
           </p>
         </div>
-        <HotTable client:load data={hot} />
+        <HotTable client:visible data={hot} />
       </section>
     )}
 
@@ -318,7 +321,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
             2024+ submissions only — the "what's under-read" leaderboard. Click any title to read on OpenReview.
           </p>
         </div>
-        <SleepersTable client:load data={sleepers} />
+        <SleepersTable client:visible data={sleepers} />
       </section>
     )}
 
@@ -332,7 +335,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
             Click a tag for the top-rated sample papers behind the number.
           </p>
         </div>
-        <TagRatingTable client:load data={tagRating} />
+        <TagRatingTable client:visible data={tagRating} />
       </section>
     )}
 
@@ -341,7 +344,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
         <h2 class="text-2xl font-semibold tracking-tight">Most-cited works</h2>
         <p class="text-sm text-muted-foreground">By our 8.5k-paper corpus, via OpenAlex referenced_works — the "what ML reads" reading list.</p>
       </div>
-      <CitedWorksTable client:load data={topCitedWorks} />
+      <CitedWorksTable client:visible data={topCitedWorks} />
     </section>
 
     <section id="top-papers" class="max-w-7xl mx-auto px-6 py-8 space-y-3">
@@ -349,7 +352,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
         <h2 class="text-2xl font-semibold tracking-tight">Top papers in the corpus</h2>
         <p class="text-sm text-muted-foreground">Compare global citations, in-corpus degree, PageRank, and Katz side by side.</p>
       </div>
-      <PapersTable client:load data={topPapers} />
+      <PapersTable client:visible data={topPapers} />
     </section>
 
     {abstractClusters.length > 0 && (
@@ -358,7 +361,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
           <h2 class="text-2xl font-semibold tracking-tight">Semantic clusters from abstracts</h2>
           <p class="text-sm text-muted-foreground">TF-IDF + KMeans on abstract text. Orthogonal to citation communities — when they disagree, you've found siloed work.</p>
         </div>
-        <AbstractClustersTable client:load data={abstractClusters} />
+        <AbstractClustersTable client:visible data={abstractClusters} />
       </section>
     )}
 
@@ -370,11 +373,11 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div class="rounded-xl border bg-card p-4">
-            <h3 class="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">Papers per year <span class="text-amber-500/70">(citation-biased)</span></h3>
+            <h3 class="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">Papers per year <span class="text-amber-400">(citation-biased)</span></h3>
             <canvas id="chart-papers-per-year" class="!w-full !max-h-80"></canvas>
           </div>
           <div class="rounded-xl border bg-card p-4">
-            <h3 class="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">Mean cites / year, per publication year <span class="text-emerald-500/70">(lag-corrected)</span></h3>
+            <h3 class="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">Mean cites / year, per publication year <span class="text-emerald-400">(lag-corrected)</span></h3>
             <canvas id="chart-cites-per-year" class="!w-full !max-h-80"></canvas>
           </div>
           <div class="rounded-xl border bg-card p-4">
@@ -413,7 +416,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
           <h2 class="text-2xl font-semibold tracking-tight">Top authors</h2>
           <p class="text-sm text-muted-foreground">Ranked by sum of citations. No author disambiguation — namesakes are merged. Click "drill" to see an author's papers, hosts cited, and communities.</p>
         </div>
-        <AuthorsTable client:load data={topAuthors} />
+        <AuthorsTable client:visible data={topAuthors} />
       </section>
     )}
 
@@ -423,7 +426,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
           <h2 class="text-2xl font-semibold tracking-tight">Research communities</h2>
           <p class="text-sm text-muted-foreground">Louvain on the 47k-edge within-corpus subgraph. Anchor = highest-PR paper in cluster, labels = TF-IDF over titles.</p>
         </div>
-        <CommunitiesTable client:load data={communities} />
+        <CommunitiesTable client:visible data={communities} />
       </section>
     )}
 
@@ -435,7 +438,7 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
             {fmt.format(totalCycles)} total up to length 8 — {cyclesByLen.map((r: any) => `len ${r.cycle_length}: ${fmt.format(r.n)}`).join(", ")}. Showing first 300.
           </p>
         </div>
-        <CyclesTable client:load data={cycles} />
+        <CyclesTable client:visible data={cycles} />
       </section>
     )}
 
@@ -448,15 +451,16 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
         <div class="space-y-6">
           <div>
             <h3 class="text-sm font-semibold mb-3 text-foreground/80">Top hosts</h3>
-            <HostsTable client:load data={topHosts} />
+            <HostsTable client:visible data={topHosts} />
           </div>
           <div>
             <h3 class="text-sm font-semibold mb-3 text-foreground/80">Top URLs</h3>
-            <UrlsTable client:load data={topUrls} />
+            <UrlsTable client:visible data={topUrls} />
           </div>
         </div>
       </section>
     )}
+    </main>
 
     <footer class="max-w-7xl mx-auto px-6 py-12 text-center text-xs text-muted-foreground border-t mt-12">
       <p class="text-sm font-medium text-foreground/70 mb-1">488,491 papers ingested. 1.05M edges computed. 64 clusters mapped.</p>
@@ -464,7 +468,6 @@ const ragCurrentFilter = "primary Computer Science works, not retracted, cited m
     </footer>
 
     <script src="/api-config.js" is:inline></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" is:inline></script>
     <script type="application/json" id="data-hosts-bar" set:html={JSON.stringify(topHosts.slice(0, 30))} />
     <script type="application/json" id="data-categories" set:html={JSON.stringify(hostCategories)} />
     <script type="application/json" id="data-hist" set:html={JSON.stringify(urlsPerPaperHist)} />

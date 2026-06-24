@@ -50,6 +50,7 @@ export function DataTable<TData, TValue>({
   const totalRows = table.getFilteredRowModel().rows.length;
   const pageIdx = table.getState().pagination.pageIndex;
   const pageCount = table.getPageCount();
+  const tableId = React.useId().replace(/:/g, "");
 
   return (
     <div className="space-y-3">
@@ -70,7 +71,12 @@ export function DataTable<TData, TValue>({
                   const sort = h.column.getIsSorted();
                   const canSort = h.column.getCanSort();
                   return (
-                    <TableHead key={h.id} className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold h-10">
+                    <TableHead
+                      key={h.id}
+                      id={`${tableId}-${h.id}`}
+                      scope="col"
+                      className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold h-10"
+                    >
                       {h.isPlaceholder ? null : canSort ? (
                         <button
                           onClick={h.column.getToggleSortingHandler()}
@@ -93,7 +99,7 @@ export function DataTable<TData, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id} className="border-b border-border/40 hover:bg-muted/30">
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="py-2.5">
+                    <TableCell key={cell.id} headers={`${tableId}-${cell.column.id}`} className="py-2.5">
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}
@@ -115,16 +121,16 @@ export function DataTable<TData, TValue>({
           <div className="flex items-center gap-2">
             <span>Page {pageIdx + 1} of {pageCount}</span>
             <div className="flex gap-1">
-              <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => table.firstPage()} disabled={!table.getCanPreviousPage()}>
+              <Button variant="outline" size="icon" className="h-7 w-7" aria-label="First page" onClick={() => table.firstPage()} disabled={!table.getCanPreviousPage()}>
                 <ChevronsLeft className="h-3.5 w-3.5" />
               </Button>
-              <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
+              <Button variant="outline" size="icon" className="h-7 w-7" aria-label="Previous page" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
                 <ChevronLeft className="h-3.5 w-3.5" />
               </Button>
-              <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
+              <Button variant="outline" size="icon" className="h-7 w-7" aria-label="Next page" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
                 <ChevronRight className="h-3.5 w-3.5" />
               </Button>
-              <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => table.lastPage()} disabled={!table.getCanNextPage()}>
+              <Button variant="outline" size="icon" className="h-7 w-7" aria-label="Last page" onClick={() => table.lastPage()} disabled={!table.getCanNextPage()}>
                 <ChevronsRight className="h-3.5 w-3.5" />
               </Button>
             </div>

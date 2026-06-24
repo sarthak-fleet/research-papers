@@ -15,8 +15,34 @@ const CAT_COLORS = {
   other: "#6b7280",
 };
 
-Chart.defaults.color = MUTED;
-Chart.defaults.borderColor = "#2a3038";
+let chartJsPromise = null;
+let chartsRendered = false;
+
+function configureChartDefaults() {
+  if (!window.Chart) return;
+  Chart.defaults.color = MUTED;
+  Chart.defaults.borderColor = "#2a3038";
+}
+
+function loadChartJs() {
+  if (window.Chart) {
+    configureChartDefaults();
+    return Promise.resolve(window.Chart);
+  }
+  if (chartJsPromise) return chartJsPromise;
+  chartJsPromise = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js";
+    script.async = true;
+    script.onload = () => {
+      configureChartDefaults();
+      resolve(window.Chart);
+    };
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+  return chartJsPromise;
+}
 
 function readJson(id) {
   const el = document.getElementById(id);
@@ -352,6 +378,9 @@ function showCommunityDrilldown(cid) {
 }
 
 function wireModals() {
+  const modal = document.getElementById("modal");
+  const close = document.getElementById("modal-close");
+
   document.querySelectorAll(".drill-btn").forEach((btn) => {
     if (btn.classList.contains("drill-author")) {
       btn.addEventListener("click", () => showAuthorDrilldown(btn.dataset.author));
@@ -361,26 +390,53 @@ function wireModals() {
       btn.addEventListener("click", () => showHostDrilldown(btn.dataset.host));
     }
   });
-  document.getElementById("modal-close").addEventListener("click", () => {
-    document.getElementById("modal").hidden = true;
+  if (!modal || !close) return;
+
+  close.addEventListener("click", () => {
+    modal.hidden = true;
   });
-  document.getElementById("modal").addEventListener("click", (e) => {
-    if (e.target.id === "modal") document.getElementById("modal").hidden = true;
+  modal.addEventListener("click", (e) => {
+    if (e.target.id === "modal") modal.hidden = true;
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") document.getElementById("modal").hidden = true;
+    if (e.key === "Escape") modal.hidden = true;
   });
 }
 
 // ---------- boot ----------
 
-document.addEventListener("DOMContentLoaded", () => {
+function renderChartsOnce() {
+  if (chartsRendered) return;
+  chartsRendered = true;
   renderHostsChart();
   renderCategoriesChart();
   renderHistChart();
   renderPapersPerYearChart();
   renderCitesPerYearChart();
   renderCommunityYearsChart();
+}
+
+function bootCharts() {
+  const canvases = Array.from(document.querySelectorAll("canvas[id^='chart-']"));
+  if (canvases.length === 0) return;
+  const loadAndRender = () => loadChartJs().then(renderChartsOnce).catch(() => {});
+  if (!("IntersectionObserver" in window)) {
+    window.requestIdleCallback ? window.requestIdleCallback(loadAndRender) : setTimeout(loadAndRender, 800);
+    return;
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+      loadAndRender();
+    },
+    { rootMargin: "500px 0px" },
+  );
+  canvases.forEach((canvas) => observer.observe(canvas));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  bootCharts();
   wireFilter("filter-hosts", "table-hosts");
   wireFilter("filter-urls", "table-urls");
   wireFilter("filter-papers", "table-papers");

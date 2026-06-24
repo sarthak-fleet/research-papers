@@ -64,6 +64,7 @@ See `DEPLOY.md` for LAN/CDN deployment shapes.
 - **Corpus build:** ~488k papers across arxiv, OpenReview, bioRxiv, medRxiv with ~1.05M paper→paper edges; full-corpus PageRank → `paper_scores_v2`; MiniLM embeddings (384-d) for all papers; 64 semantic clusters; spaCy noun-chunk tags + MLX premium tagging subset.
 - **Overlay enrichment shipped:** Semantic Scholar enrichment → `citation_overlay_v2`; ArXiv abstract refresh → `abstract_overlay_v2`; author graph → `authors_v2`, `paper_authorships_v2`.
 - **2026-06-24:** Cloudflare Pages demo deployed at `https://research-papers.pages.dev`; frontend no longer defaults to localhost APIs; Research Answer API panel ships a same-origin RAG proxy path. `RAG_SERVICE_KEY` is configured on Pages production and the clean `research-papers-cs-cited1000-all` Knowledgebase domain is seeded from OpenAlex primary-Computer-Science works over 999 citations, using local BGE-base embeddings uploaded through vector ingest. The bundled-data fallback remains for resilience.
+- **2026-06-24:** Pages demo performance hardening shipped: Chart.js loads lazily, below-fold React islands hydrate on visibility, static assets use immutable caching, and Lighthouse production checks reached desktop 100/100/100/100/100 plus mobile 99 performance and 100s elsewhere.
 
 ## Products
 

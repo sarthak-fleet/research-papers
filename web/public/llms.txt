@@ -1,0 +1,10 @@
+# researchPapers
+
+Research paper search, analytics, and RAG demo over a high-citation OpenAlex Computer Science corpus.
+
+## Public pages
+- [researchPapers dashboard](https://research-papers.pages.dev/)
+- [Research digest](https://research-papers.pages.dev/digest/)
+
+## Data notes
+The RAG demo uses OpenAlex primary Computer Science works with more than 999 citations. It stores metadata, abstracts when available from OpenAlex, citation counts, authors, topics, DOI or landing-page links, and PDF links only.
