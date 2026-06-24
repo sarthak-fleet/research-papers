@@ -12,7 +12,8 @@ wheels/
 # Local config and cached data
 .env
 data/pdfs/
-data/openalex-kb-seed-state*.json
+data/openalex-*-kb-seed-state.json
+data/openalex-*-shards/
 
 # Tool caches
 .pytest_cache/

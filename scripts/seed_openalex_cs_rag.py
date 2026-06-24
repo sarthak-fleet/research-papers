@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Seed Knowledgebase from OpenAlex high-citation Computer Science papers.
+"""Seed Knowledgebase from OpenAlex canonical Computer Science papers.
 
 Default corpus:
   type: article or preprint
   has_abstract: true
-  cited_by_count > 99
+  cited_by_count > 999
   is_retracted: false
   primary_topic.field.id: 17  # Computer Science
   primary_location.source.type: journal or conference
@@ -28,14 +28,15 @@ import httpx
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_BASE_URL = "https://knowledgebase.sarthakagrawal927.workers.dev"
 DEFAULT_DOMAIN = "research-papers"
-DEFAULT_STATE_PATH = ROOT / "data" / "openalex-kb-seed-state.json"
-DEFAULT_SHARD_DIR = ROOT / "data" / "openalex-cs-cited100-shards"
+DEFAULT_RECORD_TYPE = "PaperSignal"
+DEFAULT_STATE_PATH = ROOT / "data" / "openalex-cs-cited1000-kb-seed-state.json"
+DEFAULT_SHARD_DIR = ROOT / "data" / "openalex-cs-cited1000-shards"
 OPENALEX_WORKS_URL = "https://api.openalex.org/works"
 OPENALEX_FILTER = ",".join(
     [
         "type:article|preprint",
         "has_abstract:true",
-        "cited_by_count:>99",
+        "cited_by_count:>999",
         "is_retracted:false",
         "primary_topic.field.id:17",
         "primary_location.source.type:journal|conference",
@@ -171,7 +172,7 @@ def compact_work(work: dict[str, Any]) -> dict[str, Any]:
     )
     return {
         "record_kind": "openalex_research_paper",
-        "collection": "openalex_cs_cited_100",
+        "collection": "openalex_cs_cited_1000",
         "openalex_id": work.get("id"),
         "paper_id": str(work.get("id") or "").removeprefix("https://openalex.org/"),
         "type": work.get("type"),
@@ -217,7 +218,13 @@ def compact_work(work: dict[str, Any]) -> dict[str, Any]:
 
 def load_state(path: Path) -> dict[str, Any]:
     if not path.exists():
-        return {"cursor": "*", "pages": 0, "records_posted": 0, "batches_posted": 0}
+        return {
+            "cursor": "*",
+            "page_offset": 0,
+            "pages": 0,
+            "records_posted": 0,
+            "batches_posted": 0,
+        }
     return json.loads(path.read_text())
 
 
@@ -285,7 +292,7 @@ class JsonlGzipShardWriter:
         first_id = str(self.buffer[0].get("paper_id") or "unknown")
         last_id = str(self.buffer[-1].get("paper_id") or "unknown")
         path = self.shard_dir / (
-            f"openalex-cs-cited100-{self.shards_written:05d}-"
+            f"openalex-cs-cited1000-{self.shards_written:05d}-"
             f"{safe_filename(first_id)}-{safe_filename(last_id)}.jsonl.gz"
         )
         with gzip.open(path, "wt", encoding="utf-8", compresslevel=6) as handle:
@@ -327,6 +334,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-url", default=os.environ.get("RAG_SERVICE_URL", DEFAULT_BASE_URL))
     parser.add_argument("--domain", default=os.environ.get("RAG_DOMAIN", DEFAULT_DOMAIN))
+    parser.add_argument("--record-type", default=os.environ.get("RAG_RECORD_TYPE", DEFAULT_RECORD_TYPE))
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE_PATH)
     parser.add_argument("--per-page", type=int, default=200)
     parser.add_argument("--batch-size", type=int, default=10)
@@ -386,7 +394,7 @@ def main() -> int:
             f"domain={args.domain} cursor={state.get('cursor')} "
             f"mode={'live' if args.live else 'dry-run'} "
             f"batch_size={args.batch_size} sleep={args.sleep}s run_budget={args.run_budget} "
-            f"write_shards={args.write_shards}",
+            f"write_shards={args.write_shards} record_type={args.record_type}",
             flush=True,
         )
         if args.dry_run:
@@ -414,7 +422,7 @@ def main() -> int:
                 "name": args.domain,
                 "description": (
                     "OpenAlex high-citation Computer Science research papers: "
-                    "article/preprint, abstract present, >99 citations, not retracted. "
+                    "article/preprint, abstract present, >999 citations, not retracted. "
                     "Metadata/abstract/link only; PDFs are not stored."
                 ),
             },
@@ -427,6 +435,12 @@ def main() -> int:
         run_posted = 0
         while True:
             raw_results = page.get("results") if isinstance(page.get("results"), list) else []
+            page_offset = int(state.get("page_offset") or 0)
+            if "page_offset" not in state and int(state.get("pages") or 0) == 0:
+                page_offset = int(state.get("records_posted") or 0) % args.per_page
+                state["page_offset"] = page_offset
+            if page_offset > 0:
+                raw_results = raw_results[page_offset:]
             records = [compact_work(row) for row in raw_results if isinstance(row, dict)]
             if args.max_records is not None:
                 remaining = max(0, args.max_records - int(state.get("records_posted") or 0))
@@ -448,15 +462,18 @@ def main() -> int:
                     headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
                     json_body={
                         "domain": args.domain,
-                        "type": "OpenAlexResearchPaper",
+                        "type": args.record_type,
                         "data": batch,
-                        "idempotency_key": f"openalex-cs-cited100-v1-{ids[0]}-{ids[-1]}-{len(batch)}",
+                        "idempotency_key": f"openalex-cs-cited1000-v1-{ids[0]}-{ids[-1]}-{len(batch)}",
                     },
                     attempts=args.retries,
                 )
+                if resp.status_code >= 400:
+                    print(f"ingest failed HTTP {resp.status_code}: {resp.text[:1000]}", file=sys.stderr)
                 resp.raise_for_status()
                 body = resp.json()
                 state["records_posted"] = int(state.get("records_posted") or 0) + len(batch)
+                state["page_offset"] = int(state.get("page_offset") or 0) + len(batch)
                 run_posted += len(batch)
                 save_state(args.state, state)
                 print(
@@ -477,6 +494,7 @@ def main() -> int:
             meta = page.get("meta") if isinstance(page.get("meta"), dict) else {}
             next_cursor = meta.get("next_cursor")
             state["cursor"] = next_cursor
+            state["page_offset"] = 0
             state["pages"] = int(state.get("pages") or 0) + 1
             save_state(args.state, state)
             if not next_cursor:

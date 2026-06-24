@@ -70,9 +70,11 @@ def test_live_run_requires_explicit_bound(monkeypatch) -> None:
 
 
 def test_openalex_filter_stays_cost_and_quality_bounded() -> None:
-    assert "cited_by_count:>99" in seed_openalex_cs_rag.OPENALEX_FILTER
+    assert "cited_by_count:>999" in seed_openalex_cs_rag.OPENALEX_FILTER
     assert "primary_topic.field.id:17" in seed_openalex_cs_rag.OPENALEX_FILTER
     assert "primary_location.source.type:journal|conference" in seed_openalex_cs_rag.OPENALEX_FILTER
+    assert "cited1000" in seed_openalex_cs_rag.DEFAULT_STATE_PATH.name
+    assert seed_openalex_cs_rag.DEFAULT_RECORD_TYPE == "PaperSignal"
 
 
 def test_default_invocation_is_dry_run_without_secret(monkeypatch, capsys) -> None:
