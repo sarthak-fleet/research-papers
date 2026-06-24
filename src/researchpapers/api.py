@@ -188,8 +188,8 @@ def rag_query(payload: dict[str, Any]) -> dict:
     body = {
         "domain": domain,
         "question": question,
-        "mode": str(payload.get("mode") or "hybrid"),
-        "answer_mode": str(payload.get("answer_mode") or "extractive"),
+        "mode": str(payload.get("mode") or "semantic"),
+        "answer_mode": str(payload.get("answer_mode") or "workers_ai"),
         "top_k": top_k,
         "rerank": True,
         "mmr": True,

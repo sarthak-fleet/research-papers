@@ -163,11 +163,51 @@ def chunks(items: list[dict[str, Any]], size: int) -> list[list[dict[str, Any]]]
     return [items[i : i + size] for i in range(0, len(items), size)]
 
 
+def post_with_retries(
+    client: httpx.Client,
+    url: str,
+    *,
+    headers: dict[str, str],
+    json_body: dict[str, Any],
+    attempts: int,
+) -> httpx.Response:
+    last_error: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            resp = client.post(url, headers=headers, json=json_body)
+            if resp.status_code in {429, 500, 502, 503, 504} and attempt < attempts:
+                sleep_s = min(2 ** attempt, 20)
+                print(
+                    f"retrying HTTP {resp.status_code} in {sleep_s}s "
+                    f"(attempt {attempt}/{attempts})",
+                    flush=True,
+                )
+                time.sleep(sleep_s)
+                continue
+            return resp
+        except (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError) as exc:
+            last_error = exc
+            if attempt >= attempts:
+                raise
+            sleep_s = min(2 ** attempt, 20)
+            print(
+                f"retrying {type(exc).__name__} in {sleep_s}s "
+                f"(attempt {attempt}/{attempts})",
+                flush=True,
+            )
+            time.sleep(sleep_s)
+    if last_error:
+        raise last_error
+    raise RuntimeError("unreachable retry state")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-url", default=os.environ.get("RAG_SERVICE_URL", DEFAULT_BASE_URL))
     parser.add_argument("--domain", default=os.environ.get("RAG_DOMAIN", DEFAULT_DOMAIN))
     parser.add_argument("--batch-size", type=int, default=100)
+    parser.add_argument("--timeout", type=float, default=120.0)
+    parser.add_argument("--retries", type=int, default=4)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--out", type=Path, default=None)
     args = parser.parse_args()
@@ -186,29 +226,33 @@ def main() -> int:
         return 2
 
     base_url = args.base_url.rstrip("/")
-    with httpx.Client(timeout=90.0) as client:
-        domain_resp = client.post(
+    with httpx.Client(timeout=args.timeout) as client:
+        domain_resp = post_with_retries(
+            client,
             f"{base_url}/v1/kb/domains",
             headers={"Authorization": f"Bearer {key}"},
-            json={
+            json_body={
                 "name": args.domain,
                 "description": "researchPapers website seed: papers, clusters, ratings, hot/sleeper signals.",
             },
+            attempts=args.retries,
         )
         if domain_resp.status_code not in {200, 201, 409}:
             domain_resp.raise_for_status()
 
         total_chunks = 0
         for index, batch in enumerate(chunks(records, args.batch_size), start=1):
-            resp = client.post(
+            resp = post_with_retries(
+                client,
                 f"{base_url}/v1/kb/ingest/record",
                 headers={"Authorization": f"Bearer {key}"},
-                json={
+                json_body={
                     "domain": args.domain,
                     "type": "PaperSignal",
                     "data": batch,
                     "idempotency_key": f"research-papers-static-v1-{index}",
                 },
+                attempts=args.retries,
             )
             resp.raise_for_status()
             body = resp.json()
@@ -217,6 +261,9 @@ def main() -> int:
             print(
                 f"batch {index}: records={len(batch)} "
                 f"chunks_indexed={chunks_indexed} file_id={body.get('file_id')}"
+                f"{' idempotent' if body.get('idempotent_replay') else ''}"
+                ,
+                flush=True,
             )
             time.sleep(0.25)
     print(f"seed complete: records={len(records)} chunks_indexed={total_chunks}")

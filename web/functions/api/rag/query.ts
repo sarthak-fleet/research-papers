@@ -252,8 +252,8 @@ export async function onRequestPost(context: PagesContext): Promise<Response> {
     body: JSON.stringify({
       domain,
       question,
-      mode: String(payload.mode ?? "hybrid"),
-      answer_mode: String(payload.answer_mode ?? "extractive"),
+      mode: String(payload.mode ?? "semantic"),
+      answer_mode: String(payload.answer_mode ?? "workers_ai"),
       top_k: topK,
       rerank: true,
       mmr: true,

@@ -63,14 +63,14 @@ See `DEPLOY.md` for LAN/CDN deployment shapes.
 
 - **Corpus build:** ~488k papers across arxiv, OpenReview, bioRxiv, medRxiv with ~1.05M paper→paper edges; full-corpus PageRank → `paper_scores_v2`; MiniLM embeddings (384-d) for all papers; 64 semantic clusters; spaCy noun-chunk tags + MLX premium tagging subset.
 - **Overlay enrichment shipped:** Semantic Scholar enrichment → `citation_overlay_v2`; ArXiv abstract refresh → `abstract_overlay_v2`; author graph → `authors_v2`, `paper_authorships_v2`.
-- **2026-06-24:** Cloudflare Pages demo deployed at `https://research-papers.pages.dev`; frontend no longer defaults to localhost APIs; Research Answer API panel ships a same-origin RAG proxy path with a bundled-data cited fallback while the Knowledgebase secret is not configured.
+- **2026-06-24:** Cloudflare Pages demo deployed at `https://research-papers.pages.dev`; frontend no longer defaults to localhost APIs; Research Answer API panel ships a same-origin RAG proxy path. `RAG_SERVICE_KEY` is configured on Pages production and the `research-papers` Knowledgebase domain is seeded with 789 chunks from the curated website export. The bundled-data fallback remains for resilience.
 
 ## Products
 
 | Surface | URL / port |
 | --- | --- |
 | Public production | `https://research-papers.pages.dev` (Cloudflare Pages) |
-| Pages RAG Function | `/api/rag/query` on Pages; requires `RAG_SERVICE_KEY` to call the Knowledgebase service |
+| Pages RAG Function | `/api/rag/query` on Pages; `RAG_SERVICE_KEY` configured for the live Knowledgebase path |
 | FastAPI (local/deploy) | `http://0.0.0.0:8000` via `uv run papers api-serve` |
 | ClickHouse HTTP | `:8123` (Docker) |
 | Astro dev | `http://127.0.0.1:4321` (`cd web && npm run dev`) |
@@ -113,14 +113,14 @@ See `DEPLOY.md` for LAN/CDN deployment shapes.
 - Astro frontend wired to FastAPI/ClickHouse data path.
 - Static JSON exports via `uv run papers export-ch` → `web/public/data/*.json`.
 - Public Pages build uses bundled static JSON when no live API base is configured, so search/similar-paper demo flows do not point at localhost.
-- Research Answer API panel calls same-origin `/api/rag/query` on Pages or FastAPI `/rag/query` in same-host mode; if the live Knowledgebase service is unavailable, the browser falls back to a cited answer over bundled hot papers, sleepers, OpenReview ratings, and semantic clusters.
+- Research Answer API panel calls same-origin `/api/rag/query` on Pages or FastAPI `/rag/query` in same-host mode; the live path defaults to semantic retrieval plus synthesized cited answers through Knowledgebase/free-ai. If the live Knowledgebase service is unavailable, the browser falls back to a cited answer over bundled hot papers, sleepers, OpenReview ratings, and semantic clusters.
 - Warm restore, cold rebuild, deployment shapes documented.
 
 ## Todo / Planned / Deferred / Blocked
 
 ### Planned
 
-1. Configure `RAG_SERVICE_KEY` on Cloudflare Pages and seed the `research-papers` Knowledgebase domain with `scripts/seed_knowledgebase_rag.py` when the service key is available.
+1. Add a small golden-question regression check for the Research Answer API default prompts.
 2. Keep static JSON exports fresh after ingestion/retagging: `uv run papers export-ch` + frontend rebuild.
 3. Run overlay jobs on production corpus after deploy: `uv run papers warm-update`.
 
@@ -136,4 +136,4 @@ See `DEPLOY.md` for LAN/CDN deployment shapes.
 
 ### Blocked
 
-- Live Knowledgebase RAG path is blocked on a non-committed `RAG_SERVICE_KEY`/Pages runtime secret; public UI currently uses the bundled-data fallback until that is configured and seeded.
+- (none)

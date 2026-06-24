@@ -116,10 +116,11 @@ All under the FastAPI server (`uv run papers api-serve`):
 The website includes a "Research answer API" panel. In local same-host mode it
 calls FastAPI `POST /rag/query`; on Cloudflare Pages it calls the Pages Function
 at `/api/rag/query`. Both paths keep the Knowledgebase service key on the server.
-The Pages Function also has a bundled-data fallback over `web/public/data/*.json`,
-so the public demo API returns cited answers before the Knowledgebase secret is
-configured. FastAPI returns 503 without the key because it does not serve the
-static website export.
+The live path defaults to semantic retrieval plus synthesized cited answers
+through Knowledgebase/free-ai. The Pages Function also has a bundled-data
+fallback over `web/public/data/*.json`, so the public demo API returns cited
+answers before the Knowledgebase secret is configured. FastAPI returns 503
+without the key because it does not serve the static website export.
 
 Required runtime env for the full Knowledgebase RAG path:
 
