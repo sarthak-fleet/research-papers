@@ -76,6 +76,56 @@ def test_openalex_filter_stays_cost_and_quality_bounded() -> None:
     assert seed_openalex_cs_rag.DEFAULT_RECORD_TYPE == "PaperSignal"
 
 
+def test_embedding_selection_can_be_passed_to_knowledgebase(monkeypatch, tmp_path) -> None:
+    posted: list[dict] = []
+
+    class FakeResponse:
+        status_code = 201
+        text = "{}"
+
+        def raise_for_status(self) -> None:
+            return None
+
+        def json(self) -> dict:
+            return {"chunks_indexed": 1, "file_id": "file-1"}
+
+    def fake_fetch_openalex_page(*_args, **_kwargs):
+        return {
+            "meta": {"count": 1, "next_cursor": None},
+            "results": [{"id": "https://openalex.org/W1", "title": "One", "cited_by_count": 1000}],
+        }
+
+    def fake_post_with_retries(*_args, json_body, **_kwargs):
+        posted.append(json_body)
+        return FakeResponse()
+
+    monkeypatch.setenv("RAG_SERVICE_KEY", "test-key")
+    monkeypatch.setattr(seed_openalex_cs_rag, "fetch_openalex_page", fake_fetch_openalex_page)
+    monkeypatch.setattr(seed_openalex_cs_rag, "post_with_retries", fake_post_with_retries)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "seed_openalex_cs_rag.py",
+            "--live",
+            "--max-records",
+            "1",
+            "--state",
+            str(tmp_path / "seed-state.json"),
+            "--embedding-model",
+            "voyage-3.5-lite",
+            "--embedding-provider",
+            "voyage_ai",
+        ],
+    )
+
+    assert seed_openalex_cs_rag.main() == 0
+    assert posted[0]["embedding_model"] == "voyage-3.5-lite"
+    assert posted[0]["embedding_provider"] == "voyage_ai"
+    assert posted[1]["embedding_model"] == "voyage-3.5-lite"
+    assert posted[1]["embedding_provider"] == "voyage_ai"
+
+
 def test_default_invocation_is_dry_run_without_secret(monkeypatch, capsys) -> None:
     def fake_fetch_openalex_page(*_args, **_kwargs):
         return {

@@ -318,6 +318,8 @@ def main() -> int:
     parser.add_argument("--base-url", default=os.environ.get("RAG_SERVICE_URL", DEFAULT_BASE_URL))
     parser.add_argument("--domain", default=os.environ.get("RAG_DOMAIN", DEFAULT_DOMAIN))
     parser.add_argument("--record-type", default=os.environ.get("RAG_RECORD_TYPE", DEFAULT_RECORD_TYPE))
+    parser.add_argument("--embedding-model", default=os.environ.get("RAG_EMBEDDING_MODEL"))
+    parser.add_argument("--embedding-provider", default=os.environ.get("RAG_EMBEDDING_PROVIDER"))
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE_PATH)
     parser.add_argument("--per-page", type=int, default=200)
     parser.add_argument("--batch-size", type=int, default=10)
@@ -377,7 +379,8 @@ def main() -> int:
             f"domain={args.domain} cursor={state.get('cursor')} "
             f"mode={'live' if args.live else 'dry-run'} "
             f"batch_size={args.batch_size} sleep={args.sleep}s run_budget={args.run_budget} "
-            f"write_shards={args.write_shards} record_type={args.record_type}",
+            f"write_shards={args.write_shards} record_type={args.record_type} "
+            f"embedding_model={args.embedding_model or 'domain-default'}",
             flush=True,
         )
         if args.dry_run:
@@ -397,6 +400,10 @@ def main() -> int:
             return 2
 
         base_url = args.base_url.rstrip("/")
+        embedding_selection = {
+            **({"embedding_model": args.embedding_model.strip()} if args.embedding_model and args.embedding_model.strip() else {}),
+            **({"embedding_provider": args.embedding_provider.strip()} if args.embedding_provider and args.embedding_provider.strip() else {}),
+        }
         domain_resp = post_with_retries(
             client,
             f"{base_url}/v1/kb/domains",
@@ -408,6 +415,7 @@ def main() -> int:
                     "article/preprint, abstract present, >999 citations, not retracted. "
                     "Metadata/abstract/link only; PDFs are not stored."
                 ),
+                **embedding_selection,
             },
             attempts=args.retries,
         )
@@ -448,6 +456,7 @@ def main() -> int:
                         "type": args.record_type,
                         "data": batch,
                         "idempotency_key": f"openalex-cs-cited1000-v1-{ids[0]}-{ids[-1]}-{len(batch)}",
+                        **embedding_selection,
                     },
                     attempts=args.retries,
                 )
