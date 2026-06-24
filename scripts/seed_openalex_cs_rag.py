@@ -468,9 +468,13 @@ def main() -> int:
                 if args.sleep > 0:
                     time.sleep(args.sleep)
                 if args.max_records is not None and int(state["records_posted"]) >= args.max_records:
+                    if shard_writer:
+                        shard_writer.flush()
                     print("max-records reached", flush=True)
                     return 0
                 if run_posted >= args.run_budget:
+                    if shard_writer:
+                        shard_writer.flush()
                     print("run-budget reached", flush=True)
                     return 0
 
