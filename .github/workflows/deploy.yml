@@ -1,7 +1,12 @@
 name: Deploy research-papers to Cloudflare Pages
-# Manual-only for now. Add a `push` trigger after the first CI deploy is verified.
+# CI deploy verified 2026-06-26 — auto-deploys on push to main + manual dispatch.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - '.github/workflows/deploy.yml'
 
 concurrency:
   group: ${{ github.workflow }}
